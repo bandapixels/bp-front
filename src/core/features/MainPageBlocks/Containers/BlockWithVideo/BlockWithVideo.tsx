@@ -24,18 +24,24 @@ const BlockWithVideo: React.FunctionComponent = () => {
         >
           <div className={styles.titlesWrapper}>
             <h1 className={styles.roundedTitle}>
-              {roundedTextArr.map((char, index) => (
-                <span key={char} className={styles[`char${index}`]}>
-                  {char}
-                </span>
-              ))}
+              {roundedTextArr.map((char, index) => {
+                const key = char + index;
+                return (
+                  <span key={key} className={styles[`char${index}`]}>
+                    {char}
+                  </span>
+                );
+              })}
             </h1>
             <h1 className={styles.smallRoundedTitle}>
-              {roundedTextArr.map((char, index) => (
-                <span key={char} className={styles[`char${index}`]}>
-                  {char}
-                </span>
-              ))}
+              {roundedTextArr.map((char, index) => {
+                const key = char + index;
+                return (
+                  <span key={key} className={styles[`char${index}`]}>
+                    {char}
+                  </span>
+                );
+              })}
             </h1>
           </div>
           <video className={styles.video} autoPlay muted>
