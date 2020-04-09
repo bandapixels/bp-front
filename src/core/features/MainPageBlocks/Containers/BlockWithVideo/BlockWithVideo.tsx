@@ -25,16 +25,14 @@ const BlockWithVideo: React.FunctionComponent = () => {
           <div className={styles.titlesWrapper}>
             <h1 className={styles.roundedTitle}>
               {roundedTextArr.map((char, index) => (
-                // eslint-disable-next-line react/no-array-index-key
-                <span key={index} className={styles[`char${index}`]}>
+                <span key={char} className={styles[`char${index}`]}>
                   {char}
                 </span>
               ))}
             </h1>
             <h1 className={styles.smallRoundedTitle}>
               {roundedTextArr.map((char, index) => (
-                // eslint-disable-next-line react/no-array-index-key
-                <span key={index} className={styles[`char${index}`]}>
+                <span key={char} className={styles[`char${index}`]}>
                   {char}
                 </span>
               ))}
