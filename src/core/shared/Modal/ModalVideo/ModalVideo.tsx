@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import styles from "./modalVideo.module.scss";
 import useOutsideClick from "./useOutsideClick";
+import Button from "../../coreUi/Button/Button";
 
 interface ModalViewProps {
   clickHandler: () => void;
@@ -24,10 +25,7 @@ const ModalVideo: React.FunctionComponent<ModalViewProps> = ({
             />
           </video>
         </div>
-        <button type="button" className={styles.btnClose}>
-          <span />
-          <span />
-        </button>
+        <Button classes="btnClose" />
       </div>
     </div>
   );
