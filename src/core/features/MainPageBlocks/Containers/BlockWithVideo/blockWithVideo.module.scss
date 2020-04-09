@@ -1,4 +1,5 @@
-@import url(https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap);
+
+@import "../../../../../assets/scss/reset.scss";
 
 $big-circle-size: 120vh;
 $small-circle-size: 74vh;
@@ -16,7 +17,6 @@ $small-circle-size: 74vh;
   top: $top;
   left: $left;
   color: rgba(255, 255, 255, .3);
-  font-family: "Raleway";
   font-style: normal;
   font-weight: normal;
 }
@@ -52,7 +52,7 @@ $small-circle-size: 74vh;
   width: 100%;
   height: 100vh;
   margin: 0 auto;
-  cursor: url('../../../../../assets/images/cursor.svg'), auto;
+  cursor: url(/images/cursor.svg), auto;
 
   &::after {
     content: '';
