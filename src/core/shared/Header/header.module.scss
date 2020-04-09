@@ -1,7 +1,5 @@
-$breakpoint-max-width: 1260px;
-$breakpoint-tablet: 1024px;
-$breakpoint-mobile: 768px;
-  
+@import '../../../assets/scss/breakPoints.scss';
+
 .header{
   position: fixed;
   top: 0;
@@ -35,104 +33,6 @@ $breakpoint-mobile: 768px;
   justify-content: flex-end;
 }
 
-.navBarMenu {
-  margin: 0 140px 0 0;
-}
-
-.menuList{
-  display: flex;
-  list-style-type: none;
-  flex-flow: row nowrap;
-  align-items: center;
-}
-  
-.menuItem {
-  margin: 0 50px 0 0;
-
-  &:last-child {
-    margin-right: 0;
-  }
-
-  a {
-    color: #fff;
-    text-decoration: none;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 130%;
-
-    &.activeLink {
-      color: #EFE314;
-      position: relative;
-
-      &:after {
-        content: '';
-        display: block;
-        width: 5px;
-        height: 5px;
-        background: #EFE314;
-        position: absolute;
-        left: 50%;
-        top: calc(100% + 10px);
-        transform: translateX(-50%);
-      }
-    }
-  }
-}
-
-.headerBtn {
-  background: #EFE314;
-  color: #171718;
-  text-transform: uppercase;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 19px;
-  height: 140px;
-  width: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 40px;
-  text-align: left;
-
-  &:after {
-    content: '';
-    display: block;
-    width: 15px;
-    height: 15px;
-    background: url(/images/icons/arrow.svg) no-repeat center;
-    background-size: contain;
-    flex: 0 0 15px;
-    margin-left: 30px;
-  }
-}
-
-.menuSwitchBtn {
-  display: none;
-}
-
-.openedMobileWrapper {
-  display: none;
-}
-
-@media (max-width: $breakpoint-max-width) {
-  .menuItem {
-    margin: 0 30px 0 0;
-  }
-
-  .navBarMenu {
-    margin: 0 40px 0 0;
-  }
-
-  .headerBtn {
-    height: 90px;
-    padding: 10px 40px;
-    width: 180px;
-    font-size: 14px;
-  }
-}
-
 @media (max-width: $breakpoint-mobile) {
   .header{
     padding: 10px 15px;
@@ -152,13 +52,6 @@ $breakpoint-mobile: 768px;
       }
   }
 
-  .headerLeftPart {
-    .navBarMenu,
-    .headerBtn {
-      display: none;
-    }
-  }
-
   .logoWrapper {
     width: 30px;
     height: 40px;
@@ -169,61 +62,6 @@ $breakpoint-mobile: 768px;
     background: url(/images/logo-mobile.svg) no-repeat center;
   }
 
-  .menuSwitchBtn {
-    transition: .5s;
-    display: block;
-    width: 30px;
-    height: 30px;
-    background: url(/images/icons/menu-icon-mob.svg) no-repeat center;
-
-    &:focus {
-      outline: none;
-    }
-  }
-
-  .openedMobileWrapper {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #fff;
-    z-index: -1;
-    transform: translateY(-100%);
-    animation: slideDown .3s ease-in forwards;
-    overflow: auto;
-    padding: 0 15px 15px;
-  }
-
-  .menuItem {
-    a {
-      color: #171718;
-
-      &.activeLink {
-        &:after {
-          content: none;
-        }
-      }
-    }
-  }
-
-  .navBarMenu {
-    margin: 90px auto 0;
-  }
-  
-  .menuList {
-    flex-flow: column nowrap;
-  }
-
-  .menuItem {
-    margin: 0 auto 30px;
-
-    &:last-child {
-      margin: 0 auto;
-    }
-  }
-
   .openedMenuWrapper {
     &:after {
       background: transparent;
@@ -232,82 +70,5 @@ $breakpoint-mobile: 768px;
     .bigBlackLogo {
       background: url(/images/logo-mobile-black.svg) no-repeat center;
     }
-
-    .menuSwitchBtn {
-      background: url(/images/icons/menu-icon-mob-black.svg) no-repeat center;
-    }
-  }
-
-  .socialWrapper {
-    margin: 95px auto 0;
-  }
-
-  .socialList {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: max-content;
-    flex-flow: row nowrap;
-    margin: 0 auto;
-  }
-
-  .socialItem {
-    &:not(:last-child) {
-      margin-right: 10px;
-    }
-  }
-
-  .socialIcon {
-    width: 65px;
-    height: 65px;
-    border: 1px solid #171718;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    span {
-      width: 20px;
-      height: 20px;
-      display: block;
-    }
-  }
-
-  .socialBehance {
-    background: url(/images/icons/behance.svg) no-repeat center;
-  }
-
-  .socialFacebook {
-    background: url(/images/icons/facebook.svg) no-repeat center;
-  }
-
-  .socialDribbble {
-    background: url(/images/icons/dribbble.svg) no-repeat center;
-  }
-
-  .socialLinkedin {
-    background: url(/images/icons/linkedin.svg) no-repeat center;
-  }
-
-  .mailBtn {
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    letter-spacing: 0.03em;
-    color: #EFE314;
-    width: 290px;
-    height: 65px;
-    text-decoration: none;
-    text-align: center;
-    display: block;
-    line-height: 65px;
-    margin: 20px auto 0;
-    background: #333;
-  }
-}
-
-@keyframes slideDown {
-  to {
-    transform: translateY(0);
   }
 }

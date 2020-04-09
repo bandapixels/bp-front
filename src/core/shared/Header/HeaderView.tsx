@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import classNames from "classnames";
 import Button from "../coreUi/Button/Button";
-import MenuList from "./components/MenuList";
-import OpenedMobileMenu from "./components/OpenedMobileMenu";
+import MenuList from "./components/MenuList/MenuList";
+import OpenedMobileMenu from "./components/OpenedMobileMenu/OpenedMobileMenu";
 
 import styles from "./header.module.scss";
 
@@ -25,11 +25,8 @@ const HeaderView: React.FunctionComponent = () => {
       </div>
       <div className={styles.headerLeftPart}>
         <MenuList />
-        <Button classes={styles.headerBtn} title="discuss the project" />
-        <Button
-          classes={styles.menuSwitchBtn}
-          handlerClick={handlerOpenMobileMenu}
-        />
+        <Button classes="headerBtn" title="discuss the project" />
+        <Button classes="menuSwitchBtn" handlerClick={handlerOpenMobileMenu} />
       </div>
       {openedMenu && <OpenedMobileMenu />}
     </header>

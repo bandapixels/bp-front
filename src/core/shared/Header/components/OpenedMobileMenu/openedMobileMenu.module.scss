@@ -1,0 +1,44 @@
+@import '../../../../../assets/scss/breakPoints.scss';
+
+.openedMobileWrapper {
+  display: none;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .openedMobileWrapper {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    z-index: -1;
+    transform: translateY(-100%);
+    animation: slideDown .3s ease-in forwards;
+    overflow: auto;
+    padding: 0 15px 15px;
+  }
+
+  .mailBtn {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 0.03em;
+    color: #EFE314;
+    width: 290px;
+    height: 65px;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    line-height: 65px;
+    margin: 20px auto 0;
+    background: #333;
+  }
+}
+
+@keyframes slideDown {
+  to {
+    transform: translateY(0);
+  }
+}
