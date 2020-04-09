@@ -1,0 +1,88 @@
+.modalOverlay {
+  background: rgba(0,0,0,.6);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  animation: fadeIn .3s ease-in forwards;
+}
+
+.modalWrap {
+  background: #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  max-width: 75%;
+  max-height: 90%;
+
+  video {
+    max-width: 100%;
+    max-height: 100%;
+    animation: videoScale .5s ease-out forwards;
+  }
+}
+
+.btnClose {
+  display: inline-block;
+  width: 64px;
+  height: 48px;
+  position: absolute;
+  top: -8px;
+  right: -60px;
+  transform: rotate(0deg);
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+
+  span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 32px;
+    opacity: 1;
+    left: 16px;
+    transform: rotate(0deg);
+    transition: .3s;
+    background: #fff;
+    top: 21px;
+
+    &:first-child {
+      transform: rotate(45deg)
+    }
+    
+    &:nth-child(2) {
+      transform: rotate(-45deg)
+    }
+  }
+
+  &:hover {
+    span {
+      background: #EFE314
+    }
+  }
+  
+  &:focus {
+    outline: none
+  }
+}
+
+@keyframes videoScale {
+  0% {
+    transform: scale(.5)
+  }
+  100% {
+    transform: scale(1)
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0
+  }
+  100% {
+    opacity: 1
+  }
+}
