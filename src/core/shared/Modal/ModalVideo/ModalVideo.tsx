@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import styles from "./modalVideo.module.scss";
-import useOutsideClick from "./useOutsideClick";
+import useOutsideClick from "../../../utils/useOutsideClick";
 import Button from "../../coreUi/Button/Button";
 
 interface ModalViewProps {
