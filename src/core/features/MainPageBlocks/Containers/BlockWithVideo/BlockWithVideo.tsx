@@ -17,7 +17,19 @@ const BlockWithVideo: React.FunctionComponent = () => {
   return (
     <>
       <section className={styles.headerWrapper}>
-        <div className={styles.yellowBlock} />
+        <div className={styles.yellowBlock}>
+          <div className={styles.bigLettersWrapper}>
+            <div className={styles.firstLine}>
+              <span>New business</span>
+              <span>opportunities with</span>
+            </div>
+            <div className={styles.lastLine}>
+              <span>We help</span>
+              <span>startups</span>
+              <span>to create</span>
+            </div>
+          </div>
+        </div>
         <div
           className={styles.titlesBlock}
           onClick={(): void => setModalOpen(!modalOpen)}

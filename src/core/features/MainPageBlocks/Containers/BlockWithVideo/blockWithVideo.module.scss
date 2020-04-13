@@ -101,6 +101,7 @@ $small-circle-size: 74vh;
   background: #EFE314;
   height: 100%;
   flex: 0 0 30%;
+  z-index: 1;
 }
 
 .video {
@@ -109,4 +110,75 @@ $small-circle-size: 74vh;
   position: absolute;
   z-index: -1;
   background: #000;
+}
+
+.bigLettersWrapper {
+  margin: 32vh 0 0;
+  padding: 0 0 0 60px;
+  pointer-events: none;
+}
+
+.firstLine {
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+  color: #FFFFFF;
+  position: relative;
+
+  span {
+    &:first-child {
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    &:last-child {
+      position: absolute;
+      top: 100%;
+      left: 164px;
+      width: max-content;
+    }
+  }
+}
+
+.lastLine {
+  font-weight: 900;
+  font-size: 60px;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+  color: #171718;
+  margin: 15px 0 0;
+  position: relative;
+
+  span {
+    &:first-child {
+      max-width: 212px;
+      display: inline-block;
+      font-size: 80px;
+      line-height: 95%;
+      text-transform: uppercase;
+      color: #171718;
+      margin: 0 32px 0 0;
+    }
+
+    &:last-child {
+      color: #EFE314;
+      position: absolute;
+      left: calc(100% + 10px);
+      width: max-content;
+      bottom: 0;
+
+      &:after {
+        content: '';
+        display: block;
+        background: url(/images/icons/saas.png) no-repeat center;
+        background-size: cover;
+        width: 401px;
+        height: 283px;
+        position: absolute;
+        bottom: -25px;
+        left: calc(100% - 50px);
+      }
+    }
+  }
 }
