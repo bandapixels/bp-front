@@ -1,0 +1,112 @@
+
+@import "../../../../../assets/scss/reset.scss";
+
+$big-circle-size: 120vh;
+$small-circle-size: 74vh;
+
+@mixin header-style($font-size: 10, $size: 0, $animation: rotateTitleRight, $top: 0, $left: 0) {
+  font-size: $font-size;
+  text-transform: uppercase;
+  width: $size;
+  height: $size;
+  position: relative;
+  animation: $animation 50s linear infinite;
+  transform-origin: center;
+  margin: 0 auto;
+  position: absolute;
+  top: $top;
+  left: $left;
+  color: rgba(255, 255, 255, .3);
+  font-style: normal;
+  font-weight: normal;
+}
+
+@mixin rotated-text($num-letters: 90, $angle-span: 360deg, $angle-offset: 0deg, $height: 0, $width: 0, $left: 0, $top: 0) {
+  $angle-per-char: $angle-span / $num-letters;
+  @for $i from 0 through $num-letters {
+    .char#{$i} {
+      transform: rotate($angle-offset + $angle-per-char * $i);
+      height: $height;
+      position: absolute;
+      width: $width;
+      left: $left;
+      top: $top;
+      transform-origin: bottom center;
+    }
+  }
+}
+
+.roundedTitle {
+  @include header-style(20px, $big-circle-size, rotateTitleRight, calc(50% - 60vh), 0);
+  @include rotated-text(90, 360deg, 0deg, calc(115vh / 2), 70px, calc(115vh / 2), 0);
+}
+
+.smallRoundedTitle {
+  @include header-style(10px, $small-circle-size, rotateTitleLeft, calc(50% - 37vh), calc(50% - 37vh));
+  @include rotated-text(90, 360deg, 0deg, 37vh, 17px, 37vh, 0);
+}
+
+.titlesBlock {
+  overflow: visible;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  cursor: url(/images/cursor.svg), auto;
+
+  &::after {
+    content: '';
+    display: block;
+    background: linear-gradient(0deg, rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.8));
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.titlesWrapper {
+  position: absolute;
+  height: 120vh;
+  width: 120vh;
+  left: -20vh;
+  top: -21vh;
+  pointer-events: none;
+}
+
+@keyframes rotateTitleRight {
+  0% {
+    transform: rotate(0)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes rotateTitleLeft {
+  0% {
+    transform: rotate(0)
+  }
+  100% {
+    transform: rotate(-360deg)
+  }
+}
+
+.headerWrapper {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  flex-flow: row nowrap;
+}
+
+.yellowBlock {
+  background: #EFE314;
+  height: 100%;
+  flex: 0 0 30%;
+}
+
+.video {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: -1;
+  background: #000;
+}

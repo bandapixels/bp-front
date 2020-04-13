@@ -1,0 +1,39 @@
+@import '../../../../../assets/scss/breakPoints.scss';
+
+.socialBehance {
+  background: url(/images/icons/behance.svg) no-repeat center;
+}
+
+.socialFacebook {
+  background: url(/images/icons/facebook.svg) no-repeat center;
+}
+
+.socialDribbble {
+  background: url(/images/icons/dribbble.svg) no-repeat center;
+}
+
+.socialLinkedin {
+  background: url(/images/icons/linkedin.svg) no-repeat center;
+}
+
+.socialItem {
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+.socialIcon {
+  width: 65px;
+  height: 65px;
+  border: 1px solid #171718;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    width: 20px;
+    height: 20px;
+    display: block;
+  }
+}

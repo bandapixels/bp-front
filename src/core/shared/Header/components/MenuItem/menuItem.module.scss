@@ -1,0 +1,61 @@
+@import '../../../../../assets/scss/breakPoints.scss';
+
+.menuItem {
+  margin: 0 50px 0 0;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 130%;
+
+    &.activeLink {
+      color: #EFE314;
+      position: relative;
+
+      &:after {
+        content: '';
+        display: block;
+        width: 5px;
+        height: 5px;
+        background: #EFE314;
+        position: absolute;
+        left: 50%;
+        top: calc(100% + 10px);
+        transform: translateX(-50%);
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-max-width) {
+  .menuItem {
+    margin: 0 30px 0 0;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .menuItem {
+    margin: 0 auto 30px;
+
+    &:last-child {
+      margin: 0 auto;
+    }
+
+    a {
+      color: #171718;
+
+      &.activeLink {
+        &:after {
+          content: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+@import '../../../assets/scss/breakPoints.scss';
+
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+}
+
+.logoWrapper{
+  width: 200px;
+  height: 53px;
+  margin: 0 60px;
+}
+
+.bigBlackLogo{
+  background: url(/images/logo-black.svg) no-repeat center;
+  width: 100%;
+  height: 100%;
+  transition: .5s;
+}
+
+.headerLeftPart{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .header{
+    padding: 10px 15px;
+
+      &:after {
+        content: '';
+        display: block;
+        background: rgba(23 , 23, 24, .8);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: -1;
+      }
+  }
+
+  .logoWrapper {
+    width: 30px;
+    height: 40px;
+    margin: 0;
+  }
+
+  .bigBlackLogo {
+    background: url(/images/logo-mobile.svg) no-repeat center;
+  }
+
+  .openedMenuWrapper {
+    &:after {
+      background: transparent;
+    }
+
+    .bigBlackLogo {
+      background: url(/images/logo-mobile-black.svg) no-repeat center;
+    }
+  }
+}

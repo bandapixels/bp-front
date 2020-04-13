@@ -1,0 +1,14 @@
+@import '../../../../../assets/scss/breakPoints.scss';
+
+.socialWrapper {
+  margin: 95px auto 0;
+}
+
+.socialList {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: max-content;
+  flex-flow: row nowrap;
+  margin: 0 auto;
+}
