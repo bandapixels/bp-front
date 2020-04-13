@@ -13,10 +13,9 @@ const HeaderView: React.FunctionComponent = () => {
     setOpenedMenu(!openedMenu);
   };
 
-  const headerStyles = classNames(
-    styles.header,
-    openedMenu ? styles.openedMenuWrapper : ""
-  );
+  const headerStyles = classNames(styles.header, {
+    openedMenuWrapper: openedMenu
+  });
 
   return (
     <header className={headerStyles}>
