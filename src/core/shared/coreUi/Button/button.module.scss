@@ -49,6 +49,17 @@
   }
 }
 
+.btnPlay {
+  background: url(/images/icons/play-btn.svg) no-repeat center;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
 @media (max-width: $breakpoint-max-width) {
   .headerBtn {
     height: 90px;

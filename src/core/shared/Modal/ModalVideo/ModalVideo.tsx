@@ -1,4 +1,5 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
+import ReactPlayer from "react-player";
 import styles from "./modalVideo.module.scss";
 import useOutsideClick from "../../../utils/useOutsideClick";
 import Button from "../../coreUi/Button/Button";
@@ -11,19 +12,72 @@ const ModalVideo: React.FunctionComponent<ModalViewProps> = ({
   clickHandler
 }) => {
   const ref = useRef();
+  const playerRef = useRef();
+  const [playing, setPlaing] = useState(false);
+  const [seeking, setSeeking] = useState(false);
+  const [playedTime, setPlayedTime] = useState(0);
+
+  const handlePlayPause = (): void => {
+    // eslint-disable-next-line no-restricted-globals
+    event.stopImmediatePropagation();
+    setPlaing(!playing);
+  };
+
+  const handleSeekMouseDown = (): void => {
+    setSeeking(true);
+  };
+
+  const handleSeekChange = (event): void => {
+    setPlayedTime(parseFloat(event.currentTarget.value));
+  };
+
+  const handleSeekMouseUp = (event): void => {
+    setSeeking(false);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const player: any = playerRef.current;
+    player.seekTo(parseFloat(event.currentTarget.value));
+  };
+
+  const handlePlayedTime = ({ played }): void => {
+    setPlayedTime(parseFloat(played));
+  };
 
   useOutsideClick(ref, clickHandler);
 
   return (
     <div className={styles.modalOverlay}>
       <div className={styles.modalWrap}>
-        <div ref={ref}>
-          <video className={styles.video} autoPlay muted>
-            <source
-              src="https://demo-res.cloudinary.com/video/upload/l_video:ski_jump,fl_splice,e_reverse/l_video:ski_jump,fl_splice,e_accelerate:-50/e_brightness:10,r_max/ski_jump.webm"
-              type="video/webm"
+        <div className={styles.videoWrapper} ref={ref}>
+          <ReactPlayer
+            className={styles.video}
+            autoPlay
+            playing={playing}
+            url="/videos/AppNavi_animate.mp4"
+            width="100%"
+            height="100%"
+            ref={playerRef}
+            onProgress={handlePlayedTime}
+          />
+          {!playing && (
+            <Button classes="btnPlay" handlerClick={handlePlayPause} />
+          )}
+          <div className={styles.progressWrapper}>
+            <div
+              className={styles.progressValue}
+              style={{ width: `${playedTime * 100}%` }}
             />
-          </video>
+            <input
+              className={styles.range}
+              type="range"
+              min={0}
+              max={0.999999}
+              step="any"
+              value={playedTime}
+              onMouseDown={handleSeekMouseDown}
+              onChange={handleSeekChange}
+              onMouseUp={handleSeekMouseUp}
+            />
+          </div>
         </div>
         <Button classes="btnClose" />
       </div>
