@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import ReactPlayer from "react-player";
+import classNames from "classnames";
 import styles from "./modalVideo.module.scss";
 import useOutsideClick from "../../../utils/useOutsideClick";
 import Button from "../../coreUi/Button/Button";
@@ -11,14 +12,15 @@ interface ModalViewProps {
 const ModalVideo: React.FunctionComponent<ModalViewProps> = ({
   clickHandler
 }) => {
-  const ref = useRef();
-  const playerRef = useRef();
+  const refVideo = useRef();
+  const playerRef = useRef<ReactPlayer>();
   const [playing, setPlaying] = useState(false);
   const [playedTime, setPlayedTime] = useState(0);
+  const videoWrapperClasses = classNames(styles.videoWrapper, {
+    playedVideo: playing
+  });
 
   const handlePlayPause = (): void => {
-    // eslint-disable-next-line no-restricted-globals
-    event.stopImmediatePropagation();
     setPlaying(!playing);
   };
 
@@ -27,8 +29,7 @@ const ModalVideo: React.FunctionComponent<ModalViewProps> = ({
   };
 
   const handleSeekMouseUp = (event): void => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const player: any = playerRef.current;
+    const player = playerRef.current;
     player.seekTo(parseFloat(event.currentTarget.value));
   };
 
@@ -36,12 +37,12 @@ const ModalVideo: React.FunctionComponent<ModalViewProps> = ({
     setPlayedTime(parseFloat(played));
   };
 
-  useOutsideClick(ref, clickHandler);
+  useOutsideClick(refVideo, clickHandler);
 
   return (
     <div className={styles.modalOverlay}>
       <div className={styles.modalWrap}>
-        <div className={styles.videoWrapper} ref={ref}>
+        <div className={videoWrapperClasses} ref={refVideo}>
           <ReactPlayer
             className={styles.video}
             autoPlay
@@ -53,9 +54,7 @@ const ModalVideo: React.FunctionComponent<ModalViewProps> = ({
             onProgress={handlePlayedTime}
             onClick={handlePlayPause}
           />
-          {!playing && (
-            <Button classes="btnPlay" handlerClick={handlePlayPause} />
-          )}
+          <Button classes="btnPlay" handlerClick={handlePlayPause} />
           <div className={styles.progressWrapper}>
             <div
               className={styles.progressValue}
