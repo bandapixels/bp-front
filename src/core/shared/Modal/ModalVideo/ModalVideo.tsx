@@ -13,18 +13,13 @@ const ModalVideo: React.FunctionComponent<ModalViewProps> = ({
 }) => {
   const ref = useRef();
   const playerRef = useRef();
-  const [playing, setPlaing] = useState(false);
-  const [seeking, setSeeking] = useState(false);
+  const [playing, setPlaying] = useState(false);
   const [playedTime, setPlayedTime] = useState(0);
 
   const handlePlayPause = (): void => {
     // eslint-disable-next-line no-restricted-globals
     event.stopImmediatePropagation();
-    setPlaing(!playing);
-  };
-
-  const handleSeekMouseDown = (): void => {
-    setSeeking(true);
+    setPlaying(!playing);
   };
 
   const handleSeekChange = (event): void => {
@@ -32,7 +27,6 @@ const ModalVideo: React.FunctionComponent<ModalViewProps> = ({
   };
 
   const handleSeekMouseUp = (event): void => {
-    setSeeking(false);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const player: any = playerRef.current;
     player.seekTo(parseFloat(event.currentTarget.value));
@@ -57,6 +51,7 @@ const ModalVideo: React.FunctionComponent<ModalViewProps> = ({
             height="100%"
             ref={playerRef}
             onProgress={handlePlayedTime}
+            onClick={handlePlayPause}
           />
           {!playing && (
             <Button classes="btnPlay" handlerClick={handlePlayPause} />
@@ -73,7 +68,6 @@ const ModalVideo: React.FunctionComponent<ModalViewProps> = ({
               max={0.999999}
               step="any"
               value={playedTime}
-              onMouseDown={handleSeekMouseDown}
               onChange={handleSeekChange}
               onMouseUp={handleSeekMouseUp}
             />
