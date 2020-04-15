@@ -4,6 +4,36 @@
 
 $big-circle-size: 120vh;
 $small-circle-size: 74vh;
+$first-line-font-sizes: (
+  null: 22px,
+  1024px: 30px,
+  1280px: 36px,
+  1440px: 45px,
+  1600px: 50px,
+  1900px: 60px
+);
+$last-line-font-sizes: (
+  null: 22px,
+  1024px: 30px,
+  1280px: 36px,
+  1440px: 45px,
+  1600px: 50px,
+  1900px: 60px
+);
+$we-help-font-sizes: (
+  null: 22px,
+  1024px: 47px,
+  1280px: 50px,
+  1440px: 65px,
+  1600px: 72px,
+  1900px: 80px
+);
+$saas-sizes: (
+  null: 251px,
+  1280px: 251px,
+  1600px: 351px,
+  1900px: 401px
+);
 
 @mixin header-style($font-size: 10, $size: 0, $animation: rotateTitleRight, $top: 0, $left: 0) {
   font-size: $font-size;
@@ -36,6 +66,32 @@ $small-circle-size: 74vh;
     }
   }
 }
+
+@mixin font-size($fs-map) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null {
+      font-size: $fs-font-size;
+    }
+    @else {
+      @media screen and (min-width: $fs-breakpoint) {
+        font-size: $fs-font-size;
+      }
+    }
+  }
+}
+
+// @mixin saas-size($fs-map) {
+//   @each $fs-breakpoint, $width in $fs-map {
+//     @if $fs-breakpoint == null {
+//       width: $width;
+//     }
+//     @else {
+//       @media screen and (min-width: $fs-breakpoint) {
+//         width: $width;
+//       }
+//     }
+//   }
+// }
 
 .roundedTitle {
   @include header-style(20px, $big-circle-size, rotateTitleRight, calc(50% - 60vh), 0);
@@ -104,6 +160,7 @@ $small-circle-size: 74vh;
   flex: 0 0 30%;
   z-index: 1;
   position: relative;
+  max-width: 590px;
 }
 
 .video {
@@ -126,11 +183,11 @@ $small-circle-size: 74vh;
 
 .firstLine {
   font-weight: bold;
-  font-size: 60px;
   line-height: 130%;
   letter-spacing: 0.03em;
   color: #FFFFFF;
   position: relative;
+  @include font-size($first-line-font-sizes);
 
   span {
     &:first-child {
@@ -141,7 +198,7 @@ $small-circle-size: 74vh;
     &:last-child {
       position: absolute;
       top: 100%;
-      left: 164px;
+      left: 32%;
       width: max-content;
     }
   }
@@ -149,39 +206,38 @@ $small-circle-size: 74vh;
 
 .lastLine {
   font-weight: 900;
-  font-size: 60px;
   line-height: 130%;
   letter-spacing: 0.03em;
   color: #171718;
   margin: 15px 0 0;
   position: relative;
+  @include font-size($last-line-font-sizes);
 
   span {
     &:first-child {
       max-width: 212px;
-      display: inline-block;
-      font-size: 80px;
       line-height: 95%;
       text-transform: uppercase;
       color: #171718;
-      margin: 0 32px 0 0;
+      margin: 0 22px 0 0;
+      @include font-size($we-help-font-sizes);
     }
 
     &:last-child {
       position: absolute;
-      left: calc(100% + 10px);
+      left: calc(100% + 20px);
       width: max-content;
       bottom: 0;
 
       &:after {
         content: '';
-        display: block;
         background: url(/images/icons/saas.png) no-repeat center;
-        background-size: cover;
+        background-size: contain;
         width: 401px;
+        // @include saas-size($saas-sizes);
         height: 283px;
         position: absolute;
-        bottom: -25px;
+        bottom: -20px;
         left: calc(100% - 50px);
       }
     }
@@ -202,6 +258,7 @@ $small-circle-size: 74vh;
   position: absolute;
   bottom: 80px;
   left: 60px;
+  max-width: 430px;
 }
 
 @media (max-width: $breakpoint-mobile) {
