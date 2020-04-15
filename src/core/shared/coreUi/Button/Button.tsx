@@ -1,5 +1,4 @@
 import React from "react";
-import classNames from "classnames";
 import styles from "./button.module.scss";
 
 interface ButtonProps {
@@ -14,14 +13,8 @@ const Button: React.FunctionComponent<ButtonProps> = ({
   type,
   children
 }) => {
-  const moduleClasses = classes.split(" ").map(classN => styles[classN]);
-
   return (
-    <button
-      className={classNames(moduleClasses)}
-      onClick={handlerClick}
-      type={type}
-    >
+    <button className={styles[classes]} onClick={handlerClick} type={type}>
       {children}
     </button>
   );

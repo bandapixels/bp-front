@@ -10,8 +10,6 @@ const BlockWithVideo: React.FunctionComponent = () => {
   );
   const [roundedTextArr] = useState(roundedText.split(""));
   const [modalOpen, setModalOpen] = useState(false);
-  const discussBtnClasses = "yellowBtn btnWithIcon arrowIcon";
-  const workBtnClasses = "transparentBtn btnWithIcon triangleIcon";
   const handlerClosePopup = (): void => {
     setModalOpen(!modalOpen);
   };
@@ -50,8 +48,14 @@ const BlockWithVideo: React.FunctionComponent = () => {
             guarantees theresult.
           </p>
           <div className={styles.mobileBtnsWrapper}>
-            <Button classes={discussBtnClasses}>discuss the project</Button>
-            <Button classes={workBtnClasses}>work process</Button>
+            <Button classes="yellowBtnWithIcon">
+              discuss the project
+              <img src="/images/icons/arrow.svg" alt="arrow" />
+            </Button>
+            <Button classes="transparentBtnWithIcon">
+              work process
+              <img src="/images/icons/play-btn.svg" alt="arrow" />
+            </Button>
           </div>
         </div>
         <div

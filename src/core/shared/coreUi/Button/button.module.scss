@@ -1,5 +1,17 @@
 @import '../../../../assets/scss/breakPoints.scss';
 
+%btn-with-icon-style {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  img {
+    max-width: 24px;
+    max-height: 24px;
+  }
+}
+
 .headerBtn {
   background: #EFE314;
   color: #171718;
@@ -54,7 +66,7 @@
   z-index: 1;
 }
 
-.yellowBtn {
+.yellowBtnWithIcon {
   max-width: 290px;
   width: 100%;
   padding: 0 30px;
@@ -66,9 +78,10 @@
   font-size: 14px;
   line-height: 16px;
   text-align: center;
+  @extend %btn-with-icon-style;
 }
 
-.transparentBtn {
+.transparentBtnWithIcon {
   border: 1px solid #EFE314;
   background: transparent;
   font-weight: 500;
@@ -81,34 +94,7 @@
   font-size: 14px;
   line-height: 16px;
   text-align: center;
-}
-
-.btnWithIcon {
-  text-align: left;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  &:after {
-    content: '';
-    display: block;
-    width: 15px;
-    height: 15px;
-  }
-}
-
-.arrowIcon {
-  &:after {
-    background: url(/images/icons/arrow.svg) no-repeat center;
-    background-size: contain;
-  }
-}
-
-.triangleIcon {
-  &:after {
-    background: url(/images/icons/play-btn.svg) no-repeat center;
-    background-size: contain;
-  }
+  @extend %btn-with-icon-style
 }
 
 @media (max-width: $breakpoint-max-width) {
@@ -127,8 +113,14 @@
 }
 
 @media (max-width: $breakpoint-mobile) {
-  .yellowBtn,
-  .transparentBtn {
+  .mobileBtnsWrapper {
+    .yellowBtnWithIcon {
+      margin-bottom: 20px;
+    }
+  }
+
+  .yellowBtnWithIcon,
+  .transparentBtnWithIcon {
     max-width: none;
   }
 
