@@ -57,10 +57,7 @@ const BlockWithVideo: React.FunctionComponent = () => {
             </h1>
           </div>
           <video className={styles.video} autoPlay muted>
-            <source
-              src="https://demo-res.cloudinary.com/video/upload/l_video:ski_jump,fl_splice,e_reverse/l_video:ski_jump,fl_splice,e_accelerate:-50/e_brightness:10,r_max/ski_jump.webm"
-              type="video/webm"
-            />
+            <source src="/videos/AppNavi_animate.mp4" type="video/webm" />
           </video>
         </div>
       </section>
