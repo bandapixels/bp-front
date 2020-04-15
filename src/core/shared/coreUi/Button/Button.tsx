@@ -4,16 +4,15 @@ import styles from "./button.module.scss";
 
 interface ButtonProps {
   type?: "button";
-  title?: string;
   classes?: string;
   handlerClick?: () => void;
 }
 
 const Button: React.FunctionComponent<ButtonProps> = ({
-  title,
   handlerClick,
   classes,
-  type
+  type,
+  children
 }) => {
   const moduleClasses = classes.split(" ").map(classN => styles[classN]);
 
@@ -23,7 +22,7 @@ const Button: React.FunctionComponent<ButtonProps> = ({
       onClick={handlerClick}
       type={type}
     >
-      {title}
+      {children}
     </button>
   );
 };

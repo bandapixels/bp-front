@@ -50,8 +50,8 @@ const BlockWithVideo: React.FunctionComponent = () => {
             guarantees theresult.
           </p>
           <div className={styles.mobileBtnsWrapper}>
-            <Button title="discuss the project" classes={discussBtnClasses} />
-            <Button title="work process" classes={workBtnClasses} />
+            <Button classes={discussBtnClasses}>discuss the project</Button>
+            <Button classes={workBtnClasses}>work process</Button>
           </div>
         </div>
         <div
