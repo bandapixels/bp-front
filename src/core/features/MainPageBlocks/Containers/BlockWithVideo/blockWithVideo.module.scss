@@ -22,6 +22,8 @@ $last-line-font-sizes: (
 );
 $we-help-font-sizes: (
   null: 22px,
+  668px: 30px,
+  900px: 40px,
   1024px: 47px,
   1280px: 50px,
   1440px: 65px,
@@ -79,19 +81,6 @@ $saas-sizes: (
     }
   }
 }
-
-// @mixin saas-size($fs-map) {
-//   @each $fs-breakpoint, $width in $fs-map {
-//     @if $fs-breakpoint == null {
-//       width: $width;
-//     }
-//     @else {
-//       @media screen and (min-width: $fs-breakpoint) {
-//         width: $width;
-//       }
-//     }
-//   }
-// }
 
 .roundedTitle {
   @include header-style(20px, $big-circle-size, rotateTitleRight, calc(50% - 60vh), 0);
@@ -234,7 +223,6 @@ $saas-sizes: (
         background: url(/images/icons/saas.png) no-repeat center;
         background-size: contain;
         width: 401px;
-        // @include saas-size($saas-sizes);
         height: 283px;
         position: absolute;
         bottom: -20px;
@@ -261,7 +249,34 @@ $saas-sizes: (
   max-width: 430px;
 }
 
+@media (max-width: $breakpoint-tablet) {
+  .bigLettersWrapper {
+    padding: 0 10px 0 30px;
+  }
+
+  .mainText {
+    font-size: 16px;
+    left: 30px;
+  }
+
+  
+  .lastLine {
+    span{
+      &:last-child {
+        &:after {
+          width: 301px;
+          bottom: -50px;
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: $breakpoint-mobile) {
+  .titlesBlock {
+    display: none;
+  }
+
   .mainText {
     font-size: 14px;
     color: #BDBDBD;
@@ -279,7 +294,7 @@ $saas-sizes: (
 
   .bigLettersMobileWrapper {
     display: block;
-    margin: 120px 0 10px;
+    margin: 0 0 10px;
     font-weight: 900;
     font-size: 20px;
     line-height: 130%;
@@ -292,7 +307,12 @@ $saas-sizes: (
     flex: 0 0 100%;
     background: url(/images/mobile-bg.jpg) #171718 no-repeat center;
     min-height: 100vh;
-    padding: 0 0 90px;
+    max-width: 100%;
+    background-size: cover;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    padding: 70px 0;
 
     &> * {
       padding: 0 15px;
@@ -322,6 +342,7 @@ $saas-sizes: (
   .mobileBtnsWrapper {
     display: block;
     margin: 20px auto 0;
+    width: 100%;
 
     .yellowBtn {
       margin-bottom: 20px;

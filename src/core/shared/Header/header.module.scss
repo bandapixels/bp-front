@@ -21,6 +21,7 @@
 
 .bigBlackLogo{
   background: url(/images/logo-black.svg) no-repeat center;
+  background-size: contain;
   width: 100%;
   height: 100%;
   transition: .5s;
@@ -31,6 +32,17 @@
   flex-flow: row nowrap;
   align-items: center;
   justify-content: flex-end;
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .header {
+    padding: 20px 0 0 30px
+  }
+
+  .logoWrapper {
+    margin: 0;
+    flex: 0 0 150px;
+  }
 }
 
 @media (max-width: $breakpoint-mobile) {
@@ -56,6 +68,7 @@
     width: 30px;
     height: 40px;
     margin: 0;
+    flex: 0 0 auto;
   }
 
   .bigBlackLogo {

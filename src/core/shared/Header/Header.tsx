@@ -6,7 +6,7 @@ import OpenedMobileMenu from "./components/OpenedMobileMenu/OpenedMobileMenu";
 
 import styles from "./header.module.scss";
 
-const HeaderView: React.FunctionComponent = () => {
+const Header: React.FunctionComponent = () => {
   const [openedMenu, setOpenedMenu] = useState(false);
 
   const handlerOpenMobileMenu = (): void => {
@@ -24,7 +24,9 @@ const HeaderView: React.FunctionComponent = () => {
       </div>
       <div className={styles.headerLeftPart}>
         <MenuList />
-        <Button classes="headerBtn" title="discuss the project" />
+        <Button classes="headerBtn" title="discuss the project">
+          <img src="/images/icons/arrow.svg" alt="arrow" />
+        </Button>
         <Button classes="menuSwitchBtn" handlerClick={handlerOpenMobileMenu} />
       </div>
       {openedMenu && <OpenedMobileMenu />}
@@ -32,4 +34,4 @@ const HeaderView: React.FunctionComponent = () => {
   );
 };
 
-export default HeaderView;
+export default Header;

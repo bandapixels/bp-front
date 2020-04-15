@@ -18,6 +18,9 @@
     animation: slideDown .3s ease-in forwards;
     overflow: auto;
     padding: 0 15px 15px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
   }
 
   .mailBtn {

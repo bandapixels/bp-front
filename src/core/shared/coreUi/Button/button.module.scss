@@ -126,7 +126,18 @@
   }
 }
 
+@media (max-width: $breakpoint-tablet) {
+  .headerBtn {
+    display: none;
+  }
+}
+
 @media (max-width: $breakpoint-mobile) {
+  .yellowBtn,
+  .transparentBtn {
+    max-width: none;
+  }
+
   .headerLeftPart {
     .headerBtn {
       display: none;
