@@ -1,5 +1,6 @@
 
 @import "../../../../../assets/scss/reset.scss";
+@import "../../../../../assets/scss/breakPoints.scss";
 
 $big-circle-size: 120vh;
 $small-circle-size: 74vh;
@@ -102,6 +103,7 @@ $small-circle-size: 74vh;
   height: 100%;
   flex: 0 0 30%;
   z-index: 1;
+  position: relative;
 }
 
 .video {
@@ -116,6 +118,10 @@ $small-circle-size: 74vh;
   margin: 32vh 0 0;
   padding: 0 0 0 60px;
   pointer-events: none;
+}
+
+.yellowText {
+  color: #EFE314
 }
 
 .firstLine {
@@ -162,7 +168,6 @@ $small-circle-size: 74vh;
     }
 
     &:last-child {
-      color: #EFE314;
       position: absolute;
       left: calc(100% + 10px);
       width: max-content;
@@ -179,6 +184,90 @@ $small-circle-size: 74vh;
         bottom: -25px;
         left: calc(100% - 50px);
       }
+    }
+  }
+}
+
+.bigLettersMobileWrapper,
+.mobileBtnsWrapper {
+  display: none;
+}
+
+.mainText {
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 0.03em;
+  color: #171718;
+  position: absolute;
+  bottom: 80px;
+  left: 60px;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .mainText {
+    font-size: 14px;
+    color: #BDBDBD;
+    position: static;
+  }
+
+  .headerWrapper {
+    min-height: 100vh;
+    height: auto;
+  }
+
+  .bigLettersWrapper {
+    display: none;
+  }
+
+  .bigLettersMobileWrapper {
+    display: block;
+    margin: 120px 0 10px;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 130%;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+  }
+
+  .yellowBlock {
+    flex: 0 0 100%;
+    background: url(/images/mobile-bg.jpg) #171718 no-repeat center;
+    min-height: 100vh;
+    padding: 0 0 90px;
+
+    &> * {
+      padding: 0 15px;
+    }
+  }
+
+  .firstMobileLine,
+  .lastMobileLine {
+    display: block;
+
+    &> span {
+      display: block;
+    } 
+  }
+
+  .firstMobileLine {
+    &:after {
+      content: '';
+      display: block;
+      width: 52px;
+      height: 1px;
+      background: #EFE314;
+      margin: 15px 0;
+    }
+  }
+
+  .mobileBtnsWrapper {
+    display: block;
+    margin: 20px auto 0;
+
+    .yellowBtn {
+      margin-bottom: 20px;
     }
   }
 }

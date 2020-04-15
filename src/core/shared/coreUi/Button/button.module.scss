@@ -60,6 +60,63 @@
   z-index: 1;
 }
 
+.yellowBtn {
+  max-width: 290px;
+  width: 100%;
+  padding: 0 30px;
+  height: 50px;
+  background: #EFE314;
+  color: #171718;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+}
+
+.transparentBtn {
+  border: 1px solid #EFE314;
+  background: transparent;
+  font-weight: 500;
+  color: #EFE314;
+  max-width: 290px;
+  width: 100%;
+  padding: 0 30px;
+  height: 50px;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+}
+
+.btnWithIcon {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 15px;
+    height: 15px;
+  }
+}
+
+.arrowIcon {
+  &:after {
+    background: url(/images/icons/arrow.svg) no-repeat center;
+    background-size: contain;
+  }
+}
+
+.triangleIcon {
+  &:after {
+    background: url(/images/icons/play-btn.svg) no-repeat center;
+    background-size: contain;
+  }
+}
+
 @media (max-width: $breakpoint-max-width) {
   .headerBtn {
     height: 90px;
