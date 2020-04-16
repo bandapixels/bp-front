@@ -36,8 +36,8 @@ export const addAnimationToGrid = (
     const line = lineGrid;
     const blockHeight = line.offsetHeight;
     const yMainColorStart = ((y / blockHeight) * 100).toFixed(2);
-    const yMouseColorStart = +yMainColorStart - 20;
-    const yMouseColorEnd = +yMainColorStart + 20;
+    const yMouseColorStart = +yMainColorStart - 17;
+    const yMouseColorEnd = +yMainColorStart + 17;
     const posX = line.offsetLeft;
 
     if (minX < posX && posX < maxX) {
@@ -51,8 +51,8 @@ export const addAnimationToGrid = (
     const line = lineGrid;
     const blockWidth = line.offsetWidth;
     const xMainColorStart = ((x / blockWidth) * 100).toFixed(2);
-    const xMouseColorStart = +xMainColorStart - 10;
-    const xMouseColorEnd = +xMainColorStart + 10;
+    const xMouseColorStart = +xMainColorStart - 8;
+    const xMouseColorEnd = +xMainColorStart + 8;
     const posY = line.offsetTop;
 
     if (minY < posY && posY < maxY) {
