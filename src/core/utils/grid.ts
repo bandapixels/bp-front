@@ -53,9 +53,9 @@ export const addAnimationToGrid = (
     const yMainColorStart = ((y / blockHeight) * 100).toFixed(2);
     let coef = 0;
 
-    if (index < vMiddleElement) {
+    if (index < vMiddleElement && vLines.length % 2 !== 0) {
       coef = vMiddleElement - index + 4;
-    } else if (index > vMiddleElement) {
+    } else if (index > vMiddleElement && vLines.length % 2 !== 0) {
       coef = index - vMiddleElement + 4;
     }
 
@@ -84,14 +84,14 @@ export const addAnimationToGrid = (
     const xMainColorStart = ((x / blockWidth) * 100).toFixed(2);
     let coef = 0;
 
-    if (index < hMiddleElement) {
-      coef = hMiddleElement - index + 0;
-    } else if (index > hMiddleElement) {
-      coef = index - hMiddleElement + 0;
+    if (index < hMiddleElement && hLines.length % 2 !== 0) {
+      coef = hMiddleElement - index + 1;
+    } else if (index > hMiddleElement && hLines.length % 2 !== 0) {
+      coef = index - hMiddleElement + 1;
     }
 
-    const xMouseColorStart = +xMainColorStart - 8 + coef;
-    const xMouseColorEnd = +xMainColorStart + 8 - coef;
+    const xMouseColorStart = +xMainColorStart - 9 + coef;
+    const xMouseColorEnd = +xMainColorStart + 9 - coef;
 
     line.style.background = `linear-gradient(90deg, ${mainColor}, ${mainColor} ${xMouseColorStart}%, ${mouseColor} ${xMainColorStart}%, ${mainColor} ${xMouseColorEnd}%)`;
   });
