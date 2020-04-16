@@ -1,8 +1,38 @@
 
 @import "../../../../../assets/scss/reset.scss";
+@import "../../../../../assets/scss/breakPoints.scss";
 
 $big-circle-size: 120vh;
 $small-circle-size: 74vh;
+
+$first-line-font-sizes: (
+  null: 22px,
+  1024px: 30px,
+  1280px: 36px,
+  1440px: 45px,
+  1600px: 50px,
+  1900px: 60px
+);
+
+$last-line-font-sizes: (
+  null: 22px,
+  1024px: 30px,
+  1280px: 36px,
+  1440px: 45px,
+  1600px: 50px,
+  1900px: 60px
+);
+
+$we-help-font-sizes: (
+  null: 22px,
+  668px: 30px,
+  900px: 40px,
+  1024px: 47px,
+  1280px: 50px,
+  1440px: 65px,
+  1600px: 72px,
+  1900px: 80px
+);
 
 @mixin header-style($font-size: 10, $size: 0, $animation: rotateTitleRight, $top: 0, $left: 0) {
   font-size: $font-size;
@@ -23,6 +53,7 @@ $small-circle-size: 74vh;
 
 @mixin rotated-text($num-letters: 90, $angle-span: 360deg, $angle-offset: 0deg, $height: 0, $width: 0, $left: 0, $top: 0) {
   $angle-per-char: $angle-span / $num-letters;
+
   @for $i from 0 through $num-letters {
     .char#{$i} {
       transform: rotate($angle-offset + $angle-per-char * $i);
@@ -32,6 +63,19 @@ $small-circle-size: 74vh;
       left: $left;
       top: $top;
       transform-origin: bottom center;
+    }
+  }
+}
+
+@mixin font-size($fs-map) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null {
+      font-size: $fs-font-size;
+    }
+    @else {
+      @media screen and (min-width: $fs-breakpoint) {
+        font-size: $fs-font-size;
+      }
     }
   }
 }
@@ -101,6 +145,9 @@ $small-circle-size: 74vh;
   background: #EFE314;
   height: 100%;
   flex: 0 0 30%;
+  z-index: 1;
+  position: relative;
+  max-width: 590px;
 }
 
 .video {
@@ -109,4 +156,189 @@ $small-circle-size: 74vh;
   position: absolute;
   z-index: -1;
   background: #000;
+}
+
+.bigLettersWrapper {
+  margin: 32vh 0 0;
+  padding: 0 0 0 60px;
+  pointer-events: none;
+}
+
+.yellowText {
+  color: #EFE314
+}
+
+.firstLine {
+  font-weight: bold;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+  color: #FFFFFF;
+  position: relative;
+  @include font-size($first-line-font-sizes);
+
+  span {
+    &:first-child {
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    &:last-child {
+      position: absolute;
+      top: 100%;
+      left: 32%;
+      width: max-content;
+    }
+  }
+}
+
+.lastLine {
+  font-weight: 900;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+  color: #171718;
+  margin: 15px 0 0;
+  position: relative;
+  @include font-size($last-line-font-sizes);
+
+  span {
+    &:first-child {
+      max-width: 212px;
+      line-height: 95%;
+      text-transform: uppercase;
+      color: #171718;
+      margin: 0 22px 0 0;
+      @include font-size($we-help-font-sizes);
+    }
+
+    &:last-child {
+      position: absolute;
+      left: calc(100% + 20px);
+      width: max-content;
+      bottom: 0;
+
+      &:after {
+        content: '';
+        background: url(/images/icons/saas.png) no-repeat center;
+        background-size: contain;
+        width: 401px;
+        height: 283px;
+        position: absolute;
+        bottom: -20px;
+        left: calc(100% - 50px);
+      }
+    }
+  }
+}
+
+.bigLettersMobileWrapper,
+.mobileBtnsWrapper {
+  display: none;
+}
+
+.mainText {
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 0.03em;
+  color: #171718;
+  position: absolute;
+  bottom: 80px;
+  left: 60px;
+  max-width: 430px;
+}
+
+@media screen and (max-width: $breakpoint-tablet) {
+  .bigLettersWrapper {
+    padding: 0 10px 0 30px;
+  }
+
+  .mainText {
+    font-size: 16px;
+    left: 30px;
+  }
+
+  .lastLine {
+    span {
+      &:last-child {
+        &:after {
+          width: 301px;
+          bottom: -50px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+  .titlesBlock {
+    display: none;
+  }
+
+  .mainText {
+    font-size: 14px;
+    color: #BDBDBD;
+    position: static;
+  }
+
+  .headerWrapper {
+    min-height: 100vh;
+    height: auto;
+  }
+
+  .bigLettersWrapper {
+    display: none;
+  }
+
+  .bigLettersMobileWrapper {
+    display: block;
+    margin: 0 0 10px;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 130%;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+  }
+
+  .yellowBlock {
+    flex: 0 0 100%;
+    background: url(/images/mobile-bg.jpg) #171718 no-repeat center;
+    min-height: 100vh;
+    max-width: 100%;
+    background-size: cover;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    padding: 70px 0;
+
+    &> * {
+      padding: 0 15px;
+    }
+  }
+
+  .firstMobileLine,
+  .lastMobileLine {
+    display: block;
+
+    &> span {
+      display: block;
+    } 
+  }
+
+  .firstMobileLine {
+    &:after {
+      content: '';
+      display: block;
+      width: 52px;
+      height: 1px;
+      background: #EFE314;
+      margin: 15px 0;
+    }
+  }
+
+  .mobileBtnsWrapper {
+    display: block;
+    margin: 20px auto 0;
+    width: 100%;
+  }
 }
