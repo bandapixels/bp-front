@@ -94,10 +94,10 @@
   font-size: 14px;
   line-height: 16px;
   text-align: center;
-  @extend %btn-with-icon-style
+  @extend %btn-with-icon-style;
 }
 
-@media (max-width: $breakpoint-max-width) {
+@media screen and (max-width: $breakpoint-max-width) {
   .headerBtn {
     height: 90px;
     padding: 10px 40px;
@@ -106,13 +106,13 @@
   }
 }
 
-@media (max-width: $breakpoint-tablet) {
+@media screen and (max-width: $breakpoint-tablet) {
   .headerBtn {
     display: none;
   }
 }
 
-@media (max-width: $breakpoint-mobile) {
+@media screen and (max-width: $breakpoint-mobile) {
   .mobileBtnsWrapper {
     .yellowBtnWithIcon {
       margin-bottom: 20px;

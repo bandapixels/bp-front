@@ -4,7 +4,7 @@
   display: none;
 }
 
-@media (max-width: $breakpoint-mobile) {
+@media screen and (max-width: $breakpoint-mobile) {
   .openedMobileWrapper {
     display: block;
     position: fixed;

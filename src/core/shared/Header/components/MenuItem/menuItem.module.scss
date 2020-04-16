@@ -34,13 +34,13 @@
   }
 }
 
-@media (max-width: $breakpoint-max-width) {
+@media screen and (max-width: $breakpoint-max-width) {
   .menuItem {
     margin: 0 30px 0 0;
   }
 }
 
-@media (max-width: $breakpoint-tablet) {
+@media screen and (max-width: $breakpoint-tablet) {
   .menuItem {
     margin: 0 20px 0 0;
 
@@ -50,7 +50,7 @@
   }
 }
 
-@media (max-width: $breakpoint-mobile) {
+@media screen and (max-width: $breakpoint-mobile) {
   .menuItem {
     margin: 0 auto 30px;
     font-size: 20px;

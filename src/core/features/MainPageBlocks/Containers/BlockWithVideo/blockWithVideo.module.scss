@@ -4,6 +4,7 @@
 
 $big-circle-size: 120vh;
 $small-circle-size: 74vh;
+
 $first-line-font-sizes: (
   null: 22px,
   1024px: 30px,
@@ -12,6 +13,7 @@ $first-line-font-sizes: (
   1600px: 50px,
   1900px: 60px
 );
+
 $last-line-font-sizes: (
   null: 22px,
   1024px: 30px,
@@ -20,6 +22,7 @@ $last-line-font-sizes: (
   1600px: 50px,
   1900px: 60px
 );
+
 $we-help-font-sizes: (
   null: 22px,
   668px: 30px,
@@ -29,12 +32,6 @@ $we-help-font-sizes: (
   1440px: 65px,
   1600px: 72px,
   1900px: 80px
-);
-$saas-sizes: (
-  null: 251px,
-  1280px: 251px,
-  1600px: 351px,
-  1900px: 401px
 );
 
 @mixin header-style($font-size: 10, $size: 0, $animation: rotateTitleRight, $top: 0, $left: 0) {
@@ -56,6 +53,7 @@ $saas-sizes: (
 
 @mixin rotated-text($num-letters: 90, $angle-span: 360deg, $angle-offset: 0deg, $height: 0, $width: 0, $left: 0, $top: 0) {
   $angle-per-char: $angle-span / $num-letters;
+
   @for $i from 0 through $num-letters {
     .char#{$i} {
       transform: rotate($angle-offset + $angle-per-char * $i);
@@ -249,7 +247,7 @@ $saas-sizes: (
   max-width: 430px;
 }
 
-@media (max-width: $breakpoint-tablet) {
+@media screen and (max-width: $breakpoint-tablet) {
   .bigLettersWrapper {
     padding: 0 10px 0 30px;
   }
@@ -259,9 +257,8 @@ $saas-sizes: (
     left: 30px;
   }
 
-  
   .lastLine {
-    span{
+    span {
       &:last-child {
         &:after {
           width: 301px;
@@ -272,7 +269,7 @@ $saas-sizes: (
   }
 }
 
-@media (max-width: $breakpoint-mobile) {
+@media screen and (max-width: $breakpoint-mobile) {
   .titlesBlock {
     display: none;
   }
