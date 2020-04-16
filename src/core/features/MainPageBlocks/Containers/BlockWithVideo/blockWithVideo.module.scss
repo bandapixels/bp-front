@@ -140,10 +140,21 @@ $we-help-font-sizes: (
   overflow: hidden;
   flex-flow: row nowrap;
   position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #EFE314;
+    z-index: -2;
+  }
 }
 
 .yellowBlock {
-  background: #EFE314;
   height: 100%;
   flex: 0 0 30%;
   z-index: 1;
@@ -272,6 +283,16 @@ $we-help-font-sizes: (
   max-width: 430px;
 }
 
+.yellowLayer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 30%;
+  max-width: 590px;
+  background: #EFE314;
+}
+
 @media screen and (max-width: $breakpoint-tablet) {
   .bigLettersWrapper {
     padding: 0 10px 0 30px;
@@ -295,6 +316,11 @@ $we-help-font-sizes: (
 }
 
 @media screen and (max-width: $breakpoint-mobile) {
+  .mainWrapper {  
+    &:after {
+      content: none;
+    }
+  }
   .titlesBlock {
     display: none;
   }
