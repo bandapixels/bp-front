@@ -21,6 +21,7 @@
 
 .bigBlackLogo{
   background: url(/images/logo-black.svg) no-repeat center;
+  background-size: contain;
   width: 100%;
   height: 100%;
   transition: .5s;
@@ -33,29 +34,41 @@
   justify-content: flex-end;
 }
 
-@media (max-width: $breakpoint-mobile) {
+@media screen and (max-width: $breakpoint-tablet) {
+  .header {
+    padding: 20px 0 0 30px
+  }
+
+  .logoWrapper {
+    margin: 0;
+    flex: 0 0 150px;
+  }
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
   .header{
     padding: 10px 15px;
 
-      &:after {
-        content: '';
-        display: block;
-        background: rgba(23 , 23, 24, .8);
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        z-index: -1;
-      }
+    &:after {
+      content: '';
+      display: block;
+      background: rgba(23 , 23, 24, .8);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: -1;
+    }
   }
 
   .logoWrapper {
     width: 30px;
     height: 40px;
     margin: 0;
+    flex: 0 0 auto;
   }
 
   .bigBlackLogo {

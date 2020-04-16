@@ -7,10 +7,12 @@ const OpenedMobileMenu: React.FunctionComponent = () => {
   return (
     <div className={styles.openedMobileWrapper}>
       <MenuList />
-      <SocialList />
-      <a href="mailto:team@bandapixels.com" className={styles.mailBtn}>
-        team@bandapixels.com
-      </a>
+      <div>
+        <SocialList />
+        <a href="mailto:team@bandapixels.com" className={styles.mailBtn}>
+          team@bandapixels.com
+        </a>
+      </div>
     </div>
   );
 };
