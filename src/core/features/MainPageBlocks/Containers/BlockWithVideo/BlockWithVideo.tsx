@@ -22,8 +22,8 @@ const BlockWithVideo: React.FunctionComponent = () => {
 
     createGrid(mainWrapper, 75);
 
-    mainWrapper.addEventListener("mousemove", e => {
-      addAnimationToGrid(e, "rgba(23,23,24,.1)", "#fff");
+    document.addEventListener("mousemove", e => {
+      addAnimationToGrid(e, "rgba(23,23,24,.1)", "#fff", mainWrapper);
     });
   }, []);
 
