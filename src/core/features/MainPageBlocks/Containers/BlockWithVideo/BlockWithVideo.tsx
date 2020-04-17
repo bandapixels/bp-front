@@ -26,14 +26,6 @@ const BlockWithVideo: React.FunctionComponent = () => {
     document.addEventListener("mousemove", e => {
       addAnimationToGrid(e, "rgba(23,23,24,.1)", "#fff", mainWrapper);
     });
-
-    const secondWrapper = refGridSecondWrapper.current;
-
-    createGrid(secondWrapper, 75);
-
-    document.addEventListener("mousemove", e => {
-      addAnimationToGrid(e, "rgba(23,23,24,.1)", "#171718", secondWrapper);
-    });
   }, []);
 
   return (
@@ -111,16 +103,6 @@ const BlockWithVideo: React.FunctionComponent = () => {
           </video>
         </div>
       </section>
-      <section
-        style={{
-          background: "#fff",
-          height: "100vh",
-          width: "100%",
-          position: "relative",
-          overflow: "hidden"
-        }}
-        ref={refGridSecondWrapper}
-      />
 
       {modalOpen && <ModalVideo clickHandler={handlerClosePopup} />}
     </>
