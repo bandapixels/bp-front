@@ -12,7 +12,6 @@ const BlockWithVideo: React.FunctionComponent = () => {
   const [roundedTextArr] = useState(roundedText.split(""));
   const [modalOpen, setModalOpen] = useState(false);
   const refGridWrapper = useRef<HTMLDivElement>();
-  const refGridSecondWrapper = useRef<HTMLDivElement>();
 
   const handlerClosePopup = (): void => {
     setModalOpen(!modalOpen);
