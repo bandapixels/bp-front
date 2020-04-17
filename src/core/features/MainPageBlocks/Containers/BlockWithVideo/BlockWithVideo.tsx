@@ -12,6 +12,7 @@ const BlockWithVideo: React.FunctionComponent = () => {
   const [roundedTextArr] = useState(roundedText.split(""));
   const [modalOpen, setModalOpen] = useState(false);
   const refGridWrapper = useRef<HTMLDivElement>();
+  const refGridSecondWrapper = useRef<HTMLDivElement>();
 
   const handlerClosePopup = (): void => {
     setModalOpen(!modalOpen);
@@ -22,8 +23,16 @@ const BlockWithVideo: React.FunctionComponent = () => {
 
     createGrid(mainWrapper, 75);
 
-    mainWrapper.addEventListener("mousemove", e => {
-      addAnimationToGrid(e, "rgba(23,23,24,.1)", "#fff");
+    document.addEventListener("mousemove", e => {
+      addAnimationToGrid(e, "rgba(23,23,24,.1)", "#fff", mainWrapper);
+    });
+
+    const secondWrapper = refGridSecondWrapper.current;
+
+    createGrid(secondWrapper, 75);
+
+    document.addEventListener("mousemove", e => {
+      addAnimationToGrid(e, "rgba(23,23,24,.1)", "#171718", secondWrapper);
     });
   }, []);
 
@@ -102,6 +111,16 @@ const BlockWithVideo: React.FunctionComponent = () => {
           </video>
         </div>
       </section>
+      <section
+        style={{
+          background: "#fff",
+          height: "100vh",
+          width: "100%",
+          position: "relative",
+          overflow: "hidden"
+        }}
+        ref={refGridSecondWrapper}
+      />
 
       {modalOpen && <ModalVideo clickHandler={handlerClosePopup} />}
     </>

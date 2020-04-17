@@ -26,17 +26,18 @@ export const createGrid = (ref: HTMLElement, linesGap: number): void => {
 export const addAnimationToGrid = (
   e,
   mainColor: string,
-  mouseColor: string
+  gradientColor: string,
+  wrapper: HTMLElement
 ): void => {
   // mouse position
-  const x = e.clientX;
-  const y = e.clientY;
+  const x = e.pageX;
+  const y = e.pageY - wrapper.offsetTop;
   // line capture radius
   const [minX, maxX] = [x - 100, x + 100];
   const [minY, maxY] = [y - 100, y + 100];
   // get grid lines
-  const gradientBlocksV = document.querySelectorAll(".gradient-vertical");
-  const gradientBlocksH = document.querySelectorAll(".gradient-horizontal");
+  const gradientBlocksV = wrapper.querySelectorAll(".gradient-vertical");
+  const gradientBlocksH = wrapper.querySelectorAll(".gradient-horizontal");
   // lines that fall into the radius zone
   const vLines = [];
   const hLines = [];
@@ -80,7 +81,7 @@ export const addAnimationToGrid = (
     const yMainColorEnd = +yMainColorCenter + 17 - coef;
 
     // add gradient to the line
-    line.style.background = `linear-gradient(${mainColor}, ${mainColor} ${yMainColorStart}%, ${mouseColor} ${yMainColorCenter}%, ${mainColor} ${yMainColorEnd}%)`;
+    line.style.background = `linear-gradient(${mainColor}, ${mainColor} ${yMainColorStart}%, ${gradientColor} ${yMainColorCenter}%, ${mainColor} ${yMainColorEnd}%)`;
   });
 
   // check which horizontal lines are in the radius zone and add them to array, the rest we update the background
@@ -122,6 +123,6 @@ export const addAnimationToGrid = (
     const xMainColorEnd = +xMainColorCenter + 9 - coef;
 
     // add gradient to the line
-    line.style.background = `linear-gradient(90deg, ${mainColor}, ${mainColor} ${xMainColorStart}%, ${mouseColor} ${xMainColorCenter}%, ${mainColor} ${xMainColorEnd}%)`;
+    line.style.background = `linear-gradient(90deg, ${mainColor}, ${mainColor} ${xMainColorStart}%, ${gradientColor} ${xMainColorCenter}%, ${mainColor} ${xMainColorEnd}%)`;
   });
 };
