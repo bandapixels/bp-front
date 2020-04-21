@@ -1,0 +1,81 @@
+@import "../../../../../assets/scss/breakPoints.scss";
+
+.discussWrapper {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: #333;
+  display: flex;
+  align-items: center;
+}
+
+.discussContainer {
+  padding: 0 0 0 60px;
+  z-index: 1;
+
+  h1 {
+    font-weight: bold;
+    font-size: 80px;
+    line-height: 130%;
+    color: #FFFFFF;
+    margin: 0 0 20px;
+  }
+
+  h6 {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    color: #FFF;
+    opacity: 0.5;
+    margin: 0 0 20px;
+  }
+}
+
+.formRow {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  justify-content: start;
+  width: 1250px;
+  max-width: 1250px;
+  
+  &> div {
+    flex: 0 0 calc(50% - 15px);
+  }
+}
+
+.formContacts {
+  margin: 0 30px 0 0;
+}
+
+.formProjectType {
+  margin: 30px 0 0;
+}
+
+.projectTypeContainer {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 1250px;
+
+  .inputRadio {
+    flex: 0 0 395px;
+    margin-bottom: 30px;
+
+    &:not(:nth-child(3n + 3)) {
+      margin-right: 30px;
+    }
+  }
+}
+
+.discussForm {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.discussFormLeftPart {
+  margin: 0 60px 0 0;
+}

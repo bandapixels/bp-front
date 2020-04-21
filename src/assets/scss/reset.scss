@@ -55,8 +55,11 @@ table {
   border-spacing: 0;
 }
 
-button {
+button,
+input,
+textarea {
   cursor: pointer;
+  font-family: inherit;
 
   &:focus {
     outline: none;
