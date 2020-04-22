@@ -1,9 +1,10 @@
 import React, { useRef, useEffect } from "react";
 import { createGrid, addAnimationToGrid } from "../../../../utils/grid";
 
-import Input from "../../../../shared/coreUi/Input/Input";
-import Textarea from "../../../../shared/coreUi/Textarea/Textarea";
-import RadioButton from "../../../../shared/coreUi/RadioButton/RadioButton";
+import FormContacts from "./components/FormContacts/FormContacts";
+import FormTask from "./components/FormTask/FormTask";
+import FormProjectType from "./components/FormProjectType/FormProjectType";
+import FormBudget from "./components/FormBudget/FormBudget";
 import Button from "../../../../shared/coreUi/Button/Button";
 
 import styles from "./discussTheProject.module.scss";
@@ -24,130 +25,45 @@ const DiscussTheProject: React.FunctionComponent = () => {
   return (
     <section className={styles.discussWrapper} ref={refGridWrapper}>
       <div className={styles.discussContainer}>
-        <h1>Discuss the project</h1>
+        <h1>
+          <span>Discuss</span> the project
+        </h1>
         <form className={styles.discussForm}>
           <div className={styles.discussFormLeftPart}>
-            <div className={styles.formRow}>
-              <div className={styles.formContacts}>
-                <h6>Your contacts</h6>
-                <Input id="discuss-name" type="text" name="name">
-                  Name
-                </Input>
-                <Input id="discuss-company" type="text" name="company">
-                  Company
-                </Input>
-                <Input id="discuss-email" type="text" name="email">
-                  Email
-                </Input>
-                <Input id="discuss-skype" type="text" name="skype">
-                  Skype
-                </Input>
-              </div>
-              <div className={styles.formTask}>
-                <h6>Task</h6>
-                <Textarea name="task" placeholder="write task..." />
-              </div>
+            <div className={styles.formMainInfo}>
+              <FormContacts />
+              <FormTask />
             </div>
-            <div className={styles.formProjectType}>
-              <h6>Project type</h6>
-              <div className={styles.projectRadioContainer}>
-                <div className={styles.projectRadioRow}>
-                  <RadioButton id="type-1" value="type-1" name="type">
-                    We want to make the design of the service more convenient
-                    and understandable for users.
-                  </RadioButton>
-                  <RadioButton id="type-2" value="type-2" name="type">
-                    We are doing a new service and want to make a design for it.
-                  </RadioButton>
-                  <RadioButton id="type-3" value="type-3" name="type">
-                    We improve or expand a working service
-                  </RadioButton>
-                </div>
-                <div className={styles.projectRadioRow}>
-                  <RadioButton id="type-4" value="type-4" name="type">
-                    We are developing a new service for everyone and we know
-                    exactly what we want
-                  </RadioButton>
-                  <RadioButton id="type-5" value="type-5" name="type">
-                    We are a startup and want to make a cool MVP. We want to see
-                    a team that will help us.
-                  </RadioButton>
-                  <RadioButton id="type-6" value="type-6" name="type">
-                    Another variant
-                  </RadioButton>
-                </div>
-              </div>
-            </div>
+            <FormProjectType />
           </div>
           <div className={styles.discussFormRightPart}>
-            <div className={styles.formBudget}>
-              <h6>Budget</h6>
-              <div className={styles.projectBudgetContainer}>
-                <RadioButton
-                  id="budget-1"
-                  value="budget-1"
-                  name="budget"
-                  smallInput
-                >
-                  $ 5 000 - $ 10 000
-                </RadioButton>
-                <RadioButton
-                  id="budget-2"
-                  value="budget-2"
-                  name="budget"
-                  smallInput
-                >
-                  $ 10 000 - $ 20 000
-                </RadioButton>
-                <RadioButton
-                  id="budget-3"
-                  value="budget-3"
-                  name="budget"
-                  smallInput
-                >
-                  $ 20 000 - $ 30 000
-                </RadioButton>
-                <RadioButton
-                  id="budget-4"
-                  value="budget-4"
-                  name="budget"
-                  smallInput
-                >
-                  $ 30 000 - $ 50 000
-                </RadioButton>
-                <RadioButton
-                  id="budget-5"
-                  value="budget-5"
-                  name="budget"
-                  smallInput
-                >
-                  $ 50 000 - $ 100 000
-                </RadioButton>
-                <RadioButton
-                  id="budget-6"
-                  value="budget-6"
-                  name="budget"
-                  smallInput
-                >
-                  $ 100 000 +
-                </RadioButton>
-                <RadioButton
-                  id="budget-7"
-                  value="budget-7"
-                  name="budget"
-                  smallInput
-                >
-                  I need help
-                </RadioButton>
-                <Button classes="btnWithArrow">
-                  <span>
-                    Send
-                    <br />
-                    request
-                  </span>
-                </Button>
-              </div>
+            <FormBudget />
+            <Button classes="btnWithArrow">
+              <span>
+                Send
+                <br />
+                request
+              </span>
+            </Button>
+          </div>
+        </form>
+        <form className={styles.discussFormMobile}>
+          <div className={styles.stepOne}>
+            <div className={styles.formMainInfo}>
+              <FormContacts />
+              <FormTask />
             </div>
+          </div>
+          <div className={styles.stepTwo}>
+            <FormProjectType />
+            <FormBudget />
+            <Button classes="btnWithArrow">
+              <span>
+                Send
+                <br />
+                request
+              </span>
+            </Button>
           </div>
         </form>
       </div>

@@ -88,8 +88,15 @@
 }
 
 @media screen and (max-width: $breakpoint-tablet) and (max-height: 768px){
-  .inputText{
+  .inputText {
     flex-flow: row-reverse nowrap;
     align-items: center;
+  }
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+  .inputText {
+    flex-flow: column-reverse nowrap;
+    align-items: flex-start;
   }
 }
