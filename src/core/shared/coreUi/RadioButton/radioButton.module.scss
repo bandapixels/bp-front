@@ -122,6 +122,17 @@
   }
 }
 
+.projectRadioRow {
+  .inputRadio {
+    flex: 0 1 auto;
+    margin-bottom: 30px;
+
+    &:not(:nth-child(3n + 3)) {
+      margin-right: 30px;
+    }
+  }
+}
+
 @media screen and (max-width: $breakpoint-1600) {
   .inputRadio {
     max-height: 90px;
@@ -154,6 +165,50 @@
         height: 25px;
         flex: 0 0 25px;
       }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-max-width) {
+  .radioCircle {
+    width: 25px;
+    height: 25px;
+    flex: 0 0 25px;
+    margin: 0 10px 0 0;
+  }
+
+  .inputRadio {
+    div {
+      padding: 0 10px;
+      font-size: 12px;
+      line-height: 14px;
+      height: 90px;
+    }
+  }
+
+  .projectRadioRow {
+    .inputRadio {
+      margin: 0 0 15px;
+
+      &:not(:nth-child(3n + 3)) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-tablet) {
+  .radioCircle {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+  }
+}
+
+@media screen and (max-width: $breakpoint-tablet) and (max-height: 768px){
+  .inputRadio {
+    div {
+      height: 70px;
     }
   }
 }

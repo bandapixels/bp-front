@@ -11,7 +11,7 @@ interface InputProps {
   smallInput?: boolean;
 }
 
-const Input: React.FunctionComponent<InputProps> = ({
+const RadioButton: React.FunctionComponent<InputProps> = ({
   id,
   name,
   disabled,
@@ -40,4 +40,4 @@ const Input: React.FunctionComponent<InputProps> = ({
   );
 };
 
-export default Input;
+export default RadioButton;

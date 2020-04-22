@@ -39,3 +39,15 @@
     max-height: 205px;
   }
 }
+
+@media screen and (max-width: $breakpoint-tablet) {
+  .textarea {
+    max-height: 262px;
+  }
+}
+
+@media screen and (max-width: $breakpoint-tablet) and (max-height: 768px){
+  .textarea {
+    max-height: 190px;
+  }
+}
