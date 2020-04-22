@@ -58,3 +58,15 @@
     }
   }
 }
+
+@media screen and (max-width: $breakpoint-1600) {
+  .inputText {  
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    input[type="text"] {
+      height: 40px;
+    }
+  }
+}

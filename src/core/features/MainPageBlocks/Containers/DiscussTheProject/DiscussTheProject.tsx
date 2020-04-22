@@ -4,6 +4,7 @@ import { createGrid, addAnimationToGrid } from "../../../../utils/grid";
 import Input from "../../../../shared/coreUi/Input/Input";
 import Textarea from "../../../../shared/coreUi/Textarea/Textarea";
 import RadioButton from "../../../../shared/coreUi/RadioButton/RadioButton";
+import Button from "../../../../shared/coreUi/Button/Button";
 
 import styles from "./discussTheProject.module.scss";
 
@@ -29,7 +30,7 @@ const DiscussTheProject: React.FunctionComponent = () => {
             <div className={styles.formRow}>
               <div className={styles.formContacts}>
                 <h6>Your contacts</h6>
-                <Input id="discuss-name" type="text" name="name" disabled>
+                <Input id="discuss-name" type="text" name="name">
                   Name
                 </Input>
                 <Input id="discuss-company" type="text" name="company">
@@ -49,8 +50,8 @@ const DiscussTheProject: React.FunctionComponent = () => {
             </div>
             <div className={styles.formProjectType}>
               <h6>Project type</h6>
-              <div className={styles.projectTypeContainer}>
-                <RadioButton id="type-1" value="type-1" name="type" disabled>
+              <div className={styles.projectRadioRow}>
+                <RadioButton id="type-1" value="type-1" name="type">
                   We want to make the design of the service more convenient and
                   understandable for users.
                 </RadioButton>
@@ -60,6 +61,8 @@ const DiscussTheProject: React.FunctionComponent = () => {
                 <RadioButton id="type-3" value="type-3" name="type">
                   We improve or expand a working service
                 </RadioButton>
+              </div>
+              <div className={styles.projectRadioRow}>
                 <RadioButton id="type-4" value="type-4" name="type">
                   We are developing a new service for everyone and we know
                   exactly what we want
@@ -83,7 +86,6 @@ const DiscussTheProject: React.FunctionComponent = () => {
                   value="budget-1"
                   name="budget"
                   smallInput
-                  disabled
                 >
                   $ 5 000 - $ 10 000
                 </RadioButton>
@@ -135,6 +137,13 @@ const DiscussTheProject: React.FunctionComponent = () => {
                 >
                   I need help
                 </RadioButton>
+                <Button classes="btnWithArrow">
+                  <span>
+                    Send
+                    <br />
+                    request
+                  </span>
+                </Button>
               </div>
             </div>
           </div>

@@ -5,6 +5,7 @@
   align-items: center;
   max-height: 113px;
   max-width: 395px;
+  width: 100%;
   cursor: pointer;
   transition: .3s;
   position: relative;
@@ -87,8 +88,14 @@
     }
 
     div {
-      padding: 10px 20px;
+      padding: 9px 20px;
       height: auto;
+    }
+
+    .radioCircle {
+      width: 30px;
+      height: 30px;
+      flex: 0 0 30px;
     }
   }
 }
@@ -112,5 +119,41 @@
     height: 9px;
     
     border-radius: 50%;
+  }
+}
+
+@media screen and (max-width: $breakpoint-1600) {
+  .inputRadio {
+    max-height: 90px;
+
+    div {
+      padding: 0 20px;
+      font-size: 14px;
+      line-height: 16px;
+      height: 90px;
+    }
+
+    &.smallInput {
+      max-width: 250px;
+      font-weight: 600;
+      line-height: 150%;
+      max-height: 40px;
+  
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+  
+      div {
+        padding: 7px 20px;
+        height: auto;
+        font-size: 13px;
+      }
+  
+      .radioCircle {
+        width: 25px;
+        height: 25px;
+        flex: 0 0 25px;
+      }
+    }
   }
 }

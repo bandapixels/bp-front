@@ -21,6 +21,7 @@ const Textarea: React.FunctionComponent<TextareaProps> = ({
       placeholder={placeholder}
       className={styles.textarea}
       disabled={disabled}
+      rows={20}
     />
   );
 };
