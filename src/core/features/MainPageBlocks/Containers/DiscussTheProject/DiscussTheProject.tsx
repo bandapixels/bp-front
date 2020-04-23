@@ -47,25 +47,6 @@ const DiscussTheProject: React.FunctionComponent = () => {
             </Button>
           </div>
         </form>
-        <form className={styles.discussFormMobile}>
-          <div className={styles.stepOne}>
-            <div className={styles.formMainInfo}>
-              <FormContacts />
-              <FormTask />
-            </div>
-          </div>
-          <div className={styles.stepTwo}>
-            <FormProjectType />
-            <FormBudget />
-            <Button classes="btnWithArrow">
-              <span>
-                Send
-                <br />
-                request
-              </span>
-            </Button>
-          </div>
-        </form>
       </div>
     </section>
   );

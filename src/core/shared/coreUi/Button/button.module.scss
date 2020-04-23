@@ -108,7 +108,7 @@
   max-width: 290px;
   width: 100%;
   padding: 0 30px;
-  height: 50px;
+  height: 60px;
   background: #EFE314;
   color: #171718;
   text-transform: uppercase;
@@ -127,12 +127,33 @@
   max-width: 290px;
   width: 100%;
   padding: 0 30px;
-  height: 50px;
+  height: 60px;
   text-transform: uppercase;
   font-size: 14px;
   line-height: 16px;
   text-align: center;
   @extend %btn-with-icon-style;
+}
+
+.btnWithArrow {
+  padding: 27px 30px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: uppercase;
+  color: #171718;
+  width: 100%;
+  @extend %btn-with-icon-style;
+  @extend %btn-states;
+
+  &:after {
+    content: '';
+    display: block;
+    background: url(/images/icons/arrow.svg) no-repeat center;
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+  }
 }
 
 @media screen and (max-width: $breakpoint-max-width) {
@@ -185,25 +206,10 @@
       background: url(/images/icons/menu-icon-mob-black.svg) no-repeat center;
     }
   }
-}
 
-.btnWithArrow {
-  padding: 27px 30px;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 19px;
-  text-transform: uppercase;
-  color: #171718;
-  width: 100%;
-  @extend %btn-with-icon-style;
-  @extend %btn-states;
-
-  &:after {
-    content: '';
-    display: block;
-    background: url(/images/icons/arrow.svg) no-repeat center;
-    width: 20px;
-    height: 20px;
-    z-index: 1;
+  .discussFormRightPart {
+    .btnWithArrow {
+      display: none;
+    }
   }
 }
