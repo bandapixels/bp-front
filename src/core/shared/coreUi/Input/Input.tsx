@@ -7,6 +7,7 @@ interface InputProps {
   type?: string;
   name: string;
   disabled?: boolean;
+  handlerOnChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Input: React.FunctionComponent<InputProps> = ({
@@ -15,6 +16,7 @@ const Input: React.FunctionComponent<InputProps> = ({
   type,
   name,
   disabled,
+  handlerOnChange,
   children
 }) => {
   return (
@@ -25,6 +27,7 @@ const Input: React.FunctionComponent<InputProps> = ({
         id={id}
         name={name}
         disabled={disabled}
+        onChange={(e): void => handlerOnChange(e)}
       />
       <span>{children}</span>
     </label>

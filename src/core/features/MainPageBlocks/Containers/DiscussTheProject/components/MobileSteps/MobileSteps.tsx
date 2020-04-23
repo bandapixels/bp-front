@@ -3,19 +3,34 @@ import styles from "./mobileSteps.module.scss";
 
 import Button from "../../../../../../shared/coreUi/Button/Button";
 
-const MobileSteps: React.FunctionComponent = () => {
+interface MobileStepsProps {
+  step: number;
+  handlerChangeStep: () => void;
+}
+
+const MobileSteps: React.FunctionComponent<MobileStepsProps> = ({
+  step,
+  handlerChangeStep
+}) => {
   return (
     <div className={styles.stepWrapper}>
-      <p className={styles.currentStep}>1 / 2</p>
+      <p className={styles.currentStep}>{step} / 2</p>
       <div className={styles.stepProgress} />
-      <Button classes="yellowBtnWithIcon" type="button">
-        Next Step
-        <img src="/images/icons/arrow.svg" alt="arrow" />
-      </Button>
-      {/* <Button classes="yellowBtnWithIcon">
-        Send
-        <img src="/images/icons/arrow.svg" alt="arrow" />
-      </Button> */}
+      {step === 1 ? (
+        <Button
+          classes="yellowBtnWithIcon"
+          type="button"
+          handlerClick={handlerChangeStep}
+        >
+          Next Step
+          <img src="/images/icons/arrow.svg" alt="arrow" />
+        </Button>
+      ) : (
+        <Button classes="yellowBtnWithIcon" type="submit">
+          Send
+          <img src="/images/icons/arrow.svg" alt="arrow" />
+        </Button>
+      )}
     </div>
   );
 };

@@ -6,13 +6,15 @@ interface TextareaProps {
   placeholder?: string;
   name: string;
   disabled?: boolean;
+  handlerOnChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
 const Textarea: React.FunctionComponent<TextareaProps> = ({
   id,
   placeholder,
   name,
-  disabled
+  disabled,
+  handlerOnChange
 }) => {
   return (
     <textarea
@@ -22,6 +24,7 @@ const Textarea: React.FunctionComponent<TextareaProps> = ({
       className={styles.textarea}
       disabled={disabled}
       rows={20}
+      onChange={(e): void => handlerOnChange(e)}
     />
   );
 };

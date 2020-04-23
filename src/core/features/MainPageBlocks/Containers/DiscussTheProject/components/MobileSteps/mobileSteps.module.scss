@@ -39,4 +39,13 @@
       transition: .3s;
     }
   }
+
+  .showSecondStep {
+    .stepProgress {
+      &:before {
+        top: -1px;
+        width: 100%;
+      }
+    }
+  }
 }

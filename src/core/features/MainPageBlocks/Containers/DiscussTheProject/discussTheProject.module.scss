@@ -167,6 +167,17 @@
 
   .discussForm {
     display: block;
+
+    &.showSecondStep {
+      .formMainInfo {
+        display: none;
+      }
+
+      .formProjectType,
+      .discussFormRightPart {
+        display: block;
+      }
+    }
   }
 
   .discussFormLeftPart {

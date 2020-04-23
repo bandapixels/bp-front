@@ -1,4 +1,5 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState, FormEvent } from "react";
+import classNames from "classnames";
 import { createGrid, addAnimationToGrid } from "../../../../utils/grid";
 
 import FormContacts from "./components/FormContacts/FormContacts";
@@ -12,6 +13,50 @@ import styles from "./discussTheProject.module.scss";
 
 const DiscussTheProject: React.FunctionComponent = () => {
   const refGridWrapper = useRef<HTMLDivElement>();
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    email: "",
+    skype: "",
+    task: "",
+    projectType: "",
+    budget: ""
+  });
+  const [step, setStep] = useState(1);
+  const formClasses = classNames(styles.discussForm, {
+    showSecondStep: step === 2
+  });
+
+  const handlerOnChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ): void => {
+    const input = e.target;
+    const inputName: string = input.name;
+    const inputVal: string = input.value;
+
+    if (inputName in formData) {
+      const newData = {
+        ...formData,
+        [inputName]: inputVal
+      };
+
+      setFormData(newData);
+    }
+  };
+
+  const handlerChangeStep = (): void => {
+    const offset: number = refGridWrapper.current.offsetTop;
+
+    setStep(step + 1);
+    globalThis.scrollTo({
+      top: offset,
+      behavior: "smooth"
+    });
+  };
+
+  const handlerSendData = (e: FormEvent<HTMLFormElement>): void => {
+    e.preventDefault();
+  };
 
   useEffect(() => {
     const mainWrapper = refGridWrapper.current;
@@ -29,16 +74,19 @@ const DiscussTheProject: React.FunctionComponent = () => {
         <h1>
           <span>Discuss</span> the project
         </h1>
-        <form className={styles.discussForm}>
+        <form
+          className={formClasses}
+          onSubmit={(e): void => handlerSendData(e)}
+        >
           <div className={styles.discussFormLeftPart}>
             <div className={styles.formMainInfo}>
-              <FormContacts />
-              <FormTask />
+              <FormContacts handlerOnChange={handlerOnChange} />
+              <FormTask handlerOnChange={handlerOnChange} />
             </div>
-            <FormProjectType />
+            <FormProjectType handlerOnChange={handlerOnChange} />
           </div>
           <div className={styles.discussFormRightPart}>
-            <FormBudget />
+            <FormBudget handlerOnChange={handlerOnChange} />
             <Button classes="btnWithArrow">
               <span>
                 Send
@@ -47,7 +95,7 @@ const DiscussTheProject: React.FunctionComponent = () => {
               </span>
             </Button>
           </div>
-          <MobileSteps />
+          <MobileSteps step={step} handlerChangeStep={handlerChangeStep} />
         </form>
       </div>
     </section>

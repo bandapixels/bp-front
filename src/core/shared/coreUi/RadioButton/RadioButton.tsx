@@ -9,6 +9,7 @@ interface InputProps {
   disabled?: boolean;
   value: string;
   smallInput?: boolean;
+  handlerOnChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const RadioButton: React.FunctionComponent<InputProps> = ({
@@ -17,6 +18,7 @@ const RadioButton: React.FunctionComponent<InputProps> = ({
   disabled,
   value,
   smallInput,
+  handlerOnChange,
   children
 }) => {
   const classes = classNames(styles.inputRadio, {
@@ -31,6 +33,7 @@ const RadioButton: React.FunctionComponent<InputProps> = ({
         name={name}
         disabled={disabled}
         value={value}
+        onChange={(e): void => handlerOnChange(e)}
       />
       <div>
         <span className={styles.radioCircle} />
