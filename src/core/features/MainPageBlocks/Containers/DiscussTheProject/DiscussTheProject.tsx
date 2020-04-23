@@ -8,6 +8,7 @@ import FormProjectType from "./components/FormProjectType/FormProjectType";
 import FormBudget from "./components/FormBudget/FormBudget";
 import Button from "../../../../shared/coreUi/Button/Button";
 import MobileSteps from "./components/MobileSteps/MobileSteps";
+import ModalThanks from "../../../../shared/Modal/ModalThanks/ModalThanks";
 
 import styles from "./discussTheProject.module.scss";
 
@@ -26,6 +27,11 @@ const DiscussTheProject: React.FunctionComponent = () => {
   const formClasses = classNames(styles.discussForm, {
     showSecondStep: step === 2
   });
+  const [formSend, setFormSend] = useState(false);
+
+  const handlerClosePopup = (): void => {
+    setFormSend(!formSend);
+  };
 
   const handlerOnChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -56,6 +62,7 @@ const DiscussTheProject: React.FunctionComponent = () => {
 
   const handlerSendData = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
+    setFormSend(!formSend);
   };
 
   useEffect(() => {
@@ -98,6 +105,7 @@ const DiscussTheProject: React.FunctionComponent = () => {
           <MobileSteps step={step} handlerChangeStep={handlerChangeStep} />
         </form>
       </div>
+      {formSend && <ModalThanks clickHandler={handlerClosePopup} />}
     </section>
   );
 };

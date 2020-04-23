@@ -16,7 +16,7 @@ const MobileSteps: React.FunctionComponent<MobileStepsProps> = ({
     <div className={styles.stepWrapper}>
       <p className={styles.currentStep}>{step} / 2</p>
       <div className={styles.stepProgress} />
-      {step === 1 ? (
+      {step === 1 && (
         <Button
           classes="yellowBtnWithIcon"
           type="button"
@@ -25,7 +25,8 @@ const MobileSteps: React.FunctionComponent<MobileStepsProps> = ({
           Next Step
           <img src="/images/icons/arrow.svg" alt="arrow" />
         </Button>
-      ) : (
+      )}
+      {step === 2 && (
         <Button classes="yellowBtnWithIcon" type="submit">
           Send
           <img src="/images/icons/arrow.svg" alt="arrow" />

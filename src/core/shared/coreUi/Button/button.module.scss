@@ -93,6 +93,20 @@
   }
 }
 
+.btnCloseDark {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  background: url(/images/icons/menu-icon-mob-black.svg) no-repeat center;
+  background-size: contain;
+}
+
 .btnPlay {
   background: url(/images/icons/play-btn.svg) no-repeat center;
   width: 40px;
@@ -156,6 +170,20 @@
   }
 }
 
+.emptyBtn {
+  background: transparent;
+  border: none;
+  color: #EFE314;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  max-width: 100px;
+  width: 100%;
+  @extend %btn-with-icon-style;
+  margin: 30px 0 0;
+}
+
 @media screen and (max-width: $breakpoint-max-width) {
   .headerBtn {
     height: 90px;
@@ -211,5 +239,9 @@
     .btnWithArrow {
       display: none;
     }
+  }
+
+  .emptyBtn {
+    margin: 20px 0 0;
   }
 }
