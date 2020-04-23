@@ -6,6 +6,7 @@ import FormTask from "./components/FormTask/FormTask";
 import FormProjectType from "./components/FormProjectType/FormProjectType";
 import FormBudget from "./components/FormBudget/FormBudget";
 import Button from "../../../../shared/coreUi/Button/Button";
+import MobileSteps from "./components/MobileSteps/MobileSteps";
 
 import styles from "./discussTheProject.module.scss";
 
@@ -46,6 +47,7 @@ const DiscussTheProject: React.FunctionComponent = () => {
               </span>
             </Button>
           </div>
+          <MobileSteps />
         </form>
       </div>
     </section>
