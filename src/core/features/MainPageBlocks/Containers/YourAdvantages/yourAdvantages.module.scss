@@ -71,6 +71,7 @@
   flex: 1 0 auto;
   display: flex;
   flex-flow: row nowrap;
+  position: relative;
 
   &:nth-child(odd) {
     align-self: flex-start;
@@ -80,26 +81,75 @@
     align-self: flex-end;
   }
 
-  &:nth-child(3) {
-    margin-left: -270px;
-  }
-
-  &:nth-child(4) {
-    margin-left: -50px;
-  }
-
-  &:nth-child(5) {
-    margin-left: -200px;
-  }
-
-  &:nth-child(6) {
-    margin-left: -300px;
-  }
-
   &:nth-child(4),
   &:nth-child(5),
   &:nth-child(6) {
     align-items: center;
+  }
+
+  &:nth-child(1),
+  &:nth-child(2),
+  &:nth-child(3),
+  &:nth-child(4),
+  &:nth-child(5),
+  &:nth-child(6) {
+    &:before {
+      content: '';
+      width: 664px;
+      height: 638px;
+      position: absolute;
+      background: url(/images/icons/advantages/big-grid.svg) no-repeat center;
+    }
+  }
+
+  &:nth-child(1) {
+    &:before {
+      top: -91px;
+      left: -6px;
+    }
+  }
+
+  &:nth-child(2) {
+    &:before {
+      top: -66px;
+      left: -63px;
+    }
+  }
+
+  &:nth-child(3) {
+    margin-left: -270px;
+
+    &:before {
+      top: -91px;
+      left: -6px;
+    }
+  }
+
+  &:nth-child(4) {
+    margin-left: -50px;
+
+    &:before {
+      top: -91px;
+      left: -6px;
+    }
+  }
+
+  &:nth-child(5) {
+    margin-left: -200px;
+
+    &:before {
+      top: -91px;
+      left: -6px;
+    }
+  }
+
+  &:nth-child(6) {
+    margin-left: -300px;
+
+    &:before {
+      top: -91px;
+      left: -6px;
+    }
   }
 }
 
