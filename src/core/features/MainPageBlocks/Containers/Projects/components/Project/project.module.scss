@@ -1,0 +1,184 @@
+@import "../../../../../../../assets/scss/breakPoints.scss";
+
+.projectContent {
+  height: 84vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 60px 0 110px;
+  z-index: 1;
+}
+
+.projectInfo {
+  margin: 0 60px 0 0;
+  max-width: 840px;
+}
+
+.projectTitle {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 130%;
+  color: #171718;
+  margin: 0 0 30px;
+}
+
+.projectProblem {
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: 0.03em;
+  color: #828282;
+
+  p {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.readMore {
+  display: none;
+}
+
+.projectMedia {
+  width: 640px;
+  height: 360px;
+  max-height: 360px;
+  background: #F2F2F2;
+  border: 10px solid #4F4F4F;
+  box-sizing: border-box;
+  border-radius: 10px;
+  flex: 0 0 640px;
+}
+
+.projectDescription {
+  margin: 0 0 0 60px;
+
+  h3 {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    color: #171718;
+    margin: 0 0 15px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 150%;
+    color: #828282;
+  }
+}
+
+.projectsFooterLeftPart {
+  display: flex;
+  flex-flow:  row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+@media screen and (max-width: 1400px) {
+  .projectTitle {
+    font-size: 30px;
+  }
+
+  .projectProblem {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: $breakpoint-max-width) {
+  .projectContent {
+    justify-content: center;
+  }
+
+  .projectMedia {
+    flex: 0 1 640px;
+  }
+}
+
+@media screen and (max-width: $breakpoint-tablet) and (max-height: 1400px) {
+  .projectInfo {
+    display: none;
+  }
+
+  .projectsFooter {
+    padding: 0 60px 0 0;
+  }
+
+  .projectDescription {
+    h3 {
+      font-size: 22px;
+      line-height: 26px;
+      margin: 0 0 5px;
+    }
+  }
+}
+
+@media screen and (min-height: 1300px) and (max-width: $breakpoint-tablet) {
+  .projectContent {
+    justify-content: center;
+    flex-flow: column nowrap;
+  }
+
+  .projectInfo {
+    margin: 0 0 30px;
+  }
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+  .projectContent {
+    flex-flow: column nowrap;
+    padding: 0;
+    height: auto;
+    margin: 0 0 20px;
+  }
+
+  .projectInfo {
+    display: block;
+    margin: 0 0 20px;
+
+    h3 {
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 130%;
+      color: #FFF;
+      margin: 0 0 10px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 150%;
+    }
+  }
+
+  .readMore {
+    display: block;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0.03em;
+    text-decoration-line: underline;
+    color: #EFE314;
+    margin: 5px 0 0;
+    cursor: pointer;
+  }
+
+  .projectsFooterLeftPart {
+    flex-flow: column-reverse;
+  }
+
+  .projectDescription {
+    margin: 0 0 20px;
+  
+    h3 {
+      font-size: 20px;
+      line-height: 23px;
+      color: #fff;
+      margin: 0 0 10px;
+    }
+  
+    p {
+      font-size: 14px;
+    }
+  }
+}
