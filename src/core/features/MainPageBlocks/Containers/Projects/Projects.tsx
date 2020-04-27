@@ -57,8 +57,8 @@ const Projects: React.FunctionComponent = () => {
   ];
 
   const handlerPrevSlide = (): void => {
-    const slideWidth = globalThis.outerWidth;
     const sliderContent = sliderList.current;
+    const slideWidth = sliderContent.offsetWidth;
 
     if (activeSlide > 0) {
       const newActiveSlide = activeSlide - 1;
@@ -72,8 +72,8 @@ const Projects: React.FunctionComponent = () => {
 
   const handlerNextSlide = (): void => {
     const slidesQuantity = projectsInfo.length - 1;
-    const slideWidth = globalThis.outerWidth;
     const sliderContent = sliderList.current;
+    const slideWidth = sliderContent.offsetWidth;
 
     if (slidesQuantity > activeSlide) {
       const newActiveSlide = activeSlide + 1;
