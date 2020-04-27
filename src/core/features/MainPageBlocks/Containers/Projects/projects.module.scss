@@ -1,0 +1,74 @@
+@import "../../../../../assets/scss/breakPoints.scss";
+
+.projectsWrapper {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.projectContent {
+  height: 84vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 60px 0 110px;
+  z-index: 1;
+}
+
+.projectInfo {
+  margin: 0 60px 0 0;
+  max-width: 840px;
+}
+
+.projectTitle {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 130%;
+  color: #171718;
+  margin: 0 0 30px;
+}
+
+.projectDescription {
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: 0.03em;
+  color: #828282;
+
+  p {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.projectMedia {
+  width: 640px;
+  height: 360px;
+  background: #F2F2F2;
+  border: 10px solid #4F4F4F;
+  box-sizing: border-box;
+  border-radius: 10px;
+  flex: 0 0 640px;
+}
+
+.projectsFooter {
+  height: 16vh;
+  width: 100%;
+  border-top: 1px solid #828282;
+  z-index: 1;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.sliderBtnWrapper {
+  display: flex;
+  transform: translateY(-8vh);
+}
