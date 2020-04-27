@@ -62,7 +62,8 @@
     margin: 0 0 15px;
   }
 
-  p {
+  div {
+    max-width: 40vw;
     font-size: 16px;
     line-height: 150%;
     color: #828282;
@@ -75,6 +76,11 @@
   align-items: center;
   justify-content: flex-start;
   height: 100%;
+}
+
+.projectItem {
+  flex: 0 0 100%;
+  max-width: 100vw;
 }
 
 @media screen and (max-width: 1400px) {
@@ -119,10 +125,12 @@
   .projectContent {
     justify-content: center;
     flex-flow: column nowrap;
+    padding: 60px;
   }
 
   .projectInfo {
     margin: 0 0 30px;
+    display: block;
   }
 }
 
@@ -177,8 +185,13 @@
       margin: 0 0 10px;
     }
   
-    p {
+    div {
+      max-width: none;
       font-size: 14px;
     }
+  }
+
+  .projectItem {
+    margin-right: 30px;
   }
 }
