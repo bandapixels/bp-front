@@ -20,10 +20,13 @@ const Projects: React.FunctionComponent = () => {
 
   return (
     <section className={styles.projectsWrapper} ref={refGridWrapper}>
+      <h3 className={styles.projectsMobTitle}>
+        <span>Our</span> projects
+      </h3>
       <div className={styles.projectContent}>
         <div className={styles.projectInfo}>
           <h3 className={styles.projectTitle}>What problem do we solve</h3>
-          <div className={styles.projectDescription}>
+          <div className={styles.projectProblem}>
             <p>
               A problem is considered to be major when a reasonable consumer
               would not have bought the product if they had known the problem
@@ -41,9 +44,21 @@ const Projects: React.FunctionComponent = () => {
         <div className={styles.projectMedia} />
       </div>
       <div className={styles.projectsFooter}>
-        <Button type="button" classes="projectBtn">
-          See the creation process
-        </Button>
+        <div className={styles.projectsFooterLeftPart}>
+          <Button type="button" classes="projectBtn">
+            See the creation process
+          </Button>
+          <div className={styles.projectDescription}>
+            <h3>TECOM</h3>
+            <p>
+              TECOM Conf is China's first Tech and Entrepreneur Communities
+              conference.
+              <br />
+              TECOM Conf brings the most dynamic, engaging and vibrant
+              Communities, Startups,
+            </p>
+          </div>
+        </div>
         <div className={styles.sliderBtnWrapper}>
           <Button type="button" classes="sliderPrev">
             <img src="/images/icons/arrow.svg" alt="slider arrow prev" />

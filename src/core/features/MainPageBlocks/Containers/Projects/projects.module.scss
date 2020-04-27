@@ -33,7 +33,7 @@
   margin: 0 0 30px;
 }
 
-.projectDescription {
+.projectProblem {
   font-size: 24px;
   line-height: 150%;
   letter-spacing: 0.03em;
@@ -49,6 +49,7 @@
 .projectMedia {
   width: 640px;
   height: 360px;
+  max-height: 360px;
   background: #F2F2F2;
   border: 10px solid #4F4F4F;
   box-sizing: border-box;
@@ -64,11 +65,197 @@
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   position: relative;
+  padding: 0 180px 0 0;
 }
 
 .sliderBtnWrapper {
   display: flex;
   transform: translateY(-8vh);
+}
+
+.projectsFooterLeftPart {
+  display: flex;
+  flex-flow:  row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.projectDescription {
+  margin: 0 0 0 60px;
+
+  h3 {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    color: #171718;
+    margin: 0 0 15px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 150%;
+    color: #828282;
+  }
+}
+
+.projectsMobTitle {
+  display: none;
+}
+
+@media screen and (max-width: 1400px) {
+  .projectTitle {
+    font-size: 30px;
+  }
+
+  .projectProblem {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: $breakpoint-max-width) {
+  .projectContent {
+    justify-content: center;
+  }
+
+  .projectMedia {
+    flex: 0 1 640px;
+  }
+}
+
+@media screen and (max-width: $breakpoint-tablet) and (max-height: 1100px) {
+  .projectInfo {
+    display: none;
+  }
+
+  .projectsFooter {
+    padding: 0 60px 0 0;
+  }
+
+  .projectDescription {
+    h3 {
+      font-size: 22px;
+      line-height: 26px;
+      margin: 0 0 5px;
+    }
+
+    p {
+
+    }
+  }
+
+  .sliderBtnWrapper {
+    button {
+      max-width: 5.5vh;
+      max-height: 5.5vh;
+    }
+  }
+}
+
+@media screen and (min-height: 1300px) and (max-width: $breakpoint-tablet) {
+  .projectContent {
+    justify-content: center;
+    flex-flow: column nowrap;
+  }
+
+  .projectInfo {
+    margin: 0 0 30px;
+  }
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+  .gradient-vertical,
+  .gradient-horizontal {
+    display: none;
+  }
+
+  .projectsWrapper {
+    background-color: #333;
+    background-image: linear-gradient( rgba(255,255,255,.1), transparent 1px), linear-gradient( 90deg, rgba(255,255,255,.1), transparent 1px);
+    background-size: 15px 15px;
+    background-position: center center;
+    height: auto;
+    padding: 60px 15px;
+  }
+
+  .projectsMobTitle {
+    display: block;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 130%;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0 0 30px;
+
+    span {
+      color: #EFE314;
+      font-size: 36px;
+    }
+  }
+
+  .projectInfo {
+    display: block;
+    margin: 0 0 20px;
+
+    h3 {
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 130%;
+      color: #FFF;
+      margin: 0 0 10px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 150%;
+    }
+  }
+
+  .projectContent {
+    flex-flow: column nowrap;
+    padding: 0;
+    height: auto;
+    margin: 0 0 20px;
+  }
+
+  .projectMedia {
+    flex: 0 0 auto;
+    width: 290px;
+    height: 170px;
+    border: 5px solid #171718;
+    box-sizing: border-box;
+  }
+
+  .projectsFooter {
+    flex-flow: column;
+    height: auto;
+    padding: 0;
+    border: none;
+  }
+
+  .projectsFooterLeftPart {
+    flex-flow: column-reverse;
+  }
+
+  .projectDescription {
+    margin: 0 0 20px;
+  
+    h3 {
+      font-size: 20px;
+      line-height: 23px;
+      color: #fff;
+      margin: 0 0 10px;
+    }
+  
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .sliderBtnWrapper {
+    transform: none;
+    margin: 10px auto 0;
+  }
 }
