@@ -40,6 +40,7 @@ const Projects: React.FunctionComponent = () => {
               can be fixed easily and within a reasonable time.
             </p>
           </div>
+          <span className={styles.readMore}>read more</span>
         </div>
         <div className={styles.projectMedia} />
       </div>
@@ -59,14 +60,14 @@ const Projects: React.FunctionComponent = () => {
             </p>
           </div>
         </div>
-        <div className={styles.sliderBtnWrapper}>
-          <Button type="button" classes="sliderPrev">
-            <img src="/images/icons/arrow.svg" alt="slider arrow prev" />
-          </Button>
-          <Button type="button" classes="sliderNext">
-            <img src="/images/icons/arrow.svg" alt="slider arrow prev" />
-          </Button>
-        </div>
+      </div>
+      <div className={styles.sliderBtnWrapper}>
+        <Button type="button" classes="sliderPrev">
+          <img src="/images/icons/arrow.svg" alt="slider arrow prev" />
+        </Button>
+        <Button type="button" classes="sliderNext">
+          <img src="/images/icons/arrow.svg" alt="slider arrow prev" />
+        </Button>
       </div>
     </section>
   );
