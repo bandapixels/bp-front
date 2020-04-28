@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { createGrid, addAnimationToGrid } from "../../../../utils/grid";
 
 import styles from "./yourAdvantages.module.scss";
@@ -6,58 +6,13 @@ import styles from "./yourAdvantages.module.scss";
 const YourAdvantages: React.FunctionComponent = () => {
   const refGridWrapper = useRef<HTMLDivElement>();
   const refSlider = useRef<HTMLDivElement>();
-  const [mouseIsDown, setMouseIsDown] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
 
-  const handlerMouseDown = (e): void => {
+  const handlerWheel = (e): void => {
     const slider = refSlider.current;
+    const direction = e.deltaY > 0 ? 1 : -1;
+    const newPosition = slider.scrollLeft + 300 * direction;
 
-    setMouseIsDown(true);
-    setStartX(e.pageX - slider.offsetLeft);
-    setScrollLeft(slider.scrollLeft);
-  };
-
-  const handlerMouseLeave = (): void => {
-    setMouseIsDown(false);
-  };
-
-  const handlerMouseUp = (): void => {
-    setMouseIsDown(false);
-  };
-
-  const handlerMouseMove = (e): void => {
-    if (!mouseIsDown) return;
-
-    e.preventDefault();
-
-    const slider = refSlider.current;
-    const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 2;
-
-    slider.scrollLeft = scrollLeft - walk;
-  };
-
-  const handlerTouch = (e): void => {
-    const slider = refSlider.current;
-
-    setMouseIsDown(true);
-    for (let i = 0; i < e.changedTouches.length; i++) {
-      setStartX(e.changedTouches[i].pageX - slider.offsetLeft);
-    }
-    setScrollLeft(slider.scrollLeft);
-  };
-
-  const handlerTouchMove = (e): void => {
-    if (!mouseIsDown) return;
-
-    const slider = refSlider.current;
-
-    for (let i = 0; i < e.changedTouches.length; i++) {
-      const x = e.changedTouches[i].pageX - slider.offsetLeft;
-      const walk = (x - startX) * 2;
-      slider.scrollLeft = scrollLeft - walk;
-    }
+    slider.scroll({ left: newPosition, behavior: "smooth" });
   };
 
   useEffect(() => {
@@ -79,12 +34,7 @@ const YourAdvantages: React.FunctionComponent = () => {
       <div
         className={styles.advantagesContainer}
         ref={refSlider}
-        onMouseDown={handlerMouseDown}
-        onMouseLeave={handlerMouseLeave}
-        onMouseUp={handlerMouseUp}
-        onMouseMove={handlerMouseMove}
-        onTouchStart={handlerTouch}
-        onTouchMove={handlerTouchMove}
+        onWheel={handlerWheel}
       >
         <div className={styles.advantagesItem}>
           <div className={styles.advantagesTechnologies} />
