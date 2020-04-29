@@ -31,7 +31,8 @@ const Projects: React.FunctionComponent = () => {
         ‘major problem’ above, it can be considered to be a minor problem.
         For example, it does not do what it is normally supposed to do but
         can be fixed easily and within a reasonable time.
-      `
+      `,
+      video: "video2"
     },
     {
       name: "TECOM-2",
@@ -47,24 +48,14 @@ const Projects: React.FunctionComponent = () => {
         would not have bought the product if they had known the problem
         beforehand – for example, a toaster breaks down before a
         reasonable consumer would expect it to.
-
-        If the product has some other problem that is not covered by
-        ‘major problem’ above, it can be considered to be a minor problem.
-        For example, it does not do what it is normally supposed to do but
-        can be fixed easily and within a reasonable time.
-      `
+      `,
+      video: "video2"
     }
   ];
 
   const handlerPrevSlide = (): void => {
-    const sliderContent = sliderList.current;
-    const slideWidth = sliderContent.offsetWidth;
-
     if (activeSlide > 0) {
       const newActiveSlide = activeSlide - 1;
-
-      sliderContent.style.transform = `translateX(-${slideWidth *
-        newActiveSlide}px)`;
 
       setActiveSlide(newActiveSlide);
     }
@@ -72,14 +63,9 @@ const Projects: React.FunctionComponent = () => {
 
   const handlerNextSlide = (): void => {
     const slidesQuantity = projectsInfo.length - 1;
-    const sliderContent = sliderList.current;
-    const slideWidth = sliderContent.offsetWidth;
 
     if (slidesQuantity > activeSlide) {
       const newActiveSlide = activeSlide + 1;
-
-      sliderContent.style.transform = `translateX(-${slideWidth *
-        newActiveSlide}px)`;
 
       setActiveSlide(newActiveSlide);
     }
@@ -102,14 +88,13 @@ const Projects: React.FunctionComponent = () => {
       </h3>
       <div className={styles.projectsSlider}>
         <div className={styles.projectsSliderList} ref={sliderList}>
-          {projectsInfo.map(proj => (
-            <Project
-              name={proj.name}
-              description={proj.description}
-              problem={proj.problem}
-              key={proj.name}
-            />
-          ))}
+          <Project
+            name={projectsInfo[activeSlide].name}
+            description={projectsInfo[activeSlide].description}
+            problem={projectsInfo[activeSlide].problem}
+            key={projectsInfo[activeSlide].name}
+            video={projectsInfo[activeSlide].video}
+          />
         </div>
       </div>
       <div className={styles.sliderBtnWrapper}>

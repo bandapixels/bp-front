@@ -7,12 +7,14 @@ interface ProjectProps {
   name: string;
   description?: string;
   problem?: string;
+  video: string;
 }
 
 const Project: React.FunctionComponent<ProjectProps> = ({
   name,
   description,
-  problem
+  problem,
+  video
 }) => {
   return (
     <div className={styles.projectItem}>
@@ -22,7 +24,7 @@ const Project: React.FunctionComponent<ProjectProps> = ({
           <div className={styles.projectProblem}>{problem}</div>
           <span className={styles.readMore}>read more</span>
         </div>
-        <div className={styles.projectMedia} />
+        <div className={styles.projectMedia} data-name={video} />
       </div>
       <div className={styles.projectsFooter}>
         <div className={styles.projectsFooterLeftPart}>

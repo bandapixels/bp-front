@@ -49,6 +49,8 @@
   box-sizing: border-box;
   border-radius: 10px;
   flex: 0 0 640px;
+  transform: translateX(1000px);
+  animation: animation-media .8s ease-in-out forwards;
 }
 
 .projectDescription {
@@ -202,5 +204,11 @@
 
   .projectItem {
     margin-right: 30px;
+  }
+}
+
+@keyframes animation-media {
+  to {
+    transform: translateX(0);
   }
 }
