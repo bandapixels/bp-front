@@ -14,13 +14,12 @@
     bottom: 0;
     background: #fff;
     z-index: -1;
-    transform: translateY(-100%);
-    animation: slideDown .3s ease-in forwards;
     overflow: auto;
     padding: 0 15px 15px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
+    transform: translateY(-100%);
   }
 
   .mailBtn {
@@ -38,10 +37,26 @@
     margin: 20px auto 0;
     background: #333;
   }
+
+  .slideUp {
+    transform: translateY(0);
+    animation: slideUp .3s ease-in forwards;
+  }
+
+  .slideDown {
+    transform: translateY(-100%);
+    animation: slideDown .3s ease-in forwards;
+  }
 }
 
 @keyframes slideDown {
   to {
     transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  to {
+    transform: translateY(-100%);
   }
 }

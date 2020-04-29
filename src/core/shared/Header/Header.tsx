@@ -30,7 +30,7 @@ const Header: React.FunctionComponent = () => {
         </Button>
         <Button classes="menuSwitchBtn" handlerClick={handlerOpenMobileMenu} />
       </div>
-      {openedMenu && <OpenedMobileMenu />}
+      <OpenedMobileMenu openedMenu={openedMenu} />
     </header>
   );
 };
