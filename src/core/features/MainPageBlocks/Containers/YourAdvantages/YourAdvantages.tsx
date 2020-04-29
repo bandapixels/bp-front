@@ -5,15 +5,6 @@ import styles from "./yourAdvantages.module.scss";
 
 const YourAdvantages: React.FunctionComponent = () => {
   const refGridWrapper = useRef<HTMLDivElement>();
-  const refSlider = useRef<HTMLDivElement>();
-
-  const handlerWheel = (e): void => {
-    const slider = refSlider.current;
-    const direction = e.deltaY > 0 ? 1 : -1;
-    const newPosition = slider.scrollLeft + 300 * direction;
-
-    slider.scroll({ left: newPosition, behavior: "smooth" });
-  };
 
   useEffect(() => {
     const mainWrapper = refGridWrapper.current;
@@ -31,11 +22,7 @@ const YourAdvantages: React.FunctionComponent = () => {
         <span />
         <span>advantages</span>
       </div>
-      <div
-        className={styles.advantagesContainer}
-        ref={refSlider}
-        onWheel={handlerWheel}
-      >
+      <div className={styles.advantagesContainer}>
         <div className={styles.advantagesItem}>
           <div className={styles.advantagesTechnologies} />
           <div className={styles.advantagesInfoTechnologies}>
