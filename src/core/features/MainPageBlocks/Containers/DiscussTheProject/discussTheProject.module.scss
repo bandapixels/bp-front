@@ -124,9 +124,40 @@
   }
 }
 
-@media screen and (max-height: 950px) {
+@media screen and (max-height: 930px) {
   .discussWrapper {
     align-items: flex-end;
+  }
+}
+
+@media screen and (max-height: 930px) and (min-width: $breakpoint-mobile) {
+  .discussContainer {
+    h1 {
+      font-weight: bold;
+      font-size: 60px;
+    }
+  }
+
+  .formMainInfo {
+    .inputText {
+      input[type="text"] {
+        height: 40px;
+      }
+    }
+
+    .textarea {
+      max-height: 220px;
+    }
+  }
+
+  .formBudget {
+    .inputRadio {
+      &.smallInput {
+        &:not(:last-child) {
+          margin-bottom: 13px;
+        }
+      }
+    }
   }
 }
 
