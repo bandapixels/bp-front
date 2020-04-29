@@ -1,0 +1,116 @@
+@import "../../../../assets/scss/breakPoints.scss";
+
+.inputText {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: row-reverse nowrap;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  &:hover {
+    span {
+      color: #EFE314;
+    }
+
+    input[type="text"] {
+      border-color: #EFE314;
+    }
+  }
+
+  span {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    width: 90px;
+    display: inline-block;
+    flex: 0 0 90px;
+    transition: .3s;
+  }
+
+  input[type="text"] {
+    border: 1px solid #BDBDBD;
+    background: transparent;
+    height: 50px;
+    width: 100%;
+    font-size: 16px;
+    color: #171718;
+    font-weight: 600;
+    padding: 10px 20px;
+    transition: .3s;
+
+    &:focus {
+      background: #fff;
+    }
+
+    &:disabled {
+      pointer-events: none;
+      border-color: #4f4f4f;
+
+      &+ span {
+        color: #4f4f4f;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-1600) {
+  .inputText {  
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    input[type="text"] {
+      height: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-tablet) {
+  .inputText{
+    flex-flow: column-reverse nowrap;
+    align-items: flex-start;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    span {
+      font-size: 14px;
+      flex: 0 0 auto;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-tablet) and (max-height: 768px){
+  .inputText {
+    flex-flow: row-reverse nowrap;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+  .inputText {
+    flex-flow: column-reverse nowrap;
+    align-items: flex-start;
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    span {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"] {
+      height: 50px;
+      border-color: #BDBDBD;
+    }
+  }
+}
