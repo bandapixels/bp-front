@@ -18,91 +18,94 @@ const YourAdvantages: React.FunctionComponent = () => {
 
   return (
     <section className={styles.advantagesWrapper} ref={refGridWrapper}>
-      <div className={styles.advantagesBig}>
-        <span />
-        <span>advantages</span>
-      </div>
-      <div className={styles.advantagesContainer}>
-        <div className={styles.advantagesItem}>
-          <div className={styles.advantagesTechnologies} />
-          <div className={styles.advantagesInfoTechnologies}>
-            <h3 className={styles.advantagesTitle}>
-              Popular
-              <br />
-              and reliable
-              <br />
-              technologies
-            </h3>
-            <p className={styles.advantagesDescription}>
-              We use Node.js,
-              <br />
-              Angular and React
-            </p>
-          </div>
+      <div className={styles.advantagesScroll}>
+        <div className={styles.advantagesBig}>
+          <span />
+          <span>advantages</span>
         </div>
-        <div className={styles.advantagesItem}>
-          <div className={styles.advantagesSpeed} />
-          <div className={styles.advantagesInfoSpeed}>
-            <h3 className={styles.advantagesTitle}>
-              Being up
-              <br />
-              to speed
-            </h3>
-            <p className={styles.advantagesDescription}>
-              At all the stages you work with a PM who updates you on the
-              current progress
-            </p>
+        <div className={styles.advantagesContainer}>
+          <div className={styles.advantagesItem}>
+            <div className={styles.advantagesTechnologies} />
+            <div className={styles.advantagesInfoTechnologies}>
+              <h3 className={styles.advantagesTitle}>
+                Popular
+                <br />
+                and reliable
+                <br />
+                technologies
+              </h3>
+              <p className={styles.advantagesDescription}>
+                We use Node.js,
+                <br />
+                Angular and React
+              </p>
+            </div>
           </div>
-        </div>
-        <div className={styles.advantagesItem}>
-          <div className={styles.advantagesService} />
-          <div className={styles.advantagesInfoService}>
-            <h3 className={styles.advantagesTitle}>
-              Service
-              <br />
-              convenience
-            </h3>
-            <p className={styles.advantagesDescription}>
-              We substantially invest in UX/UI to make it comfortable for a user
-              to utilize a service
-            </p>
+          <div className={styles.advantagesItem}>
+            <div className={styles.advantagesSpeed} />
+            <div className={styles.advantagesInfoSpeed}>
+              <h3 className={styles.advantagesTitle}>
+                Being up
+                <br />
+                to speed
+              </h3>
+              <p className={styles.advantagesDescription}>
+                At all the stages you work with a PM who updates you on the
+                current progress
+              </p>
+            </div>
           </div>
-        </div>
-        <div className={styles.advantagesItem}>
-          <div className={styles.advantagesRisks} />
-          <div className={styles.advantagesInfoRisks}>
-            <h3 className={styles.advantagesTitle}>Risks elimination</h3>
-            <p className={styles.advantagesDescription}>
-              We are a big team of interchangable coworkers. In case of any
-              eventualities with a developer, your project never suffers being
-              taken by another specialist
-            </p>
+          <div className={styles.advantagesItem}>
+            <div className={styles.advantagesService} />
+            <div className={styles.advantagesInfoService}>
+              <h3 className={styles.advantagesTitle}>
+                Service
+                <br />
+                convenience
+              </h3>
+              <p className={styles.advantagesDescription}>
+                We substantially invest in UX/UI to make it comfortable for a
+                user to utilize a service
+              </p>
+            </div>
           </div>
-        </div>
-        <div className={styles.advantagesItem}>
-          <div className={styles.advantagesDeadlines} />
-          <div className={styles.advantagesInfoDeadlines}>
-            <h3 className={styles.advantagesTitle}>
-              Assurance
-              <br />
-              of meeting
-              <br />
-              the deadlines
-            </h3>
-            <p className={styles.advantagesDescription}>
-              We have rules but are flexible at the same time, so we are able to
-              change the workflow to obtain the results within specified time
-            </p>
+          <div className={styles.advantagesItem}>
+            <div className={styles.advantagesRisks} />
+            <div className={styles.advantagesInfoRisks}>
+              <h3 className={styles.advantagesTitle}>Risks elimination</h3>
+              <p className={styles.advantagesDescription}>
+                We are a big team of interchangable coworkers. In case of any
+                eventualities with a developer, your project never suffers being
+                taken by another specialist
+              </p>
+            </div>
           </div>
-        </div>
-        <div className={styles.advantagesItem}>
-          <div className={styles.advantagesTeam} />
-          <div className={styles.advantagesInfoTeam}>
-            <h3 className={styles.advantagesTitle}>Team expansion</h3>
-            <p className={styles.advantagesDescription}>
-              We expand our team as and when necessary. So you do not have to
-              look for new specialists
-            </p>
+          <div className={styles.advantagesItem}>
+            <div className={styles.advantagesDeadlines} />
+            <div className={styles.advantagesInfoDeadlines}>
+              <h3 className={styles.advantagesTitle}>
+                Assurance
+                <br />
+                of meeting
+                <br />
+                the deadlines
+              </h3>
+              <p className={styles.advantagesDescription}>
+                We have rules but are flexible at the same time, so we are able
+                to change the workflow to obtain the results within specified
+                time
+              </p>
+            </div>
+          </div>
+          <div className={styles.advantagesItem}>
+            <div className={styles.advantagesTeam} />
+            <div className={styles.advantagesInfoTeam}>
+              <h3 className={styles.advantagesTitle}>Team expansion</h3>
+              <p className={styles.advantagesDescription}>
+                We expand our team as and when necessary. So you do not have to
+                look for new specialists
+              </p>
+            </div>
           </div>
         </div>
       </div>

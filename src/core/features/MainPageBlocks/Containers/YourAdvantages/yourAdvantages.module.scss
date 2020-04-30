@@ -33,6 +33,22 @@
   }
 }
 
+.advantagesScroll {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+}
+
 .advantagesBig {
   font-weight: bold;
   font-size: 40px;
@@ -63,16 +79,8 @@
   flex-flow: row nowrap;
   align-items: center;
   justify-content: flex-start;
-  overflow-x: auto;
-  overflow-y: hidden;
   max-height: 1080px;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-
-  &::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
-  }
+  overflow: visible;
 }
 
 .advantagesItem {
