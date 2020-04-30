@@ -3,12 +3,21 @@
 .advantagesWrapper {
   height: 100vh;
   position: relative;
-  overflow: hidden;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: flex-start;
   background: #333;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
 
   &:before,
   &:after {
@@ -30,22 +39,6 @@
   &:after {
     top: -60px;
     right: 30px;
-  }
-}
-
-.advantagesScroll {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: flex-start;
-  overflow-x: auto;
-  overflow-y: hidden;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-
-  &::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
   }
 }
 

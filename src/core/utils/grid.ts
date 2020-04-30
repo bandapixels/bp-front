@@ -1,9 +1,25 @@
-export const createGrid = (ref: HTMLElement, linesGap: number): void => {
+export const createGrid = (
+  ref: HTMLElement,
+  linesGap: number,
+  childrensWidth = false
+): void => {
   // space between lines
+  let width = 0;
   let gap = linesGap;
 
+  // check what width do we need layout or childrens
+  if (childrensWidth) {
+    for (let i = 0; i < ref.children.length; i++) {
+      width += ref.children[i].clientWidth;
+    }
+
+    width += 1000;
+  } else {
+    width = ref.offsetWidth;
+  }
+
   // add vertical lines
-  while (gap < ref.offsetWidth) {
+  while (gap < width) {
     const line = document.createElement("div");
     line.classList.add("gradient-vertical");
     line.style.left = `${gap}px`;
@@ -18,6 +34,7 @@ export const createGrid = (ref: HTMLElement, linesGap: number): void => {
     const line = document.createElement("div");
     line.classList.add("gradient-horizontal");
     line.style.top = `${gap}px`;
+    line.style.width = `${width}px`;
     ref.append(line);
     gap += linesGap;
   }
@@ -27,10 +44,11 @@ export const addAnimationToGrid = (
   e,
   mainColor: string,
   gradientColor: string,
-  wrapper: HTMLElement
+  wrapper: HTMLElement,
+  childrensWidth = false
 ): void => {
   // mouse position
-  const x = e.pageX;
+  const x = e.pageX + wrapper.scrollLeft;
   const y = e.pageY - wrapper.offsetTop;
   // line capture radius
   const [minX, maxX] = [x - 100, x + 100];
@@ -108,19 +126,21 @@ export const addAnimationToGrid = (
     // find the center for gradient
     const xMainColorCenter = ((x / blockWidth) * 100).toFixed(2);
     let coef = 0;
+    const coefForSideLines = childrensWidth ? 0.05 : 1;
+    const coefForStartAndEndPoints = childrensWidth ? 3 : 9;
 
     // find a coefficient that reduces the size of the gradient for the side lines if an odd amount
     if (index < hMiddleElement && hLines.length % 2 !== 0) {
       // coefficient for lines before middle line
-      coef = hMiddleElement - index + 1;
+      coef = hMiddleElement - index + coefForSideLines;
     } else if (index > hMiddleElement && hLines.length % 2 !== 0) {
       // coefficient for lines after middle line
-      coef = index - hMiddleElement + 1;
+      coef = index - hMiddleElement + coefForSideLines;
     }
 
     // find the start and end point of gradient color
-    const xMainColorStart = +xMainColorCenter - 9 + coef;
-    const xMainColorEnd = +xMainColorCenter + 9 - coef;
+    const xMainColorStart = +xMainColorCenter - coefForStartAndEndPoints + coef;
+    const xMainColorEnd = +xMainColorCenter + coefForStartAndEndPoints - coef;
 
     // add gradient to the line
     line.style.background = `linear-gradient(90deg, ${mainColor}, ${mainColor} ${xMainColorStart}%, ${gradientColor} ${xMainColorCenter}%, ${mainColor} ${xMainColorEnd}%)`;
