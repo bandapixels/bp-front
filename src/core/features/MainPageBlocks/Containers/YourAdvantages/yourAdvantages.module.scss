@@ -96,21 +96,6 @@
     align-items: center;
   }
 
-  &:nth-child(1),
-  &:nth-child(2),
-  &:nth-child(3),
-  &:nth-child(4),
-  &:nth-child(5),
-  &:nth-child(6) {
-    &:before {
-      content: '';
-      width: 664px;
-      height: 638px;
-      position: absolute;
-      background: url(/images/icons/advantages/big-grid.svg) no-repeat center;
-    }
-  }
-
   &:nth-child(1) {
     &:before {
       top: -91px;

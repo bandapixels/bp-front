@@ -1,5 +1,9 @@
 import React, { useEffect, useRef } from "react";
-import { createGrid, addAnimationToGrid } from "../../../../utils/grid";
+import {
+  createGrid,
+  addAnimationToGrid,
+  yellowBlocks
+} from "../../../../utils/grid";
 
 import styles from "./yourAdvantages.module.scss";
 
@@ -11,9 +15,11 @@ const YourAdvantages: React.FunctionComponent = () => {
 
     createGrid(mainWrapper, 75, true);
 
-    document.addEventListener("mousemove", e => {
-      addAnimationToGrid(e, "rgba(23,23,24,.1)", "#fff", mainWrapper, true);
-    });
+    yellowBlocks(mainWrapper);
+
+    // document.addEventListener("mousemove", e => {
+    //   addAnimationToGrid(e, "rgba(23,23,24,.1)", "#fff", mainWrapper, true);
+    // });
   }, []);
 
   return (
