@@ -17,6 +17,29 @@
 }
 
 .socialItem {
+  transition: .3s;
+
+  &:hover {
+    background: #333;
+    transform: translateY(-20px);
+
+    .socialBehance {
+      background: url(/images/icons/behance-yellow.svg) no-repeat;
+    }
+    
+    .socialFacebook {
+      background: url(/images/icons/facebook-yellow.svg) no-repeat;
+    }
+    
+    .socialDribbble {
+      background: url(/images/icons/dribbble-yellow.svg) no-repeat;
+    }
+
+    .socialLinkedin {
+      background: url(/images/icons/linkedin-yellow.svg) no-repeat;
+    }
+  }
+
   &:not(:last-child) {
     margin-right: 10px;
   }
@@ -35,5 +58,7 @@
     width: 20px;
     height: 20px;
     display: block;
+    background-size: contain!important;
+    transition: .3s;
   }
 }
