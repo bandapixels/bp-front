@@ -10,12 +10,12 @@
   background: #333;
   overflow-x: auto;
   overflow-y: hidden;
-  position: relative;
   -ms-overflow-style: none;
   scrollbar-width: none;
 
   &::-webkit-scrollbar {
     width: 0px;
+    display: none;
     background: transparent;
   }
 
@@ -303,6 +303,7 @@
     background-size: 15px 15px;
     background-position: center center;
     padding: 60px 15px;
+    overflow: hidden;
 
     &:before,
     &:after {
