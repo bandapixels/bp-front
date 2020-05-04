@@ -1,20 +1,20 @@
 import React from "react";
 import styles from "./project.module.scss";
 
-import Button from "../../../../../../shared/coreUi/Button/Button";
-
 interface ProjectProps {
   name: string;
   description?: string;
   problem?: string;
   video: string;
+  url: string;
 }
 
 const Project: React.FunctionComponent<ProjectProps> = ({
   name,
   description,
   problem,
-  video
+  video,
+  url
 }) => {
   return (
     <div className={styles.projectItem}>
@@ -28,9 +28,9 @@ const Project: React.FunctionComponent<ProjectProps> = ({
       </div>
       <div className={styles.projectsFooter}>
         <div className={styles.projectsFooterLeftPart}>
-          <Button type="button" classes="projectBtn">
+          <a href={url} className={styles.projectBtn}>
             See the creation process
-          </Button>
+          </a>
           <div className={styles.projectDescription}>
             <h3>{name}</h3>
             <div>{description}</div>

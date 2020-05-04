@@ -149,28 +149,6 @@
   @extend %btn-with-icon-style;
 }
 
-.projectBtn {
-  height: 100%;
-  width: 200px;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 19px;
-  text-transform: uppercase;
-  color: #EFE314;
-  text-align: left;
-  padding: 10px 60px 0;
-  background: rgba(23,23,24,.8);
-
-  &:after {
-    content: '';
-    display: block;
-    background: url(/images/icons/big-arrow.svg) no-repeat center;
-    width: 80px;
-    height: 20px;
-    margin: 8px 0 0;
-  }
-}
-
 .btnWithArrow {
   padding: 27px 30px;
   font-weight: bold;
@@ -273,31 +251,6 @@
   .openedMenuWrapper {
     .menuSwitchBtn {
       background: url(/images/icons/menu-icon-mob-black.svg) no-repeat center;
-    }
-  }
-
-  .projectBtn {
-    width: 100%;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 14px;
-    text-transform: uppercase;
-    color: #EFE314;
-    text-align: left;
-    padding: 20px 30px;
-    background: rgba(23,23,24,.8);
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: space-between;
-
-    &:after {
-      content: '';
-      display: block;
-      z-index: 1;
-      background: url(/images/icons/arrow-yellow.svg) no-repeat center;
-      width: 20px;
-      margin: 0;
     }
   }
 

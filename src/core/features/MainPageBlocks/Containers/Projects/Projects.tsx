@@ -32,7 +32,8 @@ const Projects: React.FunctionComponent = () => {
         For example, it does not do what it is normally supposed to do but
         can be fixed easily and within a reasonable time.
       `,
-      video: "video2"
+      video: "video2",
+      url: "#"
     },
     {
       name: "TECOM-2",
@@ -49,15 +50,28 @@ const Projects: React.FunctionComponent = () => {
         beforehand – for example, a toaster breaks down before a
         reasonable consumer would expect it to.
       `,
-      video: "video2"
+      video: "video2",
+      url: "#"
     }
   ];
+
+  const scrollTopMobile = (): void => {
+    if (globalThis.outerWidth <= 668) {
+      const offset: number = refGridWrapper.current.offsetTop;
+
+      globalThis.scrollTo({
+        top: offset,
+        behavior: "smooth"
+      });
+    }
+  };
 
   const handlerPrevSlide = (): void => {
     if (activeSlide > 0) {
       const newActiveSlide = activeSlide - 1;
 
       setActiveSlide(newActiveSlide);
+      scrollTopMobile();
     }
   };
 
@@ -68,6 +82,7 @@ const Projects: React.FunctionComponent = () => {
       const newActiveSlide = activeSlide + 1;
 
       setActiveSlide(newActiveSlide);
+      scrollTopMobile();
     }
   };
 
@@ -94,6 +109,7 @@ const Projects: React.FunctionComponent = () => {
             problem={projectsInfo[activeSlide].problem}
             key={projectsInfo[activeSlide].name}
             video={projectsInfo[activeSlide].video}
+            url={projectsInfo[activeSlide].url}
           />
         </div>
       </div>
