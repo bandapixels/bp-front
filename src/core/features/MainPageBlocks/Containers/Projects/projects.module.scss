@@ -63,8 +63,7 @@
   }
 
   .projectContent {
-    flex-flow: column;
-    padding: 60px 60px 0;
+    padding: 90px 60px 30px;
     justify-content: center;
   }
 
@@ -84,6 +83,13 @@
 
   .projectProblem {
     font-size: 18px;
+  }
+
+  .projectMedia {
+    width: 520px;
+    height: 300px;
+    max-height: 300px;
+    flex: 0 0 520px;
   }
 }
 
