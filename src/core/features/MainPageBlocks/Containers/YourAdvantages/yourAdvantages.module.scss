@@ -81,6 +81,8 @@
   display: flex;
   flex-flow: row nowrap;
   position: relative;
+  opacity: .5;
+  transition: .6s;
 
   &:nth-child(odd) {
     align-self: flex-start;

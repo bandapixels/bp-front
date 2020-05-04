@@ -1,25 +1,45 @@
 import React, { useEffect, useRef } from "react";
-import {
-  createGrid,
-  addAnimationToGrid,
-  yellowBlocks
-} from "../../../../utils/grid";
+import { createGrid, addAnimationToGrid } from "../../../../utils/grid";
 
 import styles from "./yourAdvantages.module.scss";
 
 const YourAdvantages: React.FunctionComponent = () => {
   const refGridWrapper = useRef<HTMLDivElement>();
+  const refAdvantagesContainer = useRef<HTMLDivElement>();
+
+  const highlightAdvantages = (): void => {
+    const mainWrapper = refGridWrapper.current;
+    const container = refAdvantagesContainer.current;
+    const advantages = container.childNodes;
+
+    advantages.forEach((item: HTMLElement) => {
+      const element = item;
+      const position = element.offsetLeft - mainWrapper.scrollLeft;
+      const positionEnd =
+        element.offsetLeft - mainWrapper.scrollLeft + element.offsetWidth;
+
+      if (
+        position >= 0 &&
+        position < globalThis.outerWidth &&
+        positionEnd < globalThis.outerWidth
+      ) {
+        element.style.opacity = "1";
+      } else {
+        element.style.opacity = "0.5";
+      }
+    });
+  };
 
   useEffect(() => {
     const mainWrapper = refGridWrapper.current;
 
     createGrid(mainWrapper, 75, true);
 
-    yellowBlocks(mainWrapper);
+    document.addEventListener("mousemove", e => {
+      addAnimationToGrid(e, "rgba(23,23,24,.1)", "#fff", mainWrapper, true);
+    });
 
-    // document.addEventListener("mousemove", e => {
-    //   addAnimationToGrid(e, "rgba(23,23,24,.1)", "#fff", mainWrapper, true);
-    // });
+    highlightAdvantages();
   }, []);
 
   return (
@@ -28,7 +48,11 @@ const YourAdvantages: React.FunctionComponent = () => {
         <span />
         <span>advantages</span>
       </div>
-      <div className={styles.advantagesContainer}>
+      <div
+        className={styles.advantagesContainer}
+        ref={refAdvantagesContainer}
+        onWheel={highlightAdvantages}
+      >
         <div className={styles.advantagesItem}>
           <div className={styles.advantagesTechnologies} />
           <div className={styles.advantagesInfoTechnologies}>
