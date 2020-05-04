@@ -69,7 +69,21 @@
   }
 
   .projectInfo {
-      margin: 0 0 30px;
+      margin: 0 0 15px;
+  }
+
+  .projectsFooter {
+    padding: 0;
+  }
+
+  .projectDescription {
+    div {
+      max-width: none;
+    }
+  }
+
+  .projectProblem {
+    font-size: 18px;
   }
 }
 
