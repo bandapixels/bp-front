@@ -29,6 +29,8 @@ const Project: React.FunctionComponent<ProjectProps> = ({
         setVisiblePart(textArr.slice(0, 120).join(""));
         setHiddenPart(textArr.slice(120).join(""));
       }
+    } else {
+      setVisible(!visible);
     }
   };
 
@@ -47,7 +49,7 @@ const Project: React.FunctionComponent<ProjectProps> = ({
           <h3 className={styles.projectTitle}>What problem do we solve</h3>
           <div className={styles.projectProblem}>
             {visiblePart}
-            {hiddenPart && visible ? { hiddenPart } : "..."}
+            {visible ? hiddenPart : "..."}
           </div>
           {!visible && (
             <span className={styles.readMore} onClick={handlerShowMore}>
