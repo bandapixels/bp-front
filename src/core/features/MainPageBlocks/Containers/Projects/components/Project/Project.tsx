@@ -30,7 +30,7 @@ const Project: React.FunctionComponent<ProjectProps> = ({
         setHiddenPart(textArr.slice(120).join(""));
       }
     } else {
-      setVisible(!visible);
+      setVisible(true);
     }
   };
 
