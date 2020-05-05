@@ -76,7 +76,11 @@ const DiscussTheProject: React.FunctionComponent = () => {
   }, []);
 
   return (
-    <section className={styles.discussWrapper} ref={refGridWrapper}>
+    <section
+      className={styles.discussWrapper}
+      ref={refGridWrapper}
+      data-header="yellow"
+    >
       <div className={styles.discussContainer}>
         <h1>
           <span>Discuss</span> the project

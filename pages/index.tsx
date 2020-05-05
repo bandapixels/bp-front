@@ -7,16 +7,19 @@ import AboutUs from "../src/core/features/MainPageBlocks/Containers/AboutUs/Abou
 import ContactsBlock from "../src/core/shared/ContactsBlock/ContactsBlock";
 import Projects from "../src/core/features/MainPageBlocks/Containers/Projects/Projects";
 import YourAdvantages from "../src/core/features/MainPageBlocks/Containers/YourAdvantages/YourAdvantages";
+import FullPageScroll from "../src/core/shared/FullPageScroll/FullPageScroll";
 
 const Home: NextPage = () => {
   return (
     <StoreLayout>
-      <BlockWithVideo />
-      <AboutUs />
-      <YourAdvantages />
-      <Projects />
-      <DiscussTheProject />
-      <ContactsBlock />
+      <FullPageScroll>
+        <BlockWithVideo />
+        <AboutUs />
+        <YourAdvantages />
+        <Projects />
+        <DiscussTheProject />
+        <ContactsBlock />
+      </FullPageScroll>
     </StoreLayout>
   );
 };

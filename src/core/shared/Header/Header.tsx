@@ -24,10 +24,7 @@ const Header: React.FunctionComponent = () => {
       </div>
       <div className={styles.headerLeftPart}>
         <MenuList />
-        <Button classes="headerBtn">
-          discuss the project
-          <img src="/images/icons/arrow.svg" alt="arrow" />
-        </Button>
+        <Button classes="headerBtn">discuss the project</Button>
         <Button classes="menuSwitchBtn" handlerClick={handlerOpenMobileMenu} />
       </div>
       <OpenedMobileMenu openedMenu={openedMenu} />

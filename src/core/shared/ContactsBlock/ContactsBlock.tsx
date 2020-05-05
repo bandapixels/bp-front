@@ -19,7 +19,11 @@ const ConstactsBlock: React.FunctionComponent = () => {
   }, []);
 
   return (
-    <section className={styles.contactsWrapper} ref={refGridWrapper}>
+    <section
+      className={styles.contactsWrapper}
+      ref={refGridWrapper}
+      data-header="black"
+    >
       <div className={styles.contactsContent}>
         <h3 className={styles.contactsTitle}>
           Lets make your service

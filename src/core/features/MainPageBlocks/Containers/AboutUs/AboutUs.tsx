@@ -17,7 +17,11 @@ const AboutUs: React.FunctionComponent = () => {
   }, []);
 
   return (
-    <section className={styles.aboutWrapper} ref={refGridWrapper}>
+    <section
+      className={styles.aboutWrapper}
+      ref={refGridWrapper}
+      data-header="black"
+    >
       <div className={styles.aboutUsBig}>
         <span>About</span>
         <span />

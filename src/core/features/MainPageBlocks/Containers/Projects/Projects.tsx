@@ -97,7 +97,11 @@ const Projects: React.FunctionComponent = () => {
   }, []);
 
   return (
-    <section className={styles.projectsWrapper} ref={refGridWrapper}>
+    <section
+      className={styles.projectsWrapper}
+      ref={refGridWrapper}
+      data-header="black"
+    >
       <h3 className={styles.projectsMobTitle}>
         <span>Our</span> projects
       </h3>
