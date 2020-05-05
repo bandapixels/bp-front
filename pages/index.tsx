@@ -5,14 +5,16 @@ import BlockWithVideo from "../src/core/features/MainPageBlocks/Containers/Block
 import DiscussTheProject from "../src/core/features/MainPageBlocks/Containers/DiscussTheProject/DiscussTheProject";
 import AboutUs from "../src/core/features/MainPageBlocks/Containers/AboutUs/AboutUs";
 import ContactsBlock from "../src/core/shared/ContactsBlock/ContactsBlock";
+import Projects from "../src/core/features/MainPageBlocks/Containers/Projects/Projects";
 
 const Home: NextPage = () => {
   return (
     <StoreLayout>
       <BlockWithVideo />
-      <DiscussTheProject />
-      <AboutUs />
       <ContactsBlock />
+      <DiscussTheProject />
+      <Projects />
+      <AboutUs />
     </StoreLayout>
   );
 };
