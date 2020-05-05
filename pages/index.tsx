@@ -6,15 +6,17 @@ import DiscussTheProject from "../src/core/features/MainPageBlocks/Containers/Di
 import AboutUs from "../src/core/features/MainPageBlocks/Containers/AboutUs/AboutUs";
 import ContactsBlock from "../src/core/shared/ContactsBlock/ContactsBlock";
 import Projects from "../src/core/features/MainPageBlocks/Containers/Projects/Projects";
+import YourAdvantages from "../src/core/features/MainPageBlocks/Containers/YourAdvantages/YourAdvantages";
 
 const Home: NextPage = () => {
   return (
     <StoreLayout>
       <BlockWithVideo />
-      <ContactsBlock />
-      <DiscussTheProject />
-      <Projects />
       <AboutUs />
+      <YourAdvantages />
+      <Projects />
+      <DiscussTheProject />
+      <ContactsBlock />
     </StoreLayout>
   );
 };

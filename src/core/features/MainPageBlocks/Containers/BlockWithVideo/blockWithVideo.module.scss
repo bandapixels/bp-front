@@ -178,6 +178,8 @@ $we-help-font-sizes: (
 }
 
 .gradient-vertical {
+  top: 0;
+  bottom: 0;
   width: 1px;
   height: 100vh;
   background: rgba(23,23,24,.1);
