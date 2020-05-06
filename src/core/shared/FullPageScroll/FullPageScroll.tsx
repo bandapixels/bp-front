@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import styles from "./fullPageScroll.scss";
 
@@ -11,6 +11,7 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
   children
 }) => {
   const refFullPage = useRef<HTMLDivElement>();
+  const [activeSec, setActiveSec] = useState(0);
 
   // move content to active section
   const scrollContent = (wrapper: HTMLElement, scrollHeight: number): void => {
@@ -72,14 +73,21 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
   };
 
   useEffect(() => {
+    const wrapper = refFullPage.current;
+    const sections = wrapper.childNodes;
+    setActiveSec(handlerOnLoad(sections));
+  }, []);
+
+  useEffect(() => {
     const body = document.querySelector("body");
     const wrapper = refFullPage.current;
     const sections = wrapper.childNodes;
-    let spinValue = handlerOnLoad(sections);
+    let spinValue = activeSec;
     let scrollHeight = 0;
     let canScroll = true;
     let scrollings = [];
     let prevTime = new Date().getTime();
+    changeHeaderStyle(sections, spinValue);
 
     const changeSlider = (e: WheelEvent): void => {
       // stop scrolling if popup opened
@@ -88,7 +96,7 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
       }
 
       // is scroll allowed
-      if (!canScroll || document.querySelector("fullpage")) {
+      if (!canScroll) {
         return;
       }
 
@@ -170,7 +178,11 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
       body.classList.add("fullpage");
       window.addEventListener("mousewheel", changeSlider);
     }
-  }, [startScroll]);
+
+    return (): void => {
+      window.removeEventListener("mousewheel", changeSlider);
+    };
+  }, [startScroll, activeSec]);
 
   return (
     <div className={styles.fullpageWrapper} ref={refFullPage}>
