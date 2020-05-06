@@ -67,22 +67,20 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
     let scrollings = [];
     let prevTime = new Date().getTime();
 
-    body.classList.add("fullpage");
-
     const changeSlider = (e: WheelEvent): void => {
       // stop scrolling if popup opened
       if (body.classList.contains("removeScrolling")) {
         return;
       }
 
+      // is scroll allowed
+      if (!canScroll || document.querySelector("fullpage")) {
+        return;
+      }
+
       const curTime = new Date().getTime();
       // wheel distance
       const powerOfScroll = Math.abs(e.deltaY);
-
-      // is scroll allowed
-      if (!canScroll) {
-        return;
-      }
 
       // check if buttons are not pressed and power of scroll (to avoid touchpad inertia)
       if (!e.shiftKey && !e.ctrlKey && !e.altKey && powerOfScroll >= 25) {
@@ -152,11 +150,8 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
       }
     };
 
-    if (
-      document.querySelector(".fullpage") &&
-      window.innerWidth > 668 &&
-      startScroll
-    ) {
+    if (window.innerWidth > 668 && startScroll) {
+      body.classList.add("fullpage");
       window.addEventListener("mousewheel", changeSlider);
     }
   }, [startScroll]);

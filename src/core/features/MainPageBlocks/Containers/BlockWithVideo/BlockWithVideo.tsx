@@ -101,9 +101,9 @@ const BlockWithVideo: React.FunctionComponent = () => {
             <source src="/videos/AppNavi_animate.mp4" type="video/webm" />
           </video>
         </div>
-      </section>
 
-      {modalOpen && <ModalVideo clickHandler={handlerClosePopup} />}
+        {modalOpen && <ModalVideo clickHandler={handlerClosePopup} />}
+      </section>
     </>
   );
 };
