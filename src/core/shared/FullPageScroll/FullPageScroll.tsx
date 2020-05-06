@@ -13,10 +13,10 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
   const refFullPage = useRef<HTMLDivElement>();
 
   // move content to active section
-  const scrollContent = (wrapper: HTMLElement, count: number): void => {
+  const scrollContent = (wrapper: HTMLElement, scrollHeight: number): void => {
     wrapper.setAttribute(
       "style",
-      `transform: translate3d(0, -${count * 100}vh, 0)`
+      `transform: translate3d(0, ${scrollHeight}vh, 0)`
     );
   };
 
@@ -58,11 +58,25 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
     return Math.ceil(sum / number);
   };
 
+  // find active section whep page reloaded
+  const handlerOnLoad = (sections: NodeListOf<ChildNode>): number => {
+    let active = 0;
+
+    sections.forEach((el: HTMLElement, index: number) => {
+      if (el.offsetTop - window.pageYOffset < 10) {
+        active = index;
+      }
+    });
+
+    return active;
+  };
+
   useEffect(() => {
     const body = document.querySelector("body");
     const wrapper = refFullPage.current;
     const sections = wrapper.childNodes;
-    let spinValue = 0;
+    let spinValue = handlerOnLoad(sections);
+    let scrollHeight = 0;
     let canScroll = true;
     let scrollings = [];
     let prevTime = new Date().getTime();
@@ -120,6 +134,7 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
               // scroll down
               if (spinValue < sections.length - 1) {
                 spinValue += 1;
+                scrollHeight -= 100;
               } else {
                 // allow to scroll if this is the last section
                 canScroll = true;
@@ -129,6 +144,7 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
               // scroll up
               if (spinValue > 0) {
                 spinValue -= 1;
+                scrollHeight += 100;
               } else {
                 // allow to scroll if this is the first section
                 canScroll = true;
@@ -137,7 +153,7 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
             }
 
             // change section
-            scrollContent(wrapper, spinValue);
+            scrollContent(wrapper, scrollHeight);
             // change header styles
             changeHeaderStyle(sections, spinValue);
 

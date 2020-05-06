@@ -29,7 +29,11 @@ const BlockWithVideo: React.FunctionComponent = () => {
 
   return (
     <>
-      <section className={styles.mainWrapper} ref={refGridWrapper}>
+      <section
+        className={styles.mainWrapper}
+        ref={refGridWrapper}
+        id="first-section"
+      >
         <div className={styles.yellowBlock}>
           <div className={styles.bigLettersWrapper}>
             <div className={styles.firstLine}>
