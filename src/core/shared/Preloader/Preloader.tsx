@@ -23,7 +23,7 @@ const Preloader: React.FunctionComponent<PreloaderProps> = ({ isLoad }) => {
   return (
     !shouldRender && (
       <div className={classes} onAnimationEnd={onAnimationEnd}>
-        <video className={styles.video} autoPlay muted>
+        <video autoPlay muted>
           <source src="/videos/AppNavi_animate.mp4" type="video/webm" />
         </video>
       </div>

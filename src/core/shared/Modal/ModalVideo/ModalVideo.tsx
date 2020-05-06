@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import ReactPlayer from "react-player";
 import classNames from "classnames";
 import styles from "./modalVideo.module.scss";
@@ -36,6 +36,14 @@ const ModalVideo: React.FunctionComponent<ModalViewProps> = ({
   const handlePlayedTime = ({ played }): void => {
     setPlayedTime(parseFloat(played));
   };
+
+  useEffect(() => {
+    document.body.classList.add("removeScrolling");
+
+    return (): void => {
+      document.body.classList.remove("removeScrolling");
+    };
+  });
 
   useOutsideClick(refVideo, clickHandler);
 

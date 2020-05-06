@@ -14,7 +14,7 @@ const Home: NextPage = () => {
   const [isLoad, setLoad] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setLoad(true), 30000000);
+    setTimeout(() => setLoad(true), 3000);
   }, []);
 
   return (

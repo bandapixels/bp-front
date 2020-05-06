@@ -70,6 +70,11 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
     body.classList.add("fullpage");
 
     const changeSlider = (e: WheelEvent): void => {
+      // stop scrolling if popup opened
+      if (body.classList.contains("removeScrolling")) {
+        return;
+      }
+
       const curTime = new Date().getTime();
       // wheel distance
       const powerOfScroll = Math.abs(e.deltaY);
