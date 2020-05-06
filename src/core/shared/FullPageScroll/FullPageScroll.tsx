@@ -5,6 +5,7 @@ import styles from "./fullPageScroll.scss";
 const FullPageScroll: React.FunctionComponent = ({ children }) => {
   const refFullPage = useRef<HTMLDivElement>();
 
+  // move content to active section
   const scrollContent = (wrapper: HTMLElement, count: number): void => {
     wrapper.setAttribute(
       "style",
@@ -12,6 +13,7 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
     );
   };
 
+  // change header styles
   const changeHeaderStyle = (
     sections: NodeListOf<ChildNode>,
     index: number
@@ -35,9 +37,11 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
     }
   };
 
-  const getAverage = (elements, number): number => {
+  // gets the average of the last `number` elements of the given array
+  const getAverage = (elements: Array<number>, number: number): number => {
     let sum = 0;
 
+    // taking `number` elements from the end to make the average, if there are not enought, 1
     const lastElements = elements.slice(Math.max(elements.length - number, 1));
 
     for (let i = 0; i < lastElements.length; i++) {
@@ -60,12 +64,15 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
 
     const changeSlider = (e: WheelEvent): void => {
       const curTime = new Date().getTime();
+      // wheel distance
       const powerOfScroll = Math.abs(e.deltaY);
 
+      // is scroll allowed
       if (!canScroll) {
         return;
       }
 
+      // check if buttons are not pressed and power of scroll (to avoid touchpad inertia)
       if (!e.shiftKey && !e.ctrlKey && !e.altKey && powerOfScroll >= 25) {
         const value = -e.deltaY || -e.detail;
         const delta = Math.max(-1, Math.min(1, value));
@@ -73,14 +80,19 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
         const isScrollingVertically =
           Math.abs(e.deltaX) < Math.abs(e.deltaY) || !horizontalDetection;
 
+        // Limiting the array to 150 (lets not waste memory!)
         if (scrollings.length > 149) {
           scrollings.shift();
         }
 
+        // keeping record of the previous scrollings
         scrollings.push(Math.abs(value));
 
+        // time difference between the last scroll and the current one
         const timeDiff = curTime - prevTime;
         prevTime = curTime;
+
+        // enough to be consider a different scrolling action to scroll another section
         if (timeDiff > 200) {
           scrollings = [];
         }
@@ -90,28 +102,36 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
           const averageMiddle = getAverage(scrollings, 70);
           const isAccelerating = averageEnd >= averageMiddle;
 
+          // avoid multi swipes and horizontal scrolling
           if (isAccelerating && isScrollingVertically) {
             canScroll = false;
 
             if (delta < 0) {
+              // scroll down
               if (spinValue < sections.length - 1) {
                 spinValue += 1;
               } else {
+                // allow to scroll if this is the last section
                 canScroll = true;
                 return;
               }
             } else if (delta > 0) {
+              // scroll up
               if (spinValue > 0) {
                 spinValue -= 1;
               } else {
+                // allow to scroll if this is the first section
                 canScroll = true;
                 return;
               }
             }
 
+            // change section
             scrollContent(wrapper, spinValue);
+            // change header styles
             changeHeaderStyle(sections, spinValue);
 
+            // allow to scroll after animation ending
             setTimeout(() => {
               canScroll = true;
             }, 1000);
