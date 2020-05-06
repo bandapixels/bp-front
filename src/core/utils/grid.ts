@@ -49,7 +49,7 @@ export const addAnimationToGrid = (
 ): void => {
   // mouse position
   const x = e.pageX + wrapper.scrollLeft;
-  const y = e.pageY;
+  const y = e.pageY - window.pageYOffset;
   // line capture radius
   const [minX, maxX] = [x - 100, x + 100];
   const [minY, maxY] = [y - 100, y + 100];
