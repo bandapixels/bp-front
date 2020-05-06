@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NextPage } from "next";
 import StoreLayout from "../src/core/layouts/StoreLayout";
 import BlockWithVideo from "../src/core/features/MainPageBlocks/Containers/BlockWithVideo/BlockWithVideo";
@@ -8,11 +8,19 @@ import ContactsBlock from "../src/core/shared/ContactsBlock/ContactsBlock";
 import Projects from "../src/core/features/MainPageBlocks/Containers/Projects/Projects";
 import YourAdvantages from "../src/core/features/MainPageBlocks/Containers/YourAdvantages/YourAdvantages";
 import FullPageScroll from "../src/core/shared/FullPageScroll/FullPageScroll";
+import Preloader from "../src/core/shared/Preloader/Preloader";
 
 const Home: NextPage = () => {
+  const [isLoad, setLoad] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => setLoad(true), 30000000);
+  }, []);
+
   return (
     <StoreLayout>
-      <FullPageScroll>
+      <Preloader isLoad={isLoad} />
+      <FullPageScroll startScroll={isLoad}>
         <BlockWithVideo />
         <AboutUs />
         <YourAdvantages />

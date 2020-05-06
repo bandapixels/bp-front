@@ -2,7 +2,14 @@ import React, { useEffect, useRef } from "react";
 
 import styles from "./fullPageScroll.scss";
 
-const FullPageScroll: React.FunctionComponent = ({ children }) => {
+interface FullPageScrollProps {
+  startScroll: boolean;
+}
+
+const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
+  startScroll,
+  children
+}) => {
   const refFullPage = useRef<HTMLDivElement>();
 
   // move content to active section
@@ -140,10 +147,14 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
       }
     };
 
-    if (document.querySelector(".fullpage") && window.innerWidth > 668) {
+    if (
+      document.querySelector(".fullpage") &&
+      window.innerWidth > 668 &&
+      startScroll
+    ) {
       window.addEventListener("mousewheel", changeSlider);
     }
-  });
+  }, [startScroll]);
 
   return (
     <div className={styles.fullpageWrapper} ref={refFullPage}>
