@@ -35,50 +35,97 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
     }
   };
 
+  const getAverage = (elements, number): number => {
+    let sum = 0;
+
+    const lastElements = elements.slice(Math.max(elements.length - number, 1));
+
+    for (let i = 0; i < lastElements.length; i++) {
+      sum += lastElements[i];
+    }
+
+    return Math.ceil(sum / number);
+  };
+
   useEffect(() => {
     const body = document.querySelector("body");
     const wrapper = refFullPage.current;
     const sections = wrapper.childNodes;
     let spinValue = 0;
     let canScroll = true;
+    let scrollings = [];
+    let prevTime = new Date().getTime();
 
     body.classList.add("fullpage");
 
-    if (document.querySelector(".fullpage") && window.innerWidth > 668) {
-      window.addEventListener("mousewheel", (e: WheelEvent) => {
-        if (!canScroll) {
-          return;
+    const changeSlider = (e: WheelEvent): boolean => {
+      const curTime = new Date().getTime();
+      const powerOfScroll = Math.abs(e.deltaY);
+
+      if (!canScroll) {
+        return false;
+      }
+
+      if (!e.shiftKey && !e.ctrlKey && !e.altKey && powerOfScroll >= 25) {
+        const value = -e.deltaY || -e.detail;
+        const delta = Math.max(-1, Math.min(1, value));
+        const horizontalDetection = typeof e.deltaX !== "undefined";
+        const isScrollingVertically =
+          Math.abs(e.deltaX) < Math.abs(e.deltaY) || !horizontalDetection;
+
+        if (scrollings.length > 149) {
+          scrollings.shift();
         }
 
-        if (canScroll && !e.shiftKey && e.deltaX === 0) {
-          canScroll = false;
+        scrollings.push(Math.abs(value));
 
-          if (e.deltaY > 0) {
-            // down
-            if (spinValue < sections.length - 1) {
-              spinValue += 1;
-            } else {
-              canScroll = true;
-              return;
+        const timeDiff = curTime - prevTime;
+        prevTime = curTime;
+        if (timeDiff > 200) {
+          scrollings = [];
+        }
+
+        if (canScroll) {
+          const averageEnd = getAverage(scrollings, 10);
+          const averageMiddle = getAverage(scrollings, 70);
+          const isAccelerating = averageEnd >= averageMiddle;
+
+          if (isAccelerating && isScrollingVertically) {
+            canScroll = false;
+
+            if (delta < 0) {
+              if (spinValue < sections.length - 1) {
+                spinValue += 1;
+              } else {
+                canScroll = true;
+                return false;
+              }
+            } else if (delta > 0) {
+              if (spinValue > 0) {
+                spinValue -= 1;
+              } else {
+                canScroll = true;
+                return false;
+              }
             }
-          } else if (!canScroll) {
-            // up
-            if (spinValue > 0) {
-              spinValue -= 1;
-            } else {
+
+            scrollContent(wrapper, spinValue);
+            changeHeaderStyle(sections, spinValue);
+
+            setTimeout(() => {
               canScroll = true;
-              return;
-            }
+            }, 1000);
           }
 
-          scrollContent(wrapper, spinValue);
-          changeHeaderStyle(sections, spinValue);
+          return false;
         }
+      }
 
-        setTimeout(() => {
-          canScroll = true;
-        }, 1000);
-      });
+      return false;
+    };
+
+    if (document.querySelector(".fullpage") && window.innerWidth > 668) {
+      window.addEventListener("mousewheel", changeSlider);
     }
   });
 
