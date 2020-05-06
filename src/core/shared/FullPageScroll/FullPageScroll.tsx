@@ -58,12 +58,12 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
 
     body.classList.add("fullpage");
 
-    const changeSlider = (e: WheelEvent): boolean => {
+    const changeSlider = (e: WheelEvent): void => {
       const curTime = new Date().getTime();
       const powerOfScroll = Math.abs(e.deltaY);
 
       if (!canScroll) {
-        return false;
+        return;
       }
 
       if (!e.shiftKey && !e.ctrlKey && !e.altKey && powerOfScroll >= 25) {
@@ -98,14 +98,14 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
                 spinValue += 1;
               } else {
                 canScroll = true;
-                return false;
+                return;
               }
             } else if (delta > 0) {
               if (spinValue > 0) {
                 spinValue -= 1;
               } else {
                 canScroll = true;
-                return false;
+                return;
               }
             }
 
@@ -116,12 +116,8 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
               canScroll = true;
             }, 1000);
           }
-
-          return false;
         }
       }
-
-      return false;
     };
 
     if (document.querySelector(".fullpage") && window.innerWidth > 668) {
