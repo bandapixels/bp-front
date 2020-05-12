@@ -211,5 +211,10 @@ $contacts-text-font-sizes: (
     line-height: 65px;
     margin: 0 auto;
     background: #171718;
+
+    &.servicesBtn {
+      background: #EFE314;
+      color: #171718;
+    }
   }
 }

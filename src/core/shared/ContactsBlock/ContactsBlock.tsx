@@ -1,12 +1,20 @@
 import React, { useEffect, useRef } from "react";
+import classNames from "classnames";
 import { createGrid, addAnimationToGrid } from "../../utils/grid";
 
 import SocialList from "../Header/components/SocialList/SocialList";
 
 import styles from "./contactsBlock.module.scss";
 
-const ConstactsBlock: React.FunctionComponent = () => {
+interface ConstactsBlockProps {
+  classes?: string;
+}
+
+const ConstactsBlock: React.FunctionComponent<ConstactsBlockProps> = ({
+  classes
+}) => {
   const refGridWrapper = useRef<HTMLDivElement>();
+  const mailBtnClasses = classNames(styles.mailBtnMob, classes);
 
   useEffect(() => {
     const mainWrapper = refGridWrapper.current;
@@ -41,7 +49,7 @@ const ConstactsBlock: React.FunctionComponent = () => {
       <div className={styles.contactsSocial}>
         <SocialList />
       </div>
-      <a href="mailto:team@bandapixels.com" className={styles.mailBtnMob}>
+      <a href="mailto:team@bandapixels.com" className={mailBtnClasses}>
         team@bandapixels.com
       </a>
     </section>

@@ -39,6 +39,14 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
         header.className = "header";
         header.classList.add("smallDarkHeader");
         break;
+      case "full-yellow":
+        header.className = "header";
+        header.classList.add("smallFullYellowHeader");
+        break;
+      case "big-yellow":
+        header.className = "header";
+        header.classList.add("bigYellowHeader");
+        break;
       default:
         header.className = "header";
         break;

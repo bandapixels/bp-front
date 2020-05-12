@@ -34,7 +34,8 @@
 }
 
 .smallDarkHeader,
-.smallYellowHeader {
+.smallYellowHeader,
+.smallFullYellowHeader {
   .logoWrapper {
     width: 40px;
     height: 58px;
@@ -77,6 +78,25 @@
   }
 }
 
+.smallFullYellowHeader {
+  .bigBlackLogo {
+    background: url(/images/logo-small-yellow.svg) no-repeat center;
+  }
+}
+
+.bigYellowHeader {
+  .bigBlackLogo {
+    background: url(/images/logo-yellow.svg) no-repeat center;
+    background-size: contain;
+  }
+
+  .menuItem {
+    a:not(.activeLink) {
+      color: #171718;
+    }
+  }
+}
+
 .headerLeftPart{
   display: flex;
   flex-flow: row nowrap;
@@ -112,6 +132,20 @@
       left: 0;
       z-index: -1;
     }
+
+    .bigBlackLogo {
+      background: url(/images/logo-small-yellow.svg) no-repeat center;
+    }
+  
+    .openedMenuWrapper {
+      &:after {
+        background: transparent;
+      }
+  
+      .bigBlackLogo {
+        background: url(/images/logo-small-black.svg) no-repeat center;
+      }
+    }
   }
 
   .logoWrapper {
@@ -119,19 +153,5 @@
     height: 40px;
     margin: 0;
     flex: 0 0 auto;
-  }
-
-  .bigBlackLogo {
-    background: url(/images/logo-small-yellow.svg) no-repeat center;
-  }
-
-  .openedMenuWrapper {
-    &:after {
-      background: transparent;
-    }
-
-    .bigBlackLogo {
-      background: url(/images/logo-small-black.svg) no-repeat center;
-    }
   }
 }
