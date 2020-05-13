@@ -186,6 +186,24 @@ $welcome-text-font-sizes: (
   }
 }
 
+@keyframes rotateTitleRight {
+  0% {
+    transform: rotate(0)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes rotateTitleLeft {
+  0% {
+    transform: rotate(0)
+  }
+  100% {
+    transform: rotate(-360deg)
+  }
+}
+
 @media screen and (max-width: 1440px) {
   .welcomeWrapper {
     img {
@@ -248,6 +266,7 @@ $welcome-text-font-sizes: (
 
     .welcomeBtnsWrapper {
       flex: 0 0 150px;
+      width: 100%;
     }
 
     .welcomeBtn {

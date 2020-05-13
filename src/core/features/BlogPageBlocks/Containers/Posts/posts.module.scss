@@ -122,3 +122,72 @@
     margin-right: 60px;
   }
 }
+
+@media only screen and (max-height: 800px) and (min-width: $breakpoint-tablet) {
+  .blogWrapper {
+    h1 {
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint-tablet) {
+  .blogWrapper {
+    h1 {
+      font-size: 38px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint-mobile) {
+  .blogWrapper {
+    height: auto;
+    padding: 60px 15px 0;
+    background-color: #333;
+    background-image: linear-gradient( rgba(255,255,255,.1), transparent 1px), linear-gradient( 90deg, rgba(255,255,255,.1), transparent 1px);
+    background-size: 15px 15px;
+    background-position: center center;
+    display: block;
+
+    h1 {
+      font-size: 26px;
+      margin: 0 0 20px;
+    }
+  }
+
+  .blogContainer {
+    padding: 0;
+    display: block;
+    overflow: visible;
+    height: auto;
+  }
+
+  .blogItem {
+    display: block;
+    margin: 0 0 30px;
+
+    &:not(:last-child) {
+      margin-right: 0;
+    }
+  }
+
+  .blogImage {
+    margin: 0 auto 15px;
+  }
+
+  .postInfo { 
+    h4 {
+      margin: 0 0 5px;
+    }
+  }
+
+  .hashtags {
+    margin: 0 0 10px;
+  }
+
+  .postAnnotation {
+    margin: 0 0 10px;
+  }
+}

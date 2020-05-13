@@ -21,7 +21,11 @@ const WelcomeToBlog: React.FunctionComponent = () => {
   }, []);
 
   return (
-    <section className={styles.welcomeWrapper} ref={refGridWrapper}>
+    <section
+      className={styles.welcomeWrapper}
+      ref={refGridWrapper}
+      data-header="blog-header"
+    >
       <div className={styles.welcomeContent}>
         <div className={styles.welcomeInfo}>
           <h3 className={styles.welcomeTitle}>

@@ -97,6 +97,14 @@
   }
 }
 
+.blogHeader {
+  .menuItem {
+    a:not(.activeLink) {
+      color: #171718;
+    }
+  }
+}
+
 .headerLeftPart{
   display: flex;
   flex-flow: row nowrap;
