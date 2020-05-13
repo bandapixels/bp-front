@@ -132,6 +132,18 @@
   }
 }
 
+@media only screen and (max-width: 1500px) {
+  .line {
+    margin: 40px 0 0 0;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .line {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: $breakpoint-tablet) {
   .technologyTabs {
     flex: 0 0 300px;
@@ -139,10 +151,6 @@
 }
 
 @media only screen and (max-width: 820px) {
-  .line {
-    display: none;
-  }
-
   .technologyTabs {
     flex: 0 0 220px;
 
