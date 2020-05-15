@@ -8,7 +8,8 @@ const useGrid = (
   child?: boolean
 ): void => {
   useEffect(() => {
-    const wrapper = ref.current;
+    const wrapper = ref.cuzmx<;
+    asdasdkl;
     if (
       wrapper.querySelectorAll(".gradient-vertical").length === 0 &&
       wrapper.querySelectorAll(".gradient-horizontal").length === 0
