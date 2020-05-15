@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import classNames from "classnames";
 
 import styles from "./project.module.scss";
 
@@ -8,6 +9,8 @@ interface ProjectProps {
   problem?: string;
   video: string;
   url: string;
+  portrait: boolean;
+  mediaLeft: boolean;
 }
 
 const Project: React.FunctionComponent<ProjectProps> = ({
@@ -15,7 +18,9 @@ const Project: React.FunctionComponent<ProjectProps> = ({
   description,
   problem,
   video,
-  url
+  url,
+  portrait,
+  mediaLeft
 }) => {
   const [visiblePart, setVisiblePart] = useState(problem);
   const [hiddenPart, setHiddenPart] = useState("");
@@ -44,7 +49,7 @@ const Project: React.FunctionComponent<ProjectProps> = ({
 
   return (
     <div className={styles.projectItem}>
-      <div className={styles.projectContent}>
+      <div className={classNames(styles.projectContent, { mediaLeft })}>
         <div className={styles.projectInfo}>
           <h3 className={styles.projectTitle}>What problem do we solve</h3>
           <div className={styles.projectProblem}>
@@ -57,7 +62,12 @@ const Project: React.FunctionComponent<ProjectProps> = ({
             </span>
           )}
         </div>
-        <div className={styles.projectMedia} data-name={video} />
+        <div
+          className={classNames(styles.projectMedia, {
+            portrait
+          })}
+          data-name={video}
+        />
       </div>
       <div className={styles.projectsFooter}>
         <div className={styles.projectsFooterLeftPart}>

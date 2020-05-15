@@ -9,6 +9,14 @@
     "start": "next dev",
     "export": "next export"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "node_modules/.bin/eslint . --max-warnings=0",
+      "pre-push": "node_modules/.bin/eslint . --max-warnings=0"
+      "pre-commit": "npx eslint . --max-warnings=0",
+      "pre-push": "npx eslint . --max-warnings=0"
+    }
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -53,6 +61,7 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^1.7.0",
     "file-loader": "^6.0.0",
+    "husky": "^4.2.5",
     "lint-staged": "^10.0.8",
     "prettier": "1.19.1",
     "pretty-quick": "^2.0.1",

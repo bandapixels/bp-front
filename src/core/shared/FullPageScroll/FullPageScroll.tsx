@@ -87,7 +87,10 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
   useEffect(() => {
     const wrapper = refFullPage.current;
     const sections = wrapper.childNodes;
-    setActiveSec(handlerOnLoad(sections));
+
+    setTimeout(() => {
+      setActiveSec(handlerOnLoad(sections));
+    }, 100);
   }, []);
 
   useEffect(() => {

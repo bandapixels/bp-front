@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import useGrid from "../../../../utils/useGrid";
 
 import Project from "./components/Project/Project";
@@ -32,7 +32,9 @@ const Projects: React.FunctionComponent = () => {
         can be fixed easily and within a reasonable time.
       `,
       video: "video2",
-      url: "#"
+      url: "#",
+      portrait: false,
+      mediaLeft: false
     },
     {
       name: "TECOM-2",
@@ -50,7 +52,9 @@ const Projects: React.FunctionComponent = () => {
         reasonable consumer would expect it to.
       `,
       video: "video2",
-      url: "#"
+      url: "#",
+      portrait: true,
+      mediaLeft: true
     }
   ];
 
@@ -105,6 +109,8 @@ const Projects: React.FunctionComponent = () => {
             key={projectsInfo[activeSlide].name}
             video={projectsInfo[activeSlide].video}
             url={projectsInfo[activeSlide].url}
+            portrait={projectsInfo[activeSlide].portrait}
+            mediaLeft={projectsInfo[activeSlide].mediaLeft}
           />
         </div>
       </div>

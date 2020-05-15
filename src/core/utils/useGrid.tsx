@@ -8,13 +8,17 @@ const useGrid = (
   child?: boolean
 ): void => {
   useEffect(() => {
-    if (globalThis.outerWidth >= 1280) {
-      const wrapper = ref.current;
-
+    const wrapper = ref.current;
+    if (
+      wrapper.querySelectorAll(".gradient-vertical").length === 0 &&
+      wrapper.querySelectorAll(".gradient-horizontal").length === 0
+    ) {
       createGrid(wrapper, 75, child);
-      document.addEventListener("mousemove", e => {
-        addAnimationToGrid(e, mainColor, secondColor, wrapper, child);
-      });
+      if (globalThis.outerWidth >= 1280) {
+        document.addEventListener("mousemove", e => {
+          addAnimationToGrid(e, mainColor, secondColor, wrapper, child);
+        });
+      }
     }
   });
 };
