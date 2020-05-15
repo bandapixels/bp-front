@@ -114,7 +114,7 @@
 
 @media screen and (max-width: $breakpoint-tablet) {
   .header {
-    padding: 20px 0 0 30px
+    padding: 20px 0 0 30px;
   }
 
   .logoWrapper {
@@ -124,7 +124,7 @@
 }
 
 @media screen and (max-width: $breakpoint-mobile) {
-  .header{
+  .header {
     padding: 10px 15px;
 
     &:after {
@@ -145,7 +145,7 @@
       background: url(/images/logo-small-yellow.svg) no-repeat center;
     }
   
-    .openedMenuWrapper {
+    &.openedMenuWrapper {
       &:after {
         background: transparent;
       }

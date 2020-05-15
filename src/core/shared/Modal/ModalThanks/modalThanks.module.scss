@@ -1,7 +1,7 @@
 @import "../../../../assets/scss/breakPoints.scss";
 
 .modalOverlay {
-  background: #171718;
+  background: rgba(23, 23, 24, .5);
   position: absolute;
   top: 0;
   right: 0;
@@ -36,6 +36,7 @@
 
   .modalWrapThanks {
     padding: 50px 30px;
+    width: calc(100% - 30px);
 
     p {
       font-size: 16px;

@@ -13,6 +13,9 @@
     right: 0;
     bottom: 0;
     background: #fff;
+    background-image: linear-gradient(rgba(23, 23, 24, 0.1), transparent 1px), linear-gradient(90deg, rgba(23, 23, 24, 0.1), transparent 1px);
+    background-size: 15px 15px;
+    background-position: center center;
     z-index: -1;
     overflow: auto;
     padding: 0 15px 15px;

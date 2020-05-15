@@ -8,7 +8,6 @@ import styles from "./projects.module.scss";
 
 const Projects: React.FunctionComponent = () => {
   const refGridWrapper = useRef<HTMLDivElement>();
-  const sliderList = useRef<HTMLDivElement>();
   const [activeSlide, setActiveSlide] = useState(0);
 
   const projectsInfo = [
@@ -106,7 +105,7 @@ const Projects: React.FunctionComponent = () => {
         <span>Our</span> projects
       </h3>
       <div className={styles.projectsSlider}>
-        <div className={styles.projectsSliderList} ref={sliderList}>
+        <div className={styles.projectsSliderList}>
           <Project
             name={projectsInfo[activeSlide].name}
             description={projectsInfo[activeSlide].description}

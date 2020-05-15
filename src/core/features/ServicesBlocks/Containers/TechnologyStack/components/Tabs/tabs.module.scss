@@ -139,14 +139,40 @@
 }
 
 @media only screen and (max-width: 1300px) {
+  .technologyTabs {
+    li.technologyActive {
+      button {
+        max-width: 290px;
+      }
+    }
+  }
+
   .line {
-    display: none;
+    margin: 40px 0 0 -8vw;
   }
 }
 
 @media only screen and (max-width: $breakpoint-tablet) {
   .technologyTabs {
     flex: 0 0 300px;
+  }
+
+  .technologyTabs {
+    li.technologyActive {
+      button {
+        max-width: 250px;
+      }
+    }
+  }
+
+  .line {
+    margin: 40px 0 0 -1vw;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .line {
+    display: none;
   }
 }
 
