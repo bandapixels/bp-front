@@ -24,7 +24,7 @@ const ModalThanks: React.FunctionComponent<ModalThanksProps> = ({
   useOutsideClick(refThanks, clickHandler);
 
   return (
-    <div className={styles.modalOverlay}>
+    <div className={styles.modalOverlayThanks}>
       <div className={styles.modalWrapThanks}>
         <div className={styles.thanksWrapper} ref={refThanks}>
           <p>

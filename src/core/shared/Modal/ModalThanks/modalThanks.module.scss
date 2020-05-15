@@ -1,6 +1,6 @@
 @import "../../../../assets/scss/breakPoints.scss";
 
-.modalOverlay {
+.modalOverlayThanks {
   background: rgba(23, 23, 24, .5);
   position: absolute;
   top: 0;
@@ -30,7 +30,7 @@
 }
 
 @media screen and (max-width: $breakpoint-mobile) {
-  .modalOverlay {
+  .modalOverlayThanks {
     position: fixed;
   }
 

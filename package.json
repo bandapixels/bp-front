@@ -39,6 +39,7 @@
     "sass": "^1.26.3"
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.10",
     "@types/node": "^13.11.0",
     "@types/react": "^16.9.32",
     "@typescript-eslint/eslint-plugin": "^2.26.0",

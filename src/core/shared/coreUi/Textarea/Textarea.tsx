@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import classNames from "classnames";
 import styles from "./textarea.module.scss";
 
 interface TextareaProps {
@@ -16,15 +17,22 @@ const Textarea: React.FunctionComponent<TextareaProps> = ({
   disabled,
   handlerOnChange
 }) => {
+  const [textareaValue, setTextareaValue] = useState("");
+
   return (
     <textarea
       id={id}
       name={name}
       placeholder={placeholder}
-      className={styles.textarea}
+      className={classNames(styles.textarea, {
+        filledText: textareaValue.length > 0
+      })}
       disabled={disabled}
       rows={20}
-      onChange={(e): void => handlerOnChange(e)}
+      onChange={(e): void => {
+        handlerOnChange(e);
+        setTextareaValue(e.target.value);
+      }}
     />
   );
 };

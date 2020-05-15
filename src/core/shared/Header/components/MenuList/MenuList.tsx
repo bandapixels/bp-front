@@ -22,7 +22,7 @@ const MenuList: React.FunctionComponent = () => {
     },
     {
       name: "Contacts",
-      href: "#"
+      href: "/contacts"
     }
   ];
 

@@ -1,21 +1,13 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import Tabs from "./components/Tabs/Tabs";
 import Tab from "./components/Tab/Tab";
-import { createGrid, addAnimationToGrid } from "../../../../utils/grid";
+import useGrid from "../../../../utils/useGrid";
 import styles from "./technologyStack.module.scss";
 
 const TechnologyStack: React.FunctionComponent = () => {
   const refGridWrapper = useRef<HTMLDivElement>();
 
-  useEffect(() => {
-    const mainWrapper = refGridWrapper.current;
-
-    createGrid(mainWrapper, 75);
-
-    document.addEventListener("mousemove", e => {
-      addAnimationToGrid(e, "rgba(23,23,24,.1)", "#fff", mainWrapper);
-    });
-  });
+  useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#fff");
 
   return (
     <section

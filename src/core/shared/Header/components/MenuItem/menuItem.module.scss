@@ -16,6 +16,10 @@
     line-height: 130%;
     transition: 1s;
 
+    &.contactsHeader {
+      color: #171718;
+    }
+
     &.activeLink {
       color: #EFE314;
       position: relative;

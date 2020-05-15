@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import { createGrid, addAnimationToGrid } from "../../../../utils/grid";
+import React, { useRef, useState } from "react";
+import useGrid from "../../../../utils/useGrid";
 
 import styles from "./welcomeToBlog.module.scss";
 
@@ -10,15 +10,7 @@ const WelcomeToBlog: React.FunctionComponent = () => {
   const [roundedTextArr] = useState(roundedText.split(""));
   const refGridWrapper = useRef<HTMLDivElement>();
 
-  useEffect(() => {
-    const mainWrapper = refGridWrapper.current;
-
-    createGrid(mainWrapper, 75);
-
-    document.addEventListener("mousemove", e => {
-      addAnimationToGrid(e, "rgba(23,23,24,.1)", "#171718", mainWrapper);
-    });
-  }, []);
+  useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#171718");
 
   return (
     <section

@@ -44,6 +44,10 @@
     padding: 10px 20px;
     transition: .3s;
 
+    &.filledInput {
+      background: #fff;
+    }
+
     &:focus {
       background: #fff;
     }

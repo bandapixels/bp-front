@@ -1,30 +1,22 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import classNames from "classnames";
-import { createGrid, addAnimationToGrid } from "../../utils/grid";
+import useGrid from "../../utils/useGrid";
 
 import SocialList from "../Header/components/SocialList/SocialList";
 
 import styles from "./contactsBlock.module.scss";
 
-interface ConstactsBlockProps {
+interface ContactsBlockProps {
   classes?: string;
 }
 
-const ConstactsBlock: React.FunctionComponent<ConstactsBlockProps> = ({
+const ContactsBlock: React.FunctionComponent<ContactsBlockProps> = ({
   classes
 }) => {
   const refGridWrapper = useRef<HTMLDivElement>();
   const mailBtnClasses = classNames(styles.mailBtnMob, classes);
 
-  useEffect(() => {
-    const mainWrapper = refGridWrapper.current;
-
-    createGrid(mainWrapper, 75);
-
-    document.addEventListener("mousemove", e => {
-      addAnimationToGrid(e, "rgba(23,23,24,.1)", "#171718", mainWrapper);
-    });
-  }, []);
+  useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#171718");
 
   return (
     <section
@@ -56,4 +48,4 @@ const ConstactsBlock: React.FunctionComponent<ConstactsBlockProps> = ({
   );
 };
 
-export default ConstactsBlock;
+export default ContactsBlock;

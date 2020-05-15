@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { createGrid, addAnimationToGrid } from "../../../../utils/grid";
+import useGrid from "../../../../utils/useGrid";
 
 import Project from "./components/Project/Project";
 import Button from "../../../../shared/coreUi/Button/Button";
@@ -85,15 +85,7 @@ const Projects: React.FunctionComponent = () => {
     }
   };
 
-  useEffect(() => {
-    const mainWrapper = refGridWrapper.current;
-
-    createGrid(mainWrapper, 75);
-
-    document.addEventListener("mousemove", e => {
-      addAnimationToGrid(e, "rgba(23,23,24,.1)", "#171718", mainWrapper);
-    });
-  }, []);
+  useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#171718");
 
   return (
     <section

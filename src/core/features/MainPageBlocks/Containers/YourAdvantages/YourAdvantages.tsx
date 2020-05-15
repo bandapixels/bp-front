@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { createGrid, addAnimationToGrid } from "../../../../utils/grid";
+import useGrid from "../../../../utils/useGrid";
 
 import styles from "./yourAdvantages.module.scss";
 
@@ -31,16 +31,10 @@ const YourAdvantages: React.FunctionComponent = () => {
   };
 
   useEffect(() => {
-    const mainWrapper = refGridWrapper.current;
-
-    createGrid(mainWrapper, 75, true);
-
-    document.addEventListener("mousemove", e => {
-      addAnimationToGrid(e, "rgba(23,23,24,.1)", "#fff", mainWrapper, true);
-    });
-
     highlightAdvantages();
   }, []);
+
+  useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#fff", true);
 
   return (
     <section

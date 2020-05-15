@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { createGrid, addAnimationToGrid } from "../../../../utils/grid";
+import useGrid from "../../../../utils/useGrid";
 
 import styles from "./posts.module.scss";
 
@@ -62,15 +62,7 @@ const Posts: React.FunctionComponent = () => {
     }
   ];
 
-  useEffect(() => {
-    const mainWrapper = refGridWrapper.current;
-
-    createGrid(mainWrapper, 75);
-
-    document.addEventListener("mousemove", e => {
-      addAnimationToGrid(e, "rgba(23,23,24,.1)", "#fff", mainWrapper);
-    });
-  }, []);
+  useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#fff");
 
   return (
     <section

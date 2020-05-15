@@ -12,7 +12,8 @@ interface MenuItemProps {
 const MenuItem: React.FunctionComponent<MenuItemProps> = ({ name, href }) => {
   const router = useRouter();
   const linkStyles = classNames({
-    activeLink: href === router.pathname
+    activeLink: href === router.pathname,
+    contactsHeader: router.pathname === "/contacts"
   });
 
   return (
