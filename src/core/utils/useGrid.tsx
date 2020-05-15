@@ -9,6 +9,7 @@ const useGrid = (
 ): void => {
   useEffect(() => {
     const wrapper = ref.current;
+    console.log(123123);
     if (
       wrapper.querySelectorAll(".gradient-vertical").length === 0 &&
       wrapper.querySelectorAll(".gradient-horizontal").length === 0

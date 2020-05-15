@@ -11,8 +11,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "lint-staged"
+      "pre-commit": "npx eslint . --max-warnings=0",
+      "pre-push": "npx eslint . --max-warnings=0"
     }
   },
   "keywords": [],
