@@ -5,7 +5,6 @@ const initialState: FullPageScrollState = {
 };
 
 const reducer = (state = initialState, action): FullPageScrollState => {
-  console.log(state);
   switch (action.type) {
     case "CHANGE_SECTION":
       return {
