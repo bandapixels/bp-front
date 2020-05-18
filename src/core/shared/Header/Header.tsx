@@ -41,16 +41,15 @@ const Header: React.FunctionComponent = () => {
       </div>
       <div className={styles.headerLeftPart}>
         <MenuList />
-        <Button classes="headerBtn">
-          <span
-            onClick={(): void => {
-              scrollToForm();
-              dispatch(changeSection(4));
-            }}
-          >
-            discuss the project
-          </span>
-        </Button>
+        <button
+          className={styles.headerBtn}
+          onClick={(): void => {
+            scrollToForm();
+            dispatch(changeSection(4));
+          }}
+        >
+          discuss the project
+        </button>
         <Button classes="menuSwitchBtn" handlerClick={handlerOpenMobileMenu} />
       </div>
       <OpenedMobileMenu openedMenu={openedMenu} />
