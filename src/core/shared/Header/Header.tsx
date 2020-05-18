@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import classNames from "classnames";
 import { changeSection } from "../FullPageScroll/fullPageScroll.actions";
@@ -14,6 +15,7 @@ const Header: React.FunctionComponent = () => {
   const [openedMenu, setOpenedMenu] = useState(false);
   const activeSection = useSelector((state: AppState) => getSection(state));
   const dispatch = useDispatch();
+  const router = useRouter();
 
   const handlerOpenMobileMenu = (): void => {
     setOpenedMenu(!openedMenu);
@@ -28,6 +30,13 @@ const Header: React.FunctionComponent = () => {
     if (needToScroll !== 0) {
       wrapper.style.transform = `translateY(${scrollHeight + needToScroll}vh)`;
     }
+
+    dispatch(changeSection(4));
+  };
+
+  const scrollFromSeconderyPages = (): void => {
+    dispatch(changeSection(0));
+    router.push("/").then(() => setTimeout(() => scrollToForm(), 200));
   };
 
   const headerStyles = classNames(styles.header, {
@@ -44,8 +53,11 @@ const Header: React.FunctionComponent = () => {
         <button
           className={styles.headerBtn}
           onClick={(): void => {
-            scrollToForm();
-            dispatch(changeSection(4));
+            if (router.pathname === "/") {
+              scrollToForm();
+            } else {
+              scrollFromSeconderyPages();
+            }
           }}
         >
           discuss the project
