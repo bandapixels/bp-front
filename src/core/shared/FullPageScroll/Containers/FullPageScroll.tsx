@@ -156,26 +156,18 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
           if (isAccelerating && isScrollingVertically) {
             canScroll = false;
 
-            if (delta < 0) {
+            if (delta < 0 && spinValue < sections.length - 1) {
               // scroll down
-              if (spinValue < sections.length - 1) {
-                spinValue += 1;
-                scrollHeight -= 100;
-              } else {
-                // allow to scroll if this is the last section
-                canScroll = true;
-                return;
-              }
-            } else if (delta > 0) {
+              spinValue += 1;
+              scrollHeight -= 100;
+            } else if (delta > 0 && spinValue > 0) {
               // scroll up
-              if (spinValue > 0) {
-                spinValue -= 1;
-                scrollHeight += 100;
-              } else {
-                // allow to scroll if this is the first section
-                canScroll = true;
-                return;
-              }
+              spinValue -= 1;
+              scrollHeight += 100;
+            } else {
+              // allow to scroll if this is the first section
+              canScroll = true;
+              return;
             }
 
             // change section
