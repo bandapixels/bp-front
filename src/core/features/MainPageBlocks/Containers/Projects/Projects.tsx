@@ -33,8 +33,8 @@ const Projects: React.FunctionComponent = () => {
       `,
       video: "video2",
       url: "#",
-      portrait: false,
-      mediaLeft: false
+      orientation: "landscape",
+      position: "right"
     },
     {
       name: "TECOM-2",
@@ -53,8 +53,8 @@ const Projects: React.FunctionComponent = () => {
       `,
       video: "video2",
       url: "#",
-      portrait: true,
-      mediaLeft: true
+      orientation: "portrait",
+      position: "left"
     }
   ];
 
@@ -109,8 +109,8 @@ const Projects: React.FunctionComponent = () => {
             key={projectsInfo[activeSlide].name}
             video={projectsInfo[activeSlide].video}
             url={projectsInfo[activeSlide].url}
-            portrait={projectsInfo[activeSlide].portrait}
-            mediaLeft={projectsInfo[activeSlide].mediaLeft}
+            orientation={projectsInfo[activeSlide].orientation}
+            position={projectsInfo[activeSlide].position}
           />
         </div>
       </div>

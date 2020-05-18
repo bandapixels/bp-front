@@ -1,4 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { getSection } from "../fullPageScroll.selectors";
+import { changeSection } from "../fullPageScroll.actions";
+import { AppState } from "../../../store/store";
 
 import styles from "./fullPageScroll.scss";
 
@@ -11,7 +15,8 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
   children
 }) => {
   const refFullPage = useRef<HTMLDivElement>();
-  const [activeSec, setActiveSec] = useState(0);
+  const activeSec = useSelector((state: AppState) => getSection(state));
+  const dispatch = useDispatch();
 
   // move content to active section
   const scrollContent = (wrapper: HTMLElement, scrollHeight: number): void => {
@@ -89,7 +94,7 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
     const sections = wrapper.childNodes;
 
     setTimeout(() => {
-      setActiveSec(handlerOnLoad(sections));
+      dispatch(changeSection(handlerOnLoad(sections)));
     }, 100);
   }, []);
 
@@ -200,9 +205,11 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
   }, [startScroll, activeSec]);
 
   return (
-    <div className={styles.fullpageWrapper} ref={refFullPage}>
-      {children}
-    </div>
+    <>
+      <div className={styles.fullpageWrapper} ref={refFullPage}>
+        {children}
+      </div>
+    </>
   );
 };
 

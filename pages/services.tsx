@@ -4,7 +4,7 @@ import StoreLayout from "../src/core/layouts/StoreLayout";
 import WeOffer from "../src/core/features/ServicesBlocks/Containers/WeOffer/WeOffer";
 import TechnologyStack from "../src/core/features/ServicesBlocks/Containers/TechnologyStack/TechnologyStack";
 import Contacts from "../src/core/shared/ContactsBlock/ContactsBlock";
-import FullPageScroll from "../src/core/shared/FullPageScroll/FullPageScroll";
+import FullPageScroll from "../src/core/shared/FullPageScroll/Containers/FullPageScroll";
 
 const Services: NextPage = () => {
   return (

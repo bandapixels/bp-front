@@ -9,8 +9,8 @@ interface ProjectProps {
   problem?: string;
   video: string;
   url: string;
-  portrait: boolean;
-  mediaLeft: boolean;
+  orientation: string;
+  position: string;
 }
 
 const Project: React.FunctionComponent<ProjectProps> = ({
@@ -19,8 +19,8 @@ const Project: React.FunctionComponent<ProjectProps> = ({
   problem,
   video,
   url,
-  portrait,
-  mediaLeft
+  orientation,
+  position
 }) => {
   const [visiblePart, setVisiblePart] = useState(problem);
   const [hiddenPart, setHiddenPart] = useState("");
@@ -49,7 +49,11 @@ const Project: React.FunctionComponent<ProjectProps> = ({
 
   return (
     <div className={styles.projectItem}>
-      <div className={classNames(styles.projectContent, { mediaLeft })}>
+      <div
+        className={classNames(styles.projectContent, {
+          mediaLeft: position === "left"
+        })}
+      >
         <div className={styles.projectInfo}>
           <h3 className={styles.projectTitle}>What problem do we solve</h3>
           <div className={styles.projectProblem}>
@@ -64,7 +68,7 @@ const Project: React.FunctionComponent<ProjectProps> = ({
         </div>
         <div
           className={classNames(styles.projectMedia, {
-            portrait
+            portrait: orientation === "portrait"
           })}
           data-name={video}
         />

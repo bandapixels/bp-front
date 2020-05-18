@@ -7,7 +7,7 @@ import AboutUs from "../src/core/features/MainPageBlocks/Containers/AboutUs/Abou
 import ContactsBlock from "../src/core/shared/ContactsBlock/ContactsBlock";
 import Projects from "../src/core/features/MainPageBlocks/Containers/Projects/Projects";
 import YourAdvantages from "../src/core/features/MainPageBlocks/Containers/YourAdvantages/YourAdvantages";
-import FullPageScroll from "../src/core/shared/FullPageScroll/FullPageScroll";
+import FullPageScroll from "../src/core/shared/FullPageScroll/Containers/FullPageScroll";
 // import Preloader from "../src/core/shared/Preloader/Preloader";
 
 const Home: NextPage = () => {
