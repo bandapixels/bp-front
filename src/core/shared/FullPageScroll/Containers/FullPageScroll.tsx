@@ -20,10 +20,7 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
 
   // move content to active section
   const scrollContent = (wrapper: HTMLElement, scrollHeight: number): void => {
-    wrapper.setAttribute(
-      "style",
-      `transform: translate3d(0, ${scrollHeight}vh, 0)`
-    );
+    wrapper.setAttribute("style", `transform: translateY(${scrollHeight}vh)`);
   };
 
   // change header styles
@@ -103,7 +100,8 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
     const wrapper = refFullPage.current;
     const sections = wrapper.childNodes;
     let spinValue = activeSec;
-    let scrollHeight = 0;
+    let scrollHeight =
+      +wrapper.getAttribute("style")?.replace(/[^-\d]/g, "") || 0;
     let canScroll = true;
     let scrollings = [];
     let prevTime = new Date().getTime();
@@ -188,6 +186,7 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
             // allow to scroll after animation ending
             setTimeout(() => {
               canScroll = true;
+              dispatch(changeSection(spinValue));
             }, 1000);
           }
         }
