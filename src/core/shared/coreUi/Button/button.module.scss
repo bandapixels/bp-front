@@ -47,6 +47,10 @@
     &:before {
       background: #171718;
     }
+
+    &:after {
+      background: url(/images/icons/arrow-white.svg) no-repeat center;
+    }
   }
 }
 

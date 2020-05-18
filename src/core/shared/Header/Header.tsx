@@ -60,7 +60,7 @@ const Header: React.FunctionComponent = () => {
             }
           }}
         >
-          discuss the project
+          <span>discuss the project</span>
         </button>
         <Button classes="menuSwitchBtn" handlerClick={handlerOpenMobileMenu} />
       </div>
