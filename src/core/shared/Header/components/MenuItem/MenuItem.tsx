@@ -20,8 +20,11 @@ const MenuItem: React.FunctionComponent<MenuItemProps> = ({ name, href }) => {
 
   const changeLink = (e, link: string): void => {
     e.preventDefault();
-    dispatch(changeSection(0));
-    router.push(link);
+
+    if (router.pathname !== link) {
+      dispatch(changeSection(0));
+      router.push(link);
+    }
   };
 
   return (
