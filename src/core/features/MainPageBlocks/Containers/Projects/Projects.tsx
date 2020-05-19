@@ -70,23 +70,30 @@ const Projects: React.FunctionComponent = () => {
   };
 
   const handlerPrevSlide = (): void => {
-    if (activeSlide > 0) {
-      const newActiveSlide = activeSlide - 1;
+    let newActiveSlide = activeSlide;
 
-      setActiveSlide(newActiveSlide);
-      scrollTopMobile();
+    if (activeSlide > 0) {
+      newActiveSlide = activeSlide - 1;
+    } else if (activeSlide === 0) {
+      newActiveSlide = projectsInfo.length - 1;
     }
+
+    setActiveSlide(newActiveSlide);
+    scrollTopMobile();
   };
 
   const handlerNextSlide = (): void => {
-    const slidesQuantity = projectsInfo.length - 1;
+    const lastSlide = projectsInfo.length - 1;
+    let newActiveSlide = activeSlide;
 
-    if (slidesQuantity > activeSlide) {
-      const newActiveSlide = activeSlide + 1;
-
-      setActiveSlide(newActiveSlide);
-      scrollTopMobile();
+    if (lastSlide > activeSlide) {
+      newActiveSlide = activeSlide + 1;
+    } else if (lastSlide === activeSlide) {
+      newActiveSlide = 0;
     }
+
+    setActiveSlide(newActiveSlide);
+    scrollTopMobile();
   };
 
   useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#171718");

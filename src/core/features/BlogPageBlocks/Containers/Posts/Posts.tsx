@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import useGrid from "../../../../utils/useGrid";
 
 import styles from "./posts.module.scss";
@@ -73,7 +73,7 @@ const Posts: React.FunctionComponent = () => {
       <h1>Blog</h1>
       <div className={styles.blogContainer}>
         {postsData.map(post => (
-          <div className={styles.blogItem} key={post.name}>
+          <a className={styles.blogItem} key={post.name} href={post.link}>
             <div className={styles.blogImage}>
               <img src={post.image} alt={post.name} />
             </div>
@@ -88,9 +88,9 @@ const Posts: React.FunctionComponent = () => {
                 })}
               </div>
               <div className={styles.postAnnotation}>{post.annotation}</div>
-              <a href={post.link}>Read more</a>
+              <p className={styles.postReadMore}>Read more</p>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </section>

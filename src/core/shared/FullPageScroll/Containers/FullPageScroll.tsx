@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef /* useState */ } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getSection } from "../fullPageScroll.selectors";
 import { changeSection } from "../fullPageScroll.actions";
@@ -17,10 +17,12 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
   const refFullPage = useRef<HTMLDivElement>();
   const activeSec = useSelector((state: AppState) => getSection(state));
   const dispatch = useDispatch();
+  // const [animationChange, setAnimationChange] = useState(true);
 
   // move content to active section
   const scrollContent = (wrapper: HTMLElement, scrollHeight: number): void => {
     wrapper.setAttribute("style", `transform: translateY(${scrollHeight}vh)`);
+    // setAnimationChange(false);
   };
 
   // change header styles
@@ -86,6 +88,16 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
     return active;
   };
 
+  const checkForHorizontal = (
+    sections: NodeListOf<ChildNode>,
+    index: number
+  ): string => {
+    const section = sections[index] as HTMLElement;
+    const horizontalScroll = section.dataset.horizontal;
+
+    return horizontalScroll;
+  };
+
   useEffect(() => {
     const wrapper = refFullPage.current;
     const sections = wrapper.childNodes;
@@ -109,8 +121,28 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
 
     const changeSlider = (e: WheelEvent): void => {
       // stop scrolling if popup opened
-      if (body.classList.contains("removeScrolling")) {
+      if (
+        body.classList.contains("removeScrolling")
+        //  || !animationChange
+      ) {
         return;
+      }
+
+      const horizontalLayout = checkForHorizontal(sections, spinValue);
+
+      if (horizontalLayout && e.deltaY > 0) {
+        const activeSection = sections[spinValue] as HTMLElement;
+        const scrollDiff =
+          activeSection.scrollWidth -
+          Math.floor(activeSection.scrollLeft + activeSection.offsetWidth);
+
+        if (scrollDiff <= 5) {
+          activeSection.scrollLeft = 0;
+          canScroll = true;
+        } else {
+          activeSection.scrollLeft += e.deltaY;
+          canScroll = false;
+        }
       }
 
       // is scroll allowed
@@ -174,7 +206,6 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
             scrollContent(wrapper, scrollHeight);
             // change header styles
             changeHeaderStyle(sections, spinValue);
-
             // allow to scroll after animation ending
             setTimeout(() => {
               canScroll = true;
@@ -195,9 +226,17 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
     };
   }, [startScroll, activeSec]);
 
+  // const handlerAnimation = (): void => {
+  //   setAnimationChange(true);
+  // };
+
   return (
     <>
-      <div className={styles.fullpageWrapper} ref={refFullPage}>
+      <div
+        className={styles.fullpageWrapper}
+        ref={refFullPage}
+        // onAnimationEnd={handlerAnimation}
+      >
         {children}
       </div>
     </>

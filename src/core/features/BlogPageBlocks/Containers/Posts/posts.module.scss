@@ -66,12 +66,11 @@
     margin: 0 0 10px;
   }
 
-  a {
+  .postReadMore {
     font-size: 20px;
     line-height: 150%;
     letter-spacing: 0.03em;
     color: #EFE314;
-    text-decoration: none;
   }
 }
 
@@ -113,6 +112,7 @@
   flex-flow: row nowrap;
   align-items: center;
   flex: 0 0 auto;
+  text-decoration: none;
 
   &:nth-child(odd) {
     align-self: flex-end;

@@ -46,10 +46,12 @@
 
     &.filledInput {
       background: #fff;
+      border: 1px solid transparent;
     }
 
     &:focus {
       background: #fff;
+      border: 1px solid transparent;
     }
 
     &:disabled {
