@@ -15,11 +15,9 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
   children
 }) => {
   const [activeAnimation, setActiveAnimation] = useState(false);
-  const [loadSection, setLoadSection] = useState(0);
   const refFullPage = useRef<HTMLDivElement>();
   const activeSec = useSelector((state: AppState) => getSection(state));
   const dispatch = useDispatch();
-  console.log(activeSec);
 
   // move content to active section
   const scrollContent = (wrapper: HTMLElement, scrollHeight: number): void => {
@@ -108,7 +106,6 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
       const sectionOnLoad = handlerOnLoad(sections);
 
       dispatch(changeSection(sectionOnLoad));
-      setLoadSection(sectionOnLoad);
     }, 150);
   }, []);
 
