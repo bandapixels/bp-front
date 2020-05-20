@@ -126,7 +126,12 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
       const horizontalLayout = checkForHorizontal(sections, spinValue);
 
       if (horizontalLayout && e.deltaY > 0) {
-        const activeSection = sections[spinValue] as HTMLElement;
+        let activeSection = sections[spinValue] as HTMLElement;
+        activeSection = activeSection.dataset.child
+          ? (activeSection.querySelector(
+              `.${activeSection.dataset.child}`
+            ) as HTMLElement)
+          : activeSection;
         const scrollDiff =
           activeSection.scrollWidth -
           Math.floor(activeSection.scrollLeft + activeSection.offsetWidth);

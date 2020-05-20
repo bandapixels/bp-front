@@ -69,6 +69,8 @@ const Posts: React.FunctionComponent = () => {
       className={styles.blogWrapper}
       ref={refGridWrapper}
       data-header="full-yellow"
+      data-horizontal
+      data-child="blogContainer"
     >
       <h1>Blog</h1>
       <div className={styles.blogContainer}>
