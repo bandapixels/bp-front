@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getSection } from "../fullPageScroll.selectors";
 import { changeSection } from "../fullPageScroll.actions";
@@ -17,10 +17,12 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
   const refFullPage = useRef<HTMLDivElement>();
   const activeSec = useSelector((state: AppState) => getSection(state));
   const dispatch = useDispatch();
+  const [activeAnimation, setActiveAnimation] = useState(false);
 
   // move content to active section
   const scrollContent = (wrapper: HTMLElement, scrollHeight: number): void => {
     wrapper.setAttribute("style", `transform: translateY(${scrollHeight}vh)`);
+    setActiveAnimation(true);
   };
 
   // change header styles
@@ -123,9 +125,13 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
         return;
       }
 
+      if (activeAnimation) {
+        return;
+      }
+
       const horizontalLayout = checkForHorizontal(sections, spinValue);
 
-      if (horizontalLayout && e.deltaY > 0) {
+      if (horizontalLayout && e.deltaY > 0 && !activeAnimation) {
         let activeSection = sections[spinValue] as HTMLElement;
         activeSection = activeSection.dataset.child
           ? (activeSection.querySelector(
@@ -146,7 +152,7 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
       }
 
       // is scroll allowed
-      if (!canScroll) {
+      if (!canScroll || activeAnimation) {
         return;
       }
 
@@ -209,6 +215,7 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
             // allow to scroll after animation ending
             setTimeout(() => {
               canScroll = true;
+              setActiveAnimation(false);
               dispatch(changeSection(spinValue));
             }, 1000);
           }
