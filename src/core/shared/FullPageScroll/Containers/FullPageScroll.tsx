@@ -1,4 +1,4 @@
-import React, { useEffect, useRef /* useState */ } from "react";
+import React, { useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getSection } from "../fullPageScroll.selectors";
 import { changeSection } from "../fullPageScroll.actions";
@@ -17,12 +17,10 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
   const refFullPage = useRef<HTMLDivElement>();
   const activeSec = useSelector((state: AppState) => getSection(state));
   const dispatch = useDispatch();
-  // const [animationChange, setAnimationChange] = useState(true);
 
   // move content to active section
   const scrollContent = (wrapper: HTMLElement, scrollHeight: number): void => {
     wrapper.setAttribute("style", `transform: translateY(${scrollHeight}vh)`);
-    // setAnimationChange(false);
   };
 
   // change header styles
@@ -104,7 +102,7 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
 
     setTimeout(() => {
       dispatch(changeSection(handlerOnLoad(sections)));
-    }, 100);
+    }, 200);
   }, []);
 
   useEffect(() => {
@@ -121,10 +119,7 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
 
     const changeSlider = (e: WheelEvent): void => {
       // stop scrolling if popup opened
-      if (
-        body.classList.contains("removeScrolling")
-        //  || !animationChange
-      ) {
+      if (body.classList.contains("removeScrolling")) {
         return;
       }
 
@@ -226,17 +221,9 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
     };
   }, [startScroll, activeSec]);
 
-  // const handlerAnimation = (): void => {
-  //   setAnimationChange(true);
-  // };
-
   return (
     <>
-      <div
-        className={styles.fullpageWrapper}
-        ref={refFullPage}
-        // onAnimationEnd={handlerAnimation}
-      >
+      <div className={styles.fullpageWrapper} ref={refFullPage}>
         {children}
       </div>
     </>
