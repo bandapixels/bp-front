@@ -14,10 +14,11 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
   startScroll,
   children
 }) => {
+  const [activeAnimation, setActiveAnimation] = useState(false);
+  const [loadSection, setLoadSection] = useState(0);
   const refFullPage = useRef<HTMLDivElement>();
   const activeSec = useSelector((state: AppState) => getSection(state));
   const dispatch = useDispatch();
-  const [activeAnimation, setActiveAnimation] = useState(false);
 
   // move content to active section
   const scrollContent = (wrapper: HTMLElement, scrollHeight: number): void => {
@@ -103,7 +104,10 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
     const sections = wrapper.childNodes;
 
     setTimeout(() => {
-      dispatch(changeSection(handlerOnLoad(sections)));
+      const sectionOnLoad = handlerOnLoad(sections);
+
+      dispatch(changeSection(sectionOnLoad));
+      setLoadSection(sectionOnLoad);
     }, 200);
   }, []);
 
@@ -131,7 +135,7 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
 
       const horizontalLayout = checkForHorizontal(sections, spinValue);
 
-      if (horizontalLayout && e.deltaY > 0 && !activeAnimation) {
+      if (horizontalLayout && e.deltaY > 0 && !activeAnimation && canScroll) {
         let activeSection = sections[spinValue] as HTMLElement;
         activeSection = activeSection.dataset.child
           ? (activeSection.querySelector(
@@ -144,15 +148,14 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
 
         if (scrollDiff <= 5) {
           activeSection.scrollLeft = 0;
-          canScroll = true;
         } else {
           activeSection.scrollLeft += e.deltaY;
-          canScroll = false;
+          return;
         }
       }
 
       // is scroll allowed
-      if (!canScroll || activeAnimation) {
+      if (!canScroll) {
         return;
       }
 
@@ -231,7 +234,7 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
     return (): void => {
       window.removeEventListener("mousewheel", changeSlider);
     };
-  }, [startScroll, activeSec]);
+  }, [startScroll, loadSection]);
 
   return (
     <>
