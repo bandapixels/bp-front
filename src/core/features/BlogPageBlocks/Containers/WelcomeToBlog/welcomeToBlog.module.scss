@@ -169,6 +169,17 @@ $welcome-text-font-sizes: (
     line-height: 65px;
     margin: 0 30px 0 0;
     background: #333;
+    transition: .3s;
+
+    &:hover {
+      background:#171718;
+    }
+
+    &:active,
+    &:focus {
+      color: #fff;
+      background: #333;
+    }
   }
 
   .welcomeLink {
