@@ -129,7 +129,13 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
         return;
       }
 
+      // is scroll animation
       if (activeAnimation) {
+        return;
+      }
+
+      // is scroll allowed
+      if (!canScroll) {
         return;
       }
 
@@ -146,17 +152,42 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
           activeSection.scrollWidth -
           Math.floor(activeSection.scrollLeft + activeSection.offsetWidth);
 
-        if (scrollDiff <= 5) {
-          activeSection.scrollLeft = 0;
-        } else {
+        if (scrollDiff > 5) {
           activeSection.scrollLeft += e.deltaY;
           return;
         }
       }
 
-      // is scroll allowed
-      if (!canScroll) {
-        return;
+      if (horizontalLayout && e.deltaX > 0) {
+        let activeSection = sections[spinValue] as HTMLElement;
+        activeSection = activeSection.dataset.child
+          ? (activeSection.querySelector(
+              `.${activeSection.dataset.child}`
+            ) as HTMLElement)
+          : activeSection;
+        const scrollDiff =
+          activeSection.scrollWidth -
+          Math.floor(activeSection.scrollLeft + activeSection.offsetWidth);
+
+        if (scrollDiff <= 5) {
+          canScroll = false;
+          // scroll down
+          spinValue += 1;
+          scrollHeight -= 100;
+
+          // change section
+          scrollContent(wrapper, scrollHeight);
+          // change header styles
+          changeHeaderStyle(sections, spinValue);
+          // allow to scroll after animation ending
+          setTimeout(() => {
+            canScroll = true;
+            setActiveAnimation(false);
+            dispatch(changeSection(spinValue));
+          }, 1000);
+
+          return;
+        }
       }
 
       const curTime = new Date().getTime();
