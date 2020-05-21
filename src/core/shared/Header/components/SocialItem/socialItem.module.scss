@@ -43,6 +43,13 @@
   &:not(:last-child) {
     margin-right: 10px;
   }
+
+  &:active,
+  &:focus {
+    span {
+      filter: grayscale(1);
+    }
+  }
 }
 
 .socialIcon {
