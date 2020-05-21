@@ -29,12 +29,11 @@ const Header: React.FunctionComponent = () => {
 
     if (needToScroll !== 0) {
       wrapper.style.transform = `translateY(${scrollHeight + needToScroll}vh)`;
+      dispatch(changeSection(4));
     }
-
-    dispatch(changeSection(4));
   };
 
-  const scrollFromSeconderyPages = (): void => {
+  const scrollFromSecondaryPages = (): void => {
     dispatch(changeSection(0));
     router.push("/").then(() => setTimeout(() => scrollToForm(), 200));
   };
@@ -56,7 +55,7 @@ const Header: React.FunctionComponent = () => {
             if (router.pathname === "/") {
               scrollToForm();
             } else {
-              scrollFromSeconderyPages();
+              scrollFromSecondaryPages();
             }
           }}
         >

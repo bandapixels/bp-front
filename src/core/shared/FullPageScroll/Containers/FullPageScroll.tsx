@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getSection } from "../fullPageScroll.selectors";
 import { changeSection } from "../fullPageScroll.actions";
 import { AppState } from "../../../store/store";
@@ -15,6 +15,7 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
   children
 }) => {
   const [activeAnimation, setActiveAnimation] = useState(false);
+  const [canScroll, setCanScroll] = useState(true);
   const refFullPage = useRef<HTMLDivElement>();
   const activeSec = useSelector((state: AppState) => getSection(state));
   const dispatch = useDispatch();
@@ -75,7 +76,7 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
     return Math.ceil(sum / number);
   };
 
-  // find active section whep page reloaded
+  // find active section when page reloaded
   const handlerOnLoad = (sections: NodeListOf<ChildNode>): number => {
     let active = 0;
 
@@ -93,9 +94,23 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
     index: number
   ): string => {
     const section = sections[index] as HTMLElement;
-    const horizontalScroll = section.dataset.horizontal;
 
-    return horizontalScroll;
+    return section.dataset.horizontal;
+  };
+
+  const scrollToSection = (scrollHeight: number, spinValue: number): void => {
+    const wrapper = refFullPage.current;
+    const sections = wrapper.childNodes;
+    // change section
+    scrollContent(wrapper, scrollHeight);
+    // change header styles
+    changeHeaderStyle(sections, spinValue);
+    // allow to scroll after animation ending
+    setTimeout(() => {
+      setCanScroll(true);
+      setActiveAnimation(false);
+      dispatch(changeSection(spinValue));
+    }, 1000);
   };
 
   useEffect(() => {
@@ -116,7 +131,6 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
     let spinValue = activeSec;
     let scrollHeight =
       +wrapper.getAttribute("style")?.replace(/[^-\d]/g, "") || 0;
-    let canScroll = true;
     let scrollings = [];
     let prevTime = new Date().getTime();
     changeHeaderStyle(sections, spinValue);
@@ -127,36 +141,34 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
         return;
       }
 
-      // is scroll animation
-      if (activeAnimation) {
-        return;
-      }
-
-      // is scroll allowed
-      if (!canScroll) {
+      // is scroll animation and  is scroll allowed
+      if (activeAnimation || !canScroll) {
         return;
       }
 
       const horizontalLayout = checkForHorizontal(sections, spinValue);
 
-      if (horizontalLayout && e.deltaY > 0 && !activeAnimation && canScroll) {
+      if (horizontalLayout && e.deltaY && !activeAnimation && canScroll) {
         let activeSection = sections[spinValue] as HTMLElement;
         activeSection = activeSection.dataset.child
           ? (activeSection.querySelector(
               `.${activeSection.dataset.child}`
             ) as HTMLElement)
           : activeSection;
-        const scrollDiff =
+        const scrollPosition =
           activeSection.scrollWidth -
           Math.floor(activeSection.scrollLeft + activeSection.offsetWidth);
 
-        if (scrollDiff > 5) {
+        if (
+          (scrollPosition > 5 && e.deltaY > 0) ||
+          (activeSection.scrollLeft > 5 && e.deltaY < 0)
+        ) {
           activeSection.scrollLeft += e.deltaY;
           return;
         }
       }
 
-      if (horizontalLayout && e.deltaX > 0) {
+      if (horizontalLayout && e.deltaX) {
         let activeSection = sections[spinValue] as HTMLElement;
         activeSection = activeSection.dataset.child
           ? (activeSection.querySelector(
@@ -167,23 +179,23 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
           activeSection.scrollWidth -
           Math.floor(activeSection.scrollLeft + activeSection.offsetWidth);
 
-        if (scrollDiff <= 5) {
-          canScroll = false;
+        if (scrollDiff <= 5 && e.deltaX > 0) {
+          setCanScroll(false);
           // scroll down
           spinValue += 1;
           scrollHeight -= 100;
 
-          // change section
-          scrollContent(wrapper, scrollHeight);
-          // change header styles
-          changeHeaderStyle(sections, spinValue);
-          // allow to scroll after animation ending
-          setTimeout(() => {
-            canScroll = true;
-            setActiveAnimation(false);
-            dispatch(changeSection(spinValue));
-          }, 1000);
+          scrollToSection(scrollHeight, spinValue);
+          return;
+        }
 
+        if (activeSection.scrollLeft < 5 && e.deltaX < 0) {
+          setCanScroll(false);
+          // scroll up
+          spinValue -= 1;
+          scrollHeight += 100;
+
+          scrollToSection(scrollHeight, spinValue);
           return;
         }
       }
@@ -224,7 +236,7 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
 
           // avoid multi swipes and horizontal scrolling
           if (isAccelerating && isScrollingVertically) {
-            canScroll = false;
+            setCanScroll(false);
 
             if (delta < 0 && spinValue < sections.length - 1) {
               // scroll down
@@ -236,20 +248,11 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
               scrollHeight += 100;
             } else {
               // allow to scroll if this is the first section
-              canScroll = true;
+              setCanScroll(true);
               return;
             }
 
-            // change section
-            scrollContent(wrapper, scrollHeight);
-            // change header styles
-            changeHeaderStyle(sections, spinValue);
-            // allow to scroll after animation ending
-            setTimeout(() => {
-              canScroll = true;
-              setActiveAnimation(false);
-              dispatch(changeSection(spinValue));
-            }, 1000);
+            scrollToSection(scrollHeight, spinValue);
           }
         }
       }
@@ -263,7 +266,7 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
     return (): void => {
       window.removeEventListener("mousewheel", changeSlider);
     };
-  }, [startScroll, activeSec]);
+  }, [startScroll, activeSec, canScroll]);
 
   return (
     <>
