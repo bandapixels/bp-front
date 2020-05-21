@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import Tabs from "./components/Tabs/Tabs";
 import Tab from "./components/Tab/Tab";
 import useGrid from "../../../../utils/useGrid";
+import AnimatedLine from "../../../../shared/AnimatedLine/AnimatedLine";
 import styles from "./technologyStack.module.scss";
 
 const TechnologyStack: React.FunctionComponent = () => {
@@ -151,6 +152,7 @@ const TechnologyStack: React.FunctionComponent = () => {
           </Tab>
         </Tabs>
       </div>
+      <AnimatedLine backgroundColor="#333" filledColor="#fff" />
     </section>
   );
 };

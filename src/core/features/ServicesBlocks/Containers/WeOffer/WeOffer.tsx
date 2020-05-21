@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import Tabs from "./components/Tabs/Tabs";
 import styles from "./weOffer.module.scss";
 import useGrid from "../../../../utils/useGrid";
+import AnimatedLine from "../../../../shared/AnimatedLine/AnimatedLine";
 
 const WeOffer: React.FunctionComponent = () => {
   const refGridWrapper = useRef<HTMLDivElement>();
@@ -18,6 +19,7 @@ const WeOffer: React.FunctionComponent = () => {
         <h1>We offer</h1>
         <Tabs />
       </div>
+      <AnimatedLine backgroundColor="#BDBDBD" filledColor="#333" />
     </section>
   );
 };

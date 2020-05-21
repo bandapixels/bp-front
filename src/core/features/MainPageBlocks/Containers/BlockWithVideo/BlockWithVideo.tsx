@@ -4,6 +4,7 @@ import styles from "./blockWithVideo.module.scss";
 
 import ModalVideo from "../../../../shared/Modal/ModalVideo/ModalVideo";
 import Button from "../../../../shared/coreUi/Button/Button";
+import AnimatedLine from "../../../../shared/AnimatedLine/AnimatedLine";
 
 const BlockWithVideo: React.FunctionComponent = () => {
   const [roundedText] = useState(
@@ -99,6 +100,7 @@ const BlockWithVideo: React.FunctionComponent = () => {
         </div>
 
         {modalOpen && <ModalVideo clickHandler={handlerClosePopup} />}
+        <AnimatedLine backgroundColor="#333" filledColor="#fff" />
       </section>
     </>
   );

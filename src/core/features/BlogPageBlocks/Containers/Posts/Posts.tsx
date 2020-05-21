@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import useGrid from "../../../../utils/useGrid";
+import AnimatedLine from "../../../../shared/AnimatedLine/AnimatedLine";
 
 import styles from "./posts.module.scss";
 
@@ -95,6 +96,7 @@ const Posts: React.FunctionComponent = () => {
           </a>
         ))}
       </div>
+      <AnimatedLine backgroundColor="#333" filledColor="#fff" />
     </section>
   );
 };

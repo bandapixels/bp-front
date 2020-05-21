@@ -9,6 +9,7 @@ import FormBudget from "./components/FormBudget/FormBudget";
 import Button from "../../../../shared/coreUi/Button/Button";
 import MobileSteps from "./components/MobileSteps/MobileSteps";
 import ModalThanks from "../../../../shared/Modal/ModalThanks/ModalThanks";
+import AnimatedLine from "../../../../shared/AnimatedLine/AnimatedLine";
 
 import styles from "./discussTheProject.module.scss";
 
@@ -102,6 +103,7 @@ const DiscussTheProject: React.FunctionComponent = () => {
         </form>
       </div>
       {formSend && <ModalThanks clickHandler={handlerClosePopup} />}
+      <AnimatedLine backgroundColor="#333" filledColor="#fff" />
     </section>
   );
 };

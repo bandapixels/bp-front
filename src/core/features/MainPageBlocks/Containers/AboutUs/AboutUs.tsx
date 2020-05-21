@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import useGrid from "../../../../utils/useGrid";
+import AnimatedLine from "../../../../shared/AnimatedLine/AnimatedLine";
 
 import styles from "./AboutUs.module.scss";
 
@@ -60,6 +61,7 @@ const AboutUs: React.FunctionComponent = () => {
           </p>
         </div>
       </div>
+      <AnimatedLine backgroundColor="#BDBDBD" filledColor="#333" />
     </section>
   );
 };
