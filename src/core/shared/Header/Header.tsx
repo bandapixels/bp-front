@@ -21,8 +21,8 @@ const Header: React.FunctionComponent = () => {
     setOpenedMenu(!openedMenu);
   };
 
-  const scrollToForm = (): void => {
-    const needToScroll = (4 - activeSection) * -100;
+  const scrollToForm = (section = activeSection): void => {
+    const needToScroll = (4 - section) * -100;
     const wrapper = document.querySelector(".fullpageWrapper") as HTMLElement;
     const scrollHeight =
       +wrapper.getAttribute("style")?.replace(/[^-\d]/g, "") || 0;
@@ -35,7 +35,7 @@ const Header: React.FunctionComponent = () => {
 
   const scrollFromSecondaryPages = (): void => {
     dispatch(changeSection(0));
-    router.push("/").then(() => setTimeout(() => scrollToForm(), 200));
+    router.push("/").then(() => setTimeout(() => scrollToForm(0), 200));
   };
 
   const headerStyles = classNames(styles.header, {

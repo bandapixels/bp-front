@@ -139,6 +139,21 @@ $contacts-text-font-sizes: (
     background-image: linear-gradient( rgba(255,255,255,.1), transparent 1px), linear-gradient( 90deg, rgba(255,255,255,.1), transparent 1px);
     background-size: 15px 15px;
     background-position: center center;
+
+    &.contactsPage {
+      height: 100vh;
+
+      .contactsSocial {
+        flex-basis: 150px;
+      }
+
+      .contactsContent {
+        flex: 0 1 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+      }
+    }
   }
 
   .gradient-vertical {
@@ -171,8 +186,9 @@ $contacts-text-font-sizes: (
   }
 
   .contactsSocial {
-    margin: 0 auto 20px;
+    margin: 0 auto;
     align-self: center;
+    width: 100%;
   
     .socialItem {
       &:not(:last-child) {
@@ -214,13 +230,13 @@ $contacts-text-font-sizes: (
     font-size: 20px;
     letter-spacing: 0.03em;
     color: #EFE314;
-    width: 290px;
+    width: 100%;
     height: 65px;
     text-decoration: none;
     text-align: center;
     display: block;
     line-height: 65px;
-    margin: 0 auto;
+    margin: 20px auto 0;
     background: #171718;
 
     &.servicesBtn {
