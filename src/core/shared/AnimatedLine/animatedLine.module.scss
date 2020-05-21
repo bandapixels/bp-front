@@ -17,6 +17,19 @@
   }
 }
 
+@media only screen and (max-height: 800px) {
+  .animatedLine {
+    height: 30px;
+  }
+}
+
+@media only screen and (max-width: $breakpoint-mobile) {
+  .animatedLine {
+    display: none;
+    animation: smallLineAnimation 2s infinite;
+  }
+}
+
 @keyframes lineAnimation {
   0% {
     top: 0;
@@ -34,14 +47,19 @@
   }
 }
 
-@media only screen and (max-height: 800px) {
-  .animatedLine {
-    height: 30px;
+@keyframes smallLineAnimation {
+  0% {
+    top: 0;
+    bottom: 30px;
   }
-}
 
-@media only screen and (max-width: $breakpoint-mobile) {
-  .animatedLine {
-    display: none;
+  50% {
+    top: 0;
+    bottom: 0;
+  }
+
+  100% {
+    top: 30px;
+    bottom: 0;
   }
 }
