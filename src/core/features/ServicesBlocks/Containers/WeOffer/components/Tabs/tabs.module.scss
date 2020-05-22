@@ -38,10 +38,13 @@
     flex-shrink: 1;
     flex-grow: 0;
     transition: .3s;
+
+    &:hover {
+      color: #EFE314;
+    }
   }
 
-  &.tabItemActive,
-  &:hover {
+  &.tabItemActive {
     button {
       background: #171718;
       color: #EFE314;
