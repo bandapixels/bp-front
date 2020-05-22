@@ -1,0 +1,89 @@
+.analysisBottomWrapper {
+  margin: 420px auto 510px;
+}
+
+.analysisLayout {
+  max-width: 1920px;
+  margin: 0 auto;
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+}
+
+.analysisText {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 15px;
+
+  p {
+    max-width: 845px;
+    margin-right: 0;
+    margin-left: auto;
+  }
+}
+
+.logosContainer {
+  position: relative;
+  margin: -15vw 0 0;
+}
+
+.analysisLogoWrapper {
+  max-width: 1500px;
+  position: absolute;
+  padding: 0 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  top: 20vw;
+
+  img {
+    max-width: 20vw;
+  }
+}
+
+.dashedLogoWrapper {
+  position: absolute;
+  top: 32vw;
+  right: 50px;
+  padding: 0 50px 0 0;
+  max-width: 1920px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+
+  img {
+    display: block;
+    margin: 0 0 0 auto;
+    max-width: 40vw;
+  }
+}
+
+.analysisFigure {
+  width: 100%;
+  z-index: -1;
+}
+
+.analysisVideo {
+  max-width: 1500px;
+  transform: translate(-50%, 50%);
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 100%;
+  padding: 0 15px;
+
+  video {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 30px;
+    outline: none;
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  .analysisBottomWrapper {
+    margin: 420px auto calc(100px + 20vw);
+  }
+}

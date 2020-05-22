@@ -1,0 +1,25 @@
+.analysisVideoWrapper {
+  margin: 230px auto 420px;
+  padding: 0 15px;
+}
+
+.analysisVideoContainer {
+  max-width: 1500px;
+  margin: 0 auto;
+  position: relative;
+
+  video {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 30px;
+    outline: none;
+  }
+}
+
+.analysisDecor {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  transform: translate(-50%, 50%);
+}

@@ -1,0 +1,41 @@
+.challengeWrapper {
+  padding: 0 15px 30px;
+  margin: -330px auto 120px;
+  position: relative;
+}
+
+.challengeContainer {
+  max-width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  position: relative;
+}
+
+.challengeContent {
+  flex: 0 0 55%;
+}
+
+.decorChallenge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-27%);
+  z-index: -1;
+}
+
+.decorArrow {
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  top: 110px;
+  transform: translateX(60%);
+}
+
+@media only screen and (max-width: 1750px) {
+  .decorArrow {
+    transform: translateX(0);
+  }
+}
+

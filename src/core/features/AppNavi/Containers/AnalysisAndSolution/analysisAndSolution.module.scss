@@ -1,0 +1,59 @@
+.analysisWrapper {
+  margin: 120px auto 230px;
+}
+
+.analysisContainer {
+  max-width: 1500px;
+  margin: 0 auto;
+
+  h3 {
+    text-align: center;
+  }
+}
+
+.analysisSteps {
+  margin: 60px auto 0;
+}
+
+.analysisStep {
+  background: #fff;
+  box-shadow: 0px 10.48px 44.54px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  padding: 50px 50px 50px 150px;
+  position: relative;
+
+  &:nth-child(1) {
+    max-width: 410px;
+  }
+
+  &:nth-child(2) {
+    max-width: 570px;
+  }
+
+  &:nth-child(3) {
+    max-width: 580px;
+  }
+
+  &:nth-child(4) {
+    max-width: 470px;
+  }
+
+  &:nth-child(5) {
+    max-width: 710px;
+  }
+
+  &:nth-child(6) {
+    max-width: 880px;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 50px;
+  }
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+  }
+}

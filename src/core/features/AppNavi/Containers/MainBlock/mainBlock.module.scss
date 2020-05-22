@@ -61,6 +61,10 @@ p {
   line-height: 170%;
   letter-spacing: 0.03em;
   color: #4F4F4F;
+
+  &:not(:last-child) {
+    margin-bottom: 50px;
+  }
 }
 
 .blueText {
@@ -76,4 +80,62 @@ q {
   display: block;
   margin: 25px 0 0;
   border-radius: 8px;
+}
+
+h4 {
+  font-size: 40px;
+  line-height: 150%;
+  text-align: center;
+  color: #828282;
+  font-weight: normal;
+}
+
+blockquote {
+  width: 100%;
+  padding: 90px 90px 50px 100px;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 170%;
+  letter-spacing: 0.03em;
+  color: #4F4F4F;
+  position: relative;
+  background: #fff;
+  border-radius: 32px;
+  margin: 80px auto 0;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background: linear-gradient(90deg, #5EDABB -137.04%, #04D5D9 203.7%);
+    border-radius: 32px;
+    margin: -3px;
+  }
+
+  &:after {
+    content: '';
+    width: 82px;
+    height: 100px;
+    display: block;
+    background: url(/images/projects/AppNavi/quotes.jpg);
+    position: absolute;
+    top: -5px;
+    left: -37px;
+  }
+
+  em {
+    max-width: 750px;
+    display: block;
+  }
+
+  cite {
+    display: table;
+    margin: 0 0 0 auto;
+    font-style: normal;
+  }
 }
