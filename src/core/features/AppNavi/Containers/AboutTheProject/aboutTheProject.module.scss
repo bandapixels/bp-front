@@ -1,0 +1,41 @@
+.appNaviAbout {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin: 200px 0 0;
+  position: relative;
+  overflow: hidden;
+
+  &> div {
+    flex: 0 0 50%
+  }
+}
+
+.appNaviAboutLeft {
+  img {
+    max-width: 50vw;
+    width: 100%;
+    display: block;
+  }
+}
+
+.appNaviAboutRight {
+  margin: 0 9vw 0 0;
+  flex-shrink: 1!important;
+}
+
+.decor {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+@media only screen and (max-width: 1600px) {
+  .appNaviAboutRight {
+    margin: 0 5vw 0 0;
+  }
+
+  .appNaviMainLeft {
+    margin: 0 0 0 5vw;
+  }
+}

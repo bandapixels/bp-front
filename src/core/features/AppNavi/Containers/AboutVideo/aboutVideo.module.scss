@@ -1,0 +1,16 @@
+.aboutVideo {
+  margin: 90px auto 100px;
+  padding: 0 15px;
+}
+
+.aboutVideoWrapper {
+  max-width: 1500px;
+  margin: 0 auto;
+
+  video {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 30px;
+    outline: none;
+  }
+}

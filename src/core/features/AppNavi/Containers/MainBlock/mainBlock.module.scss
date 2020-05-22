@@ -1,0 +1,79 @@
+.appNaviMain {
+  position: relative;
+}
+
+.mainContent {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mainFigure {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+}
+
+.mainTransparentLogo {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10vh);
+  z-index: -2;
+}
+
+.appNaviMainLeft {
+  margin: 0 0 0 9vw;
+
+  .naviLogoWrapper {
+    margin: 0 0 10vh;
+  }
+
+  p {
+    font-weight: normal;
+    font-size: 64px;
+    line-height: 80px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+  }
+}
+
+.appNaviMainRight {
+  img {
+    display: block;
+    max-width: 60vw;
+  }
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 80px;
+  line-height: 130%;
+  color: #171718;
+  margin: 0 0 15px;
+}
+
+p {
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 170%;
+  letter-spacing: 0.03em;
+  color: #4F4F4F;
+}
+
+.blueText {
+  color: #04D5D9;
+}
+
+q {
+  font-size: 24px;
+  line-height: 150%;
+  color: #696363;
+  border: 1px solid #04D5D9;
+  padding: 30px 45px;
+  display: block;
+  margin: 25px 0 0;
+  border-radius: 8px;
+}
