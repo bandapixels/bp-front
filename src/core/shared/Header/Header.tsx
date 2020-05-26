@@ -33,13 +33,9 @@ const Header: React.FunctionComponent = () => {
     }
   };
 
-  const scrollFromSecondaryPages = (): void => {
-    dispatch(changeSection(0));
-    router.push("/").then(() => setTimeout(() => scrollToForm(0), 200));
-  };
-
   const headerStyles = classNames(styles.header, {
-    openedMenuWrapper: openedMenu
+    openedMenuWrapper: openedMenu,
+    smallYellowHeader: router.pathname === "/form"
   });
 
   return (
@@ -55,7 +51,7 @@ const Header: React.FunctionComponent = () => {
             if (router.pathname === "/") {
               scrollToForm();
             } else {
-              scrollFromSecondaryPages();
+              router.push("/form");
             }
           }}
         >

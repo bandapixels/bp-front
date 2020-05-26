@@ -66,7 +66,7 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
   const getAverage = (elements: Array<number>, number: number): number => {
     let sum = 0;
 
-    // taking `number` elements from the end to make the average, if there are not enought, 1
+    // taking `number` elements from the end to make the average, if there are not enough, 1
     const lastElements = elements.slice(Math.max(elements.length - number, 1));
 
     for (let i = 0; i < lastElements.length; i++) {
