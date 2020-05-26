@@ -9,10 +9,11 @@ import AnalysisAndSolution from "../src/core/features/AppNavi/Containers/Analysi
 import AnalysisVideo from "../src/core/features/AppNavi/Containers/AnalysisVideo/AnalysisVideo";
 import AnalysisBottom from "../src/core/features/AppNavi/Containers/AnalysisBottom/AnalysisBottom";
 import Results from "../src/core/features/AppNavi/Containers/Results/Results";
+import StoreLayout from "../src/core/layouts/StoreLayout";
 
 const AppNavi: NextPage = () => {
   return (
-    <>
+    <StoreLayout>
       <MainBlock />
       <AboutTheProject />
       <AboutVideo />
@@ -22,7 +23,7 @@ const AppNavi: NextPage = () => {
       <AnalysisVideo />
       <AnalysisBottom />
       <Results />
-    </>
+    </StoreLayout>
   );
 };
 

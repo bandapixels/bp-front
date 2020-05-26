@@ -39,7 +39,8 @@ const Header: React.FunctionComponent = () => {
   };
 
   const headerStyles = classNames(styles.header, {
-    openedMenuWrapper: openedMenu
+    openedMenuWrapper: openedMenu,
+    smallFullYellowHeader: router.pathname === "/appnavi"
   });
 
   return (
