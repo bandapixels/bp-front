@@ -14,7 +14,7 @@
 }
 
 .challengeContent {
-  flex: 0 0 55%;
+  flex: 0 0 50%;
 }
 
 .decorChallenge {
@@ -23,6 +23,8 @@
   left: 0;
   transform: translateY(-27%);
   z-index: -1;
+  max-width: 100%;
+  display: block;
 }
 
 .decorArrow {
@@ -39,3 +41,33 @@
   }
 }
 
+@media only screen and (max-width: 1260px) {
+  .challengeWrapper {
+    margin: -250px auto 120px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .challengeWrapper {
+    margin: -130px auto 120px;
+  }
+}
+
+@media only screen and (max-width: 668px) {
+  .challengeWrapper {
+    margin: -45px auto 40px;
+    padding: 0 15px 0;
+  }
+
+  .challengeContent {
+    flex: 0 0 100%;
+  }
+
+  .decorArrow {
+    display: none;
+  }
+
+  .decorChallenge {
+    display: none;
+  }
+}

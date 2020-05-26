@@ -1,14 +1,22 @@
 .appNaviAbout {
+  overflow: hidden;
+  margin: 200px 0 0;
+  position: relative;
+}
+
+.appNaviWrapper {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  margin: 200px 0 0;
   position: relative;
-  overflow: hidden;
 
   &> div {
     flex: 0 0 50%
   }
+}
+
+.textForMobile {
+  display: none;
 }
 
 .appNaviAboutLeft {
@@ -37,5 +45,31 @@
 
   .appNaviMainLeft {
     margin: 0 0 0 5vw;
+  }
+}
+
+@media only screen and (max-width: 668px) {
+  .appNaviAbout {
+    margin: 40px 0 0;
+  }
+
+  .appNaviAboutRight {
+    margin: 0 15px 0 0;
+  }
+
+  .appNaviAboutRight {
+    p {
+      display: none;
+    }
+  }
+
+  .textForMobile {
+    display: block;
+    margin: 15px 0 0;
+    padding: 0 15px;
+  }
+
+  .decor {
+    display: none;
   }
 }

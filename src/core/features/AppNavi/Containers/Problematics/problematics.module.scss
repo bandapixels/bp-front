@@ -4,9 +4,19 @@
   position: relative;
 }
 
+.problematicsQuote {
+  margin: 0 auto 135px;
+  padding: 0 20px;
+
+  blockquote {
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+}
+
 .appNaviContainer {
   max-width: 1500px;
-  margin: 0 auto 130px;
+  margin: 0 auto 45px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -19,6 +29,11 @@
 .decorP {
   flex: 0 1 auto;
   padding: 50px 0 0;
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
 }
 
 .wrapperAppLayOut {
@@ -32,7 +47,46 @@
 
 .decorO {
   position: absolute;
-  top: 45%;
+  top: 53%;
   left: -15px;
   z-index: -1;
+}
+
+@media only screen and (max-width: 960px) {
+  .decorO {
+    top: 63%;
+  }
+}
+
+@media only screen and (max-width: 668px) {
+  .problematicsWrapper {
+    margin: 40px auto 0;
+  }
+
+  .decorP {
+    display: none;
+  }
+
+  .problematicsInfo {
+    flex: 0 0 100%;
+  }
+
+  .appNaviContainer {
+    margin: 0 auto 20px;
+  }
+
+  .problematicsQuote {
+    padding: 0;
+    margin: 0 auto 40px;
+  }
+
+  .wrapperAppLayOut {
+    margin: 40px auto 0;
+  }
+
+  .decorO {
+    top: auto;
+    max-width: 90px;
+    bottom: 5%;
+  }
 }

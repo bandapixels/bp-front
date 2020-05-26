@@ -19,15 +19,24 @@ const Problematics: React.FunctionComponent = () => {
             out.Thus, it couldn’t guarantee an increase in clients and in
             company budget.
           </p>
-          <q>
-            Apart from that, the app already had its users who were used to it,
-            which we needed to consider and make a new design version that
-            wouldn't interfere with their established workflow.
-          </q>
         </div>
         <div className={styles.decorP}>
           <img src="/images/projects/AppNavi/p.svg" alt="Decor P" />
         </div>
+      </div>
+      <div className={styles.problematicsQuote}>
+        <blockquote>
+          <em>
+            Apart from that, the app already had its users who were used to it,
+            which we needed to consider and make a new design version that
+            wouldn't interfere with their established workflow.
+          </em>
+          <cite>
+            <b>Carsten Neumann,</b>
+            <br />
+            co-owner of the AppNavi project
+          </cite>
+        </blockquote>
       </div>
       <div className={styles.wrapperAppLayOut}>
         <img src="/images/projects/AppNavi/app-layout.png" alt="App Layout" />

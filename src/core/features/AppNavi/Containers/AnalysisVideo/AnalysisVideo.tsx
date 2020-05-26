@@ -8,11 +8,6 @@ const AnalysisVideo: React.FunctionComponent = () => {
         <video controls>
           <source src="/videos/AppNavi_animate.mp4" type="video/webm" />
         </video>
-        <img
-          src="/images/projects/AppNavi/full-o.svg"
-          alt="Decor O"
-          className={styles.analysisDecor}
-        />
       </div>
     </section>
   );
