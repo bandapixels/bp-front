@@ -5,10 +5,12 @@ const AnalysisAndSolution: React.FunctionComponent = () => {
   return (
     <section className={styles.analysisWrapper}>
       <div className={styles.analysisContainer}>
-        <h3>Analysis and solution</h3>
-        <h4>For the UX analysis, we took the following steps:</h4>
+        <h3 className="appNaviH3">Analysis and solution</h3>
+        <h4 className="appNaviH4">
+          For the UX analysis, we took the following steps:
+        </h4>
         <div className={styles.analysisStepsText}>
-          <p>
+          <p className="appNaviParagraph">
             The purpose of AppNavi is to provide assistance, to help you quickly
             and easily understand the issue of interest, to train, excluding
             painful and tedious explanations, and not to cause stress and

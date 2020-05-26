@@ -5,7 +5,7 @@ const AnalysisBottom: React.FunctionComponent = () => {
   return (
     <section className={styles.analysisBottomWrapper}>
       <div className={styles.analysisTopText}>
-        <p>
+        <p className="appNaviParagraph">
           As at the time of contacting us the{" "}
           <span className="blueText">AppNavi</span> service was used by clients
           who worked both during the day and at night, it was decided to develop
@@ -27,13 +27,13 @@ const AnalysisBottom: React.FunctionComponent = () => {
         />
       </div>
       <div className={styles.analysisText}>
-        <p>
+        <p className="appNaviParagraph">
           While developing a new interactive UI design we got rid of some
           redundant elements, reduced the menu size and visually separated it
           from other blocks of the application. We also changed the position of
           some elements to make a more convenient user flow.
         </p>
-        <p>
+        <p className="appNaviParagraph">
           Blocks and separate components before the redesign were square and
           with sharp corners, which was subconsciously associated with fear,
           danger, difficulties of perception, while buttons were roundish. Such
@@ -54,14 +54,14 @@ const AnalysisBottom: React.FunctionComponent = () => {
           />
         </div>
         <div className={styles.logosText}>
-          <p>
+          <p className="appNaviParagraph">
             Also, in the course of work, the corporate identity of the company
             underwent changes in order to create its stronger visual marketing
             position. Working on the AppNavi logotype, we tried to reconstruct
             associative elements, demonstrate the brand, display the main idea
             of the company.
           </p>
-          <p>
+          <p className="appNaviParagraph">
             Our task was to create a timeless, simple and understandable
             logotype that every person could draw with several moves; the
             logotype which would be so strong visually, that it could be used
@@ -70,7 +70,7 @@ const AnalysisBottom: React.FunctionComponent = () => {
             conveying one main idea. “Exploration”, “speed”, “research” – these
             associations we put into the new logotype.
           </p>
-          <p>
+          <p className="appNaviParagraph">
             The first element in the logo personifies the user who looks for the
             answer to his question. The second element is a pop-up tooltip that
             helps the user to achieve the desired goal. The third element

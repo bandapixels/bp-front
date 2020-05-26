@@ -9,8 +9,8 @@ const AboutTheProject: React.FunctionComponent = () => {
           <img src="/images/projects/AppNavi/laptop.png" alt="AppNavi Laptop" />
         </div>
         <div className={styles.appNaviAboutRight}>
-          <h3>About the project</h3>
-          <p>
+          <h3 className="appNaviH3">About the project</h3>
+          <p className="appNaviParagraph">
             The <span className="blueText">AppNavi</span> application
             successfully substitutes boring study guides on using different
             programs and instructors, suggesting engaging interactivity instead.
@@ -20,7 +20,7 @@ const AboutTheProject: React.FunctionComponent = () => {
         </div>
       </div>
       <div className={styles.textForMobile}>
-        <p>
+        <p className="appNaviParagraph">
           The <span className="blueText">AppNavi</span> application successfully
           substitutes boring study guides on using different programs and
           instructors, suggesting engaging interactivity instead. AppNavi

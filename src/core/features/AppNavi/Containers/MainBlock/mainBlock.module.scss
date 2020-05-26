@@ -47,7 +47,7 @@
   }
 }
 
-h3 {
+.appNaviH3 {
   font-weight: bold;
   font-size: 80px;
   line-height: 130%;
@@ -55,7 +55,7 @@ h3 {
   margin: 0 0 15px;
 }
 
-p {
+.appNaviParagraph {
   font-weight: normal;
   font-size: 24px;
   line-height: 170%;
@@ -71,7 +71,7 @@ p {
   color: #04D5D9;
 }
 
-q {
+.appNaviQuote {
   font-size: 24px;
   line-height: 150%;
   color: #696363;
@@ -82,7 +82,7 @@ q {
   border-radius: 8px;
 }
 
-h4 {
+.appNaviH4 {
   font-size: 40px;
   line-height: 150%;
   text-align: center;
@@ -90,7 +90,7 @@ h4 {
   font-weight: normal;
 }
 
-blockquote {
+.appNaviBlockquote {
   width: 100%;
   padding: 90px 90px 50px 100px;
   font-weight: normal;
@@ -137,6 +137,7 @@ blockquote {
     display: table;
     margin: 0 0 0 auto;
     font-style: normal;
+    color: #000;
   }
 }
 
@@ -157,11 +158,11 @@ blockquote {
     }
   }
 
-  h3 {
+  .appNaviH3 {
     font-size: 52px;
   }
 
-  p {
+  .appNaviParagraph {
     font-size: 18px;
     line-height: 150%;
   }
@@ -184,11 +185,11 @@ blockquote {
     }
   }
 
-  h3 {
+  .appNaviH3 {
     font-size: 38px;
   }
 
-  blockquote {
+  .appNaviBlockquote {
     cite {
       margin: 10px 0 0;
     }
@@ -243,12 +244,12 @@ blockquote {
     object-fit: cover;
   }
 
-  h3 {
+  .appNaviH3 {
     font-size: 26px;
     margin-bottom: 10px;
   }
 
-  p {
+  .appNaviParagraph {
     font-size: 14px;
 
     &:not(:last-child) {
@@ -256,7 +257,7 @@ blockquote {
     }
   }
 
-  blockquote {
+  .appNaviBlockquote {
     border-radius: 8px;
     padding: 15px;
     font-size: 14px;
@@ -276,7 +277,7 @@ blockquote {
     }
   }
 
-  h4 {
+  .appNaviH4 {
     font-size: 14px;
     line-height: 150%;
   }

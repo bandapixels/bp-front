@@ -6,8 +6,8 @@ const Problematics: React.FunctionComponent = () => {
     <section className={styles.problematicsWrapper}>
       <div className={styles.appNaviContainer}>
         <div className={styles.problematicsInfo}>
-          <h3>Problematics</h3>
-          <p>
+          <h3 className="appNaviH3">Problematics</h3>
+          <p className="appNaviParagraph">
             <span className="blueText">AppNavi</span> suggests a completely new
             approach to employee training as well as increases all specialists'
             work efficiency. However, despite the rather high popularity among
@@ -25,7 +25,7 @@ const Problematics: React.FunctionComponent = () => {
         </div>
       </div>
       <div className={styles.problematicsQuote}>
-        <blockquote>
+        <blockquote className="appNaviBlockquote">
           <em>
             Apart from that, the app already had its users who were used to it,
             which we needed to consider and make a new design version that
