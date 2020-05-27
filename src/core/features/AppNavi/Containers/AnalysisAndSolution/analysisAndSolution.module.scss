@@ -149,11 +149,13 @@
         top: 15px;
       }
 
-      &:not(:last-child) {
+      &:not(.analysisStep6) {
         margin-bottom: 35px;
       }
 
-      &:nth-child(odd) {
+      &.analysisStep1,
+      &.analysisStep3,
+      &.analysisStep5 {
         padding: {
           right: 15px;
           left: 70px;
@@ -168,7 +170,9 @@
         }
       }
 
-      &:nth-child(even) {
+      &.analysisStep2,
+      &.analysisStep4,
+      &.analysisStep6 {
         padding: {
           right: 70px;
           left: 15px;
