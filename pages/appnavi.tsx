@@ -1,5 +1,6 @@
 import React from "react";
 import { NextPage } from "next";
+import Head from "next/head";
 import MainBlock from "../src/core/features/AppNavi/Containers/MainBlock/MainBlock";
 import AboutTheProject from "../src/core/features/AppNavi/Containers/AboutTheProject/AboutTheProject";
 import AboutVideo from "../src/core/features/AppNavi/Containers/AboutVideo/AboutVideo";
@@ -13,17 +14,23 @@ import StoreLayout from "../src/core/layouts/StoreLayout";
 
 const AppNavi: NextPage = () => {
   return (
-    <StoreLayout>
-      <MainBlock />
-      <AboutTheProject />
-      <AboutVideo />
-      <Problematics />
-      <Challenge />
-      <AnalysisAndSolution />
-      <AnalysisVideo />
-      <AnalysisBottom />
-      <Results />
-    </StoreLayout>
+    <>
+      <Head>
+        <meta name="robots" content="noindex" />
+        <meta name="googlebot" content="noindex" />
+      </Head>
+      <StoreLayout>
+        <MainBlock />
+        <AboutTheProject />
+        <AboutVideo />
+        <Problematics />
+        <Challenge />
+        <AnalysisAndSolution />
+        <AnalysisVideo />
+        <AnalysisBottom />
+        <Results />
+      </StoreLayout>
+    </>
   );
 };
 
