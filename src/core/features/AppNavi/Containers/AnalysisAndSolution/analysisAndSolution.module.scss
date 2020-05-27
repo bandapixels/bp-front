@@ -25,32 +25,32 @@
   padding: 44px 40px 44px 150px;
   position: relative;
 
-  &:nth-child(1) {
+  &.analysisStep1 {
     max-width: 410px;
     margin: 0 27% 40px auto;
   }
 
-  &:nth-child(2) {
+  &.analysisStep2 {
     max-width: 570px;
     margin: 0 auto 70px 120px;
   }
 
-  &:nth-child(3) {
+  &.analysisStep3 {
     max-width: 580px;
     margin: 0 5% 110px auto;
   }
 
-  &:nth-child(4) {
+  &.analysisStep4 {
     max-width: 470px;
     margin: 0 0 50px auto;
   }
 
-  &:nth-child(5) {
+  &.analysisStep5 {
     max-width: 720px;
     margin: 0 auto 120px 11%;
   }
 
-  &:nth-child(6) {
+  &.analysisStep6 {
     max-width: 890px;
     margin: 0 0 0 auto;
   }

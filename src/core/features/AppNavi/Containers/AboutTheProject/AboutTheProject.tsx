@@ -1,4 +1,5 @@
 import React from "react";
+import AnimationOnScroll from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
 import styles from "./aboutTheProject.module.scss";
 
 const AboutTheProject: React.FunctionComponent = () => {
@@ -9,14 +10,18 @@ const AboutTheProject: React.FunctionComponent = () => {
           <img src="/images/projects/AppNavi/laptop.png" alt="AppNavi Laptop" />
         </div>
         <div className={styles.appNaviAboutRight}>
-          <h3 className="appNaviH3">About the project</h3>
-          <p className="appNaviParagraph">
-            The <span className="blueText">AppNavi</span> application
-            successfully substitutes boring study guides on using different
-            programs and instructors, suggesting engaging interactivity instead.
-            AppNavi eliminates the necessity of hiring a specialist for training
-            new employees, which economizes time and budget.
-          </p>
+          <AnimationOnScroll animationName="fadeInUp" duration={1}>
+            <h3 className="appNaviH3">About the project</h3>
+          </AnimationOnScroll>
+          <AnimationOnScroll animationName="fadeInUp" duration={1} delay={0.5}>
+            <p className="appNaviParagraph">
+              The <span className="blueText">AppNavi</span> application
+              successfully substitutes boring study guides on using different
+              programs and instructors, suggesting engaging interactivity
+              instead. AppNavi eliminates the necessity of hiring a specialist
+              for training new employees, which economizes time and budget.
+            </p>
+          </AnimationOnScroll>
         </div>
       </div>
       <div className={styles.textForMobile}>

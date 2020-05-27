@@ -12,9 +12,10 @@
     text-align: center;
   }
 
-  &> p {
+  .resultText {
     max-width: 940px;
     margin: 0 auto;
+    text-align: center;
   }
 }
 
@@ -33,11 +34,14 @@
   flex-flow: row nowrap;
   min-height: 250px;
 
-  p {
-    padding: 35px 35px 35px 24px;
+  .stepBorder {
     border-left: 1px solid #04D5D9;
     background:#fff;
     z-index: 2;
+  }
+
+  p {
+    padding: 35px 35px 35px 24px;
   }
 }
 
