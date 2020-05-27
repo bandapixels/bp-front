@@ -9,6 +9,12 @@
     "start": "next dev",
     "export": "next export"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx eslint --max-warnings 0",
+      "pre-push": "npx eslint --max-warnings 0"
+    }
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -39,6 +45,7 @@
     "sass": "^1.26.3"
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.10",
     "@types/node": "^13.11.0",
     "@types/react": "^16.9.32",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
@@ -52,8 +59,9 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^1.7.0",
     "file-loader": "^6.0.0",
-    "lint-staged": "^10.0.8",
-    "prettier": "1.19.1",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.2",
+    "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
     "typescript": "^3.8.3",
     "url-loader": "^4.1.0"

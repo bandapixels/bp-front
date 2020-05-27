@@ -1,6 +1,6 @@
-import React, { useRef, useEffect, useState, FormEvent } from "react";
+import React, { useRef, useState, FormEvent } from "react";
 import classNames from "classnames";
-import { createGrid, addAnimationToGrid } from "../../../../utils/grid";
+import useGrid from "../../../../utils/useGrid";
 
 import FormContacts from "./components/FormContacts/FormContacts";
 import FormTask from "./components/FormTask/FormTask";
@@ -9,6 +9,7 @@ import FormBudget from "./components/FormBudget/FormBudget";
 import Button from "../../../../shared/coreUi/Button/Button";
 import MobileSteps from "./components/MobileSteps/MobileSteps";
 import ModalThanks from "../../../../shared/Modal/ModalThanks/ModalThanks";
+import AnimatedLine from "../../../../shared/AnimatedLine/AnimatedLine";
 
 import styles from "./discussTheProject.module.scss";
 
@@ -65,18 +66,14 @@ const DiscussTheProject: React.FunctionComponent = () => {
     setFormSend(!formSend);
   };
 
-  useEffect(() => {
-    const mainWrapper = refGridWrapper.current;
-
-    createGrid(mainWrapper, 75);
-
-    document.addEventListener("mousemove", e => {
-      addAnimationToGrid(e, "rgba(23,23,24,.1)", "#fff", mainWrapper);
-    });
-  }, []);
+  useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#fff");
 
   return (
-    <section className={styles.discussWrapper} ref={refGridWrapper}>
+    <section
+      className={styles.discussWrapper}
+      ref={refGridWrapper}
+      data-header="yellow"
+    >
       <div className={styles.discussContainer}>
         <h1>
           <span>Discuss</span> the project
@@ -106,6 +103,7 @@ const DiscussTheProject: React.FunctionComponent = () => {
         </form>
       </div>
       {formSend && <ModalThanks clickHandler={handlerClosePopup} />}
+      <AnimatedLine backgroundColor="#333" filledColor="#fff" />
     </section>
   );
 };

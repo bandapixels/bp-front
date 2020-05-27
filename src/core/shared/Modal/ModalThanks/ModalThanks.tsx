@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import useOutsideClick from "../../../utils/useOutsideClick";
 import styles from "./modalThanks.module.scss";
 
@@ -13,10 +13,18 @@ const ModalThanks: React.FunctionComponent<ModalThanksProps> = ({
 }) => {
   const refThanks = useRef<HTMLDivElement>();
 
+  useEffect(() => {
+    document.body.classList.add("removeScrolling");
+
+    return (): void => {
+      document.body.classList.remove("removeScrolling");
+    };
+  });
+
   useOutsideClick(refThanks, clickHandler);
 
   return (
-    <div className={styles.modalOverlay}>
+    <div className={styles.modalOverlayThanks}>
       <div className={styles.modalWrapThanks}>
         <div className={styles.thanksWrapper} ref={refThanks}>
           <p>

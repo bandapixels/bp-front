@@ -14,21 +14,52 @@
     font-weight: 500;
     font-size: 20px;
     line-height: 130%;
+    transition: 1s;
+    position: relative;
+
+    &.contactsHeader {
+      color: #171718;
+      
+      &:not(.activeLink) {
+        &:hover {
+          &:after {
+            background: #171718;
+          }
+        }
+      }
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      width: 5px;
+      height: 5px;
+      background: transparent;
+      position: absolute;
+      left: 50%;
+      top: calc(100% + 10px);
+      transform: translateX(-50%);
+      transition: .3s;
+    }
+
+    &:hover {
+      &:after {
+        background: #fff;
+        width: 100%;
+      }
+    }
 
     &.activeLink {
       color: #EFE314;
-      position: relative;
 
       &:after {
-        content: '';
-        display: block;
-        width: 5px;
-        height: 5px;
         background: #EFE314;
-        position: absolute;
-        left: 50%;
-        top: calc(100% + 10px);
-        transform: translateX(-50%);
+      }
+
+      &:hover {
+        &:after {
+          width: 100%;
+        }
       }
     }
   }

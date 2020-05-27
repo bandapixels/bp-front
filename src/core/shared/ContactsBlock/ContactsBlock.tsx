@@ -1,25 +1,34 @@
-import React, { useEffect, useRef } from "react";
-import { createGrid, addAnimationToGrid } from "../../utils/grid";
+import React, { useRef } from "react";
+import classNames from "classnames";
+import { useRouter } from "next/router";
+import useGrid from "../../utils/useGrid";
 
 import SocialList from "../Header/components/SocialList/SocialList";
 
 import styles from "./contactsBlock.module.scss";
 
-const ConstactsBlock: React.FunctionComponent = () => {
+interface ContactsBlockProps {
+  classes?: string;
+}
+
+const ContactsBlock: React.FunctionComponent<ContactsBlockProps> = ({
+  classes
+}) => {
   const refGridWrapper = useRef<HTMLDivElement>();
+  const router = useRouter();
+  const mailBtnClasses = classNames(styles.mailBtnMob, classes);
+  const contactsWrapperClasses = classNames(styles.contactsWrapper, {
+    contactsPage: router.pathname === "/contacts"
+  });
 
-  useEffect(() => {
-    const mainWrapper = refGridWrapper.current;
-
-    createGrid(mainWrapper, 75);
-
-    document.addEventListener("mousemove", e => {
-      addAnimationToGrid(e, "rgba(23,23,24,.1)", "#171718", mainWrapper);
-    });
-  }, []);
+  useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#171718");
 
   return (
-    <section className={styles.contactsWrapper} ref={refGridWrapper}>
+    <section
+      className={contactsWrapperClasses}
+      ref={refGridWrapper}
+      data-header="black"
+    >
       <div className={styles.contactsContent}>
         <h3 className={styles.contactsTitle}>
           Lets make your service
@@ -34,14 +43,15 @@ const ConstactsBlock: React.FunctionComponent = () => {
           team@bandapixels.com
         </a>
       </div>
+
       <div className={styles.contactsSocial}>
         <SocialList />
+        <a href="mailto:team@bandapixels.com" className={mailBtnClasses}>
+          team@bandapixels.com
+        </a>
       </div>
-      <a href="mailto:team@bandapixels.com" className={styles.mailBtnMob}>
-        team@bandapixels.com
-      </a>
     </section>
   );
 };
 
-export default ConstactsBlock;
+export default ContactsBlock;

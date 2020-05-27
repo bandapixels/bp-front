@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import { createGrid, addAnimationToGrid } from "../../../../utils/grid";
+import React, { useRef, useState } from "react";
+import useGrid from "../../../../utils/useGrid";
 
 import Project from "./components/Project/Project";
 import Button from "../../../../shared/coreUi/Button/Button";
@@ -8,7 +8,6 @@ import styles from "./projects.module.scss";
 
 const Projects: React.FunctionComponent = () => {
   const refGridWrapper = useRef<HTMLDivElement>();
-  const sliderList = useRef<HTMLDivElement>();
   const [activeSlide, setActiveSlide] = useState(0);
 
   const projectsInfo = [
@@ -33,7 +32,9 @@ const Projects: React.FunctionComponent = () => {
         can be fixed easily and within a reasonable time.
       `,
       video: "video2",
-      url: "#"
+      url: "#",
+      orientation: "landscape",
+      position: "right"
     },
     {
       name: "TECOM-2",
@@ -51,7 +52,9 @@ const Projects: React.FunctionComponent = () => {
         reasonable consumer would expect it to.
       `,
       video: "video2",
-      url: "#"
+      url: "#",
+      orientation: "portrait",
+      position: "left"
     }
   ];
 
@@ -67,42 +70,45 @@ const Projects: React.FunctionComponent = () => {
   };
 
   const handlerPrevSlide = (): void => {
-    if (activeSlide > 0) {
-      const newActiveSlide = activeSlide - 1;
+    let newActiveSlide = activeSlide;
 
-      setActiveSlide(newActiveSlide);
-      scrollTopMobile();
+    if (activeSlide > 0) {
+      newActiveSlide = activeSlide - 1;
+    } else if (activeSlide === 0) {
+      newActiveSlide = projectsInfo.length - 1;
     }
+
+    setActiveSlide(newActiveSlide);
+    scrollTopMobile();
   };
 
   const handlerNextSlide = (): void => {
-    const slidesQuantity = projectsInfo.length - 1;
+    const lastSlide = projectsInfo.length - 1;
+    let newActiveSlide = activeSlide;
 
-    if (slidesQuantity > activeSlide) {
-      const newActiveSlide = activeSlide + 1;
-
-      setActiveSlide(newActiveSlide);
-      scrollTopMobile();
+    if (lastSlide > activeSlide) {
+      newActiveSlide = activeSlide + 1;
+    } else if (lastSlide === activeSlide) {
+      newActiveSlide = 0;
     }
+
+    setActiveSlide(newActiveSlide);
+    scrollTopMobile();
   };
 
-  useEffect(() => {
-    const mainWrapper = refGridWrapper.current;
-
-    createGrid(mainWrapper, 75);
-
-    document.addEventListener("mousemove", e => {
-      addAnimationToGrid(e, "rgba(23,23,24,.1)", "#171718", mainWrapper);
-    });
-  }, []);
+  useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#171718");
 
   return (
-    <section className={styles.projectsWrapper} ref={refGridWrapper}>
+    <section
+      className={styles.projectsWrapper}
+      ref={refGridWrapper}
+      data-header="black"
+    >
       <h3 className={styles.projectsMobTitle}>
         <span>Our</span> projects
       </h3>
       <div className={styles.projectsSlider}>
-        <div className={styles.projectsSliderList} ref={sliderList}>
+        <div className={styles.projectsSliderList}>
           <Project
             name={projectsInfo[activeSlide].name}
             description={projectsInfo[activeSlide].description}
@@ -110,6 +116,8 @@ const Projects: React.FunctionComponent = () => {
             key={projectsInfo[activeSlide].name}
             video={projectsInfo[activeSlide].video}
             url={projectsInfo[activeSlide].url}
+            orientation={projectsInfo[activeSlide].orientation}
+            position={projectsInfo[activeSlide].position}
           />
         </div>
       </div>

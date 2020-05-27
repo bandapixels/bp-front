@@ -1,23 +1,20 @@
-import React, { useRef, useEffect } from "react";
-import { createGrid, addAnimationToGrid } from "../../../../utils/grid";
+import React, { useRef } from "react";
+import useGrid from "../../../../utils/useGrid";
+import AnimatedLine from "../../../../shared/AnimatedLine/AnimatedLine";
 
 import styles from "./AboutUs.module.scss";
 
 const AboutUs: React.FunctionComponent = () => {
   const refGridWrapper = useRef<HTMLDivElement>();
 
-  useEffect(() => {
-    const mainWrapper = refGridWrapper.current;
-
-    createGrid(mainWrapper, 75);
-
-    document.addEventListener("mousemove", e => {
-      addAnimationToGrid(e, "rgba(23,23,24,.1)", "#171718", mainWrapper);
-    });
-  }, []);
+  useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#171718");
 
   return (
-    <section className={styles.aboutWrapper} ref={refGridWrapper}>
+    <section
+      className={styles.aboutWrapper}
+      ref={refGridWrapper}
+      data-header="black"
+    >
       <div className={styles.aboutUsBig}>
         <span>About</span>
         <span />
@@ -64,6 +61,7 @@ const AboutUs: React.FunctionComponent = () => {
           </p>
         </div>
       </div>
+      <AnimatedLine backgroundColor="#BDBDBD" filledColor="#333" />
     </section>
   );
 };

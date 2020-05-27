@@ -6,7 +6,16 @@
 }
 body {
   font-family: "Raleway";
-  cursor: url(/images/cursor.png), auto;
+  cursor: url(/images/cursors/cursor.png), auto;
+}
+
+button,
+a {
+  cursor: url(/images/cursors/hover.png), auto!important;
+
+  * {
+    cursor: url(/images/cursors/hover.png), auto!important;
+  }
 }
 
 html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,

@@ -161,6 +161,14 @@
   }
 }
 
+@media screen and (max-height: 930px) and (min-width: $breakpoint-mobile) and (max-width: 1600px) {
+  .discussFormRightPart {
+    .btnWithArrow {
+      margin-top: 58px;
+    }
+}
+}
+
 @media screen and (max-width: $breakpoint-mobile) {
   .gradient-vertical,
   .gradient-horizontal {

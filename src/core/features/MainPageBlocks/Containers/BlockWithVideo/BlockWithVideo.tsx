@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
-import { createGrid, addAnimationToGrid } from "../../../../utils/grid";
+import React, { useState, useRef } from "react";
+import useGrid from "../../../../utils/useGrid";
 import styles from "./blockWithVideo.module.scss";
 
 import ModalVideo from "../../../../shared/Modal/ModalVideo/ModalVideo";
 import Button from "../../../../shared/coreUi/Button/Button";
+import AnimatedLine from "../../../../shared/AnimatedLine/AnimatedLine";
 
 const BlockWithVideo: React.FunctionComponent = () => {
   const [roundedText] = useState(
@@ -17,19 +18,15 @@ const BlockWithVideo: React.FunctionComponent = () => {
     setModalOpen(!modalOpen);
   };
 
-  useEffect(() => {
-    const mainWrapper = refGridWrapper.current;
-
-    createGrid(mainWrapper, 75);
-
-    document.addEventListener("mousemove", e => {
-      addAnimationToGrid(e, "rgba(23,23,24,.1)", "#fff", mainWrapper);
-    });
-  }, []);
+  useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#fff");
 
   return (
     <>
-      <section className={styles.mainWrapper} ref={refGridWrapper}>
+      <section
+        className={styles.mainWrapper}
+        ref={refGridWrapper}
+        id="first-section"
+      >
         <div className={styles.yellowBlock}>
           <div className={styles.bigLettersWrapper}>
             <div className={styles.firstLine}>
@@ -101,9 +98,10 @@ const BlockWithVideo: React.FunctionComponent = () => {
             <source src="/videos/AppNavi_animate.mp4" type="video/webm" />
           </video>
         </div>
-      </section>
 
-      {modalOpen && <ModalVideo clickHandler={handlerClosePopup} />}
+        {modalOpen && <ModalVideo clickHandler={handlerClosePopup} />}
+        <AnimatedLine backgroundColor="#333" filledColor="#fff" />
+      </section>
     </>
   );
 };

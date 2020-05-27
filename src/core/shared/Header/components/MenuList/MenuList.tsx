@@ -10,19 +10,19 @@ const MenuList: React.FunctionComponent = () => {
     },
     {
       name: "Projects",
-      href: "#"
+      href: "/#"
     },
     {
       name: "Blog",
-      href: "#"
+      href: "/blog"
     },
     {
       name: "Services",
-      href: "#"
+      href: "/services"
     },
     {
       name: "Contacts",
-      href: "#"
+      href: "/contacts"
     }
   ];
 
