@@ -5,10 +5,7 @@ const AnalysisVideo: React.FunctionComponent = () => {
   return (
     <section className={styles.analysisVideoWrapper}>
       <div className={styles.analysisVideoContainer}>
-        <img
-          src="/videos/projects/appNavi/AppNavi_Black&White_v8.gif"
-          alt="video"
-        />
+        <img src="/videos/projects/appNavi/B&W.gif" alt="video" />
       </div>
     </section>
   );
