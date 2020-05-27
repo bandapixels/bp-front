@@ -6,7 +6,10 @@ const AboutVideo: React.FunctionComponent = () => {
     <section className={styles.aboutVideo}>
       <div className={styles.aboutVideoWrapper}>
         <video controls>
-          <source src="/videos/AppNavi_animate.mp4" type="video/webm" />
+          <source
+            src="/videos/projects/appNavi/AppNavi_En+5_final.mp4"
+            type="video/mp4"
+          />
         </video>
       </div>
     </section>

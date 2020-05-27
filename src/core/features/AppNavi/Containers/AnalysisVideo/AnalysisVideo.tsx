@@ -5,9 +5,10 @@ const AnalysisVideo: React.FunctionComponent = () => {
   return (
     <section className={styles.analysisVideoWrapper}>
       <div className={styles.analysisVideoContainer}>
-        <video controls>
-          <source src="/videos/AppNavi_animate.mp4" type="video/webm" />
-        </video>
+        <img
+          src="/videos/projects/appNavi/AppNavi_Black&White_v8.gif"
+          alt="video"
+        />
       </div>
     </section>
   );

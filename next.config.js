@@ -15,4 +15,16 @@ module.exports = withSass({
       return `${name}__${localName}`;
     },
   },
+  exportPathMap: async function (
+      defaultPathMap,
+      { dev, dir, outDir, distDir, buildId }
+  ) {
+    return {
+      '/': { page: '/' },
+      '/appnavi': { page: '/appnavi' },
+      '/blog': { page: '/blog' },
+      '/contacts': { page: '/contacts' },
+      '/services': { page: '/services' }
+    }
+  },
 });

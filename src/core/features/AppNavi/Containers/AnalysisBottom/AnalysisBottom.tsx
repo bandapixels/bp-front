@@ -95,9 +95,10 @@ const AnalysisBottom: React.FunctionComponent = () => {
           </AnimationOnScroll>
         </div>
         <div className={styles.analysisVideo}>
-          <video controls>
-            <source src="/videos/AppNavi_animate.mp4" type="video/webm" />
-          </video>
+          <img
+            src="/videos/projects/appNavi/AppNavi-logo-behance.gif"
+            alt="video"
+          />
         </div>
         <img
           src="/images/projects/AppNavi/trap-bottom.svg"
