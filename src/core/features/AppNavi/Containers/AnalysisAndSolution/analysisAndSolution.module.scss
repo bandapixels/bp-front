@@ -105,9 +105,95 @@
   }
 }
 
+.tabletLine {
+  display: none;
+}
+
+@media only screen and (max-width: 1280px) {
+  .tabletLine,
+  .showInMob {
+    display: block;
+  }
+
+  .tabletLine {
+    max-width: 100%;
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .bottomLine,
+  .topLine,
+  .hideInMob,
+  .analysisStepsText {
+    display: none;
+  }
+
+  .analysisSteps {
+    padding: 0 40px;
+    max-width: 960px;
+    margin: 60px auto 0;
+  }
+
+  .analysisStep {
+    padding: 44px 40px 44px 130px;
+
+    &.analysisStep1 {
+      max-width: 390px;
+      margin: 0 auto 0 170px;
+    }
+
+    &.analysisStep2 {
+      max-width: 510px;
+      margin: 0 auto 0 300px;
+    }
+
+    &.analysisStep3 {
+      max-width: 530px;
+      margin: 0 auto 0 120px;
+    }
+
+    &.analysisStep4 {
+      max-width: 430px;
+      margin: 0 auto 0 440px;
+    }
+
+    &.analysisStep5 {
+      max-width: 650px;
+      margin: 0 auto 0 120px;
+    }
+
+    &.analysisStep6 {
+      max-width: 620px;
+      margin: 0 auto 0 220px;
+    }
+
+    &:not(.analysisStep6) {
+      margin-bottom: 110px;
+    }
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .analysisStep {
+    @for $i from 1 through 6 {
+      &.analysisStep#{$i} {
+        margin-left: 100px;
+        max-width: none;
+      }
+    }
+  }
+
+  .tabletLine {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 668px) {
   .analysisStepsText {
     position: static;
+    display: block;
     max-width: none;
     margin: 20px auto;
 
@@ -115,16 +201,6 @@
       font-size: 14px;
       line-height: 150%;
     }
-  }
-
-  .showInMob {
-    display: block;
-  }
-
-  .bottomLine,
-  .topLine,
-  .hideInMob {
-    display: none;
   }
 
   .analysisWrapper {

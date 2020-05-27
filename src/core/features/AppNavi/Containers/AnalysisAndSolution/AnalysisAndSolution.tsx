@@ -39,6 +39,20 @@ const AnalysisAndSolution: React.FunctionComponent = () => {
               alt="Line"
             />
           </AnimationOnScroll>
+          <AnimationOnScroll animationName="fadeIn" duration={1} delay={4}>
+            <img
+              src="/images/projects/AppNavi/mob-line.svg"
+              className={styles.mobLine}
+              alt="line"
+            />
+          </AnimationOnScroll>
+          <AnimationOnScroll animationName="fadeIn" duration={1} delay={4}>
+            <img
+              src="/images/projects/AppNavi/tablet-line.svg"
+              className={styles.tabletLine}
+              alt="line"
+            />
+          </AnimationOnScroll>
           <AnimationOnScroll animationName="fadeIn" duration={1}>
             <div className="analysisStep analysisStep1">
               <img src="/images/projects/AppNavi/step-1.svg" alt="step 1" />
@@ -120,11 +134,6 @@ const AnalysisAndSolution: React.FunctionComponent = () => {
               </p>
             </div>
           </AnimationOnScroll>
-          <img
-            src="/images/projects/AppNavi/mob-line.svg"
-            className={styles.mobLine}
-            alt="line"
-          />
         </div>
       </div>
     </section>
