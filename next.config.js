@@ -26,5 +26,5 @@ module.exports = withSass({
       '/contacts': { page: '/contacts' },
       '/services': { page: '/services' }
     }
-  },
+  }
 });

@@ -27,6 +27,8 @@ const AnimationOnScroll: React.FunctionComponent<AnimationOnScroll> = ({
     };
 
     window.addEventListener("scroll", handlerScroll);
+
+    return (): void => window.removeEventListener("scroll", handlerScroll);
   });
 
   return (
