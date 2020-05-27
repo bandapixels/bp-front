@@ -40,7 +40,7 @@ const Header: React.FunctionComponent = () => {
 
   const headerStyles = classNames(styles.header, {
     openedMenuWrapper: openedMenu,
-    smallFullYellowHeader: router.pathname === "/appnavi"
+    bigYellowHeader: router.pathname === "/appnavi"
   });
 
   return (
