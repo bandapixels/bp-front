@@ -1,3 +1,8 @@
+enum orientations {
+  h = "HORIZONTAL",
+  v = "VERTICAL"
+}
+
 export const createGrid = (
   ref: HTMLElement,
   linesGap: number,
@@ -45,7 +50,7 @@ const getLinesInRadiusZone = (
   min: number,
   max: number,
   mainColor: string,
-  orientation: "horizontal" | "vertical"
+  orientation: orientations
 ): HTMLElement[] => {
   const neededLines = [];
 
@@ -53,7 +58,7 @@ const getLinesInRadiusZone = (
   lines.forEach((lineGrid: HTMLElement) => {
     const line = lineGrid;
     // get line offset
-    const pos = orientation === "vertical" ? line.offsetLeft : line.offsetTop;
+    const pos = orientation === "VERTICAL" ? line.offsetLeft : line.offsetTop;
 
     if (min < pos && pos < max) {
       neededLines.push(line);
@@ -68,7 +73,7 @@ const getLinesInRadiusZone = (
 const addGradient = (
   lines: HTMLElement[],
   mouseCoordinate: number,
-  orientation: "horizontal" | "vertical",
+  orientation: orientations,
   mainColor: string,
   gradientColor: string
 ): void => {
@@ -96,7 +101,7 @@ const addGradient = (
     const mainColorEnd = mainColorCenter + 120 - coefficient;
 
     // add gradient to the line
-    const degrees = orientation === "horizontal" ? "90deg, " : "";
+    const degrees = orientation === "HORIZONTAL" ? "90deg, " : "";
     line.style.background = `linear-gradient(${degrees} ${mainColor}, ${mainColor} ${mainColorStart}px, ${gradientColor} ${mainColorCenter}px, ${mainColor} ${mainColorEnd}px)`;
   });
 };
@@ -122,16 +127,16 @@ export const addAnimationToGrid = (
     minX,
     maxX,
     mainColor,
-    "vertical"
+    orientations.v
   );
   const hLines = getLinesInRadiusZone(
     gradientBlocksH,
     minY,
     maxY,
     mainColor,
-    "horizontal"
+    orientations.h
   );
 
-  addGradient(vLines, y, "vertical", mainColor, gradientColor);
-  addGradient(hLines, x, "horizontal", mainColor, gradientColor);
+  addGradient(vLines, y, orientations.v, mainColor, gradientColor);
+  addGradient(hLines, x, orientations.h, mainColor, gradientColor);
 };
