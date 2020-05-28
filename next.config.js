@@ -14,5 +14,5 @@ module.exports = withSass({
       const name = fileName.replace(/\.[^/.]+$/, '');
       return `${name}__${localName}`;
     },
-  },
+  }
 });
