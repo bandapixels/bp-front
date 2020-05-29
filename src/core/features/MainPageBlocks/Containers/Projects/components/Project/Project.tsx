@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import classNames from "classnames";
 
 import styles from "./project.module.scss";
@@ -11,6 +12,7 @@ interface ProjectProps {
   url: string;
   orientation: string;
   position: string;
+  activeSlide: number;
 }
 
 const Project: React.FunctionComponent<ProjectProps> = ({
@@ -20,11 +22,13 @@ const Project: React.FunctionComponent<ProjectProps> = ({
   video,
   url,
   orientation,
-  position
+  position,
+  activeSlide
 }) => {
   const [visiblePart, setVisiblePart] = useState(problem);
   const [hiddenPart, setHiddenPart] = useState("");
   const [visible, setVisible] = useState(false);
+  const router = useRouter();
 
   const splitTextForMobile = (): void => {
     if (globalThis.outerWidth <= 668) {
@@ -55,6 +59,9 @@ const Project: React.FunctionComponent<ProjectProps> = ({
         })}
       >
         <div className={styles.projectInfo}>
+          {router.pathname === "/projects" && activeSlide === 0 && (
+            <h1>Projects</h1>
+          )}
           <h3 className={styles.projectTitle}>What problem do we solve</h3>
           <div className={styles.projectProblem}>
             {visiblePart}

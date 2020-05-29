@@ -1,14 +1,19 @@
 import React, { useRef, useState } from "react";
+import classNames from "classnames";
+import { useRouter } from "next/router";
 import useGrid from "../../../../utils/useGrid";
-
 import Project from "./components/Project/Project";
 import Button from "../../../../shared/coreUi/Button/Button";
 
 import styles from "./projects.module.scss";
 
 const Projects: React.FunctionComponent = () => {
+  const router = useRouter();
   const refGridWrapper = useRef<HTMLDivElement>();
   const [activeSlide, setActiveSlide] = useState(0);
+  const projectsClasses = classNames(styles.projectsWrapper, {
+    projectsPageWrapper: router.pathname === "/projects"
+  });
 
   const projectsInfo = [
     {
@@ -100,7 +105,7 @@ const Projects: React.FunctionComponent = () => {
 
   return (
     <section
-      className={styles.projectsWrapper}
+      className={projectsClasses}
       ref={refGridWrapper}
       data-header="black"
     >
@@ -118,6 +123,7 @@ const Projects: React.FunctionComponent = () => {
             url={projectsInfo[activeSlide].url}
             orientation={projectsInfo[activeSlide].orientation}
             position={projectsInfo[activeSlide].position}
+            activeSlide={activeSlide}
           />
         </div>
       </div>
