@@ -33,6 +33,15 @@
     display: none;
     background: transparent;
   }
+
+  h1 {
+    font-weight: bold;
+    font-size: 80px;
+    line-height: 100%;
+    letter-spacing: 0.03em;
+    color: #171718;
+    margin: 0 0 60px;
+  }
 }
 
 .projectTitle {
@@ -170,6 +179,12 @@
       margin-right: 0px;
     }
   }
+
+  .projectInfo {
+    h1 {
+      margin-bottom: 30px;
+    }
+  }
 }
 
 @media screen and (max-width: $breakpoint-max-width) and (max-height: 1000px) {
@@ -271,6 +286,22 @@
       line-height: 130%;
       color: #FFF;
       margin: 0 0 10px;
+    }
+
+    h1 {
+      background: #171718;
+      color: #fff;
+      font-weight: 900;
+      font-size: 26px;
+      line-height: 130%;
+      text-align: center;
+      height: 180px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 0 15px;
+      text-transform: uppercase;
     }
 
     p {
