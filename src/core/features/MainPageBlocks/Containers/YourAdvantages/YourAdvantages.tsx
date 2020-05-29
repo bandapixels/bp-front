@@ -9,20 +9,19 @@ const YourAdvantages: React.FunctionComponent = () => {
   const refAdvantagesContainer = useRef<HTMLDivElement>();
 
   const highlightAdvantages = (): void => {
-    const mainWrapper = refGridWrapper.current;
     const container = refAdvantagesContainer.current;
     const advantages = container.childNodes;
 
     advantages.forEach((item: HTMLElement) => {
       const element = item;
-      const position = element.offsetLeft - mainWrapper.scrollLeft;
-      const positionEnd =
-        element.offsetLeft - mainWrapper.scrollLeft + element.offsetWidth;
+      const elementInfo = element.getBoundingClientRect();
+      const position = elementInfo.left;
+      const positionEnd = elementInfo.right;
 
       if (
         position >= 0 &&
-        position < globalThis.outerWidth &&
-        positionEnd < globalThis.outerWidth
+        position < globalThis.innerWidth &&
+        positionEnd < globalThis.innerWidth
       ) {
         element.style.opacity = "1";
       } else {
