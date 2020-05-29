@@ -4,6 +4,7 @@ const path = require('path');
 
 module.exports = withSass({
   cssModules: true,
+  ignoreOrder: true,
   cssLoaderOptions: {
     getLocalIdent: (loaderContext, localIdentName, localName) => {
       const fileName = path.basename(loaderContext.resourcePath);

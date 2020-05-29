@@ -17,7 +17,7 @@ const useGrid = (
       createGrid(wrapper, 75, child);
       if (globalThis.outerWidth >= 1280) {
         document.addEventListener("mousemove", e => {
-          addAnimationToGrid(e, mainColor, secondColor, wrapper, child);
+          addAnimationToGrid(e, mainColor, secondColor, wrapper);
         });
       }
     }
