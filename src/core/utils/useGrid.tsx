@@ -15,7 +15,7 @@ const useGrid = (
       wrapper.querySelectorAll(".gradient-horizontal").length === 0
     ) {
       createGrid(wrapper, 75, child);
-      if (globalThis.outerWidth >= 1280) {
+      if (window.outerWidth >= 1280) {
         document.addEventListener("mousemove", e => {
           addAnimationToGrid(e, mainColor, secondColor, wrapper);
         });

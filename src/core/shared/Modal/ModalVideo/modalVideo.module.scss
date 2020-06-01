@@ -63,6 +63,8 @@
   bottom: 22px;
   border-radius: 2px;
   cursor: pointer;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .progressValue {

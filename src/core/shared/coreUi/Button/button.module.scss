@@ -1,10 +1,13 @@
 @import '../../../../assets/scss/breakPoints.scss';
 
 %btn-with-icon-style {
-  text-align: left;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  div {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+  }
 
   img {
     max-width: 24px;
@@ -48,8 +51,10 @@
       background: #171718;
     }
 
-    &:after {
-      background: url(/images/icons/arrow-white.svg) no-repeat center;
+    svg {
+      path {
+        fill: #fff;
+      }
     }
   }
 }
@@ -142,10 +147,7 @@
   @extend %btn-with-icon-style;
   @extend %btn-states;
 
-  &:after {
-    content: '';
-    display: block;
-    background: url(/images/icons/arrow.svg) no-repeat center;
+  svg {
     width: 20px;
     height: 20px;
     z-index: 1;
