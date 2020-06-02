@@ -22,14 +22,18 @@ const MobileSteps: React.FunctionComponent<MobileStepsProps> = ({
           type="button"
           handlerClick={handlerChangeStep}
         >
-          Next Step
-          <img src="/images/icons/arrow.svg" alt="arrow" />
+          <div>
+            Next Step
+            <img src="/images/icons/arrow.svg" alt="arrow" />
+          </div>
         </Button>
       )}
       {step === 2 && (
         <Button classes="yellowBtnWithIcon" type="submit">
-          Send
-          <img src="/images/icons/arrow.svg" alt="arrow" />
+          <div>
+            Send
+            <img src="/images/icons/arrow.svg" alt="arrow" />
+          </div>
         </Button>
       )}
     </div>

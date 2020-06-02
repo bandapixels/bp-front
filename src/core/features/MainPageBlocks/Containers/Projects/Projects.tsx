@@ -64,10 +64,10 @@ const Projects: React.FunctionComponent = () => {
   ];
 
   const scrollTopMobile = (): void => {
-    if (globalThis.outerWidth <= 668) {
+    if (window.outerWidth <= 668) {
       const offset: number = refGridWrapper.current.offsetTop;
 
-      globalThis.scrollTo({
+      window.scrollTo({
         top: offset,
         behavior: "smooth"
       });
@@ -132,16 +132,12 @@ const Projects: React.FunctionComponent = () => {
           type="button"
           classes="sliderPrev"
           handlerClick={handlerPrevSlide}
-        >
-          <img src="/images/icons/arrow.svg" alt="slider arrow prev" />
-        </Button>
+        />
         <Button
           type="button"
           classes="sliderNext"
           handlerClick={handlerNextSlide}
-        >
-          <img src="/images/icons/arrow.svg" alt="slider arrow prev" />
-        </Button>
+        />
       </div>
     </section>
   );
