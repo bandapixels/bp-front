@@ -9,7 +9,7 @@ import FullPageScroll from "../src/core/shared/FullPageScroll/Containers/FullPag
 const Services: NextPage = () => {
   return (
     <StoreLayout>
-      <FullPageScroll startScroll>
+      <FullPageScroll>
         <WeOffer />
         <TechnologyStack />
         <Contacts classes="servicesBtn" />

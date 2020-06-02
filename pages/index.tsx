@@ -8,19 +8,13 @@ import ContactsBlock from "../src/core/shared/ContactsBlock/ContactsBlock";
 import Projects from "../src/core/features/MainPageBlocks/Containers/Projects/Projects";
 import YourAdvantages from "../src/core/features/MainPageBlocks/Containers/YourAdvantages/YourAdvantages";
 import FullPageScroll from "../src/core/shared/FullPageScroll/Containers/FullPageScroll";
-// import Preloader from "../src/core/shared/Preloader/Preloader";
+import Preloader from "../src/core/shared/Preloader/Containers/Preloader";
 
 const Home: NextPage = () => {
-  // const [isLoad, setLoad] = useState(false);
-
-  // useEffect(() => {
-  //   setTimeout(() => setLoad(true), 3000);
-  // }, []);
-
   return (
     <StoreLayout>
-      {/* <Preloader isLoad={isLoad} /> */}
-      <FullPageScroll startScroll>
+      <Preloader />
+      <FullPageScroll>
         <BlockWithVideo />
         <AboutUs />
         <YourAdvantages />
