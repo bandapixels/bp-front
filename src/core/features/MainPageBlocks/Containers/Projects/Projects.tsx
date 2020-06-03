@@ -17,7 +17,7 @@ const Projects: React.FunctionComponent = () => {
 
   const projectsInfo = [
     {
-      name: "TECOM",
+      name: "AppNavi",
       description: `
         TECOM Conf is China's first Tech and Entrepreneur Communities
         conference.
@@ -36,13 +36,13 @@ const Projects: React.FunctionComponent = () => {
         For example, it does not do what it is normally supposed to do but
         can be fixed easily and within a reasonable time.
       `,
-      video: "video2",
-      url: "#",
+      video: "/videos/AppNavi_animate.mp4",
+      url: "/appnavi",
       orientation: "landscape",
       position: "right"
     },
     {
-      name: "TECOM-2",
+      name: "DCR",
       description: `
         TECOM-2 Conf is China's first Tech and Entrepreneur Communities
         conference.
@@ -56,10 +56,30 @@ const Projects: React.FunctionComponent = () => {
         beforehand – for example, a toaster breaks down before a
         reasonable consumer would expect it to.
       `,
-      video: "video2",
+      video: "/videos/dcr.mp4",
       url: "#",
-      orientation: "portrait",
+      orientation: "landscape",
       position: "left"
+    },
+    {
+      name: "Shed",
+      description: `
+        TECOM-3 Conf is China's first Tech and Entrepreneur Communities
+        conference.
+
+        TECOM-3 Conf brings the most dynamic, engaging and vibrant
+        Communities, Startups,
+      `,
+      problem: `
+        A problem is considered to be major when a reasonable consumer
+        would not have bought the product if they had known the problem
+        beforehand – for example, a toaster breaks down before a
+        reasonable consumer would expect it to.
+      `,
+      video: "/videos/shed.mp4",
+      url: "#",
+      orientation: "landscape",
+      position: "right"
     }
   ];
 

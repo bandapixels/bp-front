@@ -64,6 +64,8 @@
     letter-spacing: 0.03em;
     color: #fff;
     margin: 0 0 10px;
+    opacity: .5;
+    transition: .3s;
   }
 
   .postReadMore {
@@ -105,6 +107,8 @@
   letter-spacing: 0.03em;
   color: #F2F2F2;
   margin: 0 0 20px;
+  opacity: .5;
+  transition: .3s;
 }
 
 .blogItem {
@@ -120,6 +124,13 @@
 
   &:not(:last-child) {
     margin-right: 60px;
+  }
+
+  &:hover {
+    h4,
+    .postAnnotation {
+      opacity: 1;
+    }
   }
 }
 

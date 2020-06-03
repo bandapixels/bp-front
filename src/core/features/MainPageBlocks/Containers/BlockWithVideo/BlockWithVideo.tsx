@@ -95,7 +95,7 @@ const BlockWithVideo: React.FunctionComponent = () => {
             </h1>
           </div>
           <video className={styles.video} autoPlay muted>
-            <source src="/videos/AppNavi_animate.mp4" type="video/webm" />
+            <source src="/videos/AppNavi_animate.mp4" type="video/mp4" />
           </video>
         </div>
 

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import classNames from "classnames";
+import Link from "next/link";
 
 import styles from "./project.module.scss";
+import BigArrow from "../../../../../../shared/Icons/BigArrow";
 
 interface ProjectProps {
   name: string;
@@ -62,8 +64,20 @@ const Project: React.FunctionComponent<ProjectProps> = ({
           {router.pathname === "/projects" && activeSlide === 0 && (
             <h1>Projects</h1>
           )}
-          <h3 className={styles.projectTitle}>What problem do we solve</h3>
-          <div className={styles.projectProblem}>
+          <h3
+            className={styles.projectTitle}
+            onClick={(): void => {
+              router.push(url);
+            }}
+          >
+            What problem do we solve
+          </h3>
+          <div
+            className={styles.projectProblem}
+            onClick={(): void => {
+              router.push(url);
+            }}
+          >
             {visiblePart}
             {visible ? hiddenPart : "..."}
           </div>
@@ -77,15 +91,26 @@ const Project: React.FunctionComponent<ProjectProps> = ({
           className={classNames(styles.projectMedia, {
             portrait: orientation === "portrait"
           })}
-          data-name={video}
-        />
+        >
+          <video muted autoPlay loop>
+            <source src={video} type="video/mp4" />
+          </video>
+        </div>
       </div>
       <div className={styles.projectsFooter}>
         <div className={styles.projectsFooterLeftPart}>
-          <a href={url} className={styles.projectBtn}>
-            See the creation process
-          </a>
-          <div className={styles.projectDescription}>
+          <Link href={url}>
+            <a href={url} className={styles.projectBtn}>
+              <span>See the creation process</span>
+              <BigArrow />
+            </a>
+          </Link>
+          <div
+            className={styles.projectDescription}
+            onClick={(): void => {
+              router.push(url);
+            }}
+          >
             <h3>{name}</h3>
             <div>{description}</div>
           </div>

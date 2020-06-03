@@ -265,6 +265,7 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
 
     return (): void => {
       window.removeEventListener("mousewheel", changeSlider);
+      body.classList.remove("fullpage");
     };
   }, [startScroll, activeSec, canScroll]);
 
