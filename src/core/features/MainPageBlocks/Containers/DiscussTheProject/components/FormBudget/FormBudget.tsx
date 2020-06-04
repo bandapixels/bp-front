@@ -1,7 +1,7 @@
 import React from "react";
 import RadioButton from "../../../../../../shared/coreUi/RadioButton/RadioButton";
 
-import styles from "../../discussTheProject.module.scss";
+import styles from "../../Containers/discussTheProject.module.scss";
 
 interface FormBudgetProps {
   handlerOnChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -20,6 +20,7 @@ const FormBudget: React.FunctionComponent<FormBudgetProps> = ({
           name="budget"
           smallInput
           handlerOnChange={handlerOnChange}
+          required
         >
           $ 5 000 - $ 10 000
         </RadioButton>
@@ -29,6 +30,7 @@ const FormBudget: React.FunctionComponent<FormBudgetProps> = ({
           name="budget"
           smallInput
           handlerOnChange={handlerOnChange}
+          required
         >
           $ 10 000 - $ 20 000
         </RadioButton>
@@ -38,6 +40,7 @@ const FormBudget: React.FunctionComponent<FormBudgetProps> = ({
           name="budget"
           smallInput
           handlerOnChange={handlerOnChange}
+          required
         >
           $ 20 000 - $ 30 000
         </RadioButton>
@@ -47,6 +50,7 @@ const FormBudget: React.FunctionComponent<FormBudgetProps> = ({
           name="budget"
           smallInput
           handlerOnChange={handlerOnChange}
+          required
         >
           $ 30 000 - $ 50 000
         </RadioButton>
@@ -56,6 +60,7 @@ const FormBudget: React.FunctionComponent<FormBudgetProps> = ({
           name="budget"
           smallInput
           handlerOnChange={handlerOnChange}
+          required
         >
           $ 50 000 - $ 100 000
         </RadioButton>
@@ -65,6 +70,7 @@ const FormBudget: React.FunctionComponent<FormBudgetProps> = ({
           name="budget"
           smallInput
           handlerOnChange={handlerOnChange}
+          required
         >
           $ 100 000 +
         </RadioButton>
@@ -74,6 +80,7 @@ const FormBudget: React.FunctionComponent<FormBudgetProps> = ({
           name="budget"
           smallInput
           handlerOnChange={handlerOnChange}
+          required
         >
           I need help
         </RadioButton>

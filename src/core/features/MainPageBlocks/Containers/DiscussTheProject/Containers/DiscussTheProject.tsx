@@ -1,37 +1,72 @@
 import React, { useRef, useState, FormEvent } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import classNames from "classnames";
-import useGrid from "../../../../utils/useGrid";
+import useGrid from "../../../../../utils/useGrid";
 
-import FormContacts from "./components/FormContacts/FormContacts";
-import FormTask from "./components/FormTask/FormTask";
-import FormProjectType from "./components/FormProjectType/FormProjectType";
-import FormBudget from "./components/FormBudget/FormBudget";
-import Button from "../../../../shared/coreUi/Button/Button";
-import MobileSteps from "./components/MobileSteps/MobileSteps";
-import ModalThanks from "../../../../shared/Modal/ModalThanks/ModalThanks";
-import AnimatedLine from "../../../../shared/AnimatedLine/AnimatedLine";
+import FormContacts from "../components/FormContacts/FormContacts";
+import FormTask from "../components/FormTask/FormTask";
+import FormProjectType from "../components/FormProjectType/FormProjectType";
+import FormBudget from "../components/FormBudget/FormBudget";
+import Button from "../../../../../shared/coreUi/Button/Button";
+import MobileSteps from "../components/MobileSteps/MobileSteps";
+import ModalThanks from "../../../../../shared/Modal/ModalThanks/ModalThanks";
+import AnimatedLine from "../../../../../shared/AnimatedLine/AnimatedLine";
 
 import styles from "./discussTheProject.module.scss";
+import { AppState } from "../../../../../store/store";
+import { getErrors, getData } from "../discussTheProject.selectors";
+import { saveErrors, saveData, resetAll } from "../discussTheProject.actions";
 
 const DiscussTheProject: React.FunctionComponent = () => {
   const refGridWrapper = useRef<HTMLDivElement>();
-  const [formData, setFormData] = useState({
-    name: "",
-    company: "",
-    email: "",
-    skype: "",
-    task: "",
-    projectType: "",
-    budget: ""
-  });
   const [step, setStep] = useState(1);
   const formClasses = classNames(styles.discussForm, {
     showSecondStep: step === 2
   });
   const [formSend, setFormSend] = useState(false);
+  const dispatch = useDispatch();
+  const formData: AppState = useSelector((state: AppState) => getData(state));
+  const formErrors = useSelector((state: AppState) => getErrors(state));
 
   const handlerClosePopup = (): void => {
     setFormSend(!formSend);
+  };
+
+  const formValidation = (data): void => {
+    const emailReg = /^([a-z0-9_-]+)@([\da-z-]+)\.([a-z]{2,5})$/;
+    const checkLength = [
+      "name",
+      "company",
+      "task",
+      "projectType",
+      "budget",
+      "skype"
+    ];
+    let newErrors = { ...formErrors };
+
+    Object.entries(data).forEach(([formName, formValue]: [string, string]) => {
+      if (checkLength.includes(formName)) {
+        if (formValue.length < 1) {
+          newErrors = Object.assign(newErrors, { [formName]: true });
+        } else {
+          newErrors = Object.assign(newErrors, { [formName]: false });
+        }
+      }
+
+      if (formName === "email") {
+        if (!emailReg.test(formValue)) {
+          newErrors = Object.assign(newErrors, { [formName]: true });
+        } else {
+          newErrors = Object.assign(newErrors, { [formName]: false });
+        }
+      }
+    });
+
+    dispatch(saveErrors(newErrors));
+  };
+
+  const validateOnSubmit = (): void => {
+    formValidation(formData);
   };
 
   const handlerOnChange = (
@@ -47,7 +82,8 @@ const DiscussTheProject: React.FunctionComponent = () => {
         [inputName]: inputVal
       };
 
-      setFormData(newData);
+      dispatch(saveData(newData));
+      formValidation({ [inputName]: inputVal });
     }
   };
 
@@ -64,6 +100,8 @@ const DiscussTheProject: React.FunctionComponent = () => {
   const handlerSendData = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     setFormSend(!formSend);
+    dispatch(resetAll());
+    e.currentTarget.reset();
   };
 
   useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#fff");
@@ -91,7 +129,7 @@ const DiscussTheProject: React.FunctionComponent = () => {
           </div>
           <div className={styles.discussFormRightPart}>
             <FormBudget handlerOnChange={handlerOnChange} />
-            <Button classes="btnWithArrow">
+            <Button classes="btnWithArrow" handlerClick={validateOnSubmit}>
               <span>
                 Send
                 <br />

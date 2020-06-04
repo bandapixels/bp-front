@@ -1,7 +1,7 @@
 import React from "react";
 import RadioButton from "../../../../../../shared/coreUi/RadioButton/RadioButton";
 
-import styles from "../../discussTheProject.module.scss";
+import styles from "../../Containers/discussTheProject.module.scss";
 
 interface FormProjectTypeProps {
   handlerOnChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -20,6 +20,7 @@ const FormProjectType: React.FunctionComponent<FormProjectTypeProps> = ({
             value="type-1"
             name="projectType"
             handlerOnChange={handlerOnChange}
+            required
           >
             We want to make the design of the service more convenient and
             understandable for users.
@@ -29,6 +30,7 @@ const FormProjectType: React.FunctionComponent<FormProjectTypeProps> = ({
             value="type-2"
             name="projectType"
             handlerOnChange={handlerOnChange}
+            required
           >
             We are doing a new service and want to make a design for it.
           </RadioButton>
@@ -37,6 +39,7 @@ const FormProjectType: React.FunctionComponent<FormProjectTypeProps> = ({
             value="type-3"
             name="projectType"
             handlerOnChange={handlerOnChange}
+            required
           >
             We improve or expand a working service
           </RadioButton>
@@ -47,6 +50,7 @@ const FormProjectType: React.FunctionComponent<FormProjectTypeProps> = ({
             value="type-4"
             name="projectType"
             handlerOnChange={handlerOnChange}
+            required
           >
             We are developing a new service for everyone and we know exactly
             what we want
@@ -56,6 +60,7 @@ const FormProjectType: React.FunctionComponent<FormProjectTypeProps> = ({
             value="type-5"
             name="projectType"
             handlerOnChange={handlerOnChange}
+            required
           >
             We are a startup and want to make a cool MVP. We want to see a team
             that will help us.
@@ -65,6 +70,7 @@ const FormProjectType: React.FunctionComponent<FormProjectTypeProps> = ({
             value="type-6"
             name="projectType"
             handlerOnChange={handlerOnChange}
+            required
           >
             Another variant
           </RadioButton>

@@ -16,7 +16,8 @@
       color: #EFE314;
     }
 
-    input[type="text"] {
+    input[type="text"],
+    input[type="email"] {
       border-color: #EFE314;
     }
   }
@@ -33,7 +34,8 @@
     transition: .3s;
   }
 
-  input[type="text"] {
+  input[type="text"],
+  input[type="email"] {
     border: 1px solid #BDBDBD;
     background: transparent;
     height: 50px;
@@ -54,6 +56,10 @@
       border: 1px solid transparent;
     }
 
+    &.errorInput {
+      border-color: red;
+    }
+
     &:disabled {
       pointer-events: none;
       border-color: #4f4f4f;
@@ -71,7 +77,8 @@
       margin-bottom: 15px;
     }
 
-    input[type="text"] {
+    input[type="text"],
+    input[type="email"] {
       height: 40px;
     }
   }
@@ -114,7 +121,8 @@
       margin-bottom: 10px;
     }
 
-    input[type="text"] {
+    input[type="text"],
+    input[type="email"] {
       height: 50px;
       border-color: #BDBDBD;
     }

@@ -1,7 +1,10 @@
 import React from "react";
 import classNames from "classnames";
+import { useSelector } from "react-redux";
 
 import styles from "./radioButton.module.scss";
+import { AppState } from "../../../store/store";
+import { getErrors } from "../../../features/MainPageBlocks/Containers/DiscussTheProject/discussTheProject.selectors";
 
 interface InputProps {
   id: string;
@@ -10,6 +13,7 @@ interface InputProps {
   value: string;
   smallInput?: boolean;
   handlerOnChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  required?: boolean;
 }
 
 const RadioButton: React.FunctionComponent<InputProps> = ({
@@ -19,10 +23,13 @@ const RadioButton: React.FunctionComponent<InputProps> = ({
   value,
   smallInput,
   handlerOnChange,
-  children
+  children,
+  required
 }) => {
+  const errors = useSelector((state: AppState) => getErrors(state));
   const classes = classNames(styles.inputRadio, {
-    smallInput
+    smallInput,
+    errorInput: errors[name]
   });
 
   return (
@@ -34,6 +41,7 @@ const RadioButton: React.FunctionComponent<InputProps> = ({
         disabled={disabled}
         value={value}
         onChange={(e): void => handlerOnChange(e)}
+        required={required}
       />
       <div>
         <span className={styles.radioCircle} />
