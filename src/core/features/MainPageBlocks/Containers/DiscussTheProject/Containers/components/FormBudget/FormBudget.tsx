@@ -1,7 +1,7 @@
 import React from "react";
-import RadioButton from "../../../../../../shared/coreUi/RadioButton/RadioButton";
+import RadioButton from "../../../../../../../shared/coreUi/RadioButton/RadioButton";
 
-import styles from "../../Containers/discussTheProject.module.scss";
+import styles from "../../discussTheProject.module.scss";
 
 interface FormBudgetProps {
   handlerOnChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;

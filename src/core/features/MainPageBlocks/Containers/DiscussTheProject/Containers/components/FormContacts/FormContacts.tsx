@@ -1,7 +1,7 @@
 import React from "react";
-import Input from "../../../../../../shared/coreUi/Input/Input";
+import Input from "../../../../../../../shared/coreUi/Input/Input";
 
-import styles from "../../Containers/discussTheProject.module.scss";
+import styles from "../../discussTheProject.module.scss";
 
 interface FormContactsProps {
   handlerOnChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;

@@ -1,7 +1,7 @@
 import React from "react";
-import Textarea from "../../../../../../shared/coreUi/Textarea/Textarea";
+import Textarea from "../../../../../../../shared/coreUi/Textarea/Textarea";
 
-import styles from "../../Containers/discussTheProject.module.scss";
+import styles from "../../discussTheProject.module.scss";
 
 interface FormTaskProps {
   handlerOnChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;

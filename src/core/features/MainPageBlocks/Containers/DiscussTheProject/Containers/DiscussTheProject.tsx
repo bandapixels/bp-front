@@ -3,12 +3,12 @@ import { useSelector, useDispatch } from "react-redux";
 import classNames from "classnames";
 import useGrid from "../../../../../utils/useGrid";
 
-import FormContacts from "../components/FormContacts/FormContacts";
-import FormTask from "../components/FormTask/FormTask";
-import FormProjectType from "../components/FormProjectType/FormProjectType";
-import FormBudget from "../components/FormBudget/FormBudget";
+import FormContacts from "./components/FormContacts/FormContacts";
+import FormTask from "./components/FormTask/FormTask";
+import FormProjectType from "./components/FormProjectType/FormProjectType";
+import FormBudget from "./components/FormBudget/FormBudget";
 import Button from "../../../../../shared/coreUi/Button/Button";
-import MobileSteps from "../components/MobileSteps/MobileSteps";
+import MobileSteps from "./components/MobileSteps/MobileSteps";
 import ModalThanks from "../../../../../shared/Modal/ModalThanks/ModalThanks";
 import AnimatedLine from "../../../../../shared/AnimatedLine/AnimatedLine";
 
