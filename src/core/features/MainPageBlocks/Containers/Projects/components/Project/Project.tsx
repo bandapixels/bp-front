@@ -92,7 +92,7 @@ const Project: React.FunctionComponent<ProjectProps> = ({
             portrait: orientation === "portrait"
           })}
         >
-          <video muted autoPlay loop>
+          <video muted autoPlay loop preload="auto">
             <source src={video} type="video/mp4" />
           </video>
         </div>
