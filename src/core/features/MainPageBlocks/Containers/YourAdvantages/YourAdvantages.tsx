@@ -25,7 +25,7 @@ const YourAdvantages: React.FunctionComponent = () => {
       ) {
         element.style.opacity = "1";
       } else {
-        element.style.opacity = "0.5";
+        element.style.opacity = "0.3";
       }
     });
   };
