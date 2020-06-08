@@ -1,24 +1,24 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from "next/router";
 import { getSection } from "../fullPageScroll.selectors";
+import { getStart } from "../../Preloader/preloader.selectors";
 import { changeSection } from "../fullPageScroll.actions";
 import { AppState } from "../../../store/store";
 import { checkBrowser } from "../../../utils/checkBrowser";
 
 import styles from "./fullPageScroll.scss";
 
-interface FullPageScrollProps {
-  startScroll: boolean;
-}
-
-const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
-  startScroll,
-  children
-}) => {
+const FullPageScroll: React.FunctionComponent = ({ children }) => {
+  const router = useRouter();
   const [activeAnimation, setActiveAnimation] = useState(false);
   const [canScroll, setCanScroll] = useState(true);
   const refFullPage = useRef<HTMLDivElement>();
   const activeSec = useSelector((state: AppState) => getSection(state));
+  const startScroll =
+    router.pathname === "/"
+      ? !useSelector((state: AppState) => getStart(state))
+      : true;
   const dispatch = useDispatch();
 
   // move content to active section
