@@ -70,14 +70,14 @@
 }
 
 .projectMedia {
-  width: 640px;
-  height: 360px;
-  max-height: 360px;
-  background: #F2F2F2;
-  border: 10px solid #4F4F4F;
+  //width: 640px;
+  height: 380px;
+  max-height: 380px;
+  background: #4F4F4F;
+  border: 8px solid #4F4F4F;
   box-sizing: border-box;
   border-radius: 10px;
-  flex: 0 0 640px;
+  flex: 0 0 auto;
 
   &.portrait {
     height: 500px;
@@ -85,6 +85,13 @@
     flex: 0 0 auto;
     max-height: 500px;
     margin-right: 180px;
+  }
+
+  video {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    border-radius: 8px;
   }
 }
 
@@ -130,20 +137,60 @@
   color: #EFE314;
   text-align: left;
   padding: 10px 60px 0;
-  background: rgba(23,23,24,.8);
+  background: transparent;
   text-decoration: none;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
+  position: relative;
+  transition: .3s;
 
-  &:after {
+  svg {
     content: '';
     display: block;
-    background: url(/images/icons/big-arrow.svg) no-repeat center;
     width: 80px;
     height: 20px;
     margin: 8px 0 0;
+  }
+
+  * {
+    z-index: 1;
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(23,23,24,.8);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    transition: .3s;
+  }
+
+  &:hover {
+    background: #EFE314;
+    color: #171718;
+
+    path {
+      fill: #171718;
+    }
+
+    &:before {
+      left: 100%;
+    }
+  }
+
+  &:active {
+    color: #fff;
+    background: #171718;
+
+    &:before {
+      background: #171718;
+    }
   }
 }
 
@@ -189,7 +236,7 @@
 
 @media screen and (max-width: $breakpoint-max-width) and (max-height: 1000px) {
   .projectMedia {
-    flex: 0 1 260px;
+    flex: 0 1 auto;
     width: 440px;
 
     &.portrait {
@@ -350,11 +397,21 @@
     color: #EFE314;
     text-align: left;
     padding: 20px 30px;
-    background: rgba(23,23,24,.8);
+    background: #171718;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     justify-content: space-between;
+    transition: .3s;
+    position: relative;
+
+    svg {
+      display: none;
+    }
+
+    &:before {
+      content: none;
+    }
 
     &:after {
       content: '';
@@ -362,6 +419,7 @@
       z-index: 1;
       background: url(/images/icons/arrow-yellow.svg) no-repeat center;
       width: 20px;
+      height: 20px;
       margin: 0;
     }
   }

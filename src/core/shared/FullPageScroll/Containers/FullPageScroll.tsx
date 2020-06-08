@@ -125,7 +125,7 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
     }, 150);
   }, []);
 
-  useEffect(() => {
+  useEffect((): (() => void) => {
     const body = document.querySelector("body");
     const wrapper = refFullPage.current;
     const sections = wrapper.childNodes;
@@ -280,6 +280,7 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
       document.addEventListener(supportWheel, changeSlider);
     }
 
+    // eslint-disable-next-line consistent-return
     return (): void => {
       document.removeEventListener("mousewheel", changeSlider, false); // IE9, Chrome, Safari, Opera
       document.removeEventListener("wheel", changeSlider, false); // Firefox
