@@ -14,11 +14,7 @@ export const createGrid = (
 
   // check what width do we need layout or children
   if (childrenWidth) {
-    for (let i = 0; i < ref.children.length; i++) {
-      width += ref.children[i].clientWidth;
-    }
-
-    width += 1000;
+    width = ref.scrollWidth + 100;
   } else {
     width = window.innerWidth;
   }
