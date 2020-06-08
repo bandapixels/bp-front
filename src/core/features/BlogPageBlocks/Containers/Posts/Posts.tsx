@@ -91,7 +91,9 @@ const Posts: React.FunctionComponent = () => {
                 })}
               </div>
               <div className={styles.postAnnotation}>{post.annotation}</div>
-              <p className={styles.postReadMore}>Read more</p>
+              <a className={styles.postReadMore} href={post.link}>
+                Read more
+              </a>
             </div>
           </a>
         ))}
