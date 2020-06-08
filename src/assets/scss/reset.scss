@@ -10,7 +10,9 @@ body {
 }
 
 button,
-a {
+a,
+input,
+textarea {
   cursor: url(/images/cursors/hover.png), auto!important;
 
   * {
