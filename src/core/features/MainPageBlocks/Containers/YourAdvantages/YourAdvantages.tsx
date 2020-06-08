@@ -40,7 +40,7 @@ const YourAdvantages: React.FunctionComponent = () => {
     <section
       className={styles.advantagesWrapper}
       ref={refGridWrapper}
-      data-header="yellow"
+      data-header="full-yellow"
       data-horizontal
     >
       <div className={styles.advantagesBig}>
