@@ -37,7 +37,7 @@ const WelcomeToBlog: React.FunctionComponent = () => {
             Who we are?
           </a>
           <a href="#" className={styles.welcomeLink}>
-            Сustomer story
+            Customer story
           </a>
         </div>
       </div>

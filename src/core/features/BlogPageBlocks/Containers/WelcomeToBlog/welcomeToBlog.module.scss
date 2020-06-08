@@ -32,20 +32,20 @@ $welcome-text-font-sizes: (
   }
 }
 
-@mixin header-style($font-size: 10, $size: 0, $animation: rotateTitleRight, $top: 0, $left: 0) {
+@mixin header-style($font-size: 10, $size: 0, $animation: rotateTitleRight, $top: 0, $left: 0, $animationTime: 50s) {
   font-size: $font-size;
   text-transform: uppercase;
   width: $size;
   height: $size;
   position: relative;
-  animation: $animation 50s linear infinite;
+  animation: $animation $animationTime linear infinite;
   transform-origin: center;
   margin: 0 auto;
   position: absolute;
   top: $top;
   left: $left;
   color: #fff;
-  text-shadow: 0px 0px #333;
+  text-shadow: 0px 0px 1px #000;
   font-style: normal;
   font-weight: normal;
 }
@@ -107,7 +107,7 @@ $welcome-text-font-sizes: (
   }
   
   .roundedTitle {
-    @include header-style(20px, $big-circle-size, rotateTitleRight, calc(50% - 60vh), 0);
+    @include header-style(20px, $big-circle-size, rotateTitleRight, calc(50% - 60vh), 0, 100s);
     @include rotated-text(90, 360deg, 0deg, calc(115vh / 2), 70px, calc(115vh / 2), 0);
   }
   
