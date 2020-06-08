@@ -21,8 +21,8 @@ const YourAdvantages: React.FunctionComponent = () => {
 
       if (
         position >= 0 &&
-        position < globalThis.innerWidth &&
-        positionEnd < globalThis.innerWidth
+        position < window.innerWidth &&
+        positionEnd < window.innerWidth
       ) {
         element.style.opacity = "1";
       } else {

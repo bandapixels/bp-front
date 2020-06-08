@@ -10,6 +10,7 @@ import Button from "../../../../shared/coreUi/Button/Button";
 import MobileSteps from "./components/MobileSteps/MobileSteps";
 import ModalThanks from "../../../../shared/Modal/ModalThanks/ModalThanks";
 import AnimatedLine from "../../../../shared/AnimatedLine/AnimatedLine";
+import Arrow from "../../../../shared/Icons/Arrow/Arrow";
 
 import styles from "./discussTheProject.module.scss";
 import useRedrawGrid from "../../../../utils/useRedrawGrid";
@@ -56,7 +57,7 @@ const DiscussTheProject: React.FunctionComponent = () => {
     const offset: number = refGridWrapper.current.offsetTop;
 
     setStep(step + 1);
-    globalThis.scrollTo({
+    window.scrollTo({
       top: offset,
       behavior: "smooth"
     });
@@ -94,11 +95,14 @@ const DiscussTheProject: React.FunctionComponent = () => {
           <div className={styles.discussFormRightPart}>
             <FormBudget handlerOnChange={handlerOnChange} />
             <Button classes="btnWithArrow">
-              <span>
-                Send
-                <br />
-                request
-              </span>
+              <div>
+                <span>
+                  Send
+                  <br />
+                  request
+                </span>
+                <Arrow />
+              </div>
             </Button>
           </div>
           <MobileSteps step={step} handlerChangeStep={handlerChangeStep} />

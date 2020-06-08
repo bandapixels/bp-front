@@ -61,12 +61,16 @@ const BlockWithVideo: React.FunctionComponent = () => {
           </p>
           <div className={styles.mobileBtnsWrapper}>
             <Button classes="yellowBtnWithIcon">
-              discuss the project
-              <img src="/images/icons/arrow.svg" alt="arrow" />
+              <div>
+                discuss the project
+                <img src="/images/icons/arrow.svg" alt="arrow" />
+              </div>
             </Button>
             <Button classes="transparentBtnWithIcon">
-              work process
-              <img src="/images/icons/play-btn.svg" alt="arrow" />
+              <div>
+                work process
+                <img src="/images/icons/play-btn.svg" alt="arrow" />
+              </div>
             </Button>
           </div>
         </div>

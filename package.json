@@ -27,6 +27,11 @@
       "git add"
     ]
   },
+  "browserslist": [
+    ">0.01%",
+    "not dead",
+    "not op_mini all"
+  ],
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",

@@ -31,7 +31,7 @@ const Project: React.FunctionComponent<ProjectProps> = ({
   const router = useRouter();
 
   const splitTextForMobile = (): void => {
-    if (globalThis.outerWidth <= 668) {
+    if (window.outerWidth <= 668) {
       const textArr = visiblePart.split("").filter(word => word.length > 0);
 
       if (textArr.length > 120) {

@@ -66,10 +66,10 @@ const Projects: React.FunctionComponent = () => {
   ];
 
   const scrollTopMobile = (): void => {
-    if (globalThis.outerWidth <= 668) {
+    if (window.outerWidth <= 668) {
       const offset: number = refGridWrapper.current.offsetTop;
 
-      globalThis.scrollTo({
+      window.scrollTo({
         top: offset,
         behavior: "smooth"
       });

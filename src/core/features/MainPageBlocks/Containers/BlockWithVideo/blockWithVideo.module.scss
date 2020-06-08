@@ -192,6 +192,7 @@ $we-help-font-sizes: (
   background: rgba(23,23,24,.1);
   position: absolute;
   pointer-events: none;
+  left: 0;
 }
 
 .bigLettersWrapper {
@@ -222,7 +223,7 @@ $we-help-font-sizes: (
       position: absolute;
       top: 100%;
       left: 32%;
-      width: max-content;
+      width: 110%;
     }
   }
 }
@@ -249,7 +250,7 @@ $we-help-font-sizes: (
     &:last-child {
       position: absolute;
       left: calc(100% + 20px);
-      width: max-content;
+      width: 56%;
       bottom: 0;
 
       &:after {
