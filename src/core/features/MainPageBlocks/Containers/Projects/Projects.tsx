@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import useGrid from "../../../../utils/useGrid";
 import Project from "./components/Project/Project";
 import Button from "../../../../shared/coreUi/Button/Button";
+import ArrowForSlider from "../../../../shared/Icons/ArrowForSlider";
 
 import styles from "./projects.module.scss";
 
@@ -133,14 +134,14 @@ const Projects: React.FunctionComponent = () => {
           classes="sliderPrev"
           handlerClick={handlerPrevSlide}
         >
-          <img src="/images/icons/arrow.svg" alt="slider arrow prev" />
+          <ArrowForSlider />
         </Button>
         <Button
           type="button"
           classes="sliderNext"
           handlerClick={handlerNextSlide}
         >
-          <img src="/images/icons/arrow.svg" alt="slider arrow prev" />
+          <ArrowForSlider />
         </Button>
       </div>
     </section>
