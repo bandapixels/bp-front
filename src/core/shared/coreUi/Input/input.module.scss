@@ -56,10 +56,6 @@
       border: 1px solid transparent;
     }
 
-    &.errorInput {
-      border-color: red;
-    }
-
     &:disabled {
       pointer-events: none;
       border-color: #4f4f4f;
@@ -67,6 +63,39 @@
       &+ span {
         color: #4f4f4f;
       }
+    }
+  }
+
+  .inputWrapper {
+    width: 100%;
+    position: relative;
+  }
+
+  &.fieldError {
+    &:hover {
+      input {
+        border-color: #EB5757;
+      }
+    }
+
+    span {
+      color: #EB5757;
+    }
+
+    input {
+      border-color: #EB5757;
+    }
+
+    .errorMessage {
+      font-family: 'Open Sans';
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 150%;
+      letter-spacing: 0.03em;
+      color: #EB5757;
+      position: absolute;
+      left: 0;
+      top: 100%;
     }
   }
 }
@@ -80,6 +109,12 @@
     input[type="text"],
     input[type="email"] {
       height: 40px;
+    }
+
+    &.fieldError {
+      .errorMessage {
+        line-height: 100%;
+      }
     }
   }
 }
@@ -96,6 +131,13 @@
     span {
       font-size: 14px;
       flex: 0 0 auto;
+    }
+
+    &.fieldError {
+      .errorMessage {
+        left: auto;
+        right: 0;
+      }
     }
   }
 }

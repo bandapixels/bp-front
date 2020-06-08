@@ -47,7 +47,7 @@ const DiscussTheProject: React.FunctionComponent = () => {
     Object.entries(data).forEach(([formName, formValue]: [string, string]) => {
       if (checkLength.includes(formName)) {
         if (formValue.length < 1) {
-          newErrors = Object.assign(newErrors, { [formName]: true });
+          newErrors = Object.assign(newErrors, { [formName]: "length" });
         } else {
           newErrors = Object.assign(newErrors, { [formName]: false });
         }
@@ -55,7 +55,7 @@ const DiscussTheProject: React.FunctionComponent = () => {
 
       if (formName === "email") {
         if (!emailReg.test(formValue)) {
-          newErrors = Object.assign(newErrors, { [formName]: true });
+          newErrors = Object.assign(newErrors, { [formName]: "email" });
         } else {
           newErrors = Object.assign(newErrors, { [formName]: false });
         }

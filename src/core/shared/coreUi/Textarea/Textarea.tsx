@@ -25,24 +25,34 @@ const Textarea: React.FunctionComponent<TextareaProps> = ({
   const errors = useSelector((state: AppState) => getErrors(state));
   const [textareaValue, setTextareaValue] = useState("");
   const textareaClasses = classNames(styles.textarea, {
-    filledText: textareaValue.length > 0,
+    filledText: textareaValue.length > 0
+  });
+  const textareaWrapperClasses = classNames(styles.textareaWrapper, {
     textareaError: errors[name]
   });
+  const error = errors[name];
 
   return (
-    <textarea
-      id={id}
-      name={name}
-      placeholder={placeholder}
-      className={textareaClasses}
-      disabled={disabled}
-      rows={20}
-      onChange={(e): void => {
-        handlerOnChange(e);
-        setTextareaValue(e.target.value);
-      }}
-      required={required}
-    />
+    <div className={textareaWrapperClasses}>
+      <textarea
+        id={id}
+        name={name}
+        placeholder={placeholder}
+        className={textareaClasses}
+        disabled={disabled}
+        rows={20}
+        onChange={(e): void => {
+          handlerOnChange(e);
+          setTextareaValue(e.target.value);
+        }}
+        required={required}
+      />
+      {error && (
+        <p className={styles.errorMessage}>
+          {error === "length" && "required to fill"}
+        </p>
+      )}
+    </div>
   );
 };
 

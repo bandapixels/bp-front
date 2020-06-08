@@ -28,25 +28,36 @@ const Input: React.FunctionComponent<InputProps> = ({
   const [inputValue, setInputValue] = useState("");
   const errors = useSelector((state: AppState) => getErrors(state));
   const inputClasses = classNames({
-    filledInput: inputValue.length > 0,
-    errorInput: errors[name]
+    filledInput: inputValue.length > 0
   });
+  const labelClasses = classNames(styles.inputText, {
+    fieldError: errors[name]
+  });
+  const error = errors[name];
 
   return (
-    <label htmlFor={id} className={styles.inputText}>
-      <input
-        type={type}
-        placeholder={placeholder}
-        id={id}
-        name={name}
-        disabled={disabled}
-        onChange={(e): void => {
-          handlerOnChange(e);
-          setInputValue(e.target.value);
-        }}
-        className={inputClasses}
-        required={required}
-      />
+    <label htmlFor={id} className={labelClasses}>
+      <div className={styles.inputWrapper}>
+        <input
+          type={type}
+          placeholder={placeholder}
+          id={id}
+          name={name}
+          disabled={disabled}
+          onChange={(e): void => {
+            handlerOnChange(e);
+            setInputValue(e.target.value);
+          }}
+          className={inputClasses}
+          required={required}
+        />
+        {error && (
+          <p className={styles.errorMessage}>
+            {error === "length" && "required to fill"}
+            {error === "email" && "enter the correct email"}
+          </p>
+        )}
+      </div>
       <span>{children}</span>
     </label>
   );

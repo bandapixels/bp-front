@@ -1,5 +1,27 @@
 @import "../../../../assets/scss/breakPoints.scss";
 
+.textareaWrapper {
+  position: relative;
+
+  &.textareaError {
+    textarea {
+      border-color: #EB5757;
+    }
+
+    .errorMessage {
+      font-family: 'Open Sans';
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 150%;
+      letter-spacing: 0.03em;
+      color: #EB5757;
+      position: absolute;
+      left: 0;
+      top: 100%;
+    }
+  }
+}
+
 .textarea {
   cursor: pointer;
   border: 1px solid #BDBDBD;
@@ -12,10 +34,6 @@
   padding: 15px;
   resize: none;
   transition: .3s;
-
-  &.textareaError {
-    border-color: red;
-  }
 
   &::placeholder {
     font-weight: bold;
