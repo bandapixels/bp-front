@@ -12,6 +12,7 @@ import ModalThanks from "../../../../shared/Modal/ModalThanks/ModalThanks";
 import AnimatedLine from "../../../../shared/AnimatedLine/AnimatedLine";
 
 import styles from "./discussTheProject.module.scss";
+import useRedrawGrid from "../../../../utils/useRedrawGrid";
 
 const DiscussTheProject: React.FunctionComponent = () => {
   const refGridWrapper = useRef<HTMLDivElement>();
@@ -67,6 +68,7 @@ const DiscussTheProject: React.FunctionComponent = () => {
   };
 
   useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#fff");
+  useRedrawGrid(refGridWrapper);
 
   return (
     <section

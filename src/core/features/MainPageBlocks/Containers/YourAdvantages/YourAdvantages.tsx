@@ -3,6 +3,7 @@ import useGrid from "../../../../utils/useGrid";
 import AnimatedLine from "../../../../shared/AnimatedLine/AnimatedLine";
 
 import styles from "./yourAdvantages.module.scss";
+import useRedrawGrid from "../../../../utils/useRedrawGrid";
 
 const YourAdvantages: React.FunctionComponent = () => {
   const refGridWrapper = useRef<HTMLDivElement>();
@@ -35,6 +36,7 @@ const YourAdvantages: React.FunctionComponent = () => {
   }, []);
 
   useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#fff", true);
+  useRedrawGrid(refGridWrapper, true);
 
   return (
     <section

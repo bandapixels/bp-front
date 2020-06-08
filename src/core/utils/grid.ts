@@ -3,6 +3,14 @@ enum orientations {
   v = "VERTICAL"
 }
 
+export const removeGrid = (ref: HTMLElement): void => {
+  ref
+    .querySelectorAll(".gradient-vertical, .gradient-horizontal")
+    ?.forEach(function(elem) {
+      elem.parentNode.removeChild(elem);
+    });
+};
+
 export const createGrid = (
   ref: HTMLElement,
   linesGap: number,

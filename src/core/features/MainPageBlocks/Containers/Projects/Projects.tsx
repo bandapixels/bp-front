@@ -7,6 +7,7 @@ import Button from "../../../../shared/coreUi/Button/Button";
 import ArrowForSlider from "../../../../shared/Icons/ArrowForSlider";
 
 import styles from "./projects.module.scss";
+import useRedrawGrid from "../../../../utils/useRedrawGrid";
 
 const Projects: React.FunctionComponent = () => {
   const router = useRouter();
@@ -103,6 +104,7 @@ const Projects: React.FunctionComponent = () => {
   };
 
   useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#171718");
+  useRedrawGrid(refGridWrapper);
 
   return (
     <section
