@@ -65,6 +65,9 @@ const Tabs: React.FunctionComponent = ({ children }) => {
     const activeBtn = contentWrapper.querySelector(
       ".technologyContent .technologyActive button"
     ) as HTMLElement;
+    const technologyType = contentWrapper.querySelector(
+      ".technologyType"
+    ) as HTMLElement;
     const leftLine = document.querySelector(".leftLine") as HTMLElement;
     const mainLine = document.querySelector(".mainLine") as HTMLElement;
     const rightLine = document.querySelector(".rightLine") as HTMLElement;
@@ -98,6 +101,10 @@ const Tabs: React.FunctionComponent = ({ children }) => {
       rightPoint === leftPoint
         ? `lineAppeare .2s linear .3s forwards`
         : `lineAppeare .3s linear .6s forwards`;
+    technologyType.style.animation =
+      rightPoint === leftPoint
+        ? `tabsAppear .8s .3s ease-in-out forwards`
+        : `tabsAppear .8s .6s ease-in-out forwards`;
   };
 
   const removeLineAnimation = (): void => {
