@@ -5,6 +5,7 @@ import styles from "./blockWithVideo.module.scss";
 import ModalVideo from "../../../../shared/Modal/ModalVideo/ModalVideo";
 import Button from "../../../../shared/coreUi/Button/Button";
 import AnimatedLine from "../../../../shared/AnimatedLine/AnimatedLine";
+import useRedrawGrid from "../../../../utils/useRedrawGrid";
 
 const BlockWithVideo: React.FunctionComponent = () => {
   const [roundedText] = useState(
@@ -19,6 +20,7 @@ const BlockWithVideo: React.FunctionComponent = () => {
   };
 
   useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#fff");
+  useRedrawGrid(refGridWrapper);
 
   return (
     <>

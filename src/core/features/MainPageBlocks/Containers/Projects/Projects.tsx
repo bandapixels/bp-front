@@ -4,8 +4,10 @@ import { useRouter } from "next/router";
 import useGrid from "../../../../utils/useGrid";
 import Project from "./components/Project/Project";
 import Button from "../../../../shared/coreUi/Button/Button";
+import ArrowForSlider from "../../../../shared/Icons/ArrowForSlider";
 
 import styles from "./projects.module.scss";
+import useRedrawGrid from "../../../../utils/useRedrawGrid";
 
 const Projects: React.FunctionComponent = () => {
   const router = useRouter();
@@ -122,6 +124,7 @@ const Projects: React.FunctionComponent = () => {
   };
 
   useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#171718");
+  useRedrawGrid(refGridWrapper);
 
   return (
     <section
@@ -152,12 +155,16 @@ const Projects: React.FunctionComponent = () => {
           type="button"
           classes="sliderPrev"
           handlerClick={handlerPrevSlide}
-        />
+        >
+          <ArrowForSlider />
+        </Button>
         <Button
           type="button"
           classes="sliderNext"
           handlerClick={handlerNextSlide}
-        />
+        >
+          <ArrowForSlider />
+        </Button>
       </div>
     </section>
   );

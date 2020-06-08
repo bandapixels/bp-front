@@ -3,6 +3,7 @@ import useGrid from "../../../../utils/useGrid";
 import AnimatedLine from "../../../../shared/AnimatedLine/AnimatedLine";
 
 import styles from "./posts.module.scss";
+import useRedrawGrid from "../../../../utils/useRedrawGrid";
 
 const Posts: React.FunctionComponent = () => {
   const refGridWrapper = useRef<HTMLDivElement>();
@@ -64,6 +65,7 @@ const Posts: React.FunctionComponent = () => {
   ];
 
   useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#fff");
+  useRedrawGrid(refGridWrapper);
 
   return (
     <section

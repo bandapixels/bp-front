@@ -4,11 +4,13 @@ import Tab from "./components/Tab/Tab";
 import useGrid from "../../../../utils/useGrid";
 import AnimatedLine from "../../../../shared/AnimatedLine/AnimatedLine";
 import styles from "./technologyStack.module.scss";
+import useRedrawGrid from "../../../../utils/useRedrawGrid";
 
 const TechnologyStack: React.FunctionComponent = () => {
   const refGridWrapper = useRef<HTMLDivElement>();
 
   useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#fff");
+  useRedrawGrid(refGridWrapper);
 
   return (
     <section

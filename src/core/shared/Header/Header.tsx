@@ -23,19 +23,27 @@ const Header: React.FunctionComponent = () => {
     setOpenedMenu(!openedMenu);
   };
 
-  const scrollToForm = (section = activeSection): void => {
-    const needToScroll = (4 - section) * -100;
+  const scrollToSection = (scrollTo: number, section = activeSection): void => {
+    const needToScroll = (scrollTo - section) * -100;
     const wrapper = document.querySelector(".fullpageWrapper") as HTMLElement;
     const scrollHeight =
       +wrapper.getAttribute("style")?.replace(/[^-\d]/g, "") || 0;
 
     if (needToScroll !== 0) {
       wrapper.style.transform = `translateY(${scrollHeight + needToScroll}vh)`;
-      dispatch(changeSection(4));
+      dispatch(changeSection(scrollTo));
     }
   };
 
-  const handlerClick = () => {
+  const handlerLogoClick = (): void => {
+    if (router.pathname !== "/") {
+      router.push("/");
+    } else {
+      scrollToSection(0);
+    }
+  };
+
+  const handlerClick = (): void => {
     const browser = checkBrowser();
 
     if (
@@ -50,7 +58,7 @@ const Header: React.FunctionComponent = () => {
         behavior: "smooth"
       });
     } else if (router.pathname === "/") {
-      scrollToForm();
+      scrollToSection(4);
     } else {
       router.push("/form");
     }
@@ -65,7 +73,7 @@ const Header: React.FunctionComponent = () => {
 
   return (
     <header className={headerStyles}>
-      <div className={styles.logoWrapper}>
+      <div className={styles.logoWrapper} onClick={handlerLogoClick}>
         <div className={styles.bigBlackLogo} />
       </div>
       <div className={styles.headerLeftPart}>

@@ -3,6 +3,7 @@ import useGrid from "../../../../utils/useGrid";
 import AnimatedLine from "../../../../shared/AnimatedLine/AnimatedLine";
 
 import styles from "./welcomeToBlog.module.scss";
+import useRedrawGrid from "../../../../utils/useRedrawGrid";
 
 const WelcomeToBlog: React.FunctionComponent = () => {
   const [roundedText] = useState(
@@ -12,6 +13,7 @@ const WelcomeToBlog: React.FunctionComponent = () => {
   const refGridWrapper = useRef<HTMLDivElement>();
 
   useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#171718");
+  useRedrawGrid(refGridWrapper);
 
   return (
     <section
@@ -37,7 +39,7 @@ const WelcomeToBlog: React.FunctionComponent = () => {
             Who we are?
           </a>
           <a href="#" className={styles.welcomeLink}>
-            Сustomer story
+            Customer story
           </a>
         </div>
       </div>

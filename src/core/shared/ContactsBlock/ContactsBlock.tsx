@@ -2,10 +2,10 @@ import React, { useRef } from "react";
 import classNames from "classnames";
 import { useRouter } from "next/router";
 import useGrid from "../../utils/useGrid";
-
 import SocialList from "../Header/components/SocialList/SocialList";
 
 import styles from "./contactsBlock.module.scss";
+import useRedrawGrid from "../../utils/useRedrawGrid";
 
 interface ContactsBlockProps {
   classes?: string;
@@ -22,6 +22,7 @@ const ContactsBlock: React.FunctionComponent<ContactsBlockProps> = ({
   });
 
   useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#171718");
+  useRedrawGrid(refGridWrapper);
 
   return (
     <section
