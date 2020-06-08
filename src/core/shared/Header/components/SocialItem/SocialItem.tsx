@@ -12,7 +12,12 @@ const SocialItem: React.FunctionComponent<SocialItemProps> = ({
 }) => {
   return (
     <li className={styles.socialItem}>
-      <a href={href} className={styles.socialIcon}>
+      <a
+        href={href}
+        className={styles.socialIcon}
+        target="_blank"
+        rel="noreferrer noopener"
+      >
         <span className={styles[classes]} />
       </a>
     </li>
