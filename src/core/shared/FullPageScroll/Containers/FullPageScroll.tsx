@@ -1,25 +1,24 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from "next/router";
 import { getSection, getScrollings } from "../fullPageScroll.selectors";
 import { changeSection, updateScrollings } from "../fullPageScroll.actions";
 import { AppState } from "../../../store/store";
 import { checkBrowser } from "../../../utils/checkBrowser";
-
+import { getStart } from "../../Preloader/preloader.selectors";
 import styles from "./fullPageScroll.scss";
 
-interface FullPageScrollProps {
-  startScroll: boolean;
-}
-
-const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
-  startScroll,
-  children
-}) => {
+const FullPageScroll: React.FunctionComponent = ({ children }) => {
+  const router = useRouter();
   const [activeAnimation, setActiveAnimation] = useState(false);
   const [canScroll, setCanScroll] = useState(true);
   const refFullPage = useRef<HTMLDivElement>();
   const activeSec = useSelector((state: AppState) => getSection(state));
   const scrollings = useSelector((state: AppState) => getScrollings(state));
+  const startScroll =
+    router.pathname === "/"
+      ? !useSelector((state: AppState) => getStart(state))
+      : true;
   const dispatch = useDispatch();
 
   // move content to active section
@@ -284,6 +283,7 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
       document.addEventListener(supportWheel, changeSlider);
     }
 
+    // eslint-disable-next-line consistent-return
     return (): void => {
       document.removeEventListener("mousewheel", changeSlider, false); // IE9, Chrome, Safari, Opera
       document.removeEventListener("wheel", changeSlider, false); // Firefox
