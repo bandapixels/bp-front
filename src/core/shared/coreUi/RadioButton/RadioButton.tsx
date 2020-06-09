@@ -27,9 +27,10 @@ const RadioButton: React.FunctionComponent<InputProps> = ({
   required
 }) => {
   const errors = useSelector((state: AppState) => getErrors(state));
+  const { error } = errors[name];
   const classes = classNames(styles.inputRadio, {
     smallInput,
-    errorInput: errors[name]
+    errorInput: error
   });
 
   return (

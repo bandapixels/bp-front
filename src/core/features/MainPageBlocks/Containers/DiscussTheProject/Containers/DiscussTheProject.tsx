@@ -44,26 +44,25 @@ const DiscussTheProject: React.FunctionComponent = () => {
       "skype"
     ];
     let newErrors = { ...formErrors };
+    let error: boolean | string = false;
 
     Object.entries(data).forEach(([formName, formValue]: [string, string]) => {
-      if (checkLength.includes(formName)) {
-        if (formValue.length < 1) {
-          newErrors = Object.assign(newErrors, { [formName]: "length" });
-        } else {
-          newErrors = Object.assign(newErrors, { [formName]: false });
-        }
+      if (checkLength.includes(formName) && formValue.length < 1) {
+        error = "length";
       }
 
-      if (formName === "email") {
-        if (!emailReg.test(formValue)) {
-          newErrors = Object.assign(newErrors, { [formName]: "email" });
-        } else {
-          newErrors = Object.assign(newErrors, { [formName]: false });
-        }
+      if (formName === "email" && !emailReg.test(formValue)) {
+        error = "email";
       }
+
+      newErrors = Object.assign(newErrors, {
+        [formName]: { ...formErrors[formName], error }
+      });
     });
 
     dispatch(saveErrors(newErrors));
+
+    return newErrors;
   };
 
   const validateOnSubmit = (): void => {
@@ -88,10 +87,24 @@ const DiscussTheProject: React.FunctionComponent = () => {
     }
   };
 
+  const getErrorsInStep = (errors = formErrors, neededStep: number): number => {
+    const stepErrors = Object.entries(errors).filter(
+      ([, info]: [string, { error: boolean | string; step: number }]) =>
+        info.step === neededStep && info.error
+    );
+
+    return stepErrors?.length;
+  };
+
   const handlerChangeStep = (): void => {
     const offset: number = refGridWrapper.current.offsetTop;
+    const errors = formValidation(formData);
+    const errorsInStep = getErrorsInStep(errors, 1);
 
-    setStep(step + 1);
+    if (errorsInStep === 0) {
+      setStep(2);
+    }
+
     window.scrollTo({
       top: offset,
       behavior: "smooth"

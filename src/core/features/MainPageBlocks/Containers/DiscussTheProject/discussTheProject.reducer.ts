@@ -2,13 +2,34 @@ import { DiscussTheProjectState } from "./discussTheProject.state";
 
 const initialState: DiscussTheProjectState = {
   errors: {
-    name: false,
-    company: false,
-    email: false,
-    skype: false,
-    task: false,
-    projectType: false,
-    budget: false
+    name: {
+      error: false,
+      step: 1
+    },
+    company: {
+      error: false,
+      step: 1
+    },
+    email: {
+      error: false,
+      step: 1
+    },
+    skype: {
+      error: false,
+      step: 1
+    },
+    task: {
+      error: false,
+      step: 1
+    },
+    projectType: {
+      error: false,
+      step: 2
+    },
+    budget: {
+      error: false,
+      step: 2
+    }
   },
   data: {
     name: "",
@@ -35,24 +56,7 @@ const reducer = (state = initialState, action): DiscussTheProjectState => {
       };
     case "RESET_ALL":
       return {
-        errors: {
-          name: false,
-          company: false,
-          email: false,
-          skype: false,
-          task: false,
-          projectType: false,
-          budget: false
-        },
-        data: {
-          name: "",
-          company: "",
-          email: "",
-          skype: "",
-          task: "",
-          projectType: "",
-          budget: ""
-        }
+        ...initialState
       };
     default:
       return state;

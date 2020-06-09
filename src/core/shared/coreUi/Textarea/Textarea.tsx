@@ -24,13 +24,13 @@ const Textarea: React.FunctionComponent<TextareaProps> = ({
 }) => {
   const errors = useSelector((state: AppState) => getErrors(state));
   const [textareaValue, setTextareaValue] = useState("");
+  const { error } = errors[name];
   const textareaClasses = classNames(styles.textarea, {
     filledText: textareaValue.length > 0
   });
   const textareaWrapperClasses = classNames(styles.textareaWrapper, {
-    textareaError: errors[name]
+    textareaError: error
   });
-  const error = errors[name];
 
   return (
     <div className={textareaWrapperClasses}>

@@ -27,13 +27,13 @@ const Input: React.FunctionComponent<InputProps> = ({
 }) => {
   const [inputValue, setInputValue] = useState("");
   const errors = useSelector((state: AppState) => getErrors(state));
+  const { error } = errors[name];
   const inputClasses = classNames({
     filledInput: inputValue.length > 0
   });
   const labelClasses = classNames(styles.inputText, {
-    fieldError: errors[name]
+    fieldError: error
   });
-  const error = errors[name];
 
   return (
     <label htmlFor={id} className={labelClasses}>
