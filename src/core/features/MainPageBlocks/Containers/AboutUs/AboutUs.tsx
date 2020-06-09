@@ -3,11 +3,13 @@ import useGrid from "../../../../utils/useGrid";
 import AnimatedLine from "../../../../shared/AnimatedLine/AnimatedLine";
 
 import styles from "./AboutUs.module.scss";
+import useRedrawGrid from "../../../../utils/useRedrawGrid";
 
 const AboutUs: React.FunctionComponent = () => {
   const refGridWrapper = useRef<HTMLDivElement>();
 
   useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#171718");
+  useRedrawGrid(refGridWrapper);
 
   return (
     <section

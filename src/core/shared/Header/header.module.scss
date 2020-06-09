@@ -19,13 +19,14 @@
   }
 }
 
-.logoWrapper{
+.logoWrapper {
+  cursor: url(/images/cursors/hover.png), auto!important;
   width: 200px;
   height: 53px;
   margin: 0 60px;
 }
 
-.bigBlackLogo{
+.bigBlackLogo {
   background: url(/images/logo-black.svg) no-repeat center;
   background-size: contain;
   width: 100%;
@@ -78,8 +79,12 @@
     background: #171718;
     color: #fff;
 
-    &:after {
-      background: url(/images/icons/arrow-white.svg) no-repeat center;
+    svg {
+      transform: rotate(90deg);
+
+      path {
+        fill: #fff;
+      }
     }
 
     &:before {
@@ -143,17 +148,21 @@
   line-height: 19px;
   height: 140px;
   width: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 40px;
   text-align: left;
   transition: 1s;
   position: relative;
   background: #fff;
 
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   * {
     z-index: 1;
+    position: relative;
   }
   
   &:before {
@@ -183,21 +192,21 @@
       background: #171718;
     }
 
-    &:after {
-      background: url(/images/icons/arrow-white.svg) no-repeat center;
+    svg {
+      path {
+        fill: #fff;
+      }
     }
   }
 
-  &:after {
-    content: '';
-    background: url(/images/icons/arrow.svg) no-repeat center;
-    background-size: auto;
+  svg {
     width: 16px;
     height: 16px;
     display: block;
     margin-left: 30px;
     flex: 0 0 16px;
     z-index: 1;
+    position: relative;
   }
 }
 

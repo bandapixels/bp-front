@@ -4,8 +4,10 @@ import { useRouter } from "next/router";
 import useGrid from "../../../../utils/useGrid";
 import Project from "./components/Project/Project";
 import Button from "../../../../shared/coreUi/Button/Button";
+import ArrowForSlider from "../../../../shared/Icons/ArrowForSlider";
 
 import styles from "./projects.module.scss";
+import useRedrawGrid from "../../../../utils/useRedrawGrid";
 
 const Projects: React.FunctionComponent = () => {
   const router = useRouter();
@@ -17,7 +19,7 @@ const Projects: React.FunctionComponent = () => {
 
   const projectsInfo = [
     {
-      name: "TECOM",
+      name: "AppNavi",
       description: `
         TECOM Conf is China's first Tech and Entrepreneur Communities
         conference.
@@ -36,13 +38,13 @@ const Projects: React.FunctionComponent = () => {
         For example, it does not do what it is normally supposed to do but
         can be fixed easily and within a reasonable time.
       `,
-      video: "video2",
-      url: "#",
+      video: "/videos/AppNavi_animate.mp4",
+      url: "/appnavi",
       orientation: "landscape",
       position: "right"
     },
     {
-      name: "TECOM-2",
+      name: "DCR",
       description: `
         TECOM-2 Conf is China's first Tech and Entrepreneur Communities
         conference.
@@ -56,18 +58,38 @@ const Projects: React.FunctionComponent = () => {
         beforehand – for example, a toaster breaks down before a
         reasonable consumer would expect it to.
       `,
-      video: "video2",
+      video: "/videos/dcr.mp4",
       url: "#",
-      orientation: "portrait",
+      orientation: "landscape",
       position: "left"
+    },
+    {
+      name: "Shed",
+      description: `
+        TECOM-3 Conf is China's first Tech and Entrepreneur Communities
+        conference.
+
+        TECOM-3 Conf brings the most dynamic, engaging and vibrant
+        Communities, Startups,
+      `,
+      problem: `
+        A problem is considered to be major when a reasonable consumer
+        would not have bought the product if they had known the problem
+        beforehand – for example, a toaster breaks down before a
+        reasonable consumer would expect it to.
+      `,
+      video: "/videos/shed.mp4",
+      url: "#",
+      orientation: "landscape",
+      position: "right"
     }
   ];
 
   const scrollTopMobile = (): void => {
-    if (globalThis.outerWidth <= 668) {
+    if (window.outerWidth <= 668) {
       const offset: number = refGridWrapper.current.offsetTop;
 
-      globalThis.scrollTo({
+      window.scrollTo({
         top: offset,
         behavior: "smooth"
       });
@@ -102,6 +124,7 @@ const Projects: React.FunctionComponent = () => {
   };
 
   useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#171718");
+  useRedrawGrid(refGridWrapper);
 
   return (
     <section
@@ -133,14 +156,14 @@ const Projects: React.FunctionComponent = () => {
           classes="sliderPrev"
           handlerClick={handlerPrevSlide}
         >
-          <img src="/images/icons/arrow.svg" alt="slider arrow prev" />
+          <ArrowForSlider />
         </Button>
         <Button
           type="button"
           classes="sliderNext"
           handlerClick={handlerNextSlide}
         >
-          <img src="/images/icons/arrow.svg" alt="slider arrow prev" />
+          <ArrowForSlider />
         </Button>
       </div>
     </section>

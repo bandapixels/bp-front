@@ -9,18 +9,26 @@ const useGrid = (
 ): void => {
   useEffect(() => {
     const wrapper = ref.current;
+    const addGradient = (e: MouseEvent): void => {
+      addAnimationToGrid(e, mainColor, secondColor, wrapper);
+    };
 
     if (
       wrapper.querySelectorAll(".gradient-vertical").length === 0 &&
       wrapper.querySelectorAll(".gradient-horizontal").length === 0
     ) {
       createGrid(wrapper, 75, child);
-      if (globalThis.outerWidth >= 1280) {
+
+      if (window.outerWidth >= 1280) {
         document.addEventListener("mousemove", e => {
           addAnimationToGrid(e, mainColor, secondColor, wrapper);
         });
       }
     }
+
+    return (): void => {
+      document.removeEventListener("mousemove", addGradient);
+    };
   });
 };
 

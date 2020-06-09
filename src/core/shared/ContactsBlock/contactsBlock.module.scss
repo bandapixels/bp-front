@@ -29,6 +29,24 @@ $contacts-text-font-sizes: (
   }
 }
 
+.gradient-vertical {
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  height: 100vh;
+  background: rgba(23,23,24,.1);
+  position: absolute;
+  pointer-events: none;
+}
+
+.gradient-horizontal {
+  width: 100vw;
+  height: 1px;
+  background: rgba(23,23,24,.1);
+  position: absolute;
+  pointer-events: none;
+}
+
 .contactsWrapper {
   height: 100vh;
   position: relative;

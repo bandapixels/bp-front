@@ -5,6 +5,7 @@ import styles from "./blockWithVideo.module.scss";
 import ModalVideo from "../../../../shared/Modal/ModalVideo/ModalVideo";
 import Button from "../../../../shared/coreUi/Button/Button";
 import AnimatedLine from "../../../../shared/AnimatedLine/AnimatedLine";
+import useRedrawGrid from "../../../../utils/useRedrawGrid";
 
 const BlockWithVideo: React.FunctionComponent = () => {
   const [roundedText] = useState(
@@ -19,6 +20,7 @@ const BlockWithVideo: React.FunctionComponent = () => {
   };
 
   useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#fff");
+  useRedrawGrid(refGridWrapper);
 
   return (
     <>
@@ -59,12 +61,16 @@ const BlockWithVideo: React.FunctionComponent = () => {
           </p>
           <div className={styles.mobileBtnsWrapper}>
             <Button classes="yellowBtnWithIcon">
-              discuss the project
-              <img src="/images/icons/arrow.svg" alt="arrow" />
+              <div>
+                discuss the project
+                <img src="/images/icons/arrow.svg" alt="arrow" />
+              </div>
             </Button>
             <Button classes="transparentBtnWithIcon">
-              work process
-              <img src="/images/icons/play-btn.svg" alt="arrow" />
+              <div>
+                work process
+                <img src="/images/icons/play-btn.svg" alt="arrow" />
+              </div>
             </Button>
           </div>
         </div>
@@ -95,7 +101,7 @@ const BlockWithVideo: React.FunctionComponent = () => {
             </h1>
           </div>
           <video className={styles.video} autoPlay muted>
-            <source src="/videos/AppNavi_animate.mp4" type="video/webm" />
+            <source src="/videos/AppNavi_animate.mp4" type="video/mp4" />
           </video>
         </div>
 

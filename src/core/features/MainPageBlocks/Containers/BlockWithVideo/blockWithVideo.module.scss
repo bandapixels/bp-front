@@ -32,13 +32,13 @@ $we-help-font-sizes: (
   1900px: 80px
 );
 
-@mixin header-style($font-size: 10, $size: 0, $animation: rotateTitleRight, $top: 0, $left: 0) {
+@mixin header-style($font-size: 10, $size: 0, $animation: rotateTitleRight, $top: 0, $left: 0, $animationTime: 50s) {
   font-size: $font-size;
   text-transform: uppercase;
   width: $size;
   height: $size;
   position: relative;
-  animation: $animation 50s linear infinite;
+  animation: $animation $animationTime linear infinite;
   transform-origin: center;
   margin: 0 auto;
   position: absolute;
@@ -79,7 +79,7 @@ $we-help-font-sizes: (
 }
 
 .roundedTitle {
-  @include header-style(20px, $big-circle-size, rotateTitleRight, calc(50% - 60vh), 0);
+  @include header-style(20px, $big-circle-size, rotateTitleRight, calc(50% - 60vh), 0, 100s);
   @include rotated-text(90, 360deg, 0deg, calc(115vh / 2), 70px, calc(115vh / 2), 0);
 }
 
@@ -192,6 +192,7 @@ $we-help-font-sizes: (
   background: rgba(23,23,24,.1);
   position: absolute;
   pointer-events: none;
+  left: 0;
 }
 
 .bigLettersWrapper {
@@ -222,7 +223,7 @@ $we-help-font-sizes: (
       position: absolute;
       top: 100%;
       left: 32%;
-      width: max-content;
+      width: 110%;
     }
   }
 }
@@ -249,7 +250,7 @@ $we-help-font-sizes: (
     &:last-child {
       position: absolute;
       left: calc(100% + 20px);
-      width: max-content;
+      width: 56%;
       bottom: 0;
 
       &:after {

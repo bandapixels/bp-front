@@ -8,6 +8,7 @@
   cursor: pointer;
   transition: .3s;
   position: relative;
+  background: #333;
 
   input[type="radio"] {
     position: absolute;
@@ -61,7 +62,7 @@
     padding: 0 30px;
     height: 113px;
     width: 100%;
-    cursor: pointer;
+    cursor: url(/images/cursors/hover.png), auto!important;
     transition: .3s;
     border: 1px solid #bdbdbd;
     color: #fff;

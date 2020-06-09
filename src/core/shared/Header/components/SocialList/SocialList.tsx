@@ -6,19 +6,19 @@ const SocialList: React.FunctionComponent = () => {
   const socialItems = [
     {
       classes: "socialBehance",
-      href: "#"
+      href: "https://www.behance.net/bandapixels"
     },
     {
       classes: "socialFacebook",
-      href: "#"
+      href: "https://www.facebook.com/BandaPixels/"
     },
     {
       classes: "socialDribbble",
-      href: "#"
+      href: "https://dribbble.com/bandapixels"
     },
     {
       classes: "socialLinkedin",
-      href: "#"
+      href: "https://www.linkedin.com/organization-guest/company/bandapixels"
     }
   ];
 

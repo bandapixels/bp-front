@@ -64,6 +64,8 @@
     letter-spacing: 0.03em;
     color: #fff;
     margin: 0 0 10px;
+    opacity: .5;
+    transition: .3s;
   }
 
   .postReadMore {
@@ -71,6 +73,35 @@
     line-height: 150%;
     letter-spacing: 0.03em;
     color: #EFE314;
+    transition: .3s;
+    position: relative;
+    display: inline;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 5px;
+      background: #EFE314;
+      position: absolute;
+      left: 0;
+      top: calc(100% + 5px);
+      transition: .3s;
+    }
+
+    &:hover {
+      &:after {
+        width: 100%;
+      }
+    }
+
+    &:active {
+      color: #fff;
+
+      &:after {
+        background: #fff;
+      }
+    }
   }
 }
 
@@ -105,6 +136,8 @@
   letter-spacing: 0.03em;
   color: #F2F2F2;
   margin: 0 0 20px;
+  opacity: .5;
+  transition: .3s;
 }
 
 .blogItem {
@@ -120,6 +153,13 @@
 
   &:not(:last-child) {
     margin-right: 60px;
+  }
+
+  &:hover {
+    h4,
+    .postAnnotation {
+      opacity: 1;
+    }
   }
 }
 

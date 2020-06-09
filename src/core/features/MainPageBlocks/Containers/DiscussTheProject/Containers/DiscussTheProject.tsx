@@ -2,7 +2,7 @@ import React, { useRef, useState, FormEvent } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import classNames from "classnames";
 import useGrid from "../../../../../utils/useGrid";
-
+import useRedrawGrid from "../../../../../utils/useRedrawGrid";
 import FormContacts from "./components/FormContacts/FormContacts";
 import FormTask from "./components/FormTask/FormTask";
 import FormProjectType from "./components/FormProjectType/FormProjectType";
@@ -11,11 +11,12 @@ import Button from "../../../../../shared/coreUi/Button/Button";
 import MobileSteps from "./components/MobileSteps/MobileSteps";
 import ModalThanks from "../../../../../shared/Modal/ModalThanks/ModalThanks";
 import AnimatedLine from "../../../../../shared/AnimatedLine/AnimatedLine";
-
-import styles from "./discussTheProject.module.scss";
 import { AppState } from "../../../../../store/store";
 import { getErrors, getData } from "../discussTheProject.selectors";
 import { saveErrors, saveData, resetAll } from "../discussTheProject.actions";
+import Arrow from "../../../../../shared/Icons/Arrow/Arrow";
+
+import styles from "./discussTheProject.module.scss";
 
 const DiscussTheProject: React.FunctionComponent = () => {
   const refGridWrapper = useRef<HTMLDivElement>();
@@ -91,7 +92,7 @@ const DiscussTheProject: React.FunctionComponent = () => {
     const offset: number = refGridWrapper.current.offsetTop;
 
     setStep(step + 1);
-    globalThis.scrollTo({
+    window.scrollTo({
       top: offset,
       behavior: "smooth"
     });
@@ -105,6 +106,7 @@ const DiscussTheProject: React.FunctionComponent = () => {
   };
 
   useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#fff");
+  useRedrawGrid(refGridWrapper);
 
   return (
     <section
@@ -130,11 +132,14 @@ const DiscussTheProject: React.FunctionComponent = () => {
           <div className={styles.discussFormRightPart}>
             <FormBudget handlerOnChange={handlerOnChange} />
             <Button classes="btnWithArrow" handlerClick={validateOnSubmit}>
-              <span>
-                Send
-                <br />
-                request
-              </span>
+              <div>
+                <span>
+                  Send
+                  <br />
+                  request
+                </span>
+                <Arrow />
+              </div>
             </Button>
           </div>
           <MobileSteps step={step} handlerChangeStep={handlerChangeStep} />

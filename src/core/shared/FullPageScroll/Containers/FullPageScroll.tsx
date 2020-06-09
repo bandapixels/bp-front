@@ -1,23 +1,24 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from "next/router";
 import { getSection } from "../fullPageScroll.selectors";
+import { getStart } from "../../Preloader/preloader.selectors";
 import { changeSection } from "../fullPageScroll.actions";
 import { AppState } from "../../../store/store";
+import { checkBrowser } from "../../../utils/checkBrowser";
 
 import styles from "./fullPageScroll.scss";
 
-interface FullPageScrollProps {
-  startScroll: boolean;
-}
-
-const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
-  startScroll,
-  children
-}) => {
+const FullPageScroll: React.FunctionComponent = ({ children }) => {
+  const router = useRouter();
   const [activeAnimation, setActiveAnimation] = useState(false);
   const [canScroll, setCanScroll] = useState(true);
   const refFullPage = useRef<HTMLDivElement>();
   const activeSec = useSelector((state: AppState) => getSection(state));
+  const startScroll =
+    router.pathname === "/"
+      ? !useSelector((state: AppState) => getStart(state))
+      : true;
   const dispatch = useDispatch();
 
   // move content to active section
@@ -124,7 +125,7 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
     }, 150);
   }, []);
 
-  useEffect(() => {
+  useEffect((): (() => void) => {
     const body = document.querySelector("body");
     const wrapper = refFullPage.current;
     const sections = wrapper.childNodes;
@@ -258,13 +259,31 @@ const FullPageScroll: React.FunctionComponent<FullPageScrollProps> = ({
       }
     };
 
-    if (window.innerWidth > 668 && startScroll) {
-      body.classList.add("fullpage");
-      window.addEventListener("mousewheel", changeSlider);
+    let supportWheel = "";
+    if ("onwheel" in document.createElement("div")) {
+      supportWheel = "wheel"; // Modern browsers support "wheel"
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore
+    } else if (document.onmousewheel !== undefined) {
+      supportWheel = "mousewheel"; // Webkit and IE support at least "mousewheel"
     }
 
+    const browser = checkBrowser();
+
+    if (browser.name === "Firefox" && +browser.version < 60) {
+      return;
+    }
+
+    if (window.innerWidth > 668 && startScroll) {
+      body.classList.add("fullpage");
+
+      document.addEventListener(supportWheel, changeSlider);
+    }
+
+    // eslint-disable-next-line consistent-return
     return (): void => {
-      window.removeEventListener("mousewheel", changeSlider);
+      document.removeEventListener("mousewheel", changeSlider, false); // IE9, Chrome, Safari, Opera
+      document.removeEventListener("wheel", changeSlider, false); // Firefox
     };
   }, [startScroll, activeSec, canScroll]);
 

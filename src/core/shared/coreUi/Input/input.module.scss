@@ -1,11 +1,11 @@
 @import "../../../../assets/scss/breakPoints.scss";
 
 .inputText {
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-flow: row-reverse nowrap;
+  background: #333;
 
   &:not(:last-child) {
     margin-bottom: 20px;

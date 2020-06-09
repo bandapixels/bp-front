@@ -23,7 +23,6 @@
 }
 
 .textarea {
-  cursor: pointer;
   border: 1px solid #BDBDBD;
   background: transparent;
   width: 100%;
@@ -34,6 +33,7 @@
   padding: 15px;
   resize: none;
   transition: .3s;
+  background: #333;
 
   &::placeholder {
     font-weight: bold;

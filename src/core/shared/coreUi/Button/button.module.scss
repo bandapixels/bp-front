@@ -1,10 +1,13 @@
 @import '../../../../assets/scss/breakPoints.scss';
 
 %btn-with-icon-style {
-  text-align: left;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  div {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+  }
 
   img {
     max-width: 24px;
@@ -48,8 +51,10 @@
       background: #171718;
     }
 
-    &:after {
-      background: url(/images/icons/arrow-white.svg) no-repeat center;
+    svg {
+      path {
+        fill: #fff;
+      }
     }
   }
 }
@@ -142,10 +147,7 @@
   @extend %btn-with-icon-style;
   @extend %btn-states;
 
-  &:after {
-    content: '';
-    display: block;
-    background: url(/images/icons/arrow.svg) no-repeat center;
+  svg {
     width: 20px;
     height: 20px;
     z-index: 1;
@@ -160,13 +162,29 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url(/images/icons/arrow.svg) no-repeat center;
     background-color: #fff;
     z-index: 1;
+    transition: .3s;
 
     &.sliderPrev {
       transform: rotate(180deg);
       margin: 0 8px 0 0;
+    }
+
+    svg {
+      transition: .3s;
+    }
+
+    &:hover {
+      border-color: #EFE314;
+
+      path {
+        fill: #EFE314;
+      }
+    }
+
+    &:active {
+      background: #171718;
     }
   }
 }
@@ -245,7 +263,7 @@
         }
       }
 
-      img {
+      svg {
         display: none;
       }
     }

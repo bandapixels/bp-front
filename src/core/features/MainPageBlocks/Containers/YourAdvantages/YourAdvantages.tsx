@@ -3,6 +3,7 @@ import useGrid from "../../../../utils/useGrid";
 import AnimatedLine from "../../../../shared/AnimatedLine/AnimatedLine";
 
 import styles from "./yourAdvantages.module.scss";
+import useRedrawGrid from "../../../../utils/useRedrawGrid";
 
 const YourAdvantages: React.FunctionComponent = () => {
   const refGridWrapper = useRef<HTMLDivElement>();
@@ -20,12 +21,12 @@ const YourAdvantages: React.FunctionComponent = () => {
 
       if (
         position >= 0 &&
-        position < globalThis.innerWidth &&
-        positionEnd < globalThis.innerWidth
+        position < window.innerWidth &&
+        positionEnd < window.innerWidth
       ) {
         element.style.opacity = "1";
       } else {
-        element.style.opacity = "0.5";
+        element.style.opacity = "0.3";
       }
     });
   };
@@ -35,12 +36,13 @@ const YourAdvantages: React.FunctionComponent = () => {
   }, []);
 
   useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#fff", true);
+  useRedrawGrid(refGridWrapper, true);
 
   return (
     <section
       className={styles.advantagesWrapper}
       ref={refGridWrapper}
-      data-header="yellow"
+      data-header="full-yellow"
       data-horizontal
     >
       <div className={styles.advantagesBig}>

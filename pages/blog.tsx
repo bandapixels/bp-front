@@ -9,7 +9,7 @@ import ContactsBlock from "../src/core/shared/ContactsBlock/ContactsBlock";
 const Home: NextPage = () => {
   return (
     <StoreLayout>
-      <FullPageScroll startScroll>
+      <FullPageScroll>
         <WelcomeToBlog />
         <Posts />
         <ContactsBlock />

@@ -7,7 +7,7 @@ const Tabs: React.FunctionComponent = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    setIsMobile(globalThis.outerWidth <= 668);
+    setIsMobile(window.outerWidth <= 668);
   }, []);
 
   return (
