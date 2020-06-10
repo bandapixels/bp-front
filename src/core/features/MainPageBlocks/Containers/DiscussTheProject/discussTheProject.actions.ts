@@ -1,7 +1,3 @@
-export const saveErrors = (action: {}): { type: string; payload: {} } => {
-  return { type: "SAVE_ERRORS", payload: action };
-};
-
 export const saveData = (action: {}): { type: string; payload: {} } => {
   return { type: "SAVE_DATA", payload: action };
 };

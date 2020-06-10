@@ -12,8 +12,8 @@ import MobileSteps from "./components/MobileSteps/MobileSteps";
 import ModalThanks from "../../../../../shared/Modal/ModalThanks/ModalThanks";
 import AnimatedLine from "../../../../../shared/AnimatedLine/AnimatedLine";
 import { AppState } from "../../../../../store/store";
-import { getErrors, getData } from "../discussTheProject.selectors";
-import { saveErrors, saveData, resetAll } from "../discussTheProject.actions";
+import { getData } from "../discussTheProject.selectors";
+import { saveData, resetAll } from "../discussTheProject.actions";
 import Arrow from "../../../../../shared/Icons/Arrow/Arrow";
 
 import styles from "./discussTheProject.module.scss";
@@ -27,13 +27,12 @@ const DiscussTheProject: React.FunctionComponent = () => {
   const [formSend, setFormSend] = useState(false);
   const dispatch = useDispatch();
   const formData: AppState = useSelector((state: AppState) => getData(state));
-  const formErrors = useSelector((state: AppState) => getErrors(state));
 
   const handlerClosePopup = (): void => {
     setFormSend(!formSend);
   };
 
-  const formValidation = (data): void => {
+  const formValidation = (data): AppState => {
     const emailReg = /^([a-z0-9_-]+)@([\da-z-]+)\.([a-z]{2,5})$/;
     const checkLength = [
       "name",
@@ -43,26 +42,32 @@ const DiscussTheProject: React.FunctionComponent = () => {
       "budget",
       "skype"
     ];
-    let newErrors = { ...formErrors };
+    let newData = { ...formData };
     let error: boolean | string = false;
 
-    Object.entries(data).forEach(([formName, formValue]: [string, string]) => {
-      if (checkLength.includes(formName) && formValue.length < 1) {
-        error = "length";
+    Object.entries(data).forEach(
+      ([formName, formValue]: [
+        string,
+        { error: boolean | string; step: number; value: string }
+      ]) => {
+        if (checkLength.includes(formName) && formValue.value.length < 1) {
+          error = "length";
+        }
+
+        if (formName === "email" && !emailReg.test(formValue.value)) {
+          error = "email";
+        }
+
+        newData = {
+          ...newData,
+          [formName]: { ...data[formName], error }
+        };
       }
+    );
 
-      if (formName === "email" && !emailReg.test(formValue)) {
-        error = "email";
-      }
+    dispatch(saveData(newData));
 
-      newErrors = Object.assign(newErrors, {
-        [formName]: { ...formErrors[formName], error }
-      });
-    });
-
-    dispatch(saveErrors(newErrors));
-
-    return newErrors;
+    return newData;
   };
 
   const validateOnSubmit = (): void => {
@@ -77,20 +82,21 @@ const DiscussTheProject: React.FunctionComponent = () => {
     const inputVal: string = input.value;
 
     if (inputName in formData) {
-      const newData = {
-        ...formData,
-        [inputName]: inputVal
-      };
-
-      dispatch(saveData(newData));
-      formValidation({ [inputName]: inputVal });
+      formValidation({
+        [inputName]: {
+          ...formData[inputName],
+          value: inputVal
+        }
+      });
     }
   };
 
-  const getErrorsInStep = (errors = formErrors, neededStep: number): number => {
-    const stepErrors = Object.entries(errors).filter(
-      ([, info]: [string, { error: boolean | string; step: number }]) =>
-        info.step === neededStep && info.error
+  const getErrorsInStep = (neededStep: number, data): number => {
+    const stepErrors = Object.entries(data).filter(
+      ([, info]: [
+        string,
+        { error: boolean | string; step: number; value: string }
+      ]) => info.step === neededStep && info.error
     );
 
     return stepErrors?.length;
@@ -98,9 +104,8 @@ const DiscussTheProject: React.FunctionComponent = () => {
 
   const handlerChangeStep = (): void => {
     const offset: number = refGridWrapper.current.offsetTop;
-    const errors = formValidation(formData);
-    const errorsInStep = getErrorsInStep(errors, 1);
-
+    const data = formValidation(formData);
+    const errorsInStep = getErrorsInStep(1, data);
     if (errorsInStep === 0) {
       setStep(2);
     }

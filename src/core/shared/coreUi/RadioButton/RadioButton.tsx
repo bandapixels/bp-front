@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 import styles from "./radioButton.module.scss";
 import { AppState } from "../../../store/store";
-import { getErrors } from "../../../features/MainPageBlocks/Containers/DiscussTheProject/discussTheProject.selectors";
+import { getData } from "../../../features/MainPageBlocks/Containers/DiscussTheProject/discussTheProject.selectors";
 
 interface InputProps {
   id: string;
@@ -26,8 +26,8 @@ const RadioButton: React.FunctionComponent<InputProps> = ({
   children,
   required
 }) => {
-  const errors = useSelector((state: AppState) => getErrors(state));
-  const { error } = errors[name];
+  const data = useSelector((state: AppState) => getData(state));
+  const { error } = data[name];
   const classes = classNames(styles.inputRadio, {
     smallInput,
     errorInput: error

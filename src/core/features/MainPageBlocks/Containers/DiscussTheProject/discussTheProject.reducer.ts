@@ -1,58 +1,48 @@
 import { DiscussTheProjectState } from "./discussTheProject.state";
 
 const initialState: DiscussTheProjectState = {
-  errors: {
-    name: {
-      error: false,
-      step: 1
-    },
-    company: {
-      error: false,
-      step: 1
-    },
-    email: {
-      error: false,
-      step: 1
-    },
-    skype: {
-      error: false,
-      step: 1
-    },
-    task: {
-      error: false,
-      step: 1
-    },
-    projectType: {
-      error: false,
-      step: 2
-    },
-    budget: {
-      error: false,
-      step: 2
-    }
+  name: {
+    error: false,
+    step: 1,
+    value: ""
   },
-  data: {
-    name: "",
-    company: "",
-    email: "",
-    skype: "",
-    task: "",
-    projectType: "",
-    budget: ""
+  company: {
+    error: false,
+    step: 1,
+    value: ""
+  },
+  email: {
+    error: false,
+    step: 1,
+    value: ""
+  },
+  skype: {
+    error: false,
+    step: 1,
+    value: ""
+  },
+  task: {
+    error: false,
+    step: 1,
+    value: ""
+  },
+  projectType: {
+    error: false,
+    step: 2,
+    value: ""
+  },
+  budget: {
+    error: false,
+    step: 2,
+    value: ""
   }
 };
 
 const reducer = (state = initialState, action): DiscussTheProjectState => {
   switch (action.type) {
-    case "SAVE_ERRORS":
-      return {
-        ...state,
-        errors: action.payload
-      };
     case "SAVE_DATA":
       return {
-        ...state,
-        data: action.payload
+        ...action.payload
       };
     case "RESET_ALL":
       return {

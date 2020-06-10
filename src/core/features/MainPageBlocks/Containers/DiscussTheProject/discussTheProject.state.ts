@@ -1,41 +1,37 @@
 export interface DiscussTheProjectState {
-  errors: {
-    name: {
-      error: boolean | string;
-      step: number;
-    };
-    company: {
-      error: boolean | string;
-      step: number;
-    };
-    email: {
-      error: boolean | string;
-      step: number;
-    };
-    skype: {
-      error: boolean | string;
-      step: number;
-    };
-    task: {
-      error: boolean | string;
-      step: number;
-    };
-    projectType: {
-      error: boolean | string;
-      step: number;
-    };
-    budget: {
-      error: boolean | string;
-      step: number;
-    };
+  name: {
+    error: boolean | string;
+    step: number;
+    value: string;
   };
-  data: {
-    name: string;
-    company: string;
-    email: string;
-    skype: string;
-    task: string;
-    projectType: string;
-    budget: string;
+  company: {
+    error: boolean | string;
+    step: number;
+    value: string;
+  };
+  email: {
+    error: boolean | string;
+    step: number;
+    value: string;
+  };
+  skype: {
+    error: boolean | string;
+    step: number;
+    value: string;
+  };
+  task: {
+    error: boolean | string;
+    step: number;
+    value: string;
+  };
+  projectType: {
+    error: boolean | string;
+    step: number;
+    value: string;
+  };
+  budget: {
+    error: boolean | string;
+    step: number;
+    value: string;
   };
 }

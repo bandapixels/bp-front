@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { useSelector } from "react-redux";
 import styles from "./textarea.module.scss";
 import { AppState } from "../../../store/store";
-import { getErrors } from "../../../features/MainPageBlocks/Containers/DiscussTheProject/discussTheProject.selectors";
+import { getData } from "../../../features/MainPageBlocks/Containers/DiscussTheProject/discussTheProject.selectors";
 
 interface TextareaProps {
   id?: string;
@@ -22,9 +22,9 @@ const Textarea: React.FunctionComponent<TextareaProps> = ({
   handlerOnChange,
   required
 }) => {
-  const errors = useSelector((state: AppState) => getErrors(state));
+  const data = useSelector((state: AppState) => getData(state));
   const [textareaValue, setTextareaValue] = useState("");
-  const { error } = errors[name];
+  const { error } = data[name];
   const textareaClasses = classNames(styles.textarea, {
     filledText: textareaValue.length > 0
   });

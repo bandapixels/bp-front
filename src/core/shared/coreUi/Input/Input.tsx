@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import classNames from "classnames";
 import { useSelector } from "react-redux";
 import styles from "./input.module.scss";
-import { getErrors } from "../../../features/MainPageBlocks/Containers/DiscussTheProject/discussTheProject.selectors";
+import { getData } from "../../../features/MainPageBlocks/Containers/DiscussTheProject/discussTheProject.selectors";
 import { AppState } from "../../../store/store";
 
 interface InputProps {
@@ -26,8 +26,8 @@ const Input: React.FunctionComponent<InputProps> = ({
   required
 }) => {
   const [inputValue, setInputValue] = useState("");
-  const errors = useSelector((state: AppState) => getErrors(state));
-  const { error } = errors[name];
+  const data = useSelector((state: AppState) => getData(state));
+  const { error } = data[name];
   const inputClasses = classNames({
     filledInput: inputValue.length > 0
   });
