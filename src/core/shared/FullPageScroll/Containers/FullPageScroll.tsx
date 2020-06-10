@@ -126,6 +126,7 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
   }, []);
 
   useEffect(() => {
+    const browser = checkBrowser();
     const body = document.querySelector("body");
     const wrapper = refFullPage.current;
     const sections = wrapper.childNodes;
@@ -204,7 +205,6 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
       const curTime = new Date().getTime();
       // wheel distance
       const powerOfScroll = Math.abs(e.deltaY);
-      const browser = checkBrowser();
       const minPower = browser.name === "Firefox" ? 1 : 25;
 
       // check if buttons are not pressed and power of scroll (to avoid touchpad inertia)
@@ -270,8 +270,6 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
     } else if (document.onmousewheel !== undefined) {
       supportWheel = "mousewheel"; // Webkit and IE support at least "mousewheel"
     }
-
-    const browser = checkBrowser();
 
     if (browser.name === "Firefox" && +browser.version < 60) {
       return;
