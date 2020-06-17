@@ -55,6 +55,7 @@ const Input: React.FunctionComponent<InputProps> = ({
           <p className={styles.errorMessage}>
             {error === "length" && "required to fill"}
             {error === "email" && "enter the correct email"}
+            {error === "skype" && "enter the correct skype login"}
           </p>
         )}
       </div>

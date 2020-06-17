@@ -33,15 +33,9 @@ const DiscussTheProject: React.FunctionComponent = () => {
   };
 
   const formValidation = (data): AppState => {
-    const emailReg = /^([a-z0-9_-]+)@([\da-z-]+)\.([a-z]{2,5})$/;
-    const checkLength = [
-      "name",
-      "company",
-      "task",
-      "projectType",
-      "budget",
-      "skype"
-    ];
+    const emailReg = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const skypeReg = /^[a-zA-Z][a-zA-Z0-9_.,-]{5,31}$/;
+    const checkLength = ["name", "company", "task", "projectType", "budget"];
     let newData = { ...formData };
     let error: boolean | string = false;
 
@@ -56,6 +50,10 @@ const DiscussTheProject: React.FunctionComponent = () => {
 
         if (formName === "email" && !emailReg.test(formValue.value)) {
           error = "email";
+        }
+
+        if (formName === "skype" && !skypeReg.test(formValue.value)) {
+          error = "skype";
         }
 
         newData = {
