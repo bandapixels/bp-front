@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 import styles from "./radioButton.module.scss";
 import { AppState } from "../../../store/store";
-import { getData } from "../../../features/MainPageBlocks/Containers/DiscussTheProject/discussTheProject.selectors";
+import { getData } from "../../../features/MainPage/Containers/DiscussTheProject/discussTheProject.selectors";
 
 interface InputProps {
   id: string;

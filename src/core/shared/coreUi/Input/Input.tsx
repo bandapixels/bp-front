@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import classNames from "classnames";
 import { useSelector } from "react-redux";
 import styles from "./input.module.scss";
-import { getData } from "../../../features/MainPageBlocks/Containers/DiscussTheProject/discussTheProject.selectors";
+import { getData } from "../../../features/MainPage/Containers/DiscussTheProject/discussTheProject.selectors";
 import { AppState } from "../../../store/store";
 
 interface InputProps {
