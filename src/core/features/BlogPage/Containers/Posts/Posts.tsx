@@ -27,7 +27,7 @@ const Posts: React.FunctionComponent = () => {
     >
       <h1>Blog</h1>
       <div className={styles.blogContainer}>
-        {!!postsData.length ? (
+        {postsData && postsData.length ? (
           postsData.map(post => (
             <a
               className={styles.blogItem}
