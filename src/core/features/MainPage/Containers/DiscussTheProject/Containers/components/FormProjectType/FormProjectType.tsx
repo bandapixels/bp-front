@@ -1,6 +1,6 @@
 import React from "react";
 import RadioButton from "../../../../../../../shared/coreUi/RadioButton/RadioButton";
-import { DiscussTheProjectInterface } from "../../../discussTheProject.state";
+import { DiscussTheProjectInterface } from "../../../../../mainPage.state";
 import styles from "../../discussTheProject.module.scss";
 
 interface FormProjectTypeProps {
@@ -19,7 +19,8 @@ const FormProjectType: React.FunctionComponent<FormProjectTypeProps> = ({
         <div className={styles.projectRadioRow}>
           <RadioButton
             id="type-1"
-            value="type-1"
+            value="We want to make the design of the service more convenient and
+            understandable for users."
             name="projectType"
             handlerOnChange={handlerOnChange}
             required
@@ -30,7 +31,7 @@ const FormProjectType: React.FunctionComponent<FormProjectTypeProps> = ({
           </RadioButton>
           <RadioButton
             id="type-2"
-            value="type-2"
+            value="We are doing a new service and want to make a design for it."
             name="projectType"
             handlerOnChange={handlerOnChange}
             required
@@ -40,7 +41,7 @@ const FormProjectType: React.FunctionComponent<FormProjectTypeProps> = ({
           </RadioButton>
           <RadioButton
             id="type-3"
-            value="type-3"
+            value="We improve or expand a working service"
             name="projectType"
             handlerOnChange={handlerOnChange}
             required
@@ -52,7 +53,8 @@ const FormProjectType: React.FunctionComponent<FormProjectTypeProps> = ({
         <div className={styles.projectRadioRow}>
           <RadioButton
             id="type-4"
-            value="type-4"
+            value="We are developing a new service for everyone and we know exactly
+            what we want"
             name="projectType"
             handlerOnChange={handlerOnChange}
             required
@@ -63,7 +65,8 @@ const FormProjectType: React.FunctionComponent<FormProjectTypeProps> = ({
           </RadioButton>
           <RadioButton
             id="type-5"
-            value="type-5"
+            value="We are a startup and want to make a cool MVP. We want to see a team
+            that will help us."
             name="projectType"
             handlerOnChange={handlerOnChange}
             required
@@ -74,7 +77,7 @@ const FormProjectType: React.FunctionComponent<FormProjectTypeProps> = ({
           </RadioButton>
           <RadioButton
             id="type-6"
-            value="type-6"
+            value="Another variant"
             name="projectType"
             handlerOnChange={handlerOnChange}
             required

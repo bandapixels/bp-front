@@ -6,10 +6,12 @@ import Button from "../../coreUi/Button/Button";
 
 interface ModalThanksProps {
   clickHandler: () => void;
+  error?: string;
 }
 
 const ModalThanks: React.FunctionComponent<ModalThanksProps> = ({
-  clickHandler
+  clickHandler,
+  error
 }) => {
   const refThanks = useRef<HTMLDivElement>();
 
@@ -27,9 +29,13 @@ const ModalThanks: React.FunctionComponent<ModalThanksProps> = ({
     <div className={styles.modalOverlayThanks}>
       <div className={styles.modalWrapThanks}>
         <div className={styles.thanksWrapper} ref={refThanks}>
-          <p>
-            Thanks for the application, our manager will contact you shortly
-          </p>
+          {error ? (
+            <p>{error}</p>
+          ) : (
+            <p>
+              Thanks for the application, our manager will contact you shortly
+            </p>
+          )}
           <Button classes="emptyBtn" handlerClick={clickHandler}>
             Go Back
             <img src="/images/icons/arrow-yellow.svg" alt="arrow" />

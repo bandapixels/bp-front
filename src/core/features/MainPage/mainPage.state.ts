@@ -36,40 +36,6 @@ export interface DiscussTheProjectInterface {
   };
 }
 
-export const formInitialState = {
-  name: {
-    error: false,
-    step: 1,
-    value: ""
-  },
-  company: {
-    error: false,
-    step: 1,
-    value: ""
-  },
-  email: {
-    error: false,
-    step: 1,
-    value: ""
-  },
-  skype: {
-    error: false,
-    step: 1,
-    value: ""
-  },
-  task: {
-    error: false,
-    step: 1,
-    value: ""
-  },
-  projectType: {
-    error: false,
-    step: 2,
-    value: ""
-  },
-  budget: {
-    error: false,
-    step: 2,
-    value: ""
-  }
-};
+export interface ShowFormState {
+  formStatus: string;
+}

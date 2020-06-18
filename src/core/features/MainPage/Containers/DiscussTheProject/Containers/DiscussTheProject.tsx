@@ -1,5 +1,8 @@
 import React, { useRef, useState, FormEvent } from "react";
 import classNames from "classnames";
+import { useDispatch, useSelector } from "react-redux";
+import { getStatus } from "../../../mainPage.selector";
+import { sendFormData } from "../../../mainPage.actions";
 import useGrid from "../../../../../utils/useGrid";
 import useRedrawGrid from "../../../../../utils/useRedrawGrid";
 import FormContacts from "./components/FormContacts/FormContacts";
@@ -11,8 +14,47 @@ import MobileSteps from "./components/MobileSteps/MobileSteps";
 import ModalThanks from "../../../../../shared/Modal/ModalThanks/ModalThanks";
 import AnimatedLine from "../../../../../shared/AnimatedLine/AnimatedLine";
 import Arrow from "../../../../../shared/Icons/Arrow/Arrow";
-import { formInitialState } from "../discussTheProject.state";
 import styles from "./discussTheProject.module.scss";
+import { AppState } from "../../../../../store/store";
+import { getSection } from "../../../../../shared/FullPageScroll/fullPageScroll.selectors";
+
+export const formInitialState = {
+  name: {
+    error: false,
+    step: 1,
+    value: ""
+  },
+  company: {
+    error: false,
+    step: 1,
+    value: ""
+  },
+  email: {
+    error: false,
+    step: 1,
+    value: ""
+  },
+  skype: {
+    error: false,
+    step: 1,
+    value: ""
+  },
+  task: {
+    error: false,
+    step: 1,
+    value: ""
+  },
+  projectType: {
+    error: false,
+    step: 2,
+    value: ""
+  },
+  budget: {
+    error: false,
+    step: 2,
+    value: ""
+  }
+};
 
 const DiscussTheProject: React.FunctionComponent = () => {
   const refGridWrapper = useRef<HTMLDivElement>();
@@ -22,6 +64,8 @@ const DiscussTheProject: React.FunctionComponent = () => {
   });
   const [formSend, setFormSend] = useState(false);
   const [formData, setFormData] = useState(formInitialState);
+  const formStatus = useSelector((state: AppState) => getStatus(state));
+  const dispatch = useDispatch();
 
   const handlerClosePopup = (): void => {
     setFormSend(!formSend);
@@ -108,8 +152,20 @@ const DiscussTheProject: React.FunctionComponent = () => {
     });
   };
 
+  const getFormValues = (): {} => {
+    const data = {};
+    Object.entries(formData).forEach(([name, info]) => {
+      data[name] = info.value;
+    });
+
+    return data;
+  };
+
   const handlerSendData = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
+    const values = getFormValues();
+
+    dispatch(sendFormData(values));
     setFormSend(!formSend);
     setFormData(formInitialState);
     e.currentTarget.reset();
@@ -161,7 +217,15 @@ const DiscussTheProject: React.FunctionComponent = () => {
           <MobileSteps step={step} handlerChangeStep={handlerChangeStep} />
         </form>
       </div>
-      {formSend && <ModalThanks clickHandler={handlerClosePopup} />}
+      {formSend && formStatus === "success" && (
+        <ModalThanks clickHandler={handlerClosePopup} />
+      )}
+      {formSend && formStatus !== "success" && (
+        <ModalThanks
+          clickHandler={handlerClosePopup}
+          error="Please try again"
+        />
+      )}
       <AnimatedLine backgroundColor="#333" filledColor="#fff" />
     </section>
   );
