@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./mobileSteps.module.scss";
 
-import Button from "../../../../../../shared/coreUi/Button/Button";
+import Button from "../../../../../../../shared/coreUi/Button/Button";
 
 interface MobileStepsProps {
   step: number;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import classNames from "classnames";
 import styles from "./textarea.module.scss";
 
@@ -8,6 +8,9 @@ interface TextareaProps {
   name: string;
   disabled?: boolean;
   handlerOnChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  required?: boolean;
+  value: string;
+  error: string | boolean;
 }
 
 const Textarea: React.FunctionComponent<TextareaProps> = ({
@@ -15,25 +18,39 @@ const Textarea: React.FunctionComponent<TextareaProps> = ({
   placeholder,
   name,
   disabled,
-  handlerOnChange
+  handlerOnChange,
+  required,
+  value,
+  error
 }) => {
-  const [textareaValue, setTextareaValue] = useState("");
+  const textareaClasses = classNames(styles.textarea, {
+    filledText: value.length > 0
+  });
+  const textareaWrapperClasses = classNames(styles.textareaWrapper, {
+    textareaError: !!error
+  });
 
   return (
-    <textarea
-      id={id}
-      name={name}
-      placeholder={placeholder}
-      className={classNames(styles.textarea, {
-        filledText: textareaValue.length > 0
-      })}
-      disabled={disabled}
-      rows={20}
-      onChange={(e): void => {
-        handlerOnChange(e);
-        setTextareaValue(e.target.value);
-      }}
-    />
+    <div className={textareaWrapperClasses}>
+      <textarea
+        id={id}
+        name={name}
+        placeholder={placeholder}
+        className={textareaClasses}
+        disabled={disabled}
+        rows={20}
+        onChange={(e): void => {
+          handlerOnChange(e);
+        }}
+        required={required}
+        value={value}
+      />
+      {error && (
+        <p className={styles.errorMessage}>
+          {error === "length" && "required to fill"}
+        </p>
+      )}
+    </div>
   );
 };
 

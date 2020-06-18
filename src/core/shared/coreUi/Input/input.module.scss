@@ -5,7 +5,6 @@
   align-items: center;
   justify-content: space-between;
   flex-flow: row-reverse nowrap;
-  background: #333;
 
   &:not(:last-child) {
     margin-bottom: 20px;
@@ -16,7 +15,8 @@
       color: #EFE314;
     }
 
-    input[type="text"] {
+    input[type="text"],
+    input[type="email"] {
       border-color: #EFE314;
     }
   }
@@ -33,7 +33,8 @@
     transition: .3s;
   }
 
-  input[type="text"] {
+  input[type="text"],
+  input[type="email"] {
     border: 1px solid #BDBDBD;
     background: transparent;
     height: 50px;
@@ -43,6 +44,7 @@
     font-weight: 600;
     padding: 10px 20px;
     transition: .3s;
+    background: #333;
 
     &.filledInput {
       background: #fff;
@@ -63,6 +65,39 @@
       }
     }
   }
+
+  .inputWrapper {
+    width: 100%;
+    position: relative;
+  }
+
+  &.fieldError {
+    &:hover {
+      input {
+        border-color: #EB5757;
+      }
+    }
+
+    span {
+      color: #EB5757;
+    }
+
+    input {
+      border-color: #EB5757;
+    }
+
+    .errorMessage {
+      font-family: 'Open Sans';
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 150%;
+      letter-spacing: 0.03em;
+      color: #EB5757;
+      position: absolute;
+      left: 0;
+      top: 100%;
+    }
+  }
 }
 
 @media screen and (max-width: $breakpoint-1600) {
@@ -71,8 +106,15 @@
       margin-bottom: 15px;
     }
 
-    input[type="text"] {
+    input[type="text"],
+    input[type="email"] {
       height: 40px;
+    }
+
+    &.fieldError {
+      .errorMessage {
+        line-height: 100%;
+      }
     }
   }
 }
@@ -89,6 +131,13 @@
     span {
       font-size: 14px;
       flex: 0 0 auto;
+    }
+
+    &.fieldError {
+      .errorMessage {
+        left: auto;
+        right: 0;
+      }
     }
   }
 }
@@ -114,7 +163,8 @@
       margin-bottom: 10px;
     }
 
-    input[type="text"] {
+    input[type="text"],
+    input[type="email"] {
       height: 50px;
       border-color: #BDBDBD;
     }

@@ -1,14 +1,16 @@
 import React from "react";
-import Input from "../../../../../../shared/coreUi/Input/Input";
-
+import Input from "../../../../../../../shared/coreUi/Input/Input";
+import { DiscussTheProjectInterface } from "../../../../../../../shared/interfaces/formData";
 import styles from "../../discussTheProject.module.scss";
 
 interface FormContactsProps {
   handlerOnChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  formData: DiscussTheProjectInterface;
 }
 
 const FormContacts: React.FunctionComponent<FormContactsProps> = ({
-  handlerOnChange
+  handlerOnChange,
+  formData
 }) => {
   return (
     <div className={styles.formContacts}>
@@ -18,6 +20,9 @@ const FormContacts: React.FunctionComponent<FormContactsProps> = ({
         type="text"
         name="name"
         handlerOnChange={handlerOnChange}
+        required
+        value={formData.name.value}
+        error={formData.name.error}
       >
         Name
       </Input>
@@ -26,14 +31,20 @@ const FormContacts: React.FunctionComponent<FormContactsProps> = ({
         type="text"
         name="company"
         handlerOnChange={handlerOnChange}
+        required
+        value={formData.company.value}
+        error={formData.company.error}
       >
         Company
       </Input>
       <Input
         id="discuss-email"
-        type="text"
+        type="email"
         name="email"
         handlerOnChange={handlerOnChange}
+        required
+        value={formData.email.value}
+        error={formData.email.error}
       >
         Email
       </Input>
@@ -42,6 +53,9 @@ const FormContacts: React.FunctionComponent<FormContactsProps> = ({
         type="text"
         name="skype"
         handlerOnChange={handlerOnChange}
+        required
+        value={formData.skype.value}
+        error={formData.skype.error}
       >
         Skype
       </Input>

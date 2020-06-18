@@ -11,7 +11,8 @@
   background: #333;
 
   input[type="radio"] {
-    display: none;
+    position: absolute;
+    opacity: 0;
 
     &:disabled {
       + div {
@@ -97,6 +98,12 @@
       width: 30px;
       height: 30px;
       flex: 0 0 30px;
+    }
+  }
+
+  &.errorInput {
+    div {
+      border-color: #EB5757;
     }
   }
 }

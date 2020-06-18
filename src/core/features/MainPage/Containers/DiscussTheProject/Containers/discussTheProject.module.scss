@@ -1,4 +1,4 @@
-@import "../../../../../assets/scss/breakPoints.scss";
+@import "../../../../../../assets/scss/breakPoints";
 
 .discussWrapper {
   height: 100vh;
@@ -142,6 +142,10 @@
     .inputText {
       input[type="text"] {
         height: 40px;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
       }
     }
 
