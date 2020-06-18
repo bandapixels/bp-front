@@ -1,10 +1,6 @@
 import React from "react";
 import classNames from "classnames";
-import { useSelector } from "react-redux";
-
 import styles from "./radioButton.module.scss";
-import { AppState } from "../../../store/store";
-import { getData } from "../../../features/MainPage/Containers/DiscussTheProject/discussTheProject.selectors";
 
 interface InputProps {
   id: string;
@@ -14,6 +10,7 @@ interface InputProps {
   smallInput?: boolean;
   handlerOnChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   required?: boolean;
+  error: boolean | string;
 }
 
 const RadioButton: React.FunctionComponent<InputProps> = ({
@@ -24,13 +21,12 @@ const RadioButton: React.FunctionComponent<InputProps> = ({
   smallInput,
   handlerOnChange,
   children,
-  required
+  required,
+  error
 }) => {
-  const data = useSelector((state: AppState) => getData(state));
-  const { error } = data[name];
   const classes = classNames(styles.inputRadio, {
     smallInput,
-    errorInput: error
+    errorInput: !!error
   });
 
   return (

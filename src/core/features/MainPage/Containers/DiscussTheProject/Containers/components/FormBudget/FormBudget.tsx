@@ -1,14 +1,16 @@
 import React from "react";
 import RadioButton from "../../../../../../../shared/coreUi/RadioButton/RadioButton";
-
+import { DiscussTheProjectInterface } from "../../../discussTheProject.state";
 import styles from "../../discussTheProject.module.scss";
 
 interface FormBudgetProps {
   handlerOnChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  formData: DiscussTheProjectInterface;
 }
 
 const FormBudget: React.FunctionComponent<FormBudgetProps> = ({
-  handlerOnChange
+  handlerOnChange,
+  formData
 }) => {
   return (
     <div className={styles.formBudget}>
@@ -21,6 +23,7 @@ const FormBudget: React.FunctionComponent<FormBudgetProps> = ({
           smallInput
           handlerOnChange={handlerOnChange}
           required
+          error={formData.budget.error}
         >
           $ 5 000 - $ 10 000
         </RadioButton>
@@ -31,6 +34,7 @@ const FormBudget: React.FunctionComponent<FormBudgetProps> = ({
           smallInput
           handlerOnChange={handlerOnChange}
           required
+          error={formData.budget.error}
         >
           $ 10 000 - $ 20 000
         </RadioButton>
@@ -41,6 +45,7 @@ const FormBudget: React.FunctionComponent<FormBudgetProps> = ({
           smallInput
           handlerOnChange={handlerOnChange}
           required
+          error={formData.budget.error}
         >
           $ 20 000 - $ 30 000
         </RadioButton>
@@ -51,6 +56,7 @@ const FormBudget: React.FunctionComponent<FormBudgetProps> = ({
           smallInput
           handlerOnChange={handlerOnChange}
           required
+          error={formData.budget.error}
         >
           $ 30 000 - $ 50 000
         </RadioButton>
@@ -61,6 +67,7 @@ const FormBudget: React.FunctionComponent<FormBudgetProps> = ({
           smallInput
           handlerOnChange={handlerOnChange}
           required
+          error={formData.budget.error}
         >
           $ 50 000 - $ 100 000
         </RadioButton>
@@ -71,6 +78,7 @@ const FormBudget: React.FunctionComponent<FormBudgetProps> = ({
           smallInput
           handlerOnChange={handlerOnChange}
           required
+          error={formData.budget.error}
         >
           $ 100 000 +
         </RadioButton>
@@ -81,6 +89,7 @@ const FormBudget: React.FunctionComponent<FormBudgetProps> = ({
           smallInput
           handlerOnChange={handlerOnChange}
           required
+          error={formData.budget.error}
         >
           I need help
         </RadioButton>

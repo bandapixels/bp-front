@@ -1,9 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import classNames from "classnames";
-import { useSelector } from "react-redux";
 import styles from "./input.module.scss";
-import { getData } from "../../../features/MainPage/Containers/DiscussTheProject/discussTheProject.selectors";
-import { AppState } from "../../../store/store";
 
 interface InputProps {
   id: string;
@@ -13,6 +10,8 @@ interface InputProps {
   disabled?: boolean;
   handlerOnChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   required?: boolean;
+  value: string;
+  error?: string | boolean;
 }
 
 const Input: React.FunctionComponent<InputProps> = ({
@@ -23,16 +22,15 @@ const Input: React.FunctionComponent<InputProps> = ({
   disabled,
   handlerOnChange,
   children,
-  required
+  required,
+  value,
+  error
 }) => {
-  const [inputValue, setInputValue] = useState("");
-  const data = useSelector((state: AppState) => getData(state));
-  const { error } = data[name];
   const inputClasses = classNames({
-    filledInput: inputValue.length > 0
+    filledInput: value.length > 0
   });
   const labelClasses = classNames(styles.inputText, {
-    fieldError: error
+    fieldError: !!error
   });
 
   return (
@@ -46,10 +44,10 @@ const Input: React.FunctionComponent<InputProps> = ({
           disabled={disabled}
           onChange={(e): void => {
             handlerOnChange(e);
-            setInputValue(e.target.value);
           }}
           className={inputClasses}
           required={required}
+          value={value}
         />
         {error && (
           <p className={styles.errorMessage}>

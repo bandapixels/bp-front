@@ -1,5 +1,4 @@
 import React, { useRef, useState, FormEvent } from "react";
-import { useSelector, useDispatch } from "react-redux";
 import classNames from "classnames";
 import useGrid from "../../../../../utils/useGrid";
 import useRedrawGrid from "../../../../../utils/useRedrawGrid";
@@ -11,11 +10,8 @@ import Button from "../../../../../shared/coreUi/Button/Button";
 import MobileSteps from "./components/MobileSteps/MobileSteps";
 import ModalThanks from "../../../../../shared/Modal/ModalThanks/ModalThanks";
 import AnimatedLine from "../../../../../shared/AnimatedLine/AnimatedLine";
-import { AppState } from "../../../../../store/store";
-import { getData } from "../discussTheProject.selectors";
-import { saveData, resetAll } from "../discussTheProject.actions";
 import Arrow from "../../../../../shared/Icons/Arrow/Arrow";
-
+import { formInitialState } from "../discussTheProject.state";
 import styles from "./discussTheProject.module.scss";
 
 const DiscussTheProject: React.FunctionComponent = () => {
@@ -25,25 +21,25 @@ const DiscussTheProject: React.FunctionComponent = () => {
     showSecondStep: step === 2
   });
   const [formSend, setFormSend] = useState(false);
-  const dispatch = useDispatch();
-  const formData: AppState = useSelector((state: AppState) => getData(state));
+  const [formData, setFormData] = useState(formInitialState);
 
   const handlerClosePopup = (): void => {
     setFormSend(!formSend);
   };
 
-  const formValidation = (data): AppState => {
+  const formValidation = (data): void => {
     const emailReg = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const skypeReg = /^[a-zA-Z][a-zA-Z0-9_.,-]{5,31}$/;
     const checkLength = ["name", "company", "task", "projectType", "budget"];
     let newData = { ...formData };
-    let error: boolean | string = false;
 
     Object.entries(data).forEach(
       ([formName, formValue]: [
         string,
         { error: boolean | string; step: number; value: string }
       ]) => {
+        let error: boolean | string = false;
+
         if (checkLength.includes(formName) && formValue.value.length < 1) {
           error = "length";
         }
@@ -62,14 +58,7 @@ const DiscussTheProject: React.FunctionComponent = () => {
         };
       }
     );
-
-    dispatch(saveData(newData));
-
-    return newData;
-  };
-
-  const validateOnSubmit = (): void => {
-    formValidation(formData);
+    setFormData(newData);
   };
 
   const handlerOnChange = (
@@ -89,8 +78,12 @@ const DiscussTheProject: React.FunctionComponent = () => {
     }
   };
 
-  const getErrorsInStep = (neededStep: number, data): number => {
-    const stepErrors = Object.entries(data).filter(
+  const validateOnSubmit = (): void => {
+    formValidation(formData);
+  };
+
+  const getErrorsInStep = (neededStep: number): number => {
+    const stepErrors = Object.entries(formData).filter(
       ([, info]: [
         string,
         { error: boolean | string; step: number; value: string }
@@ -101,9 +94,10 @@ const DiscussTheProject: React.FunctionComponent = () => {
   };
 
   const handlerChangeStep = (): void => {
+    formValidation(formData);
     const offset: number = refGridWrapper.current.offsetTop;
-    const data = formValidation(formData);
-    const errorsInStep = getErrorsInStep(1, data);
+    const errorsInStep = getErrorsInStep(1);
+
     if (errorsInStep === 0) {
       setStep(2);
     }
@@ -117,7 +111,7 @@ const DiscussTheProject: React.FunctionComponent = () => {
   const handlerSendData = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     setFormSend(!formSend);
-    dispatch(resetAll());
+    setFormData(formInitialState);
     e.currentTarget.reset();
   };
 
@@ -140,13 +134,19 @@ const DiscussTheProject: React.FunctionComponent = () => {
         >
           <div className={styles.discussFormLeftPart}>
             <div className={styles.formMainInfo}>
-              <FormContacts handlerOnChange={handlerOnChange} />
-              <FormTask handlerOnChange={handlerOnChange} />
+              <FormContacts
+                handlerOnChange={handlerOnChange}
+                formData={formData}
+              />
+              <FormTask handlerOnChange={handlerOnChange} formData={formData} />
             </div>
-            <FormProjectType handlerOnChange={handlerOnChange} />
+            <FormProjectType
+              handlerOnChange={handlerOnChange}
+              formData={formData}
+            />
           </div>
           <div className={styles.discussFormRightPart}>
-            <FormBudget handlerOnChange={handlerOnChange} />
+            <FormBudget handlerOnChange={handlerOnChange} formData={formData} />
             <Button classes="btnWithArrow" handlerClick={validateOnSubmit}>
               <div>
                 <span>

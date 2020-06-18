@@ -1,9 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import classNames from "classnames";
-import { useSelector } from "react-redux";
 import styles from "./textarea.module.scss";
-import { AppState } from "../../../store/store";
-import { getData } from "../../../features/MainPage/Containers/DiscussTheProject/discussTheProject.selectors";
 
 interface TextareaProps {
   id?: string;
@@ -12,6 +9,8 @@ interface TextareaProps {
   disabled?: boolean;
   handlerOnChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   required?: boolean;
+  value: string;
+  error: string | boolean;
 }
 
 const Textarea: React.FunctionComponent<TextareaProps> = ({
@@ -20,16 +19,15 @@ const Textarea: React.FunctionComponent<TextareaProps> = ({
   name,
   disabled,
   handlerOnChange,
-  required
+  required,
+  value,
+  error
 }) => {
-  const data = useSelector((state: AppState) => getData(state));
-  const [textareaValue, setTextareaValue] = useState("");
-  const { error } = data[name];
   const textareaClasses = classNames(styles.textarea, {
-    filledText: textareaValue.length > 0
+    filledText: value.length > 0
   });
   const textareaWrapperClasses = classNames(styles.textareaWrapper, {
-    textareaError: error
+    textareaError: !!error
   });
 
   return (
@@ -43,9 +41,9 @@ const Textarea: React.FunctionComponent<TextareaProps> = ({
         rows={20}
         onChange={(e): void => {
           handlerOnChange(e);
-          setTextareaValue(e.target.value);
         }}
         required={required}
+        value={value}
       />
       {error && (
         <p className={styles.errorMessage}>

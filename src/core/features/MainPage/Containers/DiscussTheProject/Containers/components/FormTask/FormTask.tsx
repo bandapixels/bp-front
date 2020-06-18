@@ -1,14 +1,16 @@
 import React from "react";
 import Textarea from "../../../../../../../shared/coreUi/Textarea/Textarea";
-
+import { DiscussTheProjectInterface } from "../../../discussTheProject.state";
 import styles from "../../discussTheProject.module.scss";
 
 interface FormTaskProps {
   handlerOnChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  formData: DiscussTheProjectInterface;
 }
 
 const FormTask: React.FunctionComponent<FormTaskProps> = ({
-  handlerOnChange
+  handlerOnChange,
+  formData
 }) => {
   return (
     <div className={styles.formTask}>
@@ -18,6 +20,8 @@ const FormTask: React.FunctionComponent<FormTaskProps> = ({
         placeholder="write task..."
         handlerOnChange={handlerOnChange}
         required
+        value={formData.task.value}
+        error={formData.task.error}
       />
     </div>
   );
