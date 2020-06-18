@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import useGrid from "../../../../utils/useGrid";
 import AnimatedLine from "../../../../shared/AnimatedLine/AnimatedLine";
 import { getPosts } from "../../blogPage.actions";
-import { getAllPosts, getStatus } from "../../blogPage.selectors";
+import { getAllPosts } from "../../blogPage.selectors";
 import useRedrawGrid from "../../../../utils/useRedrawGrid";
 import { AppState } from "../../../../store/store";
 import styles from "./posts.module.scss";
@@ -13,7 +13,6 @@ const Posts: React.FunctionComponent = () => {
   dispatch(getPosts());
   const refGridWrapper = useRef<HTMLDivElement>();
   const postsData = useSelector((state: AppState) => getAllPosts(state));
-  const status = useSelector((state: AppState) => getStatus(state));
 
   useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#fff");
   useRedrawGrid(refGridWrapper);
@@ -28,7 +27,7 @@ const Posts: React.FunctionComponent = () => {
     >
       <h1>Blog</h1>
       <div className={styles.blogContainer}>
-        {status === "success" && !!postsData.length ? (
+        {!!postsData.length ? (
           postsData.map(post => (
             <a
               className={styles.blogItem}

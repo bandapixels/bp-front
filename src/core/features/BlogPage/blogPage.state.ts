@@ -10,5 +10,4 @@ export interface BlogPageState {
       name: string;
     }[];
   }[];
-  status: string;
 }
