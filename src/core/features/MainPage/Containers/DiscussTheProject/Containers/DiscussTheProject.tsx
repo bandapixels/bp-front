@@ -128,10 +128,6 @@ const DiscussTheProject: React.FunctionComponent = () => {
     }
   };
 
-  const validateOnSubmit = (): void => {
-    formValidation(formData);
-  };
-
   const getErrorsInStep = (neededStep: number): number => {
     const stepErrors = Object.entries(formData).filter(
       ([, info]: [
@@ -209,7 +205,10 @@ const DiscussTheProject: React.FunctionComponent = () => {
           </div>
           <div className={styles.discussFormRightPart}>
             <FormBudget handlerOnChange={handlerOnChange} formData={formData} />
-            <Button classes="btnWithArrow" handlerClick={validateOnSubmit}>
+            <Button
+              classes="btnWithArrow"
+              handlerClick={(): void => formValidation(formData)}
+            >
               <div>
                 <span>
                   Send
