@@ -16,7 +16,6 @@ import AnimatedLine from "../../../../../shared/AnimatedLine/AnimatedLine";
 import Arrow from "../../../../../shared/Icons/Arrow/Arrow";
 import styles from "./discussTheProject.module.scss";
 import { AppState } from "../../../../../store/store";
-import { getSection } from "../../../../../shared/FullPageScroll/fullPageScroll.selectors";
 
 export const formInitialState = {
   name: {
@@ -71,7 +70,7 @@ const DiscussTheProject: React.FunctionComponent = () => {
     setFormSend(!formSend);
   };
 
-  const formValidation = (data): void => {
+  const formValidation = (data, change = false): void => {
     const emailReg = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const skypeReg = /^[a-zA-Z][a-zA-Z0-9_.,-]{5,31}$/;
     const checkLength = ["name", "company", "task", "projectType", "budget"];
@@ -84,7 +83,7 @@ const DiscussTheProject: React.FunctionComponent = () => {
       ]) => {
         let error: boolean | string = false;
 
-        if (checkLength.includes(formName) && formValue.value.length < 1) {
+        if (checkLength.includes(formName) && formValue.value.length === 0) {
           error = "length";
         }
 
@@ -94,6 +93,10 @@ const DiscussTheProject: React.FunctionComponent = () => {
 
         if (formName === "skype" && !skypeReg.test(formValue.value)) {
           error = "skype";
+        }
+
+        if (change && formValue.value.length === 0) {
+          error = false;
         }
 
         newData = {
@@ -113,12 +116,15 @@ const DiscussTheProject: React.FunctionComponent = () => {
     const inputVal: string = input.value;
 
     if (inputName in formData) {
-      formValidation({
-        [inputName]: {
-          ...formData[inputName],
-          value: inputVal
-        }
-      });
+      formValidation(
+        {
+          [inputName]: {
+            ...formData[inputName],
+            value: inputVal
+          }
+        },
+        true
+      );
     }
   };
 

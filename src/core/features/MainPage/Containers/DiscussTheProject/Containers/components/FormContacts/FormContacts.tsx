@@ -1,6 +1,6 @@
 import React from "react";
 import Input from "../../../../../../../shared/coreUi/Input/Input";
-import { DiscussTheProjectInterface } from "../../../../../mainPage.state";
+import { DiscussTheProjectInterface } from "../../../../../../../shared/interfaces/formData";
 import styles from "../../discussTheProject.module.scss";
 
 interface FormContactsProps {

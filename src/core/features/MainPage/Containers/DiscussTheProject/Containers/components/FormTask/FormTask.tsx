@@ -1,6 +1,6 @@
 import React from "react";
 import Textarea from "../../../../../../../shared/coreUi/Textarea/Textarea";
-import { DiscussTheProjectInterface } from "../../../../../mainPage.state";
+import { DiscussTheProjectInterface } from "../../../../../../../shared/interfaces/formData";
 import styles from "../../discussTheProject.module.scss";
 
 interface FormTaskProps {
