@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import useGrid from "../../../../utils/useGrid";
 import Link from "next/link";
+import useGrid from "../../../../utils/useGrid";
 import AnimatedLine from "../../../../shared/AnimatedLine/AnimatedLine";
-import { getPosts } from "../../blogPage.actions";
+import { GetPosts } from "../../blogPage.actions";
 import { getAllPosts } from "../../blogPage.selectors";
 import useRedrawGrid from "../../../../utils/useRedrawGrid";
 import { AppState } from "../../../../store/store";
@@ -15,7 +15,7 @@ const Posts: React.FunctionComponent = () => {
   const postsData = useSelector((state: AppState) => getAllPosts(state));
 
   useEffect(() => {
-    dispatch(getPosts());
+    dispatch(new GetPosts());
   }, []);
 
   useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#fff");

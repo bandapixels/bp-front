@@ -2,7 +2,7 @@ import React, { useRef, useState, FormEvent } from "react";
 import classNames from "classnames";
 import { useDispatch, useSelector } from "react-redux";
 import { getStatus } from "../../../mainPage.selector";
-import { sendFormData } from "../../../mainPage.actions";
+import { SendFormData } from "../../../mainPage.actions";
 import useGrid from "../../../../../utils/useGrid";
 import useRedrawGrid from "../../../../../utils/useRedrawGrid";
 import FormContacts from "./components/FormContacts/FormContacts";
@@ -167,7 +167,7 @@ const DiscussTheProject: React.FunctionComponent = () => {
     e.preventDefault();
     const values = getFormValues();
 
-    dispatch(sendFormData(values));
+    dispatch(new SendFormData(values));
     setFormSend(!formSend);
     setFormData(formInitialState);
     e.currentTarget.reset();
