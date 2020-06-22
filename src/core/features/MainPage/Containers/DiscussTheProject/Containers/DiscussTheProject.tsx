@@ -1,4 +1,4 @@
-import React, { useRef, useState, FormEvent } from "react";
+import React, { FormEvent, useRef, useState } from "react";
 import classNames from "classnames";
 import { useDispatch, useSelector } from "react-redux";
 import { getStatus } from "../../../mainPage.selector";
@@ -57,6 +57,7 @@ export const formInitialState = {
 
 const DiscussTheProject: React.FunctionComponent = () => {
   const refGridWrapper = useRef<HTMLDivElement>();
+  const refForm = useRef<HTMLFormElement>();
   const [step, setStep] = useState(1);
   const formClasses = classNames(styles.discussForm, {
     showSecondStep: step === 2
@@ -70,7 +71,7 @@ const DiscussTheProject: React.FunctionComponent = () => {
     setFormSend(!formSend);
   };
 
-  const formValidation = (data, change = false): void => {
+  const formValidation = (data, change = false): number => {
     const emailReg = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const skypeReg = /^[a-zA-Z][a-zA-Z0-9_.,-]{5,31}$/;
     const checkLength = ["name", "company", "task", "projectType", "budget"];
@@ -106,6 +107,15 @@ const DiscussTheProject: React.FunctionComponent = () => {
       }
     );
     setFormData(newData);
+
+    const errors = Object.entries(newData).filter(
+      ([, info]: [
+        string,
+        { error: boolean | string; step: number; value: string }
+      ]) => info.error
+    );
+
+    return errors?.length;
   };
 
   const handlerOnChange = (
@@ -154,23 +164,33 @@ const DiscussTheProject: React.FunctionComponent = () => {
     });
   };
 
-  const getFormValues = (): {} => {
-    const data = {};
+  const prepareDataToSend = (): {} => {
+    const data = {
+      email: "",
+      body: ""
+    };
+
+    data.email = formData.email.value;
     Object.entries(formData).forEach(([name, info]) => {
-      data[name] = info.value;
+      if (name !== "email") {
+        data.body += `${name}: ${info.value} \n `;
+      }
     });
 
     return data;
   };
 
-  const handlerSendData = (e: FormEvent<HTMLFormElement>): void => {
-    e.preventDefault();
-    const values = getFormValues();
+  const handlerSendData = (data): void => {
+    const errors = formValidation(data);
 
-    dispatch(new SendFormData(values));
-    setFormSend(!formSend);
-    setFormData(formInitialState);
-    e.currentTarget.reset();
+    if (!errors) {
+      const dataToSend = prepareDataToSend();
+
+      dispatch(new SendFormData(dataToSend));
+      setFormSend(!formSend);
+      setFormData(formInitialState);
+      refForm.current.reset();
+    }
   };
 
   useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#fff");
@@ -188,7 +208,8 @@ const DiscussTheProject: React.FunctionComponent = () => {
         </h1>
         <form
           className={formClasses}
-          onSubmit={(e): void => handlerSendData(e)}
+          ref={refForm}
+          onSubmit={(e: FormEvent<HTMLFormElement>): void => e.preventDefault()}
         >
           <div className={styles.discussFormLeftPart}>
             <div className={styles.formMainInfo}>
@@ -207,7 +228,7 @@ const DiscussTheProject: React.FunctionComponent = () => {
             <FormBudget handlerOnChange={handlerOnChange} formData={formData} />
             <Button
               classes="btnWithArrow"
-              handlerClick={(): void => formValidation(formData)}
+              handlerClick={(): void => handlerSendData(formData)}
             >
               <div>
                 <span>
