@@ -166,16 +166,9 @@ const DiscussTheProject: React.FunctionComponent = () => {
 
   const prepareDataToSend = (): {} => {
     const data = {
-      email: "",
-      body: ""
+      email: formData.email.value,
+      body: `Name: ${formData.name.value} \n Company: ${formData.company.value} \n Skype: ${formData.skype.value} \n Task: ${formData.task.value} \n Project type: ${formData.projectType.value} \n Budget: ${formData.budget.value}`
     };
-
-    data.email = formData.email.value;
-    Object.entries(formData).forEach(([name, info]) => {
-      if (name !== "email") {
-        data.body += `${name}: ${info.value} \n `;
-      }
-    });
 
     return data;
   };
