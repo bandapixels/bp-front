@@ -1,12 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
-import { getSection } from "../fullPageScroll.selectors";
-import { getStart } from "../../Preloader/preloader.selectors";
-import { changeSection } from "../fullPageScroll.actions";
+import { getSection, getScrollings } from "../fullPageScroll.selectors";
+import { changeSection, updateScrollings } from "../fullPageScroll.actions";
 import { AppState } from "../../../store/store";
 import { checkBrowser } from "../../../utils/checkBrowser";
-
+import { getStart } from "../../Preloader/preloader.selectors";
 import styles from "./fullPageScroll.scss";
 
 const FullPageScroll: React.FunctionComponent = ({ children }) => {
@@ -15,6 +14,7 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
   const [canScroll, setCanScroll] = useState(true);
   const refFullPage = useRef<HTMLDivElement>();
   const activeSec = useSelector((state: AppState) => getSection(state));
+  const scrollings = useSelector((state: AppState) => getScrollings(state));
   const startScroll =
     router.pathname === "/"
       ? !useSelector((state: AppState) => getStart(state))
@@ -126,13 +126,14 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
   }, []);
 
   useEffect((): (() => void) => {
+    const browser = checkBrowser();
     const body = document.querySelector("body");
     const wrapper = refFullPage.current;
     const sections = wrapper.childNodes;
     let spinValue = activeSec;
     let scrollHeight =
       +wrapper.getAttribute("style")?.replace(/[^-\d]/g, "") || 0;
-    let scrollings = [];
+    let newScrollings = scrollings;
     let prevTime = new Date().getTime();
     changeHeaderStyle(sections, spinValue);
 
@@ -204,9 +205,10 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
       const curTime = new Date().getTime();
       // wheel distance
       const powerOfScroll = Math.abs(e.deltaY);
+      const minPower = browser.name === "Firefox" ? 1 : 25;
 
       // check if buttons are not pressed and power of scroll (to avoid touchpad inertia)
-      if (!e.shiftKey && !e.ctrlKey && !e.altKey && powerOfScroll >= 25) {
+      if (!e.shiftKey && !e.ctrlKey && !e.altKey && powerOfScroll >= minPower) {
         const value = -e.deltaY || -e.detail;
         const delta = Math.max(-1, Math.min(1, value));
         const horizontalDetection = typeof e.deltaX !== "undefined";
@@ -214,25 +216,26 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
           Math.abs(e.deltaX) < Math.abs(e.deltaY) || !horizontalDetection;
 
         // Limiting the array to 150 (lets not waste memory!)
-        if (scrollings.length > 149) {
-          scrollings.shift();
+        if (newScrollings.length > 149) {
+          newScrollings.shift();
         }
 
         // keeping record of the previous scrollings
-        scrollings.push(Math.abs(value));
+        newScrollings.push(Math.abs(value));
 
         // time difference between the last scroll and the current one
         const timeDiff = curTime - prevTime;
         prevTime = curTime;
-
         // enough to be consider a different scrolling action to scroll another section
         if (timeDiff > 200) {
-          scrollings = [];
+          newScrollings = [];
         }
 
+        dispatch(updateScrollings(newScrollings));
+
         if (canScroll) {
-          const averageEnd = getAverage(scrollings, 10);
-          const averageMiddle = getAverage(scrollings, 70);
+          const averageEnd = getAverage(newScrollings, 10);
+          const averageMiddle = getAverage(newScrollings, 70);
           const isAccelerating = averageEnd >= averageMiddle;
 
           // avoid multi swipes and horizontal scrolling
@@ -267,8 +270,6 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
     } else if (document.onmousewheel !== undefined) {
       supportWheel = "mousewheel"; // Webkit and IE support at least "mousewheel"
     }
-
-    const browser = checkBrowser();
 
     if (browser.name === "Firefox" && +browser.version < 60) {
       return;
