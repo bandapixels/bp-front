@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import useGrid from "../../../../utils/useGrid";
+import Link from "next/link";
 import AnimatedLine from "../../../../shared/AnimatedLine/AnimatedLine";
 import { getPosts } from "../../blogPage.actions";
 import { getAllPosts } from "../../blogPage.selectors";
@@ -32,28 +33,26 @@ const Posts: React.FunctionComponent = () => {
       <div className={styles.blogContainer}>
         {postsData && postsData.length ? (
           postsData.map(post => (
-            <a
-              className={styles.blogItem}
-              key={post.head}
-              href={`/blog/${post.slug}`}
-            >
-              <div className={styles.blogImage}>
-                <img src={post.image} alt={post.head} />
-              </div>
-              <div className={styles.postInfo}>
-                <h4>{post.head}</h4>
-                <p className={styles.postTime}>{post.created_at}</p>
-                <div className={styles.hashtags}>
-                  {post.tags.map((hashtag, index) => {
-                    const key = hashtag.name + index;
-
-                    return <span key={key}>{hashtag.name}</span>;
-                  })}
+            <Link key={post.head} href={`/blog/${post.slug}`}>
+              <a className={styles.blogItem}>
+                <div className={styles.blogImage}>
+                  <img src={post.image} alt={post.head} />
                 </div>
-                <div className={styles.postAnnotation}>{post.excerpt}</div>
-                <p className={styles.postReadMore}>Read more</p>
-              </div>
-            </a>
+                <div className={styles.postInfo}>
+                  <h4>{post.head}</h4>
+                  <p className={styles.postTime}>{post.created_at}</p>
+                  <div className={styles.hashtags}>
+                    {post.tags.map((hashtag, index) => {
+                      const key = hashtag.name + index;
+
+                      return <span key={key}>{hashtag.name}</span>;
+                    })}
+                  </div>
+                  <div className={styles.postAnnotation}>{post.excerpt}</div>
+                  <p className={styles.postReadMore}>Read more</p>
+                </div>
+              </a>
+            </Link>
           ))
         ) : (
           <p>No posts</p>
