@@ -3,6 +3,6 @@ export default {
   host: process.env.APP_HOSTNAME || "bandapixels.com",
   helpers: {
     form: "/contact",
-    blog: "/blog"
+    blog: "/postList"
   }
 };
