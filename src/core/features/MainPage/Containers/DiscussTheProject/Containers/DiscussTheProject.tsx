@@ -63,7 +63,7 @@ const DiscussTheProject: React.FunctionComponent = () => {
     showSecondStep: step === 2
   });
   const [formSend, setFormSend] = useState(false);
-  const [formData, setFormData] = useState(formInitialState);
+  const [formData, setFormData] = useState({ ...formInitialState });
   const formStatus = useSelector((state: AppState) => getStatus(state));
   const dispatch = useDispatch();
 
