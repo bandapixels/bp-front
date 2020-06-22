@@ -181,7 +181,7 @@ const DiscussTheProject: React.FunctionComponent = () => {
 
       dispatch(new SendFormData(dataToSend));
       setFormSend(!formSend);
-      setFormData(formInitialState);
+      setFormData({ ...formInitialState });
       refForm.current.reset();
     }
   };

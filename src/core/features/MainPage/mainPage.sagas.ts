@@ -7,12 +7,11 @@ import {
 } from "./mainPage.actions";
 import EmailReq from "../../api/email-request";
 
-function* watchSendFormData(): SagaIterator {
+function* watchSendFormRequest(): SagaIterator {
   const { payload } = yield take(FormActions.SEND_FORM_DATA);
-  const data = JSON.stringify(payload);
 
   try {
-    yield call(EmailReq.SendData, data);
+    yield call(EmailReq.SendData, payload);
     yield put(new SendFormDataSuccess("success"));
   } catch (e) {
     yield put(new SendFormDataFailed("failed"));
@@ -20,5 +19,5 @@ function* watchSendFormData(): SagaIterator {
 }
 
 export default function* root(): SagaIterator {
-  yield all([fork(watchSendFormData)]);
+  yield all([fork(watchSendFormRequest)]);
 }
