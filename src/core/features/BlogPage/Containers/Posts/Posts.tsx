@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import useGrid from "../../../../utils/useGrid";
 import AnimatedLine from "../../../../shared/AnimatedLine/AnimatedLine";
@@ -10,9 +10,12 @@ import styles from "./posts.module.scss";
 
 const Posts: React.FunctionComponent = () => {
   const dispatch = useDispatch();
-  dispatch(getPosts());
   const refGridWrapper = useRef<HTMLDivElement>();
   const postsData = useSelector((state: AppState) => getAllPosts(state));
+
+  useEffect(() => {
+    dispatch(getPosts());
+  }, []);
 
   useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#fff");
   useRedrawGrid(refGridWrapper);
@@ -42,9 +45,9 @@ const Posts: React.FunctionComponent = () => {
                 <p className={styles.postTime}>{post.created_at}</p>
                 <div className={styles.hashtags}>
                   {post.tags.map((hashtag, index) => {
-                    const key = hashtag + index;
+                    const key = hashtag.name + index;
 
-                    return <span key={key}>{hashtag}</span>;
+                    return <span key={key}>{hashtag.name}</span>;
                   })}
                 </div>
                 <div className={styles.postAnnotation}>{post.excerpt}</div>
