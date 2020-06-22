@@ -1,17 +1,24 @@
+import { Action } from "../../store/store";
 import { BlogPageState } from "./blogPage.state";
 
-export const getPosts = (): { type: string } => {
-  return { type: "GET_POSTS" };
-};
+export enum PostsActions {
+  GET_POSTS = "[BlogPage] get posts",
+  GET_POSTS_SUCCESS = "[BlogPage] save posts to the store",
+  GET_POSTS_FAILED = "[BlogPage] get posts failed"
+}
 
-export const getPostsSuccess = (
-  posts: BlogPageState
-): { type: string; payload: BlogPageState } => {
-  return { type: "GET_POSTS_SUCCESS", payload: posts };
-};
+export class GetPosts extends Action {
+  readonly type = PostsActions.GET_POSTS;
+}
 
-export const getPostsFailed = (
-  failureStatus: string
-): { type: string; payload: string } => {
-  return { type: "GET_POSTS_FAILED", payload: failureStatus };
-};
+export class GetPostsSuccess extends Action {
+  readonly type = PostsActions.GET_POSTS_SUCCESS;
+
+  constructor(public payload: { posts: BlogPageState }) {
+    super();
+  }
+}
+
+export class GetPostsFailed extends Action {
+  readonly type = PostsActions.GET_POSTS_FAILED;
+}

@@ -1,16 +1,20 @@
 import { all, fork, call, put, take } from "@redux-saga/core/effects";
 import { SagaIterator } from "@redux-saga/types";
-import { getPostsSuccess, getPostsFailed } from "./blogPage.actions";
+import {
+  GetPostsSuccess,
+  GetPostsFailed,
+  PostsActions
+} from "./blogPage.actions";
 import PostsReq from "../../api/posts-request";
 
 function* watchGetPosts(): SagaIterator {
-  yield take("GET_POSTS");
+  yield take(PostsActions.GET_POSTS);
 
   try {
     const { data } = yield call(PostsReq.GetPosts);
-    yield put(getPostsSuccess(data));
+    yield put(new GetPostsSuccess(data));
   } catch (e) {
-    yield put(getPostsFailed(e));
+    yield put(new GetPostsFailed());
   }
 }
 

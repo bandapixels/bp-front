@@ -1,4 +1,5 @@
 import { BlogPageState } from "./blogPage.state";
+import { PostsActions } from "./blogPage.actions";
 
 const initialState: BlogPageState = {
   posts: []
@@ -6,11 +7,11 @@ const initialState: BlogPageState = {
 
 const reducer = (state = initialState, action): BlogPageState => {
   switch (action.type) {
-    case "GET_POSTS_SUCCESS":
+    case PostsActions.GET_POSTS_SUCCESS:
       return {
         posts: [...action.payload]
       };
-    case "GET_POSTS_FAILED":
+    case PostsActions.GET_POSTS_FAILED:
       return {
         posts: []
       };
