@@ -24,6 +24,7 @@ const MenuItem: React.FunctionComponent<MenuItemProps> = ({ name, href }) => {
     if (router.pathname !== link) {
       dispatch(changeSection(0));
       router.push(link);
+      window.scrollTo({ top: 0 });
     }
   };
 

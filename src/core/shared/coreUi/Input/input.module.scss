@@ -36,7 +36,6 @@
   input[type="text"],
   input[type="email"] {
     border: 1px solid #BDBDBD;
-    background: transparent;
     height: 50px;
     width: 100%;
     font-size: 16px;
@@ -87,7 +86,7 @@
     }
 
     .errorMessage {
-      font-family: 'Open Sans';
+      font-family: 'Open Sans', sans-serif;
       font-weight: 600;
       font-size: 12px;
       line-height: 150%;

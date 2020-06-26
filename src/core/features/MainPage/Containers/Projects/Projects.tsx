@@ -5,7 +5,7 @@ import useGrid from "../../../../utils/useGrid";
 import Project from "./components/Project/Project";
 import Button from "../../../../shared/coreUi/Button/Button";
 import ArrowForSlider from "../../../../shared/Icons/ArrowForSlider";
-
+import Head from "next/head";
 import styles from "./projects.module.scss";
 import useRedrawGrid from "../../../../utils/useRedrawGrid";
 
@@ -127,46 +127,53 @@ const Projects: React.FunctionComponent = () => {
   useRedrawGrid(refGridWrapper);
 
   return (
-    <section
-      className={projectsClasses}
-      ref={refGridWrapper}
-      data-header="black"
-    >
-      <h3 className={styles.projectsMobTitle}>
-        <span>Our</span> projects
-      </h3>
-      <div className={styles.projectsSlider}>
-        <div className={styles.projectsSliderList}>
-          <Project
-            name={projectsInfo[activeSlide].name}
-            description={projectsInfo[activeSlide].description}
-            problem={projectsInfo[activeSlide].problem}
-            key={projectsInfo[activeSlide].name}
-            video={projectsInfo[activeSlide].video}
-            url={projectsInfo[activeSlide].url}
-            orientation={projectsInfo[activeSlide].orientation}
-            position={projectsInfo[activeSlide].position}
-            activeSlide={activeSlide}
-          />
+    <>
+      {router.pathname === "/projects" && (
+        <Head>
+          <title>{projectsInfo[activeSlide].name}</title>
+        </Head>
+      )}
+      <section
+        className={projectsClasses}
+        ref={refGridWrapper}
+        data-header="black"
+      >
+        <h3 className={styles.projectsMobTitle}>
+          <span>Our</span> projects
+        </h3>
+        <div className={styles.projectsSlider}>
+          <div className={styles.projectsSliderList}>
+            <Project
+              name={projectsInfo[activeSlide].name}
+              description={projectsInfo[activeSlide].description}
+              problem={projectsInfo[activeSlide].problem}
+              key={projectsInfo[activeSlide].name}
+              video={projectsInfo[activeSlide].video}
+              url={projectsInfo[activeSlide].url}
+              orientation={projectsInfo[activeSlide].orientation}
+              position={projectsInfo[activeSlide].position}
+              activeSlide={activeSlide}
+            />
+          </div>
         </div>
-      </div>
-      <div className={styles.sliderBtnWrapper}>
-        <Button
-          type="button"
-          classes="sliderPrev"
-          handlerClick={handlerPrevSlide}
-        >
-          <ArrowForSlider />
-        </Button>
-        <Button
-          type="button"
-          classes="sliderNext"
-          handlerClick={handlerNextSlide}
-        >
-          <ArrowForSlider />
-        </Button>
-      </div>
-    </section>
+        <div className={styles.sliderBtnWrapper}>
+          <Button
+            type="button"
+            classes="sliderPrev"
+            handlerClick={handlerPrevSlide}
+          >
+            <ArrowForSlider />
+          </Button>
+          <Button
+            type="button"
+            classes="sliderNext"
+            handlerClick={handlerNextSlide}
+          >
+            <ArrowForSlider />
+          </Button>
+        </div>
+      </section>
+    </>
   );
 };
 

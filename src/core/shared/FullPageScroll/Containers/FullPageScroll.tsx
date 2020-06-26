@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
-import { getSection, getScrollings } from "../fullPageScroll.selectors";
-import { changeSection, updateScrollings } from "../fullPageScroll.actions";
+import { getSection } from "../fullPageScroll.selectors";
+import { changeSection } from "../fullPageScroll.actions";
 import { AppState } from "../../../store/store";
 import { checkBrowser } from "../../../utils/checkBrowser";
 import { getStart } from "../../Preloader/preloader.selectors";
@@ -14,7 +14,6 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
   const [canScroll, setCanScroll] = useState(true);
   const refFullPage = useRef<HTMLDivElement>();
   const activeSec = useSelector((state: AppState) => getSection(state));
-  const scrollings = useSelector((state: AppState) => getScrollings(state));
   const startScroll =
     router.pathname === "/"
       ? !useSelector((state: AppState) => getStart(state))
@@ -63,33 +62,6 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
     }
   };
 
-  // gets the average of the last `number` elements of the given array
-  const getAverage = (elements: Array<number>, number: number): number => {
-    let sum = 0;
-
-    // taking `number` elements from the end to make the average, if there are not enough, 1
-    const lastElements = elements.slice(Math.max(elements.length - number, 1));
-
-    for (let i = 0; i < lastElements.length; i++) {
-      sum += lastElements[i];
-    }
-
-    return Math.ceil(sum / number);
-  };
-
-  // find active section when page reloaded
-  const handlerOnLoad = (sections: NodeListOf<ChildNode>): number => {
-    let active = 0;
-
-    sections.forEach((el: HTMLElement, index: number) => {
-      if (el.offsetTop - window.pageYOffset < 10) {
-        active = index;
-      }
-    });
-
-    return active;
-  };
-
   const checkForHorizontal = (
     sections: NodeListOf<ChildNode>,
     index: number
@@ -115,13 +87,8 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
   };
 
   useEffect(() => {
-    const wrapper = refFullPage.current;
-    const sections = wrapper.childNodes;
-
     setTimeout(() => {
-      const sectionOnLoad = handlerOnLoad(sections);
-
-      dispatch(changeSection(sectionOnLoad));
+      window.scrollTo({ top: 0 });
     }, 150);
   }, []);
 
@@ -133,8 +100,6 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
     let spinValue = activeSec;
     let scrollHeight =
       +wrapper.getAttribute("style")?.replace(/[^-\d]/g, "") || 0;
-    let newScrollings = scrollings;
-    let prevTime = new Date().getTime();
     changeHeaderStyle(sections, spinValue);
 
     const changeSlider = (e: WheelEvent): void => {
@@ -149,8 +114,9 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
       }
 
       const horizontalLayout = checkForHorizontal(sections, spinValue);
+      const deltaY = browser.name === "Firefox" ? e.deltaY * 40 : e.deltaY;
 
-      if (horizontalLayout && e.deltaY && !activeAnimation && canScroll) {
+      if (horizontalLayout && deltaY && !activeAnimation && canScroll) {
         let activeSection = sections[spinValue] as HTMLElement;
         activeSection = activeSection.dataset.child
           ? (activeSection.querySelector(
@@ -162,10 +128,10 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
           Math.floor(activeSection.scrollLeft + activeSection.offsetWidth);
 
         if (
-          (scrollPosition > 5 && e.deltaY > 0) ||
-          (activeSection.scrollLeft > 5 && e.deltaY < 0)
+          (scrollPosition > 5 && deltaY > 0) ||
+          (activeSection.scrollLeft > 5 && deltaY < 0)
         ) {
-          activeSection.scrollLeft += e.deltaY;
+          activeSection.scrollLeft += deltaY;
           return;
         }
       }
@@ -201,45 +167,20 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
           return;
         }
       }
-
-      const curTime = new Date().getTime();
       // wheel distance
-      const powerOfScroll = Math.abs(e.deltaY);
-      const minPower = browser.name === "Firefox" ? 1 : 25;
+      const powerOfScroll = Math.abs(deltaY);
 
       // check if buttons are not pressed and power of scroll (to avoid touchpad inertia)
-      if (!e.shiftKey && !e.ctrlKey && !e.altKey && powerOfScroll >= minPower) {
+      if (!e.shiftKey && !e.ctrlKey && !e.altKey && powerOfScroll >= 25) {
         const value = -e.deltaY || -e.detail;
         const delta = Math.max(-1, Math.min(1, value));
         const horizontalDetection = typeof e.deltaX !== "undefined";
         const isScrollingVertically =
           Math.abs(e.deltaX) < Math.abs(e.deltaY) || !horizontalDetection;
 
-        // Limiting the array to 150 (lets not waste memory!)
-        if (newScrollings.length > 149) {
-          newScrollings.shift();
-        }
-
-        // keeping record of the previous scrollings
-        newScrollings.push(Math.abs(value));
-
-        // time difference between the last scroll and the current one
-        const timeDiff = curTime - prevTime;
-        prevTime = curTime;
-        // enough to be consider a different scrolling action to scroll another section
-        if (timeDiff > 200) {
-          newScrollings = [];
-        }
-
-        dispatch(updateScrollings(newScrollings));
-
         if (canScroll) {
-          const averageEnd = getAverage(newScrollings, 10);
-          const averageMiddle = getAverage(newScrollings, 70);
-          const isAccelerating = averageEnd >= averageMiddle;
-
           // avoid multi swipes and horizontal scrolling
-          if (isAccelerating && isScrollingVertically) {
+          if (isScrollingVertically) {
             setCanScroll(false);
 
             if (delta < 0 && spinValue < sections.length - 1) {
@@ -285,6 +226,7 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
     return (): void => {
       document.removeEventListener("mousewheel", changeSlider, false); // IE9, Chrome, Safari, Opera
       document.removeEventListener("wheel", changeSlider, false); // Firefox
+      document.body.classList.remove("fullpage");
     };
   }, [startScroll, activeSec, canScroll]);
 

@@ -1,11 +1,15 @@
 import React from "react";
 import { NextPage } from "next";
+import Head from "next/head";
 import StoreLayout from "../src/core/layouts/StoreLayout";
 import DiscussTheProject from "../src/core/features/MainPage/Containers/DiscussTheProject/Containers/DiscussTheProject";
 
 const Contacts: NextPage = () => {
   return (
     <StoreLayout>
+      <Head>
+        <title>Form</title>
+      </Head>
       <DiscussTheProject />
     </StoreLayout>
   );

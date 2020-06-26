@@ -1,5 +1,6 @@
 import React from "react";
 import { NextPage } from "next";
+import Head from "next/head";
 import StoreLayout from "../src/core/layouts/StoreLayout";
 import WeOffer from "../src/core/features/Services/Containers/WeOffer/WeOffer";
 import TechnologyStack from "../src/core/features/Services/Containers/TechnologyStack/TechnologyStack";
@@ -9,6 +10,9 @@ import FullPageScroll from "../src/core/shared/FullPageScroll/Containers/FullPag
 const Services: NextPage = () => {
   return (
     <StoreLayout>
+      <Head>
+        <title>Services</title>
+      </Head>
       <FullPageScroll>
         <WeOffer />
         <TechnologyStack />

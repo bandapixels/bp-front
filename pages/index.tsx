@@ -1,5 +1,6 @@
 import React from "react";
 import { NextPage } from "next";
+import Head from "next/head";
 import StoreLayout from "../src/core/layouts/StoreLayout";
 import BlockWithVideo from "../src/core/features/MainPage/Containers/BlockWithVideo/BlockWithVideo";
 import DiscussTheProject from "../src/core/features/MainPage/Containers/DiscussTheProject/Containers/DiscussTheProject";
@@ -14,6 +15,9 @@ const Home: NextPage = () => {
   return (
     <StoreLayout>
       <Preloader />
+      <Head>
+        <title>Bandapixels</title>
+      </Head>
       <FullPageScroll>
         <BlockWithVideo />
         <AboutUs />
