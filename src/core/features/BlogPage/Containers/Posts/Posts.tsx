@@ -14,6 +14,12 @@ const Posts: React.FunctionComponent = () => {
   const refGridWrapper = useRef<HTMLDivElement>();
   const postsData = useSelector((state: AppState) => getAllPosts(state));
 
+  const formatDate = (date: string): string => {
+    const publishDate = new Date(date);
+
+    return publishDate.toDateString();
+  };
+
   useEffect(() => {
     dispatch(new GetPosts());
   }, []);
@@ -40,7 +46,9 @@ const Posts: React.FunctionComponent = () => {
                 </div>
                 <div className={styles.postInfo}>
                   <h4>{post.head}</h4>
-                  <p className={styles.postTime}>{post.created_at}</p>
+                  <p className={styles.postTime}>
+                    {formatDate(post.created_at)}
+                  </p>
                   <div className={styles.hashtags}>
                     {post.tags.map((hashtag, index) => {
                       const key = hashtag.name + index;
