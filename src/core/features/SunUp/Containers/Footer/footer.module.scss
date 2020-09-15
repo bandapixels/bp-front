@@ -1,0 +1,37 @@
+.sunUpFooter {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 120px 0 150px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  background: #1B2137;
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 668px) {
+  .sunUpFooter {
+    padding: 50px 0 100px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+
+    img {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+
+      &:nth-child(even) {
+        margin-right: 0;
+        margin-left: auto;
+        padding-left: 10px;
+      }
+
+      &:nth-child(odd) {
+        padding-right: 10px;
+      }
+    }
+  }
+}

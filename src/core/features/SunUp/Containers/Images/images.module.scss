@@ -1,0 +1,170 @@
+.sunUpImages {
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-top: 390px;
+  padding-bottom: 250px;
+
+  * {
+    font-family: Roboto, sans-serif;
+  }
+}
+
+.sunUpImagesWrapper {
+  position: relative;
+}
+
+.sunUpImagesMain {
+  max-width: 1580px;
+  margin: 0 auto;
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -190px;
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.sunUpImagesContent {
+  max-width: 1000px;
+  width: 100%;
+  background: #1B2137;
+  border-bottom-right-radius: 100px;
+  border-top-right-radius: 100px;
+  padding-left: 130px;
+  height: 1100px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+}
+
+.sunUpImagesContentImg {
+  transform: translateY(220px);
+}
+
+.sunUpImagesBack {
+  margin-top: -80px;
+  position: relative;
+}
+
+.sunUpImagesBackImg {
+  position: absolute;
+  right: 0;
+  bottom: -250px;
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .sunUpImages {
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+
+  .sunUpImagesMain {
+    position: static;
+    transform: none;
+    margin-bottom: 40px;
+  }
+
+  .sunUpImagesContent {
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .sunUpImagesContentImg {
+    transform: none;
+    margin: 0 auto;
+  }
+
+  .sunUpImagesBackImg {
+    bottom: 0;
+    position: static;
+  }
+
+  .sunUpImagesBack {
+    padding: 100px 0;
+    margin: 0;
+
+    > img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 668px) {
+  .sunUpImages {
+    padding-top: 90px;
+    padding-bottom: 60px;
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+  }
+
+  .sunUpImagesFirst {
+    background: #1B2137;
+    border-radius: 30px;
+    padding: 40px 0;
+    margin-bottom: 20px;
+
+    img {
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+
+      &:nth-child(even) {
+        padding-right: 10px;
+      }
+
+      &:nth-child(odd) {
+        margin-right: 0;
+        margin-left: auto;
+        padding-left: 10px;
+      }
+
+      &:last-child {
+        margin: 0 auto;
+        padding: 0 10px;
+      }
+    }
+  }
+
+  .sunUpImagesSecond {
+    p {
+      font-size: 14px;
+      line-height: 150%;
+      color: #211C18;
+      padding: 0 20px;
+      margin-bottom: 40px;
+    }
+
+    img {
+      &:nth-child(odd) {
+        padding-right: 10px;
+      }
+
+      &:nth-child(even) {
+        margin-right: 0;
+        margin-left: auto;
+        padding-left: 10px;
+      }
+    }
+  }
+}
