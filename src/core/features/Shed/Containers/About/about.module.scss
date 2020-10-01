@@ -1,0 +1,80 @@
+.shredAbout {
+  max-width: 1470px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto 180px;
+}
+
+.shredAboutWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h3 {
+    font-weight: 300;
+    font-size: 56px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #8CD50B;
+    margin-bottom: 55px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 36px;
+    letter-spacing: 0.02em;
+    text-indent: 25px;
+  }
+
+  span {
+    color: #8CD50B;
+  }
+}
+
+.shredAboutImg {
+  flex-shrink: 1;
+  min-width: 300px;
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+.shredAboutContent {
+  max-width: 700px;
+  margin-left: 50px;
+  z-index: 1;
+
+  &Second {
+    margin-left: 0;
+    margin-right: 50px;
+
+    p {
+      text-indent: 0;
+    }
+  }
+}
+
+.shredAboutDecor {
+  margin-top: -50px;
+  margin-bottom: -50px;
+  z-index: 0;
+
+  img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.shredAboutVideo {
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+}

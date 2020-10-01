@@ -1,0 +1,22 @@
+.shredPrototype {
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto 240px;
+}
+
+.shredPrototypeWrapper {
+  h3 {
+    padding-left: 240px;
+    font-weight: 300;
+    font-size: 56px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #8CD50B;
+    margin-bottom: 55px;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+}

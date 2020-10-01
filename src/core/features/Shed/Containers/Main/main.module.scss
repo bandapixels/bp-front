@@ -1,0 +1,39 @@
+.shredMain {
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+.shredMainWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 240px;
+}
+
+.shredMainLogo {
+  max-width: 290px;
+  width: 100%;
+
+  img {
+    margin: 0 auto 60px;
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 36px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #8A8A8A;
+  }
+}
+
+.shredMainBig {
+  flex-shrink: 1;
+}
