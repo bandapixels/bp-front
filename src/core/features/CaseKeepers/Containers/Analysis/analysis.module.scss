@@ -1,0 +1,103 @@
+.keepersAnalysis {
+  margin: 210px auto 0;
+  max-width: 1920px;
+  width: 100%;
+  position: relative;
+  padding: 0 20px;
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+.keepersAnalysisWrapper {
+  max-width: 1720px;
+  margin: 0 auto;
+
+  h3 {
+    font-weight: 500;
+    font-size: 65px;
+    line-height: 84px;
+    color: #1A1C1E;
+    margin-bottom: 30px;
+  }
+}
+
+.keepersAnalysisContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  p {
+    font-size: 25px;
+    line-height: 40px;
+    color: #1A1C1E;
+    max-width: 820px;
+  }
+}
+
+.keepersAnalysisContentLeft {
+  img {
+    box-shadow: 0 8px 44px rgba(27, 81, 165, 0.2);
+    border-radius: 14px;
+    margin: 60px 0;
+  }
+}
+
+.keepersAnalysisMessage {
+  margin: 0 auto;
+}
+
+.keepersAnalysisLogin {
+  max-width: 1780px;
+  margin: 100px auto 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  > * {
+    flex-basis: 48%;
+    flex-shrink: 0;
+  }
+
+  img {
+    box-shadow: 0 8px 44px rgba(27, 81, 165, 0.2);
+    border-radius: 14px;
+  }
+
+  p {
+    font-size: 25px;
+    line-height: 40px;
+    color: #1A1C1E;
+    margin-bottom: 70px;
+    max-width: 660px;
+  }
+}
+
+.keepersAnalysisRegister {
+  margin: 0 auto;
+  transform: translate(-85px, -100px);
+  background: #fff;
+}
+
+.keepersAnalysisDecor1 {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  z-index: -1;
+}
+
+.keepersAnalysisDecor2 {
+  position: absolute;
+  top: 35%;
+  left: 10px;
+  z-index: -1;
+}
+
+.keepersAnalysisDecor3 {
+  position: absolute;
+  top: 55%;
+  right: 50px;
+  z-index: -1;
+}

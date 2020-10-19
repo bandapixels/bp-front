@@ -1,4 +1,4 @@
-.shredMain {
+.shedMain {
   max-width: 1920px;
   width: 100%;
   margin: 0 auto;
@@ -9,14 +9,14 @@
   }
 }
 
-.shredMainWrapper {
+.shedMainWrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-left: 240px;
 }
 
-.shredMainLogo {
+.shedMainLogo {
   max-width: 290px;
   width: 100%;
 
@@ -34,6 +34,44 @@
   }
 }
 
-.shredMainBig {
+.shedMainBig {
   flex-shrink: 1;
+}
+
+@media only screen and (max-width: 1200px) {
+  .shedMainWrapper {
+    padding-left: 15px;
+  }
+}
+
+@media only screen and (max-width: 668px) {
+  .shedMain {
+    margin: 100px auto 40px;
+  }
+
+  .shedMainWrapper {
+    flex-flow: column;
+    align-items: center;
+  }
+
+  .shedMainLogo {
+    margin: 0 auto 25px;
+
+    img {
+      max-width: 170px;
+      margin: 0 auto;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 30px;
+      margin-top: 30px;
+    }
+  }
+
+  .shedMainBig {
+    img {
+      margin: 0 0 0 auto;
+    }
+  }
 }

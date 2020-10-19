@@ -3,12 +3,12 @@ import styles from "./about.module.scss";
 
 const About: React.FunctionComponent = () => {
   return (
-    <section className={styles.shredAbout}>
-      <div className={styles.shredAboutWrapper}>
-        <div className={styles.shredAboutImg}>
-          <img src="/images/projects/Shred/about.png" alt="Shed about" />
+    <section className={styles.shedAbout}>
+      <div className={styles.shedAboutWrapper}>
+        <div className={styles.shedAboutImg}>
+          <img src="/images/projects/Shed/about.png" alt="Shed about" />
         </div>
-        <div className={styles.shredAboutContent}>
+        <div className={styles.shedAboutContent}>
           <h3>About</h3>
           <p>
             <span>The Shed</span> is a service where you can find everything you
@@ -24,11 +24,11 @@ const About: React.FunctionComponent = () => {
           </p>
         </div>
       </div>
-      <div className={styles.shredAboutDecor}>
-        <img src="/images/projects/Shred/logo-grey.png" alt="Shed about" />
+      <div className={styles.shedAboutDecor}>
+        <img src="/images/projects/Shed/logo-grey.png" alt="Shed about" />
       </div>
-      <div className={styles.shredAboutWrapper}>
-        <div className={styles.shredAboutContentSecond}>
+      <div className={styles.shedAboutWrapper}>
+        <div className={styles.shedAboutContentSecond}>
           <p>
             To sum up, <span>The Shed</span> provides several advantages -
             unnecessary things do not consume additional space, a passive
@@ -43,12 +43,12 @@ const About: React.FunctionComponent = () => {
             pollutes the environment.
           </p>
         </div>
-        <div className={styles.shredAboutImg}>
-          <img src="/images/projects/Shred/about-2.png" alt="Shed about" />
+        <div className={styles.shedAboutImg}>
+          <img src="/images/projects/Shed/about-2.png" alt="Shed about" />
         </div>
       </div>
-      <div className={styles.shredAboutVideo}>
-        <img src="/images/projects/Shred/animation.gif" alt="video" />
+      <div className={styles.shedAboutVideo}>
+        <img src="/images/projects/Shed/animation.gif" alt="video" />
       </div>
     </section>
   );

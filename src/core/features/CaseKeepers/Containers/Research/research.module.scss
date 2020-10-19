@@ -1,0 +1,61 @@
+.keepersResearch {
+  max-width: 1920px;
+  margin: 120px auto 0;
+  position: relative;
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  * {
+    font-family: Roboto;
+  }
+}
+
+.keepersWrapper {
+  max-width: 1740px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  h1 {
+    font-weight: 500;
+    font-size: 65px;
+    color: #1A1C1E;
+    margin-bottom: 70px;
+  }
+}
+
+.keepersInfoRow {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  margin-bottom: 90px;
+}
+
+.keepersInfoCol {
+  max-width: 300px;
+  width: 100%;
+}
+
+.keepersInfoNumber {
+  font-weight: 900;
+  font-size: 100px;
+  text-align: center;
+  letter-spacing: 1.4px;
+  color: #3A79DB;
+  margin-bottom: 30px;
+}
+
+.keepersInfoText {
+  font-size: 28px;
+  line-height: 40px;
+  text-align: center;
+  color: #828282;
+}
+
+.keepersResearchDecor {
+  position: absolute;
+  top: 0;
+  right: 20%;
+}

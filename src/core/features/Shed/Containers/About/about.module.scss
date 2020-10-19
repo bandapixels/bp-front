@@ -1,14 +1,16 @@
-.shredAbout {
-  max-width: 1470px;
+.shedAbout {
+  max-width: 1950px;
   width: 100%;
   padding: 0 15px;
   margin: 0 auto 180px;
 }
 
-.shredAboutWrapper {
+.shedAboutWrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: 1440px;
+  margin: 0 auto;
 
   h3 {
     font-weight: 300;
@@ -31,7 +33,7 @@
   }
 }
 
-.shredAboutImg {
+.shedAboutImg {
   flex-shrink: 1;
   min-width: 300px;
 
@@ -41,7 +43,7 @@
   }
 }
 
-.shredAboutContent {
+.shedAboutContent {
   max-width: 700px;
   margin-left: 50px;
   z-index: 1;
@@ -49,6 +51,7 @@
   &Second {
     margin-left: 0;
     margin-right: 50px;
+    max-width: 700px;
 
     p {
       text-indent: 0;
@@ -56,7 +59,7 @@
   }
 }
 
-.shredAboutDecor {
+.shedAboutDecor {
   margin-top: -50px;
   margin-bottom: -50px;
   z-index: 0;
@@ -68,7 +71,7 @@
   }
 }
 
-.shredAboutVideo {
+.shedAboutVideo {
   max-width: 1920px;
   width: 100%;
   margin: 0 auto;
@@ -76,5 +79,55 @@
   img {
     display: block;
     max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .shedAboutWrapper {
+    h3 {
+      font-size: 48px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .shedAbout {
+    margin-top: 60px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .shedAbout {
+    margin: 40px auto;
+  }
+
+  .shedAboutWrapper {
+    flex-flow: column-reverse;
+
+    &:nth-child(3) {
+      flex-flow: column;
+    }
+
+    h3 {
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 32px;
+    }
+  }
+
+  .shedAboutContent {
+    margin: 0 auto;
+
+    &Second {
+      margin: 0 auto;
+    }
+  }
+
+  .shedAboutDecor {
+    display: none;
   }
 }

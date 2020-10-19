@@ -1,14 +1,17 @@
-.shredProblematics {
-  max-width: 1470px;
+.shedProblematics {
+  max-width: 1950px;
   width: 100%;
   padding: 0 15px;
   margin: 0 auto 180px;
+  position: relative;
 }
 
-.shredProblematicsWrapper {
+.shedProblematicsWrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: 1470px;
+  margin: 0 auto;
 
   h3 {
     font-weight: 300;
@@ -23,6 +26,7 @@
     font-size: 16px;
     line-height: 36px;
     letter-spacing: 0.02em;
+    color: #8A8A8A;
   }
 
   span {
@@ -30,7 +34,7 @@
   }
 }
 
-.shredProblematicsImg {
+.shedProblematicsImg {
   flex-shrink: 1;
   min-width: 300px;
 
@@ -40,7 +44,7 @@
   }
 }
 
-.shredProblematicsContent {
+.shedProblematicsContent {
   max-width: 700px;
   margin-left: 0;
   z-index: 1;
@@ -56,7 +60,7 @@
   }
 }
 
-.shredProblematicsDecor {
+.shedProblematicsDecor {
   margin-top: -50px;
   margin-bottom: -50px;
   z-index: 0;
@@ -65,5 +69,61 @@
     display: block;
     max-width: 100%;
     margin: 0 auto;
+  }
+}
+
+.circleHalf {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translateY(50%);
+  z-index: -1;
+}
+
+@media only screen and (max-width: 1200px) {
+  .shedProblematicsWrapper {
+    h3 {
+      font-size: 48px;
+    }
+  }
+}
+
+@media only screen and (max-width: 668px) {
+  .shedProblematics {
+    margin: 40px auto;
+  }
+
+  .shedProblematicsWrapper {
+    flex-flow: column;
+
+    &:nth-child(3) {
+      flex-flow: column-reverse;
+    }
+
+    h3 {
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 32px;
+    }
+  }
+
+  .shedProblematicsDecor {
+    display: none;
+  }
+
+  .shedProblematicsImg {
+    min-width: auto;
+  }
+
+  .shedProblematicsContentSecond {
+    margin: 0 auto;
+  }
+
+  .circleHalf {
+    display: none;
   }
 }

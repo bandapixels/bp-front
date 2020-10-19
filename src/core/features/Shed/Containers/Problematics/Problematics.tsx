@@ -3,9 +3,9 @@ import styles from "./problematics.module.scss";
 
 const Problematics: React.FunctionComponent = () => {
   return (
-    <section className={styles.shredProblematics}>
-      <div className={styles.shredProblematicsWrapper}>
-        <div className={styles.shredProblematicsContent}>
+    <section className={styles.shedProblematics}>
+      <div className={styles.shedProblematicsWrapper}>
+        <div className={styles.shedProblematicsContent}>
           <h3>Problematics</h3>
           <p>
             The sharing service helps to solve several problems at the same
@@ -17,27 +17,27 @@ const Problematics: React.FunctionComponent = () => {
             color palette, as well as client's mind map.
           </p>
         </div>
-        <div className={styles.shredProblematicsImg}>
+        <div className={styles.shedProblematicsImg}>
           <img
-            src="/images/projects/Shred/problematics-1.png"
+            src="/images/projects/Shed/problematics-1.png"
             alt="Shed Problematics"
           />
         </div>
       </div>
-      <div className={styles.shredProblematicsDecor}>
+      <div className={styles.shedProblematicsDecor}>
         <img
-          src="/images/projects/Shred/logo-grey.png"
+          src="/images/projects/Shed/logo-grey.png"
           alt="Shed Problematics"
         />
       </div>
-      <div className={styles.shredProblematicsWrapper}>
-        <div className={styles.shredProblematicsImg}>
+      <div className={styles.shedProblematicsWrapper}>
+        <div className={styles.shedProblematicsImg}>
           <img
-            src="/images/projects/Shred/problematics-1.png"
+            src="/images/projects/Shed/problematics-2.png"
             alt="Shed Problematics"
           />
         </div>
-        <div className={styles.shredProblematicsContentSecond}>
+        <div className={styles.shedProblematicsContentSecond}>
           <p>
             The product was created from scratch, we had just the basics and the
             understanding of the functionality, provided by the client. New
@@ -52,12 +52,17 @@ const Problematics: React.FunctionComponent = () => {
           </p>
         </div>
       </div>
-      <div className={styles.shredProblematicsDecor}>
+      <div className={styles.shedProblematicsDecor}>
         <img
-          src="/images/projects/Shred/logo-grey.png"
+          src="/images/projects/Shed/logo-grey.png"
           alt="Shed Problematics"
         />
       </div>
+      <img
+        src="/images/projects/Shed/circle-half.png"
+        alt="Shed Problematics"
+        className={styles.circleHalf}
+      />
     </section>
   );
 };

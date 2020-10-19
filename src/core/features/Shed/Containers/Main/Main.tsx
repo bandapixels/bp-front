@@ -3,14 +3,14 @@ import styles from "./main.module.scss";
 
 const Main: React.FunctionComponent = () => {
   return (
-    <section className={styles.shredMain}>
-      <div className={styles.shredMainWrapper}>
-        <div className={styles.shredMainLogo}>
-          <img src="/images/projects/Shred/logo.png" alt="Shed Logo" />
+    <section className={styles.shedMain}>
+      <div className={styles.shedMainWrapper}>
+        <div className={styles.shedMainLogo}>
+          <img src="/images/projects/Shed/logo.png" alt="Shed Logo" />
           <p>A service where you can find everything you need</p>
         </div>
-        <div className={styles.shredMainBig}>
-          <img src="/images/projects/Shred/main-big.png" alt="Shed Logo" />
+        <div className={styles.shedMainBig}>
+          <img src="/images/projects/Shed/main-big.png" alt="Shed Logo" />
         </div>
       </div>
     </section>

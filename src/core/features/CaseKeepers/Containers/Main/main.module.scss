@@ -1,0 +1,76 @@
+.keepersMain {
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    z-index: -1;
+  }
+}
+
+.keepersMainContent {
+  max-width: 820px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-100%);
+  left: 4%;
+
+  h1 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 65px;
+    line-height: 84px;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+  }
+
+  p {
+    font-size: 28px;
+    line-height: 40px;
+    color: #FFFFFF;
+
+  }
+}
+
+.keepersMainText {
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: #FFFFFF;
+  position: absolute;
+  top: 50px;
+  left: 4%;
+}
+
+@media only screen and (max-width: 1700px) {
+  .keepersMainContent {
+    max-width: 40%;
+    top: 55%;
+
+    h1 {
+      font-size: 55px;
+      line-height: 64px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  .keepersMainContent {
+    max-width: 40%;
+    top: 55%;
+
+    h1 {
+      font-size: 40px;
+      line-height: 44px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 26px;
+    }
+  }
+}

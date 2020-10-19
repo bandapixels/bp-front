@@ -3,13 +3,13 @@ import styles from "./challenge.module.scss";
 
 const Challenge: React.FunctionComponent = () => {
   return (
-    <section className={styles.shredChallenge}>
+    <section className={styles.shedChallenge}>
       <h3>Challenge</h3>
-      <p className={styles.shredChallengeSubtitle}>
+      <p className={styles.shedChallengeSubtitle}>
         To create high-quality design, our team needed to solve several
         problems:
       </p>
-      <ul className={styles.shredChallengeList}>
+      <ul className={styles.shedChallengeList}>
         <li>
           <span>01.</span> Creating an account for 3 user types: owners (placing
           things in a warehouse and tracking rent); renters (saving necessary
@@ -39,15 +39,39 @@ const Challenge: React.FunctionComponent = () => {
           the delivered goods
         </li>
       </ul>
-      <div className={styles.shredChallengeSteps}>
-        <div className={styles.shredChallengeStepsItem}>
-          <div className={styles.shredChallengeStepsIcon}>
+      <div className={styles.shedChallengeSteps}>
+        <div className={styles.shedChallengeStepsItem}>
+          <div className={styles.shedChallengeStepsIcon}>
             <img
-              src="/images/projects/Shred/user-acc.png"
+              src="/images/projects/Shed/user-acc.png"
               alt="Shed Problematics"
             />
           </div>
           <p>different user Accounts</p>
+        </div>
+        <div className={styles.shedChallengeStepsItem}>
+          <div className={styles.shedChallengeStepsIcon}>
+            <img
+              src="/images/projects/Shed/check.png"
+              alt="Shed Problematics"
+            />
+          </div>
+          <p>remote quality control</p>
+        </div>
+        <div className={styles.shedChallengeStepsItem}>
+          <div className={styles.shedChallengeStepsIcon}>
+            <img
+              src="/images/projects/Shed/search.png"
+              alt="Shed Problematics"
+            />
+          </div>
+          <p>unique search engine</p>
+        </div>
+        <div className={styles.shedChallengeStepsItem}>
+          <div className={styles.shedChallengeStepsIcon}>
+            <img src="/images/projects/Shed/link.png" alt="Shed Problematics" />
+          </div>
+          <p>Clear product verification</p>
         </div>
       </div>
     </section>
