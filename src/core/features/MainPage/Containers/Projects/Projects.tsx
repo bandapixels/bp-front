@@ -58,10 +58,10 @@ const Projects: React.FunctionComponent = () => {
         beforehand – for example, a toaster breaks down before a
         reasonable consumer would expect it to.
       `,
-      video: "/videos/dcr.mp4",
+      video: "",
       url: "/sunup",
       orientation: "landscape",
-      position: "left"
+      position: "right"
     },
     {
       name: "Shed",
@@ -80,6 +80,46 @@ const Projects: React.FunctionComponent = () => {
       `,
       video: "/videos/shed.mp4",
       url: "/shed",
+      orientation: "landscape",
+      position: "left"
+    },
+    {
+      name: "DCR",
+      description: `
+        TECOM-3 Conf is China's first Tech and Entrepreneur Communities
+        conference.
+
+        TECOM-3 Conf brings the most dynamic, engaging and vibrant
+        Communities, Startups,
+      `,
+      problem: `
+        A problem is considered to be major when a reasonable consumer
+        would not have bought the product if they had known the problem
+        beforehand – for example, a toaster breaks down before a
+        reasonable consumer would expect it to.
+      `,
+      video: "/videos/dcr.mp4",
+      url: "/dcr",
+      orientation: "landscape",
+      position: "right"
+    },
+    {
+      name: "CaseKeepers",
+      description: `
+        TECOM-3 Conf is China's first Tech and Entrepreneur Communities
+        conference.
+
+        TECOM-3 Conf brings the most dynamic, engaging and vibrant
+        Communities, Startups,
+      `,
+      problem: `
+        A problem is considered to be major when a reasonable consumer
+        would not have bought the product if they had known the problem
+        beforehand – for example, a toaster breaks down before a
+        reasonable consumer would expect it to.
+      `,
+      video: "",
+      url: "/casekeepers",
       orientation: "landscape",
       position: "right"
     }

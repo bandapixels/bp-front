@@ -72,8 +72,7 @@
 }
 
 .projectMedia {
-  //width: 640px;
-  height: 380px;
+  max-width: 640px;
   max-height: 380px;
   background: #4F4F4F;
   border: 8px solid #4F4F4F;
@@ -83,7 +82,7 @@
 
   &.portrait {
     height: 500px;
-    width: 300px;
+    max-width: 300px;
     flex: 0 0 auto;
     max-height: 500px;
     margin-right: 180px;
@@ -197,6 +196,10 @@
   }
 }
 
+.noVideo {
+  opacity: 0;
+}
+
 @media screen and (max-width: 1400px) {
   .projectTitle {
     font-size: 30px;
@@ -211,7 +214,7 @@
   .projectMedia {
     &.portrait {
       max-height: 400px;
-      width: 260px;
+      max-width: 260px;
       margin-right: 120px;
     }
   }
@@ -223,7 +226,7 @@
   }
 
   .projectMedia {
-    flex: 0 1 640px;
+    flex: 0 1 auto;
 
     &.portrait {
       margin-right: 0;
@@ -240,12 +243,12 @@
 @media screen and (max-width: $breakpoint-max-width) and (max-height: 1000px) {
   .projectMedia {
     flex: 0 1 auto;
-    width: 440px;
+    max-width: 440px;
 
     &.portrait {
       margin-right: 0;
       max-height: 400px;
-      width: 260px;
+      max-width: 260px;
     }
   }
 }
@@ -311,7 +314,7 @@
     &.portrait {
       margin-right: 0;
       max-height: 300px;
-      width: 200px;
+      max-width: 200px;
     }
   }
 }
