@@ -32,6 +32,8 @@
     letter-spacing: 0.02em;
     color: #8A8A8A;
     max-width: 490px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
   }
 }
 
@@ -70,5 +72,9 @@
 
   .shedTimelineWrapper {
     margin: 0 auto;
+  }
+
+  .shedTimelineTime {
+    margin: 0 0 24px;
   }
 }

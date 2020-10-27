@@ -1,7 +1,10 @@
 import React from "react";
+import useIsMobile from "../../../../utils/useIsMobile";
 import styles from "./analysis.module.scss";
 
 const Analysis: React.FunctionComponent = () => {
+  const isMobile = useIsMobile();
+
   return (
     <section className={styles.keepersAnalysis}>
       <div className={styles.keepersAnalysisWrapper}>
@@ -15,8 +18,10 @@ const Analysis: React.FunctionComponent = () => {
               customers
             </p>
             <img
-              src="/images/projects/caseKeepers/analysis-1.png"
-              alt="CaseKeepers "
+              src={`/images/projects/caseKeepers/analysis-1${
+                isMobile ? "-mobile" : ""
+              }.png`}
+              alt="CaseKeepers"
             />
             <p>
               Convenient and new Collaboration Suite for professionals and their
@@ -37,7 +42,9 @@ const Analysis: React.FunctionComponent = () => {
           </div>
         </div>
         <img
-          src="/images/projects/caseKeepers/analysis-4.png"
+          src={`/images/projects/caseKeepers/analysis-4${
+            isMobile ? "-mobile" : ""
+          }.png`}
           alt="CaseKeepers "
           className={styles.keepersAnalysisMessage}
         />
@@ -45,7 +52,9 @@ const Analysis: React.FunctionComponent = () => {
       <div className={styles.keepersAnalysisLogin}>
         <div>
           <img
-            src="/images/projects/caseKeepers/analysis-5.png"
+            src={`/images/projects/caseKeepers/analysis-5${
+              isMobile ? "-mobile" : ""
+            }.png`}
             alt="CaseKeepers "
           />
         </div>
@@ -55,11 +64,15 @@ const Analysis: React.FunctionComponent = () => {
             customers. This is smart. It is fast
           </p>
           <img
-            src="/images/projects/caseKeepers/analysis-6.png"
+            src={`/images/projects/caseKeepers/analysis-6${
+              isMobile ? "-mobile" : ""
+            }.png`}
             alt="CaseKeepers "
           />
           <img
-            src="/images/projects/caseKeepers/analysis-7.png"
+            src={`/images/projects/caseKeepers/analysis-7${
+              isMobile ? "-mobile" : ""
+            }.png`}
             alt="CaseKeepers "
             className={styles.keepersAnalysisRegister}
           />

@@ -1,16 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import useIsMobile from "../../../../utils/useIsMobile";
 import styles from "./images.module.scss";
 
 const Images: React.FunctionComponent = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  const handleIsMobile = (): void => {
-    setIsMobile(window.innerWidth < 669);
-  };
-
-  useEffect(() => {
-    handleIsMobile();
-  }, []);
+  const isMobile = useIsMobile();
 
   return (
     <section className={styles.sunUpImages}>

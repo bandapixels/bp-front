@@ -1,7 +1,10 @@
 import React from "react";
+import useIsMobile from "../../../../utils/useIsMobile";
 import styles from "./research.module.scss";
 
 const Research: React.FunctionComponent = () => {
+  const isMobile = useIsMobile();
+
   return (
     <section className={styles.keepersResearch}>
       <div className={styles.keepersWrapper}>
@@ -27,10 +30,40 @@ const Research: React.FunctionComponent = () => {
           </div>
         </div>
       </div>
-      <img
-        src="/images/projects/caseKeepers/research.png"
-        alt="CaseKeepers Research bg"
-      />
+      {isMobile ? (
+        <div className={styles.keepersResearchImagesWrapper}>
+          <img
+            src="/images/projects/caseKeepers/research-1.png"
+            alt="CaseKeepers Research bg"
+          />
+          <img
+            src="/images/projects/caseKeepers/research-2.png"
+            alt="CaseKeepers Research bg"
+          />
+          <img
+            src="/images/projects/caseKeepers/research-3.png"
+            alt="CaseKeepers Research bg"
+          />
+          <img
+            src="/images/projects/caseKeepers/research-4.png"
+            alt="CaseKeepers Research bg"
+          />
+          <img
+            src="/images/projects/caseKeepers/research-5.png"
+            alt="CaseKeepers Research bg"
+          />
+          <img
+            src="/images/projects/caseKeepers/research-6.png"
+            alt="CaseKeepers Research bg"
+          />
+        </div>
+      ) : (
+        <img
+          src="/images/projects/caseKeepers/research.png"
+          alt="CaseKeepers Research bg"
+        />
+      )}
+
       <img
         src="/images/projects/caseKeepers/research-decor.png"
         alt="CaseKeepers decor"

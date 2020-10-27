@@ -1,7 +1,10 @@
 import React from "react";
+import useIsMobile from "../../../../utils/useIsMobile";
 import styles from "./footer.module.scss";
 
 const Footer: React.FunctionComponent = () => {
+  const isMobile = useIsMobile();
+
   return (
     <footer className={styles.keepersFooter}>
       <div className={styles.keepersFooterContent}>
@@ -14,7 +17,9 @@ const Footer: React.FunctionComponent = () => {
         </p>
       </div>
       <img
-        src="/images/projects/caseKeepers/footer.png"
+        src={`/images/projects/caseKeepers/footer${
+          isMobile ? "-mobile.svg" : ".png"
+        }`}
         alt="CaseKeepers footer"
       />
       <img

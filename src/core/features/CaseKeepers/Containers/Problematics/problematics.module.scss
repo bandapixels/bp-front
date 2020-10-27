@@ -41,3 +41,30 @@
     }
   }
 }
+
+@media only screen and (max-width: 669px) {
+  .keepersProblematicsWrapper {
+    h1 {
+      font-size: 25px;
+      line-height: 30px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  .keepersProblematicsImageWrapper {
+    background: url(/images/projects/caseKeepers/problematics-wave.svg) no-repeat top;
+    background-size: cover;
+    padding-top: 50vw;
+
+    img {
+      &:nth-child(1) {
+        margin: 0 0 0 auto;
+      }
+    }
+  }
+}

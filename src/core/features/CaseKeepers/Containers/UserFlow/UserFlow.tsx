@@ -1,7 +1,10 @@
 import React from "react";
+import useIsMobile from "../../../../utils/useIsMobile";
 import styles from "./userFlow.module.scss";
 
 const UserFlow: React.FunctionComponent = () => {
+  const isMobile = useIsMobile();
+
   return (
     <section className={styles.keepersUserFlow}>
       <div className={styles.keepersUserFlowWrapper}>
@@ -12,7 +15,11 @@ const UserFlow: React.FunctionComponent = () => {
         </p>
       </div>
       <img
-        src="/images/projects/caseKeepers/userflow-schema.png"
+        src={
+          isMobile
+            ? "/images/projects/caseKeepers/userflow-schema-mobile.png"
+            : "/images/projects/caseKeepers/userflow-schema.png"
+        }
         alt="CaseKeepers schema"
       />
       <img

@@ -35,3 +35,61 @@
   bottom: 100px;
   right: 0;
 }
+
+@media only screen and (max-width: 1024px) {
+  .keepersChallengeContent {
+    padding: 0 20px;
+  }
+
+  .keepersColorsFont {
+    flex-flow: column;
+    align-items: flex-start;
+  }
+
+  .keepersColorsFontImg {
+    margin: 0 0 30px;
+  }
+}
+
+@media only screen and (max-width: 669px) {
+  .keepersChallengeWrapper {
+    padding: 0 15px;
+    margin: 0 auto 60px;
+
+    h1 {
+      font-size: 24px;
+      line-height: 30px;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 22px;
+      text-align: left;
+    }
+  }
+
+  .keepersChallengeDecor {
+    display: none!important;
+  }
+
+  .keepersChallengeImagesWrapper {
+    position: relative;
+
+    img {
+      &:not([class]) {
+        width: 100%;
+        max-width: none;
+      }
+    }
+  }
+
+  .keepersChallengeMobile {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+    box-shadow: 0 20px 60px rgba(27, 81, 165, .15);
+  }
+}

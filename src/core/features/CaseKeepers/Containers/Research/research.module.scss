@@ -9,7 +9,7 @@
   }
 
   * {
-    font-family: Roboto;
+    font-family: Roboto, sans-serif;
   }
 }
 
@@ -58,4 +58,49 @@
   position: absolute;
   top: 0;
   right: 20%;
+}
+
+@media only screen and (max-width: 669px) {
+  .keepersResearchDecor {
+    display: none!important;
+  }
+
+  .keepersWrapper {
+    h1 {
+      font-size: 24px;
+      line-height: 30px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+  }
+
+  .keepersInfoRow {
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 60px;
+  }
+
+  .keepersInfoNumber {
+    margin-bottom: 20px;
+  }
+
+  .keepersInfoCol:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  .keepersResearchImagesWrapper {
+    img {
+      margin: 0 auto;
+
+      &:nth-child(1),
+      &:nth-child(3) {
+        margin: 0 0 0 auto;
+      }
+
+      &:nth-child(2) {
+        margin: 0 auto 0 0;
+      }
+    }
+  }
 }

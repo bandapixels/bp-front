@@ -3,6 +3,11 @@
   width: 100%;
   padding: 0 15px;
   margin: 0 auto 180px;
+
+  p, li {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+  }
 }
 
 .shedImplementationWrapper {

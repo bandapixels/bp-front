@@ -73,8 +73,24 @@
 }
 
 @media only screen and (max-width: 668px) {
+  .shedFooterWrapper {
+    display: flex;
+    flex-flow: column-reverse nowrap;
+  }
+
+  .footerContent p {
+    font-size: 19px;
+    line-height: 32px;
+  }
+
+  .footerLogo {
+    max-width: 72px;
+  }
+
   .footerContent {
-    display: none;
+    position: static;
+    transform: none;
+    margin: 0 auto 15px;
   }
 
   .shedFooterCircles {

@@ -1,7 +1,10 @@
 import React from "react";
+import useIsMobile from "../../../../utils/useIsMobile";
 import styles from "./timeline.module.scss";
 
 const Timeline: React.FunctionComponent = () => {
+  const isMobile = useIsMobile();
+
   return (
     <section className={styles.keepersTimeline}>
       <div className={styles.keepersTimelineWrapper}>
@@ -13,10 +16,19 @@ const Timeline: React.FunctionComponent = () => {
           </p>
         </div>
       </div>
-      <img
-        src="/images/projects/caseKeepers/timeline.png"
-        alt="CaseKeepers Timeline"
-      />
+      {isMobile ? (
+        <div className={styles.keepersTimelineImagesWrapper}>
+          <img
+            src="/images/projects/caseKeepers/timeline-mobile.svg"
+            alt="CaseKeepers Timeline"
+          />
+        </div>
+      ) : (
+        <img
+          src="/images/projects/caseKeepers/timeline.png"
+          alt="CaseKeepers Timeline"
+        />
+      )}
     </section>
   );
 };

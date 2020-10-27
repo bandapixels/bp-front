@@ -1,13 +1,23 @@
 import React from "react";
+import useIsMobile from "../../../../utils/useIsMobile";
 import styles from "./timeline.module.scss";
 
 const Timeline: React.FunctionComponent = () => {
+  const isMobile = useIsMobile();
+
   return (
     <section className={styles.shedTimeline}>
       <h3>Project timeline</h3>
       <div className={styles.shedTimelineWrapper}>
         <div className={styles.shedTimelineTime}>
-          <img src="/images/projects/Shed/time.png" alt="Shed Time" />
+          <img
+            src={
+              isMobile
+                ? "/images/projects/Shed/time-mobile.png"
+                : "/images/projects/Shed/time.png"
+            }
+            alt="Shed Time"
+          />
         </div>
         <p>
           At all stages of the Sarai project, certain time intervals were

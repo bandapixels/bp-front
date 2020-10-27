@@ -1,7 +1,10 @@
 import React from "react";
+import useIsMobile from "../../../../utils/useIsMobile";
 import styles from "./problematics.module.scss";
 
 const Problematics: React.FunctionComponent = () => {
+  const isMobile = useIsMobile();
+
   return (
     <section className={styles.keepersProblematics}>
       <div className={styles.keepersProblematicsWrapper}>
@@ -15,10 +18,23 @@ const Problematics: React.FunctionComponent = () => {
           </p>
         </div>
       </div>
-      <img
-        src="/images/projects/caseKeepers/problematics.png"
-        alt="CaseKeepers Problematics"
-      />
+      {isMobile ? (
+        <div className={styles.keepersProblematicsImageWrapper}>
+          <img
+            src="/images/projects/caseKeepers/problematics-1.png"
+            alt="CaseKeepers Problematics"
+          />
+          <img
+            src="/images/projects/caseKeepers/problematics-2.png"
+            alt="CaseKeepers Problematics"
+          />
+        </div>
+      ) : (
+        <img
+          src="/images/projects/caseKeepers/problematics.png"
+          alt="CaseKeepers Problematics"
+        />
+      )}
     </section>
   );
 };

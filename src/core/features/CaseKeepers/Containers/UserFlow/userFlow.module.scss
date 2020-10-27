@@ -16,6 +16,10 @@
       transform: translateY(-80px);
     }
   }
+
+  * {
+    font-family: Roboto, sans-serif;
+  }
 }
 
 .keepersUserFlowWrapper {
@@ -68,6 +72,33 @@
       &:not([class]) {
         transform: none;
         margin-top: 30px;
+        max-width: 100%;
+        width: auto;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 669px) {
+  .keepersUserFlowWrapper {
+    h1 {
+      font-size: 24px;
+      line-height: 30px;
+      font-weight: 500;
+      letter-spacing: normal;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  .keepersUserFlow {
+    img {
+      &[class] {
+        display: none;
       }
     }
   }

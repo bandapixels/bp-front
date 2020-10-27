@@ -57,3 +57,40 @@
   }
 }
 
+@media only screen and (max-width: 669px) {
+  .keepersFooter {
+    margin: 0 auto;
+
+    img {
+      max-width: none;
+      width: 100%;
+    }
+  }
+
+  .keepersFooterDecor {
+    display: none!important;
+  }
+
+  .keepersFooterContent {
+    position: static;
+    width: 100%;
+    max-width: none;
+    padding: 0 20px;
+    margin: 80px auto 15px;
+
+    h3 {
+      color: #1A1C1E;
+      font-size: 24px;
+      line-height: 30px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 22px;
+      letter-spacing: 0.5px;
+      color: #1A1C1E;
+    }
+  }
+}
+

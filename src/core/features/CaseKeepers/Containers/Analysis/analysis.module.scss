@@ -101,3 +101,62 @@
   right: 50px;
   z-index: -1;
 }
+
+@media only screen and (max-width: 669px) {
+  .keepersAnalysis {
+    margin-top: 80px;
+    padding: 0;
+  }
+
+  .keepersAnalysisWrapper {
+    h3 {
+      font-size: 24px;
+      line-height: 30px;
+      margin-bottom: 20px;
+      padding: 0 20px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 22px;
+      padding: 0 20px;
+    }
+
+    & > img {
+      margin: 0 0 0 auto;
+      box-shadow: 0 8px 44px rgba(27, 81, 165, 0.2);
+    }
+  }
+
+  .keepersAnalysisContent {
+    flex-flow: column;
+  }
+
+  .keepersAnalysisContentLeft {
+    img {
+      margin: 20px 0 40px 15px;
+      border-radius: 14px 0 0 14px;
+    }
+  }
+
+  .keepersAnalysisLogin {
+    flex-flow: column;
+    align-items: center;
+
+    p {
+      margin: 30px 0;
+      padding: 0 20px;
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    img {
+      margin: 0 auto;
+    }
+  }
+
+  .keepersAnalysisRegister {
+    transform: none;
+    margin-top: 40px!important;
+  }
+}
