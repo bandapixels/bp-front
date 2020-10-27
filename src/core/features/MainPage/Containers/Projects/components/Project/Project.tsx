@@ -87,15 +87,19 @@ const Project: React.FunctionComponent<ProjectProps> = ({
             </span>
           )}
         </div>
-        <div
+        <video
+          muted
+          autoPlay
+          loop
+          preload="auto"
+          playsInline
           className={classNames(styles.projectMedia, {
-            portrait: orientation === "portrait"
+            portrait: orientation === "portrait",
+            noVideo: !video.length
           })}
         >
-          <video muted autoPlay loop preload="auto">
-            <source src={video} type="video/mp4" />
-          </video>
-        </div>
+          <source src={video} type="video/mp4" />
+        </video>
       </div>
       <div className={styles.projectsFooter}>
         <div className={styles.projectsFooterLeftPart}>

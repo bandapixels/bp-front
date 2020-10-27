@@ -86,10 +86,9 @@
   }
 
   .projectMedia {
-    width: 520px;
-    height: 300px;
+    max-width: 520px;
     max-height: 300px;
-    flex: 0 0 520px;
+    flex: 0 0 auto;
   }
 }
 
@@ -146,7 +145,7 @@
 
   .projectMedia {
     flex: 0 0 auto;
-    width: 290px;
+    max-width: 290px;
     height: auto;
     border: 5px solid #171718;
   }

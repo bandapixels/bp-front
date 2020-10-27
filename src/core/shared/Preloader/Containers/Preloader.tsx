@@ -36,7 +36,13 @@ const Preloader: React.FunctionComponent = () => {
   return (
     shouldStart && (
       <div className={classes} onAnimationEnd={handlerAnimation}>
-        <video autoPlay muted loop={false} onEnded={handlerVideoEnd}>
+        <video
+          autoPlay
+          muted
+          loop={false}
+          onEnded={handlerVideoEnd}
+          playsInline
+        >
           <source src="/videos/logo-loader.mp4" type="video/mp4" />
         </video>
       </div>
