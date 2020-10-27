@@ -23,9 +23,9 @@ const AppNavi: NextPage = () => {
       <StoreLayout>
         <MainBlock />
         <AboutTheProject />
-        <AboutVideo />
         <Problematics />
         <Challenge />
+        <AboutVideo />
         <AnalysisAndSolution />
         <AnalysisVideo />
         <AnalysisBottom />

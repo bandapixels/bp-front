@@ -44,7 +44,7 @@ const Projects: React.FunctionComponent = () => {
       position: "right"
     },
     {
-      name: "DCR",
+      name: "SunUp",
       description: `
         TECOM-2 Conf is China's first Tech and Entrepreneur Communities
         conference.
@@ -59,7 +59,7 @@ const Projects: React.FunctionComponent = () => {
         reasonable consumer would expect it to.
       `,
       video: "/videos/dcr.mp4",
-      url: "#",
+      url: "/sunup",
       orientation: "landscape",
       position: "left"
     },
@@ -79,7 +79,7 @@ const Projects: React.FunctionComponent = () => {
         reasonable consumer would expect it to.
       `,
       video: "/videos/shed.mp4",
-      url: "#",
+      url: "/shed",
       orientation: "landscape",
       position: "right"
     }

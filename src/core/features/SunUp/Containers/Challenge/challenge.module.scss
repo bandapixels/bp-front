@@ -1,0 +1,131 @@
+.sunUpChallenge {
+  max-width: 1920px;
+  width: 100%;
+  background: #1B2137 url("/images/projects/SunUp/challenge-bg.png") no-repeat center;
+  background-size: cover;
+  border-radius: 100px;
+  padding: 100px 0;
+  margin: 0 auto;
+
+  * {
+    font-family: Roboto, sans-serif;
+  }
+}
+
+.sunUpChallengeWrapper {
+  max-width: 1570px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sunUpChallengeInfo {
+  max-width: 540px;
+
+  h3 {
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 70px;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 24px;
+    line-height: 150%;
+    color: #F2F2F2;
+  }
+}
+
+.sunUpChallengeItem {
+  max-width: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &:not(:last-child) {
+    margin-bottom: 100px;
+  }
+}
+
+.sunUpChallengeCircle {
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  width: 200px;
+  height: 200px;
+  position: relative;
+  margin-right: 30px;
+  flex-shrink: 0;
+
+  &:after {
+    content: '';
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #454B5D;
+    border-radius: 50%;
+  }
+}
+
+.sunUpChallengeText {
+  p {
+    font-size: 24px;
+    line-height: 150%;
+    color: #fff;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .sunUpChallengeWrapper {
+    flex-flow: column;
+  }
+
+  .sunUpChallengeInfo {
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .sunUpChallengeItem {
+    flex-flow: column;
+    max-width: 280px;
+    text-align: center;
+  }
+
+  .sunUpChallengeItem:not(:last-child) {
+    margin-bottom: 40px;
+  }
+
+  .sunUpChallengeCircle {
+    margin: 0 0 20px;
+  }
+}
+
+@media only screen and (max-width: 668px) {
+  .sunUpChallenge {
+    padding: 60px 0;
+    border-radius: 30px;
+  }
+
+  .sunUpChallengeInfo {
+    h3 {
+      font-size: 30px;
+      line-height: 35px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .sunUpChallengeText {
+    p {
+      font-size: 14px;
+    }
+  }
+}

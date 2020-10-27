@@ -1,0 +1,70 @@
+.keepersProblematics {
+  max-width: 1920px;
+  width: 100%;
+  margin: 120px auto 0;
+
+  img {
+    display: block;
+    max-width: 100%;
+    transform: translateY(-90px);
+  }
+}
+
+.keepersProblematicsWrapper {
+  max-width: 1740px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  * {
+    max-width: 750px;
+  }
+
+  h1 {
+    font-weight: 500;
+    font-size: 65px;
+    line-height: 84px;
+    color: #1A1C1E;
+    margin-bottom: 30px;
+  }
+
+  p {
+    font-size: 25px;
+    line-height: 40px;
+    color: #1A1C1E;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .keepersProblematics {
+    img {
+      transform: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 669px) {
+  .keepersProblematicsWrapper {
+    h1 {
+      font-size: 25px;
+      line-height: 30px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  .keepersProblematicsImageWrapper {
+    background: url(/images/projects/caseKeepers/problematics-wave.svg) no-repeat top;
+    background-size: cover;
+    padding-top: 50vw;
+
+    img {
+      &:nth-child(1) {
+        margin: 0 0 0 auto;
+      }
+    }
+  }
+}

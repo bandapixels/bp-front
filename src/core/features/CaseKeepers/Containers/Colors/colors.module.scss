@@ -1,0 +1,145 @@
+.keepersColors {
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+.keepersColorsWrapper {
+  max-width: 1720px;
+  margin: 0 auto;
+
+  h3 {
+    font-weight: 500;
+    font-size: 65px;
+    line-height: 84px;
+    margin-bottom: 70px;
+  }
+}
+
+.keepersColorsList {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 150px;
+}
+
+.keepersColorsItem {
+  max-width: 220px;
+  width: 100%;
+
+  img {
+    display: block;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 25px;
+    line-height: 40px;
+    text-align: center;
+    letter-spacing: 3px;
+    color: #A2A2A2;
+  }
+}
+
+.keepersColorsFont {
+  display: flex;
+  align-items: center;
+}
+
+.keepersColorsFontImg {
+  margin-right: 150px;
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+.keepersColorsFontSymbols {
+  font-size: 32px;
+  line-height: 50px;
+  letter-spacing: 0.26em;
+  color: #A1A1A1;
+
+  p {
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+  }
+}
+
+.keepersColorsDecor1 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(100%);
+}
+
+.keepersColorsDecor2 {
+  position: absolute;
+  bottom: 0;
+  right: 20%;
+  transform: translateY(100%);
+}
+
+@media only screen and (max-width: 1024px) {
+  .keepersColorsFontImg {
+    margin-right: 50px;
+  }
+
+  .keepersColorsFontSymbols {
+    font-size: 26px;
+  }
+}
+
+@media only screen and (max-width: 669px) {
+  .keepersColorsWrapper {
+    h3 {
+      font-size: 24px;
+      line-height: 30px;
+      margin-bottom: 30px;
+    }
+  }
+
+  .keepersColorsItem {
+    max-width: 130px;
+    margin-bottom: 40px;
+
+    p {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  .keepersColorsList {
+    margin-bottom: 40px;
+  }
+
+  .keepersColorsFont {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .keepersColorsFontImg {
+    margin: 0 0 30px;
+
+    img {
+      max-width: 150px;
+    }
+  }
+
+  .keepersColorsFontSymbols {
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: normal;
+  }
+
+  .keepersColorsDecor1,
+  .keepersColorsDecor2 {
+    display: none;
+  }
+}
