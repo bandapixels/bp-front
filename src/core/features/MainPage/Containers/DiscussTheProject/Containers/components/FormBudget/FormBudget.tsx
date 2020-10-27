@@ -22,7 +22,6 @@ const FormBudget: React.FunctionComponent<FormBudgetProps> = ({
           name="budget"
           smallInput
           handlerOnChange={handlerOnChange}
-          required
           error={formData.budget.error}
         >
           $ 5 000 - $ 10 000
@@ -33,7 +32,6 @@ const FormBudget: React.FunctionComponent<FormBudgetProps> = ({
           name="budget"
           smallInput
           handlerOnChange={handlerOnChange}
-          required
           error={formData.budget.error}
         >
           $ 10 000 - $ 20 000
@@ -44,7 +42,6 @@ const FormBudget: React.FunctionComponent<FormBudgetProps> = ({
           name="budget"
           smallInput
           handlerOnChange={handlerOnChange}
-          required
           error={formData.budget.error}
         >
           $ 20 000 - $ 30 000
@@ -55,7 +52,6 @@ const FormBudget: React.FunctionComponent<FormBudgetProps> = ({
           name="budget"
           smallInput
           handlerOnChange={handlerOnChange}
-          required
           error={formData.budget.error}
         >
           $ 30 000 - $ 50 000
@@ -66,7 +62,6 @@ const FormBudget: React.FunctionComponent<FormBudgetProps> = ({
           name="budget"
           smallInput
           handlerOnChange={handlerOnChange}
-          required
           error={formData.budget.error}
         >
           $ 50 000 - $ 100 000
@@ -77,7 +72,6 @@ const FormBudget: React.FunctionComponent<FormBudgetProps> = ({
           name="budget"
           smallInput
           handlerOnChange={handlerOnChange}
-          required
           error={formData.budget.error}
         >
           $ 100 000 +
@@ -88,7 +82,6 @@ const FormBudget: React.FunctionComponent<FormBudgetProps> = ({
           name="budget"
           smallInput
           handlerOnChange={handlerOnChange}
-          required
           error={formData.budget.error}
         >
           I need help

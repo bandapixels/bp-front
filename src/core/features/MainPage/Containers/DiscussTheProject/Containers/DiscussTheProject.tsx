@@ -165,12 +165,10 @@ const DiscussTheProject: React.FunctionComponent = () => {
   };
 
   const prepareDataToSend = (): {} => {
-    const data = {
+    return {
       email: formData.email.value,
       body: `Name: ${formData.name.value} \n Company: ${formData.company.value} \n Skype: ${formData.skype.value} \n Task: ${formData.task.value} \n Project type: ${formData.projectType.value} \n Budget: ${formData.budget.value}`
     };
-
-    return data;
   };
 
   const handlerSendData = (data): void => {

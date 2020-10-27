@@ -34,7 +34,7 @@
   align-items: flex-start;
 
   &::-webkit-scrollbar {
-    width: 0px;
+    width: 0;
     display: none;
     background: transparent;
   }
@@ -111,7 +111,7 @@
   letter-spacing: 0.03em;
   color: #BDBDBD;
   margin: 0 0 10px;
-  font-family: 'Open Sans';
+  font-family: 'Open Sans', sans-serif;
 }
 
 .hashtags {

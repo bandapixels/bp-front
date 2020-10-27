@@ -23,7 +23,6 @@ const FormProjectType: React.FunctionComponent<FormProjectTypeProps> = ({
             understandable for users."
             name="projectType"
             handlerOnChange={handlerOnChange}
-            required
             error={formData.projectType.error}
           >
             We want to make the design of the service more convenient and
@@ -34,7 +33,6 @@ const FormProjectType: React.FunctionComponent<FormProjectTypeProps> = ({
             value="We are doing a new service and want to make a design for it."
             name="projectType"
             handlerOnChange={handlerOnChange}
-            required
             error={formData.projectType.error}
           >
             We are doing a new service and want to make a design for it.
@@ -44,7 +42,6 @@ const FormProjectType: React.FunctionComponent<FormProjectTypeProps> = ({
             value="We improve or expand a working service"
             name="projectType"
             handlerOnChange={handlerOnChange}
-            required
             error={formData.projectType.error}
           >
             We improve or expand a working service
@@ -57,7 +54,6 @@ const FormProjectType: React.FunctionComponent<FormProjectTypeProps> = ({
             what we want"
             name="projectType"
             handlerOnChange={handlerOnChange}
-            required
             error={formData.projectType.error}
           >
             We are developing a new service for everyone and we know exactly
@@ -69,7 +65,6 @@ const FormProjectType: React.FunctionComponent<FormProjectTypeProps> = ({
             that will help us."
             name="projectType"
             handlerOnChange={handlerOnChange}
-            required
             error={formData.projectType.error}
           >
             We are a startup and want to make a cool MVP. We want to see a team
@@ -80,7 +75,6 @@ const FormProjectType: React.FunctionComponent<FormProjectTypeProps> = ({
             value="Another variant"
             name="projectType"
             handlerOnChange={handlerOnChange}
-            required
             error={formData.projectType.error}
           >
             Another variant

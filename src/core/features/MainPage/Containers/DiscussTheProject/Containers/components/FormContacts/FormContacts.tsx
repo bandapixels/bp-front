@@ -20,7 +20,6 @@ const FormContacts: React.FunctionComponent<FormContactsProps> = ({
         type="text"
         name="name"
         handlerOnChange={handlerOnChange}
-        required
         value={formData.name.value}
         error={formData.name.error}
       >
@@ -31,7 +30,6 @@ const FormContacts: React.FunctionComponent<FormContactsProps> = ({
         type="text"
         name="company"
         handlerOnChange={handlerOnChange}
-        required
         value={formData.company.value}
         error={formData.company.error}
       >
@@ -42,7 +40,6 @@ const FormContacts: React.FunctionComponent<FormContactsProps> = ({
         type="email"
         name="email"
         handlerOnChange={handlerOnChange}
-        required
         value={formData.email.value}
         error={formData.email.error}
       >
@@ -53,7 +50,6 @@ const FormContacts: React.FunctionComponent<FormContactsProps> = ({
         type="text"
         name="skype"
         handlerOnChange={handlerOnChange}
-        required
         value={formData.skype.value}
         error={formData.skype.error}
       >

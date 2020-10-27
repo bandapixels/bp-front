@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import classNames from "classnames";
 import { useSelector, useDispatch } from "react-redux";
 import styles from "./preloader.module.scss";
@@ -26,6 +26,12 @@ const Preloader: React.FunctionComponent = () => {
   const handlerAnimation = (): void => {
     dispatch(setStart());
   };
+
+  useEffect(() => {
+    document.body.classList.add("noScroll");
+
+    return (): void => document.body.classList.remove("noScroll");
+  }, []);
 
   return (
     shouldStart && (

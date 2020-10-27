@@ -19,7 +19,6 @@ const FormTask: React.FunctionComponent<FormTaskProps> = ({
         name="task"
         placeholder="write task..."
         handlerOnChange={handlerOnChange}
-        required
         value={formData.task.value}
         error={formData.task.error}
       />
