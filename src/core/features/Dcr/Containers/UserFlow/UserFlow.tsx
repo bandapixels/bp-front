@@ -1,5 +1,8 @@
 import React from "react";
 import useIsMobile from "../../../../utils/useIsMobile";
+import AnimationOnScroll, {
+  AnimationNames
+} from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
 import styles from "./userFlow.module.scss";
 
 const UserFlow: React.FunctionComponent = () => {
@@ -16,14 +19,33 @@ const UserFlow: React.FunctionComponent = () => {
             className={styles.dcrUserFlowItinerary}
           />
           <div className={styles.dcrUserFlowText}>
-            <h3>Юзерфлоу</h3>
+            <AnimationOnScroll
+              animationName={AnimationNames.fadeInUp}
+              duration={1}
+            >
+              <h3>Юзерфлоу</h3>
+            </AnimationOnScroll>
             <p>
-              Для наглядности и удобства восприятия связи между страницами и
-              основными их элементами, был создан удобный User Flow
+              <AnimationOnScroll
+                animationName={AnimationNames.fadeInUp}
+                duration={1}
+                as="span"
+                delay={0.5}
+              >
+                Для наглядности и удобства восприятия связи между страницами и
+                основными их элементами, был создан удобный User Flow
+              </AnimationOnScroll>
             </p>
             <p>
-              Связь, которая отобразилась на данной схеме, ускорила процес
-              восприятия и ориентации в приложени.
+              <AnimationOnScroll
+                animationName={AnimationNames.fadeInUp}
+                duration={1}
+                as="span"
+                delay={0.7}
+              >
+                Связь, которая отобразилась на данной схеме, ускорила процес
+                восприятия и ориентации в приложени.
+              </AnimationOnScroll>
             </p>
           </div>
           <div className={styles.dcrUserFlowImage}>

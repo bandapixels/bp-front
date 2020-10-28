@@ -1,5 +1,8 @@
 import React from "react";
 import useIsMobile from "../../../../utils/useIsMobile";
+import AnimationOnScroll, {
+  AnimationNames
+} from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
 import styles from "./designSolutions.module.scss";
 
 const DesignSolutions: React.FunctionComponent = () => {
@@ -24,16 +27,34 @@ const DesignSolutions: React.FunctionComponent = () => {
       />
       <div className={styles.dcrDesignMain}>
         <div className={styles.dcrDesignMainLeft}>
-          <h3>Дизайнерские решения</h3>
-          <h5>
-            <span>80+</span> UI элементов создано
-          </h5>
+          <AnimationOnScroll
+            animationName={AnimationNames.fadeInUp}
+            duration={1}
+          >
+            <h3>Дизайнерские решения</h3>
+          </AnimationOnScroll>
+          <AnimationOnScroll
+            animationName={AnimationNames.fadeInUp}
+            duration={1}
+            delay={0.5}
+          >
+            <h5>
+              <span>80+</span> UI элементов создано
+            </h5>
+          </AnimationOnScroll>
           <p>
-            Во время работы над UI дизайном мы произвели редизайн всех кнопок на
-            сайте, видоизменили и улучшили внешний вид, визуально расширив их и
-            сделав более округлыми, оставив при этом изначальный голубой цвет,
-            что помогло сохранить ассоциативные связи клиентов и упростить
-            взаимодействия пользователей на сайте.
+            <AnimationOnScroll
+              animationName={AnimationNames.fadeInUp}
+              duration={1}
+              delay={0.7}
+              as="span"
+            >
+              Во время работы над UI дизайном мы произвели редизайн всех кнопок
+              на сайте, видоизменили и улучшили внешний вид, визуально расширив
+              их и сделав более округлыми, оставив при этом изначальный голубой
+              цвет, что помогло сохранить ассоциативные связи клиентов и
+              упростить взаимодействия пользователей на сайте.
+            </AnimationOnScroll>
           </p>
         </div>
         <div className={styles.dcrDesignMainRight}>
@@ -53,25 +74,52 @@ const DesignSolutions: React.FunctionComponent = () => {
           />
         </div>
         <div className={styles.dcrDesignIconsRight}>
-          <h5>
-            <span>50+</span> Тематических иконок
-          </h5>
+          <AnimationOnScroll
+            animationName={AnimationNames.fadeInUp}
+            duration={1}
+            delay={0.2}
+          >
+            <h5>
+              <span>50+</span> Тематических иконок
+            </h5>
+          </AnimationOnScroll>
           <p>
-            Добавление единообразных иконок к определенным разделам сайта
-            освежило внешний вид портала, разбавило большое количество текста,
-            укрепило ассоциативные связи пользователя с конкретными действиями.
+            <AnimationOnScroll
+              animationName={AnimationNames.fadeInUp}
+              duration={1}
+              delay={0.5}
+              as="span"
+            >
+              Добавление единообразных иконок к определенным разделам сайта
+              освежило внешний вид портала, разбавило большое количество текста,
+              укрепило ассоциативные связи пользователя с конкретными
+              действиями.
+            </AnimationOnScroll>
           </p>
         </div>
       </div>
       <div className={styles.dcrDesignDesigners}>
         <div className={styles.dcrDesignDesignersLeft}>
-          <h5>
-            <span>4</span> Креативных дизайнера
-          </h5>
+          <AnimationOnScroll
+            animationName={AnimationNames.fadeInUp}
+            duration={1}
+            delay={0.2}
+          >
+            <h5>
+              <span>4</span> Креативных дизайнера
+            </h5>
+          </AnimationOnScroll>
           <p>
-            Нашей команде также удалось успешно соединить серьезную тематику
-            портала и тематические изображения, не отвлекая при этом внимания
-            пользователей сайта.
+            <AnimationOnScroll
+              animationName={AnimationNames.fadeInUp}
+              duration={1}
+              delay={0.5}
+              as="span"
+            >
+              Нашей команде также удалось успешно соединить серьезную тематику
+              портала и тематические изображения, не отвлекая при этом внимания
+              пользователей сайта.
+            </AnimationOnScroll>
           </p>
         </div>
         <div className={styles.dcrDesignDesignersRight}>
@@ -91,25 +139,51 @@ const DesignSolutions: React.FunctionComponent = () => {
           />
         </div>
         <div className={styles.dcrDesignAccentsRight}>
-          <h5>
-            <span>Правильные</span> акценты
-          </h5>
+          <AnimationOnScroll
+            animationName={AnimationNames.fadeInUp}
+            duration={1}
+            delay={0.2}
+          >
+            <h5>
+              <span>Правильные</span> акценты
+            </h5>
+          </AnimationOnScroll>
           <p>
-            Добавив больше воздуха между отдельными элементами сайта и расчертив
-            границы между блоками нам удалось сделать портал визуально более
-            легким, а взаимодействие на сайте более удобным.
+            <AnimationOnScroll
+              animationName={AnimationNames.fadeInUp}
+              duration={1}
+              delay={0.5}
+              as="span"
+            >
+              Добавив больше воздуха между отдельными элементами сайта и
+              расчертив границы между блоками нам удалось сделать портал
+              визуально более легким, а взаимодействие на сайте более удобным.
+            </AnimationOnScroll>
           </p>
         </div>
       </div>
       <div className={styles.dcrDesignNavigation}>
         <div className={styles.dcrDesignNavigationLeft}>
-          <h5>
-            <span>Удобная</span> навигация
-          </h5>
+          <AnimationOnScroll
+            animationName={AnimationNames.fadeInUp}
+            duration={1}
+            delay={0.2}
+          >
+            <h5>
+              <span>Удобная</span> навигация
+            </h5>
+          </AnimationOnScroll>
           <p>
-            Путем создания чекбоксов мы улучшили процесс поиска необходимой
-            информации на сайте, повысив таким образом для пользователя
-            вероятность решить поставленную задачу, найти ответ.
+            <AnimationOnScroll
+              animationName={AnimationNames.fadeInUp}
+              duration={1}
+              delay={0.5}
+              as="span"
+            >
+              Путем создания чекбоксов мы улучшили процесс поиска необходимой
+              информации на сайте, повысив таким образом для пользователя
+              вероятность решить поставленную задачу, найти ответ.
+            </AnimationOnScroll>
           </p>
         </div>
         <div className={styles.dcrDesignNavigationRight}>

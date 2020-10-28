@@ -1,15 +1,21 @@
 import React from "react";
-import AnimationOnScroll from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
+import AnimationOnScroll, {
+  AnimationNames
+} from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
 import styles from "./results.module.scss";
 
 const Results: React.FunctionComponent = () => {
   return (
     <section className={styles.appNaviResults}>
       <div className={styles.appNaviResultsContainer}>
-        <AnimationOnScroll animationName="fadeInUp" duration={1}>
+        <AnimationOnScroll animationName={AnimationNames.fadeInUp} duration={1}>
           <h3 className="appNaviH3">Results</h3>
         </AnimationOnScroll>
-        <AnimationOnScroll animationName="fadeInUp" duration={1} delay={0.5}>
+        <AnimationOnScroll
+          animationName={AnimationNames.fadeInUp}
+          duration={1}
+          delay={0.5}
+        >
           <p className="appNaviParagraph resultText">
             Getting down to the project realization, the owners of the AppNavi
             brand have distinguished us among other companies yet at the initial
@@ -17,7 +23,11 @@ const Results: React.FunctionComponent = () => {
             with us.
           </p>
         </AnimationOnScroll>
-        <AnimationOnScroll animationName="zoomIn" duration={1} delay={1}>
+        <AnimationOnScroll
+          animationName={AnimationNames.zoomIn}
+          duration={1}
+          delay={1}
+        >
           <blockquote className="appNaviBlockquote">
             <em>
               Getting down to the project realization, the owners of the AppNavi
@@ -36,16 +46,19 @@ const Results: React.FunctionComponent = () => {
           <div className={styles.twoStepsRow}>
             <div className={styles.stepItem}>
               <AnimationOnScroll
-                animationName="fadeInRight"
+                animationName={AnimationNames.fadeInRight}
                 duration={1}
                 delay={0.5}
               >
                 <span className={styles.stepItemNumber}>1</span>
               </AnimationOnScroll>
-              <AnimationOnScroll animationName="zoomIn" duration={0.5}>
+              <AnimationOnScroll
+                animationName={AnimationNames.zoomIn}
+                duration={0.5}
+              >
                 <div className={styles.stepBorder}>
                   <AnimationOnScroll
-                    animationName="fadeInUp"
+                    animationName={AnimationNames.fadeInUp}
                     duration={1}
                     delay={1.5}
                   >
@@ -61,16 +74,19 @@ const Results: React.FunctionComponent = () => {
             </div>
             <div className={styles.stepItem}>
               <AnimationOnScroll
-                animationName="fadeInRight"
+                animationName={AnimationNames.fadeInRight}
                 duration={1}
                 delay={0.5}
               >
                 <span className={styles.stepItemNumber}>2</span>
               </AnimationOnScroll>
-              <AnimationOnScroll animationName="zoomIn" duration={1}>
+              <AnimationOnScroll
+                animationName={AnimationNames.zoomIn}
+                duration={1}
+              >
                 <div className={styles.stepBorder}>
                   <AnimationOnScroll
-                    animationName="fadeInUp"
+                    animationName={AnimationNames.fadeInUp}
                     duration={1}
                     delay={1.5}
                   >
@@ -87,16 +103,20 @@ const Results: React.FunctionComponent = () => {
           <div className={styles.oneStepRow}>
             <div className={styles.stepItem}>
               <AnimationOnScroll
-                animationName="fadeInRight"
+                animationName={AnimationNames.fadeInRight}
                 duration={1}
                 delay={1.5}
               >
                 <span className={styles.stepItemNumber}>3</span>
               </AnimationOnScroll>
-              <AnimationOnScroll animationName="zoomIn" duration={1} delay={1}>
+              <AnimationOnScroll
+                animationName={AnimationNames.zoomIn}
+                duration={1}
+                delay={1}
+              >
                 <div className={styles.stepBorder}>
                   <AnimationOnScroll
-                    animationName="fadeInUp"
+                    animationName={AnimationNames.fadeInUp}
                     duration={1}
                     delay={2.5}
                   >
@@ -116,16 +136,20 @@ const Results: React.FunctionComponent = () => {
           <div className={styles.twoStepsRow}>
             <div className={styles.stepItem}>
               <AnimationOnScroll
-                animationName="fadeInRight"
+                animationName={AnimationNames.fadeInRight}
                 duration={1}
                 delay={3.5}
               >
                 <span className={styles.stepItemNumber}>4</span>
               </AnimationOnScroll>
-              <AnimationOnScroll animationName="zoomIn" duration={1} delay={3}>
+              <AnimationOnScroll
+                animationName={AnimationNames.zoomIn}
+                duration={1}
+                delay={3}
+              >
                 <div className={styles.stepBorder}>
                   <AnimationOnScroll
-                    animationName="fadeInUp"
+                    animationName={AnimationNames.fadeInUp}
                     duration={1}
                     delay={4.5}
                   >
@@ -141,16 +165,20 @@ const Results: React.FunctionComponent = () => {
             </div>
             <div className={styles.stepItem}>
               <AnimationOnScroll
-                animationName="fadeInRight"
+                animationName={AnimationNames.fadeInRight}
                 duration={1}
                 delay={3.5}
               >
                 <span className={styles.stepItemNumber}>5</span>
               </AnimationOnScroll>
-              <AnimationOnScroll animationName="zoomIn" duration={1} delay={3}>
+              <AnimationOnScroll
+                animationName={AnimationNames.zoomIn}
+                duration={1}
+                delay={3}
+              >
                 <div className={styles.stepBorder}>
                   <AnimationOnScroll
-                    animationName="fadeInUp"
+                    animationName={AnimationNames.fadeInUp}
                     duration={1}
                     delay={4.5}
                   >

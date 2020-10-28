@@ -1,5 +1,7 @@
 import React from "react";
-import AnimationOnScroll from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
+import AnimationOnScroll, {
+  AnimationNames
+} from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
 import styles from "./problematics.module.scss";
 
 const Problematics: React.FunctionComponent = () => {
@@ -7,10 +9,17 @@ const Problematics: React.FunctionComponent = () => {
     <section className={styles.problematicsWrapper}>
       <div className={styles.appNaviContainer}>
         <div className={styles.problematicsInfo}>
-          <AnimationOnScroll animationName="fadeInUp" duration={1}>
+          <AnimationOnScroll
+            animationName={AnimationNames.fadeInUp}
+            duration={1}
+          >
             <h3 className="appNaviH3">Problematics</h3>
           </AnimationOnScroll>
-          <AnimationOnScroll animationName="fadeInUp" duration={1} delay={0.5}>
+          <AnimationOnScroll
+            animationName={AnimationNames.fadeInUp}
+            duration={1}
+            delay={0.5}
+          >
             <p className="appNaviParagraph">
               <span className="blueText">AppNavi</span> suggests a completely
               new approach to employee training as well as increases all
@@ -29,7 +38,11 @@ const Problematics: React.FunctionComponent = () => {
           <img src="/images/projects/AppNavi/p.svg" alt="Decor P" />
         </div>
       </div>
-      <AnimationOnScroll animationName="zoomIn" duration={1} delay={1}>
+      <AnimationOnScroll
+        animationName={AnimationNames.zoomIn}
+        duration={1}
+        delay={1}
+      >
         <div className={styles.problematicsQuote}>
           <blockquote className="appNaviBlockquote">
             <em>

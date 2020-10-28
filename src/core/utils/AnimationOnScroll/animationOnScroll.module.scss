@@ -16,6 +16,21 @@
   transform: translateX(100%);
 }
 
+.fadeInLeft {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.rollInLeft {
+  opacity: 0;
+  transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+}
+
+.rollInRight {
+  opacity: 0;
+  transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+}
+
 @keyframes fadeInRight {
   100% {
     opacity: 1;
@@ -39,5 +54,26 @@
 @keyframes fadeIn {
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes fadeInLeft {
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes rollInLeft {
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes rollInRight {
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }

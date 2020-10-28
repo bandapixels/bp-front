@@ -1,5 +1,8 @@
 import React from "react";
 import useIsMobile from "../../../../utils/useIsMobile";
+import AnimationOnScroll, {
+  AnimationNames
+} from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
 import styles from "./prototypes.module.scss";
 
 const Prototypes: React.FunctionComponent = () => {
@@ -19,30 +22,63 @@ const Prototypes: React.FunctionComponent = () => {
           alt="prototypes map"
         />
         <div className={styles.dcrPrototypesTextWrapper}>
-          <h3>Прототипы</h3>
+          <AnimationOnScroll
+            animationName={AnimationNames.fadeInUp}
+            duration={1}
+          >
+            <h3>Прототипы</h3>
+          </AnimationOnScroll>
           <div className={styles.dcrPrototypesText}>
             <div>
               <p>
-                Прототип позволил ускорить весь процесс создания дизайна,
-                увидеть целостную картину всего приложения, а также использовать
-                бюджет проекта более рациональным образом.
+                <AnimationOnScroll
+                  animationName={AnimationNames.fadeInUp}
+                  duration={1}
+                  as="span"
+                  delay={0.5}
+                >
+                  Прототип позволил ускорить весь процесс создания дизайна,
+                  увидеть целостную картину всего приложения, а также
+                  использовать бюджет проекта более рациональным образом.
+                </AnimationOnScroll>
               </p>
               <p>
-                Исходя из аналитики мы создали свою версию расположения
-                элементов и блоков на портале, прибегая к минимальным изменениям
-                на сайте, чтобы не усложнять дальнейшее взаимодействие
-                пользователей с сервисом.
+                <AnimationOnScroll
+                  animationName={AnimationNames.fadeInUp}
+                  duration={1}
+                  as="span"
+                  delay={0.7}
+                >
+                  Исходя из аналитики мы создали свою версию расположения
+                  элементов и блоков на портале, прибегая к минимальным
+                  изменениям на сайте, чтобы не усложнять дальнейшее
+                  взаимодействие пользователей с сервисом.
+                </AnimationOnScroll>
               </p>
             </div>
             <div>
               <p>
-                Благодаря прототипу, клиент смог наглядно увидеть изменения и
-                оценить новые возможности своего продукта. Кроме того, мы
-                придумали несколько новых полезных пользовательских сценариев.
+                <AnimationOnScroll
+                  animationName={AnimationNames.fadeInUp}
+                  duration={1}
+                  as="span"
+                  delay={0.9}
+                >
+                  Благодаря прототипу, клиент смог наглядно увидеть изменения и
+                  оценить новые возможности своего продукта. Кроме того, мы
+                  придумали несколько новых полезных пользовательских сценариев.
+                </AnimationOnScroll>
               </p>
               <p>
-                Таким образом, нам удалось существенно повысить уровень удобства
-                использования портала DCR Solutions.
+                <AnimationOnScroll
+                  animationName={AnimationNames.fadeInUp}
+                  duration={1}
+                  as="span"
+                  delay={1.1}
+                >
+                  Таким образом, нам удалось существенно повысить уровень
+                  удобства использования портала DCR Solutions.
+                </AnimationOnScroll>
               </p>
             </div>
           </div>

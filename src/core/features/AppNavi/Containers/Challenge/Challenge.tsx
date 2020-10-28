@@ -1,5 +1,7 @@
 import React from "react";
-import AnimationOnScroll from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
+import AnimationOnScroll, {
+  AnimationNames
+} from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
 import styles from "./challenge.module.scss";
 
 const Challenge: React.FunctionComponent = () => {
@@ -7,10 +9,17 @@ const Challenge: React.FunctionComponent = () => {
     <section className={styles.challengeWrapper}>
       <div className={styles.challengeContainer}>
         <div className={styles.challengeContent}>
-          <AnimationOnScroll animationName="fadeInUp" duration={1}>
+          <AnimationOnScroll
+            animationName={AnimationNames.fadeInUp}
+            duration={1}
+          >
             <h3 className="appNaviH3">Challenge</h3>
           </AnimationOnScroll>
-          <AnimationOnScroll animationName="fadeInUp" duration={1} delay={0.5}>
+          <AnimationOnScroll
+            animationName={AnimationNames.fadeInUp}
+            duration={1}
+            delay={0.5}
+          >
             <p className="appNaviParagraph mb-30">
               <span className="blueText">AppNavi</span> is a completely new idea
               in the market and in the training field, meaning that companies
@@ -20,7 +29,11 @@ const Challenge: React.FunctionComponent = () => {
               possible.
             </p>
           </AnimationOnScroll>
-          <AnimationOnScroll animationName="fadeInUp" duration={1} delay={1}>
+          <AnimationOnScroll
+            animationName={AnimationNames.fadeInUp}
+            duration={1}
+            delay={1}
+          >
             <p className="appNaviParagraph">
               The UI part, on the other hand, was supposed to ensure an easy
               comprehension when integrated into absolutely any software. It was

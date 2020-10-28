@@ -1,4 +1,7 @@
 import React from "react";
+import AnimationOnScroll, {
+  AnimationNames
+} from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
 import useIsMobile from "../../../../utils/useIsMobile";
 import styles from "./projectTimeline.module.scss";
 
@@ -9,7 +12,12 @@ const ProjectTimeline: React.FunctionComponent = () => {
     <section className={styles.sunUpTimeline}>
       <div className={styles.sunUpTimelineWrapper}>
         <div className={styles.sunUpTimelineInfo}>
-          <h3>Project Timeline</h3>
+          <AnimationOnScroll
+            animationName={AnimationNames.fadeInUp}
+            duration={1}
+          >
+            <h3>Project Timeline</h3>
+          </AnimationOnScroll>
           <div className={styles.sunUpTimelineStages}>
             <div className={styles.sunUpTimelineStage}>
               <div className={styles.sunUpTimelineHours}>

@@ -1,11 +1,13 @@
 import React from "react";
-import AnimationOnScroll from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
+import AnimationOnScroll, {
+  AnimationNames
+} from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
 import styles from "./analysisBottom.module.scss";
 
 const AnalysisBottom: React.FunctionComponent = () => {
   return (
     <section className={styles.analysisBottomWrapper}>
-      <AnimationOnScroll animationName="fadeInUp" duration={1}>
+      <AnimationOnScroll animationName={AnimationNames.fadeInUp} duration={1}>
         <div className={styles.analysisTopText}>
           <p className="appNaviParagraph">
             As at the time of contacting us the{" "}
@@ -31,7 +33,7 @@ const AnalysisBottom: React.FunctionComponent = () => {
         />
       </div>
       <div className={styles.analysisText}>
-        <AnimationOnScroll animationName="fadeInUp" duration={1}>
+        <AnimationOnScroll animationName={AnimationNames.fadeInUp} duration={1}>
           <p className="appNaviParagraph mb-30">
             While developing a new interactive UI design we got rid of some
             redundant elements, reduced the menu size and visually separated it
@@ -39,7 +41,11 @@ const AnalysisBottom: React.FunctionComponent = () => {
             of some elements to make a more convenient user flow.
           </p>
         </AnimationOnScroll>
-        <AnimationOnScroll animationName="fadeInUp" duration={1} delay={0.5}>
+        <AnimationOnScroll
+          animationName={AnimationNames.fadeInUp}
+          duration={1}
+          delay={0.5}
+        >
           <p className="appNaviParagraph">
             Blocks and separate components before the redesign were square and
             with sharp corners, which was subconsciously associated with fear,
@@ -52,7 +58,7 @@ const AnalysisBottom: React.FunctionComponent = () => {
         </AnimationOnScroll>
       </div>
       <div className={styles.logosContainer}>
-        <AnimationOnScroll animationName="fadeInUp" duration={1}>
+        <AnimationOnScroll animationName={AnimationNames.fadeInUp} duration={1}>
           <div className={styles.analysisLogoWrapper}>
             <img src="/images/projects/AppNavi/logo.svg" alt="AppNavi Logo" />
           </div>
@@ -64,7 +70,11 @@ const AnalysisBottom: React.FunctionComponent = () => {
           />
         </div>
         <div className={styles.logosText}>
-          <AnimationOnScroll animationName="fadeInUp" duration={1} delay={0.5}>
+          <AnimationOnScroll
+            animationName={AnimationNames.fadeInUp}
+            duration={1}
+            delay={0.5}
+          >
             <p className="appNaviParagraph mb-30">
               Also, in the course of work, the corporate identity of the company
               underwent changes in order to create its stronger visual marketing
@@ -73,7 +83,11 @@ const AnalysisBottom: React.FunctionComponent = () => {
               of the company.
             </p>
           </AnimationOnScroll>
-          <AnimationOnScroll animationName="fadeInUp" duration={1} delay={1}>
+          <AnimationOnScroll
+            animationName={AnimationNames.fadeInUp}
+            duration={1}
+            delay={1}
+          >
             <p className="appNaviParagraph mb-30">
               Our task was to create a timeless, simple and understandable
               logotype that every person could draw with several moves; the
@@ -84,7 +98,11 @@ const AnalysisBottom: React.FunctionComponent = () => {
               these associations we put into the new logotype.
             </p>
           </AnimationOnScroll>
-          <AnimationOnScroll animationName="fadeInUp" duration={1} delay={1.5}>
+          <AnimationOnScroll
+            animationName={AnimationNames.fadeInUp}
+            duration={1}
+            delay={1.5}
+          >
             <p className="appNaviParagraph">
               The first element in the logo personifies the user who looks for
               the answer to his question. The second element is a pop-up tooltip

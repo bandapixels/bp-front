@@ -1,4 +1,7 @@
 import React from "react";
+import AnimationOnScroll, {
+  AnimationNames
+} from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
 import styles from "./main.module.scss";
 
 const Main: React.FunctionComponent = () => {
@@ -7,9 +10,14 @@ const Main: React.FunctionComponent = () => {
       <div className={styles.dcrMainWrapper}>
         <div className={styles.dcrMainImages}>
           <div className={styles.dcrMainImagesRow}>
-            <div className={styles.dcrMainLogo}>
-              <img src="/images/projects/dcr/dcr-logo.png" alt="dcr logo" />
-            </div>
+            <AnimationOnScroll
+              animationName={AnimationNames.fadeIn}
+              duration={1}
+            >
+              <div className={styles.dcrMainLogo}>
+                <img src="/images/projects/dcr/dcr-logo.png" alt="dcr logo" />
+              </div>
+            </AnimationOnScroll>
             <div className={styles.dcrMainMac}>
               <img
                 src="/images/projects/dcr/mac.png"
@@ -25,17 +33,36 @@ const Main: React.FunctionComponent = () => {
             alt="dcr about"
           />
           <div className={styles.dcrAboutText}>
-            <h3>О компании</h3>
+            <AnimationOnScroll
+              animationName={AnimationNames.fadeInUp}
+              duration={1}
+            >
+              <h3>О компании</h3>
+            </AnimationOnScroll>
             <p>
-              DCR Solutions – инновационная датская IT-компания, которая
-              занимается диджитализацей сложных рабочих процессов и конечно же,
-              разработкой поддерживаемых пользователями IT-систем.
+              <AnimationOnScroll
+                animationName={AnimationNames.fadeInUp}
+                duration={1}
+                delay={0.5}
+                as="span"
+              >
+                DCR Solutions – инновационная датская IT-компания, которая
+                занимается диджитализацей сложных рабочих процессов и конечно
+                же, разработкой поддерживаемых пользователями IT-систем.
+              </AnimationOnScroll>
             </p>
             <p>
-              На своей платформе они создают различные графики и схемы для
-              отображения статистики, которые пошагово помогают решить проблемы,
-              возникающие в бизнесе, связанные с привлечением нового персонала,
-              расходами компании, процессом страхования.
+              <AnimationOnScroll
+                animationName={AnimationNames.fadeInUp}
+                duration={1}
+                delay={0.7}
+                as="span"
+              >
+                На своей платформе они создают различные графики и схемы для
+                отображения статистики, которые пошагово помогают решить
+                проблемы, возникающие в бизнесе, связанные с привлечением нового
+                персонала, расходами компании, процессом страхования.
+              </AnimationOnScroll>
             </p>
           </div>
         </div>
