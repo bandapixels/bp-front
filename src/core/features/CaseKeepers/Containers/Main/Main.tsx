@@ -1,5 +1,8 @@
 import React from "react";
 import useIsMobile from "../../../../utils/useIsMobile";
+import AnimationOnScroll, {
+  AnimationNames
+} from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
 import styles from "./main.module.scss";
 
 const Main: React.FunctionComponent = () => {
@@ -14,14 +17,22 @@ const Main: React.FunctionComponent = () => {
         />
       ) : null}
       <div className={styles.keepersMainContent}>
-        <h1>CaseKeepers - Service for lawyers & their clients</h1>
-        <p>
-          Convenient and new Collaboration Suite
-          <br />
-          for professionals and their customers.
-          <br />
-          This is smart. It is fast. It is safe and secure
-        </p>
+        <AnimationOnScroll animationName={AnimationNames.fadeInUp} duration={1}>
+          <h1>CaseKeepers - Service for lawyers & their clients</h1>
+        </AnimationOnScroll>
+        <AnimationOnScroll
+          animationName={AnimationNames.fadeInUp}
+          duration={1}
+          delay={0.5}
+        >
+          <p>
+            Convenient and new Collaboration Suite
+            <br />
+            for professionals and their customers.
+            <br />
+            This is smart. It is fast. It is safe and secure
+          </p>
+        </AnimationOnScroll>
       </div>
       <p className={styles.keepersMainText}>Web • Mobile</p>
       {isMobile ? (

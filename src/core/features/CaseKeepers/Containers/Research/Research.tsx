@@ -1,5 +1,8 @@
 import React from "react";
 import useIsMobile from "../../../../utils/useIsMobile";
+import AnimationOnScroll, {
+  AnimationNames
+} from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
 import styles from "./research.module.scss";
 
 const Research: React.FunctionComponent = () => {
@@ -8,25 +11,62 @@ const Research: React.FunctionComponent = () => {
   return (
     <section className={styles.keepersResearch}>
       <div className={styles.keepersWrapper}>
-        <h1>Research & Prototypes</h1>
+        <AnimationOnScroll animationName={AnimationNames.fadeInUp} duration={1}>
+          <h1>Research & Prototypes</h1>
+        </AnimationOnScroll>
         <div className={styles.keepersInfoRow}>
           <div className={styles.keepersInfoCol}>
-            <p className={styles.keepersInfoNumber}>26</p>
-            <p className={styles.keepersInfoText}>
-              Studied sites, applications of competitors
-            </p>
+            <AnimationOnScroll
+              animationName={AnimationNames.zoomIn}
+              duration={0.5}
+            >
+              <p className={styles.keepersInfoNumber}>26</p>
+            </AnimationOnScroll>
+            <AnimationOnScroll
+              animationName={AnimationNames.fadeInUp}
+              duration={0.7}
+              delay={0.5}
+            >
+              <p className={styles.keepersInfoText}>
+                Studied sites, applications of competitors
+              </p>
+            </AnimationOnScroll>
           </div>
           <div className={styles.keepersInfoCol}>
-            <p className={styles.keepersInfoNumber}>16</p>
-            <p className={styles.keepersInfoText}>
-              Created theories to optimize processes
-            </p>
+            <AnimationOnScroll
+              animationName={AnimationNames.zoomIn}
+              duration={0.5}
+              delay={0.2}
+            >
+              <p className={styles.keepersInfoNumber}>16</p>
+            </AnimationOnScroll>
+            <AnimationOnScroll
+              animationName={AnimationNames.fadeInUp}
+              duration={0.7}
+              delay={0.7}
+            >
+              <p className={styles.keepersInfoText}>
+                Created theories to optimize processes
+              </p>
+            </AnimationOnScroll>
           </div>
           <div className={styles.keepersInfoCol}>
-            <p className={styles.keepersInfoNumber}>34</p>
-            <p className={styles.keepersInfoText}>
-              Creating screens of desktop prototypes and applications
-            </p>
+            <AnimationOnScroll
+              animationName={AnimationNames.zoomIn}
+              duration={0.5}
+              delay={0.4}
+            >
+              <p className={styles.keepersInfoNumber}>34</p>
+            </AnimationOnScroll>
+            <AnimationOnScroll
+              animationName={AnimationNames.fadeInUp}
+              duration={0.7}
+              delay={0.9}
+            >
+              <p className={styles.keepersInfoText}>
+                Creating screens of desktop prototypes and applications
+              </p>
+            </AnimationOnScroll>
           </div>
         </div>
       </div>
