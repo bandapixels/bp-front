@@ -1,6 +1,9 @@
 import React from "react";
 import useIsMobile from "../../../../utils/useIsMobile";
 import styles from "./analysis.module.scss";
+import AnimationOnScroll, {
+  AnimationNames
+} from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
 
 const Analysis: React.FunctionComponent = () => {
   const isMobile = useIsMobile();
@@ -8,27 +11,41 @@ const Analysis: React.FunctionComponent = () => {
   return (
     <section className={styles.keepersAnalysis}>
       <div className={styles.keepersAnalysisWrapper}>
-        <h3>Analysis and solution</h3>
+        <AnimationOnScroll animationName={AnimationNames.fadeInUp} duration={1}>
+          <h3>Analysis and solution</h3>
+        </AnimationOnScroll>
         <div className={styles.keepersAnalysisContent}>
           <div className={styles.keepersAnalysisContentLeft}>
-            <p>
-              Convenient and new Collaboration Suite for professionals and their
-              customers. This is smart. It is fast. It is safe and secure.
-              Convenient and new Collaboration Suite for professionals and their
-              customers
-            </p>
+            <AnimationOnScroll
+              animationName={AnimationNames.fadeInUp}
+              duration={1}
+              delay={0.5}
+            >
+              <p>
+                Convenient and new Collaboration Suite for professionals and
+                their customers. This is smart. It is fast. It is safe and
+                secure. Convenient and new Collaboration Suite for professionals
+                and their customers
+              </p>
+            </AnimationOnScroll>
             <img
               src={`/images/projects/caseKeepers/analysis-1${
                 isMobile ? "-mobile" : ""
               }.png`}
               alt="CaseKeepers"
             />
-            <p>
-              Convenient and new Collaboration Suite for professionals and their
-              customers. This is smart. It is fast. It is safe and secure.
-              Convenient and new Collaboration Suite for professionals and their
-              customers
-            </p>
+            <AnimationOnScroll
+              animationName={AnimationNames.fadeInUp}
+              duration={1}
+              delay={0.2}
+            >
+              <p>
+                Convenient and new Collaboration Suite for professionals and
+                their customers. This is smart. It is fast. It is safe and
+                secure. Convenient and new Collaboration Suite for professionals
+                and their customers
+              </p>
+            </AnimationOnScroll>
           </div>
           <div className={styles.keepersAnalysisContentRight}>
             <img
@@ -59,10 +76,16 @@ const Analysis: React.FunctionComponent = () => {
           />
         </div>
         <div>
-          <p>
-            Convenient and new Collaboration Suite for professionals and their
-            customers. This is smart. It is fast
-          </p>
+          <AnimationOnScroll
+            animationName={AnimationNames.fadeInUp}
+            duration={1}
+            delay={0.2}
+          >
+            <p>
+              Convenient and new Collaboration Suite for professionals and their
+              customers. This is smart. It is fast
+            </p>
+          </AnimationOnScroll>
           <img
             src={`/images/projects/caseKeepers/analysis-6${
               isMobile ? "-mobile" : ""

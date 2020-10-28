@@ -1,5 +1,8 @@
 import React from "react";
 import useIsMobile from "../../../../utils/useIsMobile";
+import AnimationOnScroll, {
+  AnimationNames
+} from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
 import styles from "./problematics.module.scss";
 
 const Problematics: React.FunctionComponent = () => {
@@ -9,13 +12,24 @@ const Problematics: React.FunctionComponent = () => {
     <section className={styles.keepersProblematics}>
       <div className={styles.keepersProblematicsWrapper}>
         <div className={styles.keepersProblematicsContent}>
-          <h1>Problematics</h1>
-          <p>
-            Convenient and new Collaboration Suite for professionals and their
-            customers. This is smart. It is fast. It is safe and
-            secure.Convenient and new Collaboration Suite for professionals and
-            their customers.
-          </p>
+          <AnimationOnScroll
+            animationName={AnimationNames.fadeInUp}
+            duration={1}
+          >
+            <h1>Problematics</h1>
+          </AnimationOnScroll>
+          <AnimationOnScroll
+            animationName={AnimationNames.fadeInUp}
+            duration={1}
+            delay={0.5}
+          >
+            <p>
+              Convenient and new Collaboration Suite for professionals and their
+              customers. This is smart. It is fast. It is safe and
+              secure.Convenient and new Collaboration Suite for professionals
+              and their customers.
+            </p>
+          </AnimationOnScroll>
         </div>
       </div>
       {isMobile ? (

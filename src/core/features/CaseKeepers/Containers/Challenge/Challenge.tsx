@@ -1,6 +1,9 @@
 import React from "react";
 import useIsMobile from "../../../../utils/useIsMobile";
 import styles from "./challenge.module.scss";
+import AnimationOnScroll, {
+  AnimationNames
+} from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
 
 const Challenge: React.FunctionComponent = () => {
   const isMobile = useIsMobile();
@@ -9,12 +12,23 @@ const Challenge: React.FunctionComponent = () => {
     <section className={styles.keepersChallenge}>
       <div className={styles.keepersChallengeWrapper}>
         <div className={styles.keepersChallengeContent}>
-          <h1>Challenge</h1>
-          <p>
-            Convenient and new Collaboration Suite for professionals and their
-            customers. This is smart. It is fast. It is safe and
-            secure.Convenient and new
-          </p>
+          <AnimationOnScroll
+            animationName={AnimationNames.fadeInUp}
+            duration={1}
+          >
+            <h1>Challenge</h1>
+          </AnimationOnScroll>
+          <AnimationOnScroll
+            animationName={AnimationNames.fadeInUp}
+            duration={1}
+            delay={0.5}
+          >
+            <p>
+              Convenient and new Collaboration Suite for professionals and their
+              customers. This is smart. It is fast. It is safe and
+              secure.Convenient and new
+            </p>
+          </AnimationOnScroll>
         </div>
       </div>
       {isMobile ? (

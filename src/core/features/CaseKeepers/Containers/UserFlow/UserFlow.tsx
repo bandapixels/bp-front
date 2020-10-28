@@ -1,5 +1,8 @@
 import React from "react";
 import useIsMobile from "../../../../utils/useIsMobile";
+import AnimationOnScroll, {
+  AnimationNames
+} from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
 import styles from "./userFlow.module.scss";
 
 const UserFlow: React.FunctionComponent = () => {
@@ -8,11 +11,19 @@ const UserFlow: React.FunctionComponent = () => {
   return (
     <section className={styles.keepersUserFlow}>
       <div className={styles.keepersUserFlowWrapper}>
-        <h1>User flow</h1>
-        <p>
-          Convenient and new Collaboration Suite for professionals and their
-          customers.
-        </p>
+        <AnimationOnScroll animationName={AnimationNames.fadeInUp} duration={1}>
+          <h1>User flow</h1>
+        </AnimationOnScroll>
+        <AnimationOnScroll
+          animationName={AnimationNames.fadeInUp}
+          duration={1}
+          delay={0.5}
+        >
+          <p>
+            Convenient and new Collaboration Suite for professionals and their
+            customers.
+          </p>
+        </AnimationOnScroll>
       </div>
       <img
         src={

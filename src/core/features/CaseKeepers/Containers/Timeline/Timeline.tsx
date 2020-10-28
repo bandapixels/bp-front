@@ -1,5 +1,8 @@
 import React from "react";
 import useIsMobile from "../../../../utils/useIsMobile";
+import AnimationOnScroll, {
+  AnimationNames
+} from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
 import styles from "./timeline.module.scss";
 
 const Timeline: React.FunctionComponent = () => {
@@ -9,11 +12,22 @@ const Timeline: React.FunctionComponent = () => {
     <section className={styles.keepersTimeline}>
       <div className={styles.keepersTimelineWrapper}>
         <div className={styles.keepersTimelineContent}>
-          <h1>Project Timeline</h1>
-          <p>
-            Convenient and new Collaboration Suite for professionals and their
-            customers. This is smart. It is fast.
-          </p>
+          <AnimationOnScroll
+            animationName={AnimationNames.fadeInUp}
+            duration={1}
+          >
+            <h1>Project Timeline</h1>
+          </AnimationOnScroll>
+          <AnimationOnScroll
+            animationName={AnimationNames.fadeInUp}
+            duration={1}
+            delay={0.5}
+          >
+            <p>
+              Convenient and new Collaboration Suite for professionals and their
+              customers. This is smart. It is fast.
+            </p>
+          </AnimationOnScroll>
         </div>
       </div>
       {isMobile ? (
