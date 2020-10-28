@@ -1,5 +1,8 @@
 import React from "react";
 import useIsMobile from "../../../../utils/useIsMobile";
+import AnimationOnScroll, {
+  AnimationNames
+} from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
 import styles from "./userFlow.module.scss";
 
 const MainBlock: React.FunctionComponent = () => {
@@ -9,11 +12,22 @@ const MainBlock: React.FunctionComponent = () => {
     <section className={styles.sunUpUserFlowMain}>
       <div className={styles.sunUpUserFlowWrapper}>
         <div className={styles.sunUpUserFlowInfo}>
-          <h3>User fIow</h3>
-          <p>
-            При разработке юзер флов, было принято решение оптимизировать пару
-            шагов для более быстрого создания проекта пользователем системы.
-          </p>
+          <AnimationOnScroll
+            duration={1}
+            animationName={AnimationNames.fadeInUp}
+          >
+            <h3>User fIow</h3>
+          </AnimationOnScroll>
+          <AnimationOnScroll
+            delay={0.5}
+            duration={1}
+            animationName={AnimationNames.fadeInUp}
+          >
+            <p>
+              При разработке юзер флов, было принято решение оптимизировать пару
+              шагов для более быстрого создания проекта пользователем системы.
+            </p>
+          </AnimationOnScroll>
         </div>
         <div className={styles.sunUpUserFlowMap}>
           {isMobile ? (
@@ -58,7 +72,9 @@ const MainBlock: React.FunctionComponent = () => {
             />
           )}
         </div>
-        <p className={styles.sunUpUserFlowWireframes}>12 Wireframes</p>
+        <AnimationOnScroll duration={1} animationName={AnimationNames.fadeInUp}>
+          <p className={styles.sunUpUserFlowWireframes}>12 Wireframes</p>
+        </AnimationOnScroll>
       </div>
     </section>
   );

@@ -1,20 +1,33 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, createElement } from "react";
 import "./animationOnScroll.module.scss";
 
+export enum AnimationNames {
+  fadeInUp = "fadeInUp",
+  zoomIn = "zoomIn",
+  fadeIn = "fadeIn",
+  fadeInRight = "fadeInRight",
+  fadeInLeft = "fadeInLeft",
+  rollInLeft = "rollInLeft",
+  rollInRight = "rollInRight"
+}
+
 interface AnimationOnScroll {
-  animationName: string;
+  animationName: AnimationNames;
   duration: number;
   delay?: number;
+  as?: "span" | "div";
 }
 
 const AnimationOnScroll: React.FunctionComponent<AnimationOnScroll> = ({
   children,
   animationName,
   duration,
-  delay = 0
+  delay = 0,
+  as
 }) => {
   const animatedElement = useRef<HTMLDivElement>();
   const animation = `animation: ${animationName} ${duration}s ${delay}s forwards`;
+  const display = as ? "display:block" : "";
 
   useEffect(() => {
     const element = animatedElement.current;
@@ -22,7 +35,7 @@ const AnimationOnScroll: React.FunctionComponent<AnimationOnScroll> = ({
 
     const handlerScroll = (): void => {
       if (topPosition < window.innerHeight + window.scrollY) {
-        element.setAttribute("style", animation);
+        element.setAttribute("style", `${animation}; ${display}`);
       }
     };
 
@@ -31,7 +44,13 @@ const AnimationOnScroll: React.FunctionComponent<AnimationOnScroll> = ({
     return (): void => window.removeEventListener("scroll", handlerScroll);
   });
 
-  return (
+  return as ? (
+    createElement(
+      `${as}`,
+      { ref: animatedElement, className: animationName },
+      children
+    )
+  ) : (
     <div ref={animatedElement} className={animationName}>
       {children}
     </div>

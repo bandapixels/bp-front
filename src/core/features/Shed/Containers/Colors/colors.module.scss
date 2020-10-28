@@ -2,6 +2,7 @@
   max-width: 1470px;
   padding: 0 15px;
   margin: 0 auto 180px;
+  overflow: hidden;
 
   h3 {
     font-size: 56px;
@@ -36,6 +37,15 @@
     display: block;
     max-width: 100%;
   }
+
+  p {
+    color: #8A8A8A;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: lowercase;
+    margin-top: 40px;
+  }
 }
 
 %colorWrapper {
@@ -50,23 +60,9 @@
     max-height: 100%;
   }
 
-  & + p {
-    color: #8A8A8A;
-    font-size: 18px;
-    text-align: center;
-    letter-spacing: 0.02em;
-    text-transform: lowercase;
-    margin-top: 40px;
-  }
-
   @media only screen and (max-width: 668px) {
     height: 135px;
     width: 135px;
-
-    & + p {
-      font-size: 16px;
-      margin-top: 15px;
-    }
   }
 }
 
@@ -156,5 +152,10 @@
   .shedColorsItem {
     margin-bottom: 40px;
     max-width: 135px;
+
+    p {
+      font-size: 16px;
+      margin-top: 15px;
+    }
   }
 }

@@ -1,5 +1,7 @@
 import React from "react";
-import AnimationOnScroll from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
+import AnimationOnScroll, {
+  AnimationNames
+} from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
 import styles from "./mainBlock.module.scss";
 
 const MainBlock: React.FunctionComponent = () => {
@@ -20,7 +22,10 @@ const MainBlock: React.FunctionComponent = () => {
           <div className={styles.naviLogoWrapper}>
             <img src="/images/projects/AppNavi/logo.svg" alt="AppNavi Logo" />
           </div>
-          <AnimationOnScroll animationName="fadeInUp" duration={1}>
+          <AnimationOnScroll
+            animationName={AnimationNames.fadeInUp}
+            duration={1}
+          >
             <p>
               Software easily
               <br /> explained!

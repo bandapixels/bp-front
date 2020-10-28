@@ -1,5 +1,8 @@
 import React from "react";
 import useIsMobile from "../../../../utils/useIsMobile";
+import AnimationOnScroll, {
+  AnimationNames
+} from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
 import styles from "./results.module.scss";
 
 const Results: React.FunctionComponent = () => {
@@ -18,12 +21,21 @@ const Results: React.FunctionComponent = () => {
         )}
       </div>
       <div className={styles.sunUpResultsInfo}>
-        <h3>Results</h3>
-        <p>
-          Solar Roof is comparable in price to a typical roof with solar panels.
-          Purchase SunUp Roof at one of the lowest cost-per-watt of any national
-          provider and take control of your monthly electricity bill.
-        </p>
+        <AnimationOnScroll animationName={AnimationNames.fadeInUp} duration={1}>
+          <h3>Results</h3>
+        </AnimationOnScroll>
+        <AnimationOnScroll
+          animationName={AnimationNames.fadeInUp}
+          duration={1}
+          delay={0.5}
+        >
+          <p>
+            Solar Roof is comparable in price to a typical roof with solar
+            panels. Purchase SunUp Roof at one of the lowest cost-per-watt of
+            any national provider and take control of your monthly electricity
+            bill.
+          </p>
+        </AnimationOnScroll>
       </div>
     </section>
   );

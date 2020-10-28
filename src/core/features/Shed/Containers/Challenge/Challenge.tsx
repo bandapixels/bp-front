@@ -1,42 +1,75 @@
 import React from "react";
+import AnimationOnScroll, {
+  AnimationNames
+} from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
 import styles from "./challenge.module.scss";
 
 const Challenge: React.FunctionComponent = () => {
   return (
     <section className={styles.shedChallenge}>
-      <h3>Challenge</h3>
-      <p className={styles.shedChallengeSubtitle}>
-        To create high-quality design, our team needed to solve several
-        problems:
-      </p>
+      <AnimationOnScroll animationName={AnimationNames.fadeInUp} duration={1}>
+        <h3>Challenge</h3>
+      </AnimationOnScroll>
+      <AnimationOnScroll
+        animationName={AnimationNames.fadeInUp}
+        duration={1}
+        delay={0.5}
+      >
+        <p className={styles.shedChallengeSubtitle}>
+          To create high-quality design, our team needed to solve several
+          problems:
+        </p>
+      </AnimationOnScroll>
       <ul className={styles.shedChallengeList}>
         <li>
-          <span>01.</span> Creating an account for 3 user types: owners (placing
-          things in a warehouse and tracking rent); renters (saving necessary
-          things, reading notes and tracking the regions with; the necessary
-          stuff) warehouse (tracking the movement, arrival and status of things
-          to register them on the site)
+          <AnimationOnScroll
+            animationName={AnimationNames.fadeInLeft}
+            duration={1}
+          >
+            <span>01.</span> Creating an account for 3 user types: owners
+            (placing things in a warehouse and tracking rent); renters (saving
+            necessary things, reading notes and tracking the regions with; the
+            necessary stuff) warehouse (tracking the movement, arrival and
+            status of things to register them on the site)
+          </AnimationOnScroll>
         </li>
         <li>
-          <span>03.</span> Creating a search engine for users that takes into
-          account search filters and optimizes the search process. The flow to
-          the end goal (rent) should not take much time, the search page
-          includes a search box and navigation in the categories specified by
-          the client.
+          <AnimationOnScroll
+            animationName={AnimationNames.fadeInLeft}
+            duration={1}
+            delay={0.5}
+          >
+            <span>03.</span> Creating a search engine for users that takes into
+            account search filters and optimizes the search process. The flow to
+            the end goal (rent) should not take much time, the search page
+            includes a search box and navigation in the categories specified by
+            the client.
+          </AnimationOnScroll>
         </li>
         <li>
-          <span>02.</span> Simplicity in uploading and placing goods on the
-          site, as well as accounting for the status of the rent (confirmation
-          of its arrival, condition, cost). The whole scenario of product
-          verification should be clear to anyone who wants to use the
-          application (targeting an average person who does not have the time
-          and desire to dig into complex bureaucracy)
+          <AnimationOnScroll
+            animationName={AnimationNames.fadeInRight}
+            duration={1}
+          >
+            <span>02.</span> Simplicity in uploading and placing goods on the
+            site, as well as accounting for the status of the rent (confirmation
+            of its arrival, condition, cost). The whole scenario of product
+            verification should be clear to anyone who wants to use the
+            application (targeting an average person who does not have the time
+            and desire to dig into complex bureaucracy)
+          </AnimationOnScroll>
         </li>
         <li>
-          <span>04.</span> Remote quality control: the application reads the QR
-          code of the goods upon arrival of the order and uploads the video with
-          the order printout, which confirms the integrity and serviceability of
-          the delivered goods
+          <AnimationOnScroll
+            animationName={AnimationNames.fadeInRight}
+            duration={1}
+            delay={0.5}
+          >
+            <span>04.</span> Remote quality control: the application reads the
+            QR code of the goods upon arrival of the order and uploads the video
+            with the order printout, which confirms the integrity and
+            serviceability of the delivered goods
+          </AnimationOnScroll>
         </li>
       </ul>
       <div className={styles.shedChallengeSteps}>

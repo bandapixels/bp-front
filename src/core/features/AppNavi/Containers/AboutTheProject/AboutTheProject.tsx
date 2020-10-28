@@ -1,5 +1,7 @@
 import React from "react";
-import AnimationOnScroll from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
+import AnimationOnScroll, {
+  AnimationNames
+} from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
 import styles from "./aboutTheProject.module.scss";
 
 const AboutTheProject: React.FunctionComponent = () => {
@@ -10,10 +12,17 @@ const AboutTheProject: React.FunctionComponent = () => {
           <img src="/images/projects/AppNavi/laptop.png" alt="AppNavi Laptop" />
         </div>
         <div className={styles.appNaviAboutRight}>
-          <AnimationOnScroll animationName="fadeInUp" duration={1}>
+          <AnimationOnScroll
+            animationName={AnimationNames.fadeInUp}
+            duration={1}
+          >
             <h3 className="appNaviH3">About the project</h3>
           </AnimationOnScroll>
-          <AnimationOnScroll animationName="fadeInUp" duration={1} delay={0.5}>
+          <AnimationOnScroll
+            animationName={AnimationNames.fadeInUp}
+            duration={1}
+            delay={0.5}
+          >
             <p className="appNaviParagraph">
               The <span className="blueText">AppNavi</span> application
               successfully substitutes boring study guides on using different

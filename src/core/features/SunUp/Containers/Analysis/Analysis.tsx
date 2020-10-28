@@ -1,4 +1,7 @@
 import React from "react";
+import AnimationOnScroll, {
+  AnimationNames
+} from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
 import useIsMobile from "../../../../utils/useIsMobile";
 import styles from "./analysis.module.scss";
 
@@ -8,27 +11,43 @@ const Analysis: React.FunctionComponent = () => {
   return (
     <section className={styles.sunUpAnalysis}>
       <div className={styles.sunUpAnalysisWrapper}>
-        <div className={styles.sunUpAnalysisSteps}>
-          <img
-            src="/images/projects/SunUp/analysis-steps.svg"
-            alt="SunUp analysis steps"
-          />
-        </div>
+        <AnimationOnScroll
+          animationName={AnimationNames.fadeInLeft}
+          duration={1}
+        >
+          <div className={styles.sunUpAnalysisSteps}>
+            <img
+              src="/images/projects/SunUp/analysis-steps.svg"
+              alt="SunUp analysis steps"
+            />
+          </div>
+        </AnimationOnScroll>
         <div className={styles.sunUpAnalysisInterface}>
           <div className={styles.sunUpAnalysisContent}>
-            <h3>Analysis and solution</h3>
-            <p>
-              Solar Roof is comparable in price to a typical roof with solar
-              panels. Purchase SunUp Roof at one of the lowest cost-per-watt of
-              any national provider and take control of your monthly electricity
-              bill.
-            </p>
-            <p>
-              Solar Roof is comparable in price to a typical roof with solar
-              panels. Purchase SunUp Roof at one of the lowest cost-per-watt of
-              any national provider and take control of your monthly electricity
-              bill.
-            </p>
+            <AnimationOnScroll
+              animationName={AnimationNames.fadeInUp}
+              duration={1}
+            >
+              <h3>Analysis and solution</h3>
+            </AnimationOnScroll>
+            <AnimationOnScroll
+              animationName={AnimationNames.fadeInUp}
+              duration={1}
+              delay={0.5}
+            >
+              <p>
+                Solar Roof is comparable in price to a typical roof with solar
+                panels. Purchase SunUp Roof at one of the lowest cost-per-watt
+                of any national provider and take control of your monthly
+                electricity bill.
+              </p>
+              <p>
+                Solar Roof is comparable in price to a typical roof with solar
+                panels. Purchase SunUp Roof at one of the lowest cost-per-watt
+                of any national provider and take control of your monthly
+                electricity bill.
+              </p>
+            </AnimationOnScroll>
           </div>
           {isMobile ? (
             <div className={styles.sunUpAnalysisImages}>

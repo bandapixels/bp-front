@@ -23,6 +23,7 @@
     line-height: 160%;
     letter-spacing: 0.01em;
     color: #E0E0E0;
+    font-family: 'Open Sans', sans-serif;
 
     &:not(:last-child) {
       margin-bottom: 25px;
@@ -97,6 +98,7 @@
   justify-content: center;
   color: #131516;
   flex-shrink: 0;
+  font-family: 'Open Sans', sans-serif;
 
   div {
     width: 100px;
@@ -107,7 +109,7 @@
     justify-content: center;
   }
   
-  &:nth-child(1) {
+  &1 {
     border-color: #162B43;
     color: #fff;
     margin-bottom: 55px;
@@ -117,7 +119,7 @@
     }
   }
 
-  &:nth-child(2) {
+  &2 {
     border-color: #42A7E4;
 
     div {
@@ -125,7 +127,7 @@
     }
   }
 
-  &:nth-child(3) {
+  &3 {
     border-color: #9FDBFF;
     margin-bottom: 55px;
 
@@ -134,7 +136,7 @@
     }
   }
 
-  &:nth-child(4) {
+  &4 {
     border-color: #F7685B;
 
     div {
@@ -142,7 +144,7 @@
     }
   }
 
-  &:nth-child(5) {
+  &5 {
     border-color: #F59D12;
 
     div {
@@ -150,7 +152,7 @@
     }
   }
 
-  &:nth-child(6) {
+  &6 {
     border-color: #2ED47A;
 
     div {
