@@ -18,6 +18,7 @@ const Header: React.FunctionComponent = () => {
   const activeSection = useSelector((state: AppState) => getSection(state));
   const dispatch = useDispatch();
   const router = useRouter();
+  const casesPages = ["/appnavi", "/sunup", "/shed", "/dcr", "/casekeepers"];
 
   const handlerOpenMobileMenu = (): void => {
     setOpenedMenu(!openedMenu);
@@ -66,9 +67,9 @@ const Header: React.FunctionComponent = () => {
 
   const headerStyles = classNames(styles.header, {
     openedMenuWrapper: openedMenu,
-    bigYellowHeader: router.pathname === "/appnavi",
     smallYellowHeader: router.pathname === "/form",
-    blogHeader: router.pathname === "/projects"
+    blogHeader: router.pathname === "/projects",
+    casesHeader: casesPages.includes(router.pathname)
   });
 
   return (

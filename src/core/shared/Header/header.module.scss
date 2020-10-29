@@ -210,6 +210,14 @@
   }
 }
 
+.casesHeader {
+  background: rgba(23, 23, 24, .2);
+
+  .bigBlackLogo {
+    background: url(/images/logo-yellow.svg) no-repeat center;
+  }
+}
+
 @media screen and (max-width: $breakpoint-max-width) {
   .headerBtn {
     height: 90px;
