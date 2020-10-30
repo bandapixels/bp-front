@@ -31,10 +31,13 @@ const AnimationOnScroll: React.FunctionComponent<AnimationOnScroll> = ({
 
   useEffect(() => {
     const element = animatedElement.current;
-    const topPosition = element.getBoundingClientRect().top;
+    const rect = element.getBoundingClientRect();
 
     const handlerScroll = (): void => {
-      if (topPosition < window.innerHeight + window.scrollY) {
+      if (
+        rect.top <= window.innerHeight + window.scrollY &&
+        rect.left <= window.innerWidth + window.scrollX
+      ) {
         element.setAttribute("style", `${animation}; ${display}`);
       }
     };
