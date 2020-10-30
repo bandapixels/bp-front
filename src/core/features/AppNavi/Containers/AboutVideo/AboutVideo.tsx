@@ -7,7 +7,7 @@ const AboutVideo: React.FunctionComponent = () => {
       <div className={styles.aboutVideoWrapper}>
         <video controls>
           <source
-            src="/videos/projects/appNavi/AppNavi_En+5_final.mp4"
+            src="/videos/projects/appNavi/AppNavi-1920.mp4"
             type="video/mp4"
           />
         </video>
