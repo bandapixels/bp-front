@@ -19,6 +19,12 @@ const BlockWithVideo: React.FunctionComponent = () => {
     setModalOpen(!modalOpen);
   };
 
+  const scrollToFormInMobile = (): void => {
+    const formSection = document.querySelector(".discussWrapper");
+
+    formSection.scrollIntoView({ behavior: "smooth" });
+  };
+
   useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#fff");
   useRedrawGrid(refGridWrapper);
 
@@ -60,23 +66,26 @@ const BlockWithVideo: React.FunctionComponent = () => {
             guarantees theresult.
           </p>
           <div className={styles.mobileBtnsWrapper}>
-            <Button classes="yellowBtnWithIcon">
+            <Button
+              classes="yellowBtnWithIcon"
+              handlerClick={scrollToFormInMobile}
+            >
               <div>
                 discuss the project
                 <img src="/images/icons/arrow.svg" alt="arrow" />
               </div>
             </Button>
-            <Button classes="transparentBtnWithIcon">
-              <div>
-                work process
-                <img src="/images/icons/play-btn.svg" alt="arrow" />
-              </div>
-            </Button>
+            {/*<Button classes="transparentBtnWithIcon">*/}
+            {/*  <div>*/}
+            {/*    work process*/}
+            {/*    <img src="/images/icons/play-btn.svg" alt="arrow" />*/}
+            {/*  </div>*/}
+            {/*</Button>*/}
           </div>
         </div>
         <div
           className={styles.titlesBlock}
-          onClick={(): void => setModalOpen(!modalOpen)}
+          // onClick={(): void => setModalOpen(!modalOpen)}
         >
           <div className={styles.titlesWrapper}>
             <h1 className={styles.roundedTitle}>
