@@ -9,7 +9,7 @@ $first-line-font-sizes: (
   1280px: 36px,
   1440px: 45px,
   1600px: 50px,
-  1900px: 60px
+  1900px: 60px,
 );
 
 $last-line-font-sizes: (
@@ -18,7 +18,7 @@ $last-line-font-sizes: (
   1280px: 36px,
   1440px: 45px,
   1600px: 50px,
-  1900px: 60px
+  1900px: 60px,
 );
 
 $we-help-font-sizes: (
@@ -29,10 +29,17 @@ $we-help-font-sizes: (
   1280px: 50px,
   1440px: 65px,
   1600px: 72px,
-  1900px: 80px
+  1900px: 80px,
 );
 
-@mixin header-style($font-size: 10, $size: 0, $animation: rotateTitleRight, $top: 0, $left: 0, $animationTime: 50s) {
+@mixin header-style(
+  $font-size: 10,
+  $size: 0,
+  $animation: rotateTitleRight,
+  $top: 0,
+  $left: 0,
+  $animationTime: 50s
+) {
   font-size: $font-size;
   text-transform: uppercase;
   width: $size;
@@ -44,12 +51,20 @@ $we-help-font-sizes: (
   position: absolute;
   top: $top;
   left: $left;
-  color: rgba(255, 255, 255, .3);
+  color: rgba(255, 255, 255, 0.3);
   font-style: normal;
   font-weight: normal;
 }
 
-@mixin rotated-text($num-letters: 90, $angle-span: 360deg, $angle-offset: 0deg, $height: 0, $width: 0, $left: 0, $top: 0) {
+@mixin rotated-text(
+  $num-letters: 90,
+  $angle-span: 360deg,
+  $angle-offset: 0deg,
+  $height: 0,
+  $width: 0,
+  $left: 0,
+  $top: 0
+) {
   $angle-per-char: $angle-span / $num-letters;
 
   @for $i from 0 through $num-letters {
@@ -69,8 +84,7 @@ $we-help-font-sizes: (
   @each $fs-breakpoint, $fs-font-size in $fs-map {
     @if $fs-breakpoint == null {
       font-size: $fs-font-size;
-    }
-    @else {
+    } @else {
       @media screen and (min-width: $fs-breakpoint) {
         font-size: $fs-font-size;
       }
@@ -79,12 +93,33 @@ $we-help-font-sizes: (
 }
 
 .roundedTitle {
-  @include header-style(20px, $big-circle-size, rotateTitleRight, calc(50% - 60vh), 0, 100s);
-  @include rotated-text(90, 360deg, 0deg, calc(115vh / 2), 70px, calc(115vh / 2), 0);
+  @include header-style(
+    20px,
+    $big-circle-size,
+    rotateTitleRight,
+    calc(50% - 60vh),
+    0,
+    100s
+  );
+  @include rotated-text(
+    90,
+    360deg,
+    0deg,
+    calc(115vh / 2),
+    70px,
+    calc(115vh / 2),
+    0
+  );
 }
 
 .smallRoundedTitle {
-  @include header-style(10px, $small-circle-size, rotateTitleLeft, calc(50% - 37vh), calc(50% - 37vh));
+  @include header-style(
+    10px,
+    $small-circle-size,
+    rotateTitleLeft,
+    calc(50% - 37vh),
+    calc(50% - 37vh)
+  );
   @include rotated-text(90, 360deg, 0deg, 37vh, 17px, 37vh, 0);
 }
 
@@ -97,9 +132,13 @@ $we-help-font-sizes: (
   //cursor: url(/images/cursors/cursor-show.png) 60 8, auto;
 
   &::after {
-    content: '';
+    content: "";
     display: block;
-    background: linear-gradient(0deg, rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.8));
+    background: linear-gradient(
+      0deg,
+      rgba(17, 17, 17, 0.8),
+      rgba(17, 17, 17, 0.8)
+    );
     width: 100%;
     height: 100%;
   }
@@ -116,19 +155,19 @@ $we-help-font-sizes: (
 
 @keyframes rotateTitleRight {
   0% {
-    transform: rotate(0)
+    transform: rotate(0);
   }
   100% {
-    transform: rotate(360deg)
+    transform: rotate(360deg);
   }
 }
 
 @keyframes rotateTitleLeft {
   0% {
-    transform: rotate(0)
+    transform: rotate(0);
   }
   100% {
-    transform: rotate(-360deg)
+    transform: rotate(-360deg);
   }
 }
 
@@ -140,14 +179,14 @@ $we-help-font-sizes: (
   position: relative;
 
   &:after {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: #EFE314;
+    background: #efe314;
     z-index: -2;
   }
 }
@@ -181,7 +220,7 @@ $we-help-font-sizes: (
   bottom: 0;
   width: 1px;
   height: 100vh;
-  background: rgba(23,23,24,.1);
+  background: rgba(167, 167, 167, 0.1);
   position: absolute;
   pointer-events: none;
 }
@@ -189,7 +228,7 @@ $we-help-font-sizes: (
 .gradient-horizontal {
   width: 100vw;
   height: 1px;
-  background: rgba(23,23,24,.1);
+  background: rgba(167, 167, 167, 0.1);
   position: absolute;
   pointer-events: none;
   left: 0;
@@ -202,14 +241,14 @@ $we-help-font-sizes: (
 }
 
 .yellowText {
-  color: #EFE314
+  color: #efe314;
 }
 
 .firstLine {
   font-weight: bold;
   line-height: 130%;
   letter-spacing: 0.03em;
-  color: #FFFFFF;
+  color: #ffffff;
   position: relative;
   @include font-size($first-line-font-sizes);
 
@@ -254,7 +293,7 @@ $we-help-font-sizes: (
       bottom: 0;
 
       &:after {
-        content: '';
+        content: "";
         background: url(/images/icons/saas.png) no-repeat center;
         background-size: contain;
         width: 401px;
@@ -291,7 +330,7 @@ $we-help-font-sizes: (
   left: 0;
   width: 30%;
   max-width: 590px;
-  background: #EFE314;
+  background: #efe314;
 }
 
 @media screen and (max-width: $breakpoint-tablet) {
@@ -317,7 +356,7 @@ $we-help-font-sizes: (
 }
 
 @media screen and (max-width: $breakpoint-mobile) {
-  .mainWrapper {  
+  .mainWrapper {
     &:after {
       content: none;
     }
@@ -328,7 +367,7 @@ $we-help-font-sizes: (
 
   .mainText {
     font-size: 14px;
-    color: #BDBDBD;
+    color: #bdbdbd;
     position: static;
   }
 
@@ -349,7 +388,7 @@ $we-help-font-sizes: (
     line-height: 130%;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   .yellowBlock {
@@ -363,7 +402,7 @@ $we-help-font-sizes: (
     justify-content: center;
     padding: 70px 0;
 
-    &> * {
+    & > * {
       padding: 0 15px;
     }
   }
@@ -372,18 +411,18 @@ $we-help-font-sizes: (
   .lastMobileLine {
     display: block;
 
-    &> span {
+    & > span {
       display: block;
-    } 
+    }
   }
 
   .firstMobileLine {
     &:after {
-      content: '';
+      content: "";
       display: block;
       width: 52px;
       height: 1px;
-      background: #EFE314;
+      background: #efe314;
       margin: 15px 0;
     }
   }
