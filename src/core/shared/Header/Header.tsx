@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import classNames from "classnames";
@@ -15,6 +15,7 @@ import styles from "./header.module.scss";
 
 const Header: React.FunctionComponent = () => {
   const [openedMenu, setOpenedMenu] = useState(false);
+  const headerRef = useRef<HTMLElement>();
   const activeSection = useSelector((state: AppState) => getSection(state));
   const dispatch = useDispatch();
   const router = useRouter();
@@ -72,8 +73,27 @@ const Header: React.FunctionComponent = () => {
     casesHeader: casesPages.includes(router.pathname)
   });
 
+  const handlerScrollInCases = (): void => {
+    const header = headerRef.current;
+
+    if (window.scrollY > 200) {
+      header.classList.add("smallCasesHeader");
+    } else {
+      header.classList.remove("smallCasesHeader");
+    }
+  };
+
+  useEffect(() => {
+    if (casesPages.includes(router.pathname)) {
+      window.addEventListener("scroll", handlerScrollInCases);
+    }
+
+    return (): void =>
+      window.removeEventListener("scroll", handlerScrollInCases);
+  }, []);
+
   return (
-    <header className={headerStyles}>
+    <header className={headerStyles} ref={headerRef}>
       <div className={styles.logoWrapper} onClick={handlerLogoClick}>
         <div className={styles.bigBlackLogo} />
       </div>
