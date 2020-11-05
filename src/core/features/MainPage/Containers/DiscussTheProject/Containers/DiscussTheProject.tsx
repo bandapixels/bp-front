@@ -71,7 +71,11 @@ const DiscussTheProject: React.FunctionComponent = () => {
     setFormSend(!formSend);
   };
 
-  const formValidation = (data, change = false): number => {
+  const formValidation = (
+    data,
+    change = false,
+    checkedStep?: number
+  ): number => {
     const emailReg = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const skypeReg = /^[a-zA-Z][a-zA-Z0-9_.,-]{5,31}$/;
     const checkLength = ["name", "company", "task", "projectType", "budget"];
@@ -100,6 +104,10 @@ const DiscussTheProject: React.FunctionComponent = () => {
           error = false;
         }
 
+        if (checkedStep && checkedStep !== formValue.step) {
+          error = false;
+        }
+
         newData = {
           ...newData,
           [formName]: { ...data[formName], error }
@@ -108,11 +116,13 @@ const DiscussTheProject: React.FunctionComponent = () => {
     );
     setFormData(newData);
 
-    const errors = Object.entries(newData).filter(
+    const errors = Object.entries(
+      newData
+    ).filter(
       ([, info]: [
         string,
         { error: boolean | string; step: number; value: string }
-      ]) => info.error
+      ]) => (checkedStep ? info.error && info.step === checkedStep : info.error)
     );
 
     return errors?.length;
@@ -138,21 +148,9 @@ const DiscussTheProject: React.FunctionComponent = () => {
     }
   };
 
-  const getErrorsInStep = (neededStep: number): number => {
-    const stepErrors = Object.entries(formData).filter(
-      ([, info]: [
-        string,
-        { error: boolean | string; step: number; value: string }
-      ]) => info.step === neededStep && info.error
-    );
-
-    return stepErrors?.length;
-  };
-
   const handlerChangeStep = (): void => {
-    formValidation(formData);
     const offset: number = refGridWrapper.current.offsetTop;
-    const errorsInStep = getErrorsInStep(1);
+    const errorsInStep = formValidation(formData, false, 1);
 
     if (errorsInStep === 0) {
       setStep(2);
@@ -171,16 +169,20 @@ const DiscussTheProject: React.FunctionComponent = () => {
     };
   };
 
-  const handlerSendData = (data): void => {
-    const errors = formValidation(data);
+  const handlerSendData = (): void => {
+    const errors = formValidation(formData);
 
     if (!errors) {
       const dataToSend = prepareDataToSend();
 
       dispatch(new SendFormData(dataToSend));
       setFormSend(!formSend);
-      setFormData({ ...formInitialState });
-      refForm.current.reset();
+      setStep(1);
+
+      if (formStatus === "success") {
+        setFormData({ ...formInitialState });
+        refForm.current.reset();
+      }
     }
   };
 
@@ -219,7 +221,7 @@ const DiscussTheProject: React.FunctionComponent = () => {
             <FormBudget handlerOnChange={handlerOnChange} formData={formData} />
             <Button
               classes="btnWithArrow"
-              handlerClick={(): void => handlerSendData(formData)}
+              handlerClick={(): void => handlerSendData()}
             >
               <div>
                 <span>
@@ -231,7 +233,11 @@ const DiscussTheProject: React.FunctionComponent = () => {
               </div>
             </Button>
           </div>
-          <MobileSteps step={step} handlerChangeStep={handlerChangeStep} />
+          <MobileSteps
+            step={step}
+            handlerChangeStep={handlerChangeStep}
+            handlerSubmit={handlerSendData}
+          />
         </form>
       </div>
       {formSend && formStatus === "success" && (
