@@ -18,6 +18,7 @@ const Shed: NextPage = () => {
       <Head>
         <meta name="robots" content="noindex" />
         <meta name="googlebot" content="noindex" />
+        <title>Shed</title>
       </Head>
       <StoreLayout>
         <Main />

@@ -16,6 +16,7 @@ const Dcr: NextPage = () => {
       <Head>
         <meta name="robots" content="noindex" />
         <meta name="googlebot" content="noindex" />
+        <title>DCR</title>
       </Head>
       <StoreLayout>
         <Main />

@@ -18,6 +18,7 @@ const CaseKeepers: NextPage = () => {
       <Head>
         <meta name="robots" content="noindex" />
         <meta name="googlebot" content="noindex" />
+        <title>CaseKeepers</title>
       </Head>
       <StoreLayout>
         <Main />
