@@ -53,6 +53,7 @@
     letter-spacing: 0.03em;
     color: #171718;
     margin: 0 0 60px;
+    display: none;
   }
 }
 
@@ -108,15 +109,15 @@
 
   h3 {
     font-weight: bold;
-    font-size: 24px;
+    font-size: 30px;
     line-height: 28px;
     color: #171718;
-    margin: 0 0 15px;
+    margin: 0 0 5px;
   }
 
   div {
     max-width: 42vw;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 150%;
     color: #828282;
   }
@@ -259,15 +260,23 @@
       max-width: 53vw;
     }
   }
-}
 
-@media screen and (max-width: 1400px) {
+  .projectPageDescription {
+    h3 {
+      font-size: 24px;
+    }
+
+    div {
+      font-size: 16px;
+    }
+  }
+
   .projectPageTitle {
-    font-size: 30px;
+    font-size: 24px;
   }
 
   .projectPageProblem {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 
@@ -422,6 +431,7 @@
   .projectPageMedia {
     max-width: 100%;
   }
+
   .projectPageItem {
     background-color: #333;
     background-image: linear-gradient( rgba(255,255,255,.1), transparent 1px), linear-gradient( 90deg, rgba(255,255,255,.1), transparent 1px);
