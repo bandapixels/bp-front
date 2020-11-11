@@ -25,13 +25,14 @@ const ScrollLayout: React.FunctionComponent = ({ children }) => {
           threshold: 0.1
         };
 
-        const handleIntersect = (entries): void => {
+        const handleIntersect = (entries, observer): void => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
               const elem = entry.target;
 
               if (entry.intersectionRatio > 0.1) {
                 elem.setAttribute("style", styles);
+                observer.disconnect();
               }
             }
           });
