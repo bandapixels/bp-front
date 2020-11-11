@@ -27,13 +27,48 @@
 
 .technologyIcons {
   margin: 6vh 0 0;
+  display: flex;
+  flex-flow: row wrap;
 
-  img {
+  .technologyIconsItem {
+    flex-shrink: 0;
     width: 110px;
-    height: 104px;
+    font-family: 'Open Sans', sans-serif;
 
     &:not(:last-child) {
       margin-right: 40px;
+    }
+
+    &:hover {
+      .technologyIconsHover {
+        width: 100%;
+      }
+    }
+
+    .technologyIconsWrapper {
+      position: relative;
+      margin: 0 auto;
+      width: 80px;
+    }
+
+    .technologyIconsHover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      width: 0;
+      transition: .8s;
+    }
+
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+
+    p {
+      font-size: 16px;
+      text-align: center;
+      transition: .3s;
     }
   }
 }
@@ -93,7 +128,7 @@
   .technologyIcons {
     margin: 2vh 0 0;
 
-    img {
+    .technologyIconsItem {
       &:not(:last-child) {
         margin-right: 25px;
       }
@@ -157,12 +192,12 @@
     max-width: 280px;
     margin: 35px auto 0;
 
-    img {
+    .technologyIconsItem {
+      margin: 0 15px;
+
       &:not(:last-child) {
         margin-right: 15px;
       }
-
-      margin: 0 15px;
     }
   }
 }

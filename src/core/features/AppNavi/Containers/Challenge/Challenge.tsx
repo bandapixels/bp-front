@@ -18,7 +18,7 @@ const Challenge: React.FunctionComponent = () => {
           <AnimationOnScroll
             animationName={AnimationNames.fadeInUp}
             duration={1}
-            delay={0.5}
+            delay={0.25}
           >
             <p className="appNaviParagraph mb-30">
               <span className="blueText">AppNavi</span> is a completely new idea
@@ -32,7 +32,7 @@ const Challenge: React.FunctionComponent = () => {
           <AnimationOnScroll
             animationName={AnimationNames.fadeInUp}
             duration={1}
-            delay={1}
+            delay={0.5}
           >
             <p className="appNaviParagraph">
               The UI part, on the other hand, was supposed to ensure an easy

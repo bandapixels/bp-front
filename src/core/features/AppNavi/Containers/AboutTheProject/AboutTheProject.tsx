@@ -21,7 +21,7 @@ const AboutTheProject: React.FunctionComponent = () => {
           <AnimationOnScroll
             animationName={AnimationNames.fadeInUp}
             duration={1}
-            delay={0.5}
+            delay={0.25}
           >
             <p className="appNaviParagraph">
               The <span className="blueText">AppNavi</span> application

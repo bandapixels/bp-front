@@ -12,7 +12,7 @@ const WelcomeToBlog: React.FunctionComponent = () => {
   const [roundedTextArr] = useState(roundedText.split(""));
   const refGridWrapper = useRef<HTMLDivElement>();
 
-  useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#171718");
+  useGrid(refGridWrapper, "rgba(167,167,167,0.1)", "#171718");
   useRedrawGrid(refGridWrapper);
 
   return (
@@ -34,14 +34,14 @@ const WelcomeToBlog: React.FunctionComponent = () => {
             project
           </p>
         </div>
-        <div className={styles.welcomeBtnsWrapper}>
-          <a href="#" className={styles.welcomeBtn}>
-            Who we are?
-          </a>
-          <a href="#" className={styles.welcomeLink}>
-            Customer story
-          </a>
-        </div>
+        {/*<div className={styles.welcomeBtnsWrapper}>*/}
+        {/*  <a href="#" className={styles.welcomeBtn}>*/}
+        {/*    Who we are?*/}
+        {/*  </a>*/}
+        {/*  <a href="#" className={styles.welcomeLink}>*/}
+        {/*    Customer story*/}
+        {/*  </a>*/}
+        {/*</div>*/}
       </div>
       <div className={styles.titlesWrapper}>
         <h1 className={styles.roundedTitle}>

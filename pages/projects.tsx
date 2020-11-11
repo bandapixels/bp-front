@@ -2,7 +2,8 @@ import React from "react";
 import { NextPage } from "next";
 import Head from "next/head";
 import StoreLayout from "../src/core/layouts/StoreLayout";
-import Projects from "../src/core/features/MainPage/Containers/Projects/Projects";
+import ProjectsWrapper from "../src/core/features/Projects/Containers/ProjectsWrapper/ProjectsWrapper";
+import FullPageScroll from "../src/core/shared/FullPageScroll/Containers/FullPageScroll";
 
 const Contacts: NextPage = () => {
   return (
@@ -10,9 +11,12 @@ const Contacts: NextPage = () => {
       <Head>
         <meta name="robots" content="noindex" />
         <meta name="googlebot" content="noindex" />
+        <title>Projects</title>
       </Head>
       <StoreLayout>
-        <Projects />
+        <FullPageScroll>
+          <ProjectsWrapper />
+        </FullPageScroll>
       </StoreLayout>
     </>
   );

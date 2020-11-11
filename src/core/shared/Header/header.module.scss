@@ -215,6 +215,23 @@
 
   .bigBlackLogo {
     background: url(/images/logo-yellow.svg) no-repeat center;
+    background-size: contain;
+  }
+}
+
+.smallCasesHeader {
+  .bigBlackLogo {
+    background: url(/images/logo-small-yellow.svg) no-repeat center;
+    background-size: contain;
+  }
+
+  .headerBtn {
+    font-size: 14px;
+    line-height: 16px;
+    height: 80px;
+    width: 180px;
+    justify-content: space-between;
+    padding: 16px 30px;
   }
 }
 

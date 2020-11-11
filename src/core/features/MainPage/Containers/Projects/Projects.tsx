@@ -5,9 +5,9 @@ import useGrid from "../../../../utils/useGrid";
 import Project from "./components/Project/Project";
 import Button from "../../../../shared/coreUi/Button/Button";
 import ArrowForSlider from "../../../../shared/Icons/ArrowForSlider";
-import Head from "next/head";
 import styles from "./projects.module.scss";
 import useRedrawGrid from "../../../../utils/useRedrawGrid";
+import constants from "../../../../shared/constants";
 
 const Projects: React.FunctionComponent = () => {
   const router = useRouter();
@@ -17,113 +17,7 @@ const Projects: React.FunctionComponent = () => {
     projectsPageWrapper: router.pathname === "/projects"
   });
 
-  const projectsInfo = [
-    {
-      name: "AppNavi",
-      description: `
-        TECOM Conf is China's first Tech and Entrepreneur Communities
-        conference.
-        
-        TECOM Conf brings the most dynamic, engaging and vibrant
-        Communities, Startups,
-      `,
-      problem: `
-        A problem is considered to be major when a reasonable consumer
-        would not have bought the product if they had known the problem
-        beforehand – for example, a toaster breaks down before a
-        reasonable consumer would expect it to.
-        
-        If the product has some other problem that is not covered by
-        ‘major problem’ above, it can be considered to be a minor problem.
-        For example, it does not do what it is normally supposed to do but
-        can be fixed easily and within a reasonable time.
-      `,
-      video: "/videos/AppNavi_animate.mp4",
-      url: "/appnavi",
-      orientation: "landscape",
-      position: "right"
-    },
-    {
-      name: "SunUp",
-      description: `
-        TECOM-2 Conf is China's first Tech and Entrepreneur Communities
-        conference.
-
-        TECOM-2 Conf brings the most dynamic, engaging and vibrant
-        Communities, Startups,
-      `,
-      problem: `
-        A problem is considered to be major when a reasonable consumer
-        would not have bought the product if they had known the problem
-        beforehand – for example, a toaster breaks down before a
-        reasonable consumer would expect it to.
-      `,
-      video: "",
-      url: "/sunup",
-      orientation: "landscape",
-      position: "right"
-    },
-    {
-      name: "Shed",
-      description: `
-        TECOM-3 Conf is China's first Tech and Entrepreneur Communities
-        conference.
-
-        TECOM-3 Conf brings the most dynamic, engaging and vibrant
-        Communities, Startups,
-      `,
-      problem: `
-        A problem is considered to be major when a reasonable consumer
-        would not have bought the product if they had known the problem
-        beforehand – for example, a toaster breaks down before a
-        reasonable consumer would expect it to.
-      `,
-      video: "/videos/shed.mp4",
-      url: "/shed",
-      orientation: "landscape",
-      position: "left"
-    },
-    {
-      name: "DCR",
-      description: `
-        TECOM-3 Conf is China's first Tech and Entrepreneur Communities
-        conference.
-
-        TECOM-3 Conf brings the most dynamic, engaging and vibrant
-        Communities, Startups,
-      `,
-      problem: `
-        A problem is considered to be major when a reasonable consumer
-        would not have bought the product if they had known the problem
-        beforehand – for example, a toaster breaks down before a
-        reasonable consumer would expect it to.
-      `,
-      video: "/videos/dcr.mp4",
-      url: "/dcr",
-      orientation: "landscape",
-      position: "right"
-    },
-    {
-      name: "CaseKeepers",
-      description: `
-        TECOM-3 Conf is China's first Tech and Entrepreneur Communities
-        conference.
-
-        TECOM-3 Conf brings the most dynamic, engaging and vibrant
-        Communities, Startups,
-      `,
-      problem: `
-        A problem is considered to be major when a reasonable consumer
-        would not have bought the product if they had known the problem
-        beforehand – for example, a toaster breaks down before a
-        reasonable consumer would expect it to.
-      `,
-      video: "",
-      url: "/casekeepers",
-      orientation: "landscape",
-      position: "right"
-    }
-  ];
+  const projectsInfo = constants.projects;
 
   const scrollTopMobile = (): void => {
     if (window.outerWidth <= 668) {
@@ -163,16 +57,11 @@ const Projects: React.FunctionComponent = () => {
     scrollTopMobile();
   };
 
-  useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#171718");
+  useGrid(refGridWrapper, "rgba(167,167,167,0.1)", "#171718");
   useRedrawGrid(refGridWrapper);
 
   return (
     <>
-      {router.pathname === "/projects" && (
-        <Head>
-          <title>{projectsInfo[activeSlide].name}</title>
-        </Head>
-      )}
       <section
         className={projectsClasses}
         ref={refGridWrapper}
@@ -192,7 +81,6 @@ const Projects: React.FunctionComponent = () => {
               url={projectsInfo[activeSlide].url}
               orientation={projectsInfo[activeSlide].orientation}
               position={projectsInfo[activeSlide].position}
-              activeSlide={activeSlide}
             />
           </div>
         </div>

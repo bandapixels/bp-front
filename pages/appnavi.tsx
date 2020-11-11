@@ -11,6 +11,7 @@ import AnalysisVideo from "../src/core/features/AppNavi/Containers/AnalysisVideo
 import AnalysisBottom from "../src/core/features/AppNavi/Containers/AnalysisBottom/AnalysisBottom";
 import Results from "../src/core/features/AppNavi/Containers/Results/Results";
 import StoreLayout from "../src/core/layouts/StoreLayout";
+import ScrollLayout from "../src/core/layouts/ScrollLayout";
 
 const AppNavi: NextPage = () => {
   return (
@@ -21,15 +22,17 @@ const AppNavi: NextPage = () => {
         <title>AppNavi</title>
       </Head>
       <StoreLayout>
-        <MainBlock />
-        <AboutTheProject />
-        <Problematics />
-        <Challenge />
-        <AboutVideo />
-        <AnalysisAndSolution />
-        <AnalysisVideo />
-        <AnalysisBottom />
-        <Results />
+        <ScrollLayout>
+          <MainBlock />
+          <AboutTheProject />
+          <Problematics />
+          <Challenge />
+          <AboutVideo />
+          <AnalysisAndSolution />
+          <AnalysisVideo />
+          <AnalysisBottom />
+          <Results />
+        </ScrollLayout>
       </StoreLayout>
     </>
   );

@@ -8,7 +8,7 @@ import useRedrawGrid from "../../../../utils/useRedrawGrid";
 const WeOffer: React.FunctionComponent = () => {
   const refGridWrapper = useRef<HTMLDivElement>();
 
-  useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#171718");
+  useGrid(refGridWrapper, "rgba(167,167,167,0.1)", "#171718");
   useRedrawGrid(refGridWrapper);
 
   return (

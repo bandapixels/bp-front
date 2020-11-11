@@ -10,6 +10,7 @@ import Challenge from "../src/core/features/Shed/Containers/Challenge/Challenge"
 import Implementation from "../src/core/features/Shed/Containers/Implementation/Implementation";
 import Colors from "../src/core/features/Shed/Containers/Colors/Colors";
 import Footer from "../src/core/features/Shed/Containers/Footer/Footer";
+import ScrollLayout from "../src/core/layouts/ScrollLayout";
 import StoreLayout from "../src/core/layouts/StoreLayout";
 
 const Shed: NextPage = () => {
@@ -18,17 +19,20 @@ const Shed: NextPage = () => {
       <Head>
         <meta name="robots" content="noindex" />
         <meta name="googlebot" content="noindex" />
+        <title>Shed</title>
       </Head>
       <StoreLayout>
-        <Main />
-        <About />
-        <Prototype />
-        <Timeline />
-        <Problematics />
-        <Challenge />
-        <Implementation />
-        <Colors />
-        <Footer />
+        <ScrollLayout>
+          <Main />
+          <About />
+          <Prototype />
+          <Timeline />
+          <Problematics />
+          <Challenge />
+          <Implementation />
+          <Colors />
+          <Footer />
+        </ScrollLayout>
       </StoreLayout>
     </>
   );

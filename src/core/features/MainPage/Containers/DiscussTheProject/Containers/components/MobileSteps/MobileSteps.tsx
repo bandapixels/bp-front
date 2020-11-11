@@ -6,11 +6,13 @@ import Button from "../../../../../../../shared/coreUi/Button/Button";
 interface MobileStepsProps {
   step: number;
   handlerChangeStep: () => void;
+  handlerSubmit: () => void;
 }
 
 const MobileSteps: React.FunctionComponent<MobileStepsProps> = ({
   step,
-  handlerChangeStep
+  handlerChangeStep,
+  handlerSubmit
 }) => {
   return (
     <div className={styles.stepWrapper}>
@@ -29,7 +31,11 @@ const MobileSteps: React.FunctionComponent<MobileStepsProps> = ({
         </Button>
       )}
       {step === 2 && (
-        <Button classes="yellowBtnWithIcon" type="submit">
+        <Button
+          classes="yellowBtnWithIcon"
+          type="submit"
+          handlerClick={handlerSubmit}
+        >
           <div>
             Send
             <img src="/images/icons/arrow.svg" alt="arrow" />

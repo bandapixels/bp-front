@@ -49,13 +49,13 @@ const Posts: React.FunctionComponent = () => {
                   <p className={styles.postTime}>
                     {formatDate(post.created_at)}
                   </p>
-                  <div className={styles.hashtags}>
-                    {post.tags.map((hashtag, index) => {
-                      const key = hashtag.name + index;
+                  {/*<div className={styles.hashtags}>*/}
+                  {/*  {post.tags.map((hashtag, index) => {*/}
+                  {/*    const key = hashtag.name + index;*/}
 
-                      return <span key={key}>{hashtag.name}</span>;
-                    })}
-                  </div>
+                  {/*    return <span key={key}>{hashtag.name}</span>;*/}
+                  {/*  })}*/}
+                  {/*</div>*/}
                   <div className={styles.postAnnotation}>{post.excerpt}</div>
                   <p className={styles.postReadMore}>Read more</p>
                 </div>

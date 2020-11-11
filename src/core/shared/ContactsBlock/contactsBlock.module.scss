@@ -5,7 +5,7 @@ $contacts-title-font-sizes: (
   1024px: 54px,
   1280px: 54px,
   1600px: 80px,
-  1900px: 80px
+  1900px: 80px,
 );
 
 $contacts-text-font-sizes: (
@@ -13,15 +13,14 @@ $contacts-text-font-sizes: (
   1024px: 24px,
   1280px: 24px,
   1600px: 30px,
-  1900px: 30px
+  1900px: 30px,
 );
 
 @mixin font-size($fs-map) {
   @each $fs-breakpoint, $fs-font-size in $fs-map {
     @if $fs-breakpoint == null {
       font-size: $fs-font-size;
-    }
-    @else {
+    } @else {
       @media screen and (min-width: $fs-breakpoint) {
         font-size: $fs-font-size;
       }
@@ -34,7 +33,7 @@ $contacts-text-font-sizes: (
   bottom: 0;
   width: 1px;
   height: 100vh;
-  background: rgba(23,23,24,.1);
+  background: rgba(167, 167, 167, 0.1);
   position: absolute;
   pointer-events: none;
 }
@@ -42,7 +41,7 @@ $contacts-text-font-sizes: (
 .gradient-horizontal {
   width: 100vw;
   height: 1px;
-  background: rgba(23,23,24,.1);
+  background: rgba(167, 167, 167, 0.1);
   position: absolute;
   pointer-events: none;
 }
@@ -87,7 +86,7 @@ $contacts-text-font-sizes: (
     font-weight: bold;
     font-size: 20px;
     letter-spacing: 0.03em;
-    color: #EFE314;
+    color: #efe314;
     width: 290px;
     height: 65px;
     text-decoration: none;
@@ -96,7 +95,7 @@ $contacts-text-font-sizes: (
     line-height: 65px;
     margin: 50px 0 0;
     background: #333;
-    transition: .3s;
+    transition: 0.3s;
 
     &:hover {
       background: #171718;
@@ -154,7 +153,8 @@ $contacts-text-font-sizes: (
     height: auto;
     padding: 60px 15px 30px;
     background-color: #333;
-    background-image: linear-gradient( rgba(255,255,255,.1), transparent 1px), linear-gradient( 90deg, rgba(255,255,255,.1), transparent 1px);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.1), transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.1), transparent 1px);
     background-size: 15px 15px;
     background-position: center center;
 
@@ -193,13 +193,13 @@ $contacts-text-font-sizes: (
 
   .contactsTitle {
     font-size: 26px;
-    color: #FFF;
+    color: #fff;
     margin: 0 0 10px;
   }
 
   .contactsText {
     font-size: 14px;
-    color: #BDBDBD;
+    color: #bdbdbd;
     margin: 0 0 20px;
   }
 
@@ -207,18 +207,18 @@ $contacts-text-font-sizes: (
     margin: 0 auto;
     align-self: center;
     width: 100%;
-  
+
     .socialItem {
       &:not(:last-child) {
         margin-right: 10px;
       }
     }
-  
+
     .socialIcon {
       width: 65px;
       height: 65px;
       border-color: #fff;
-  
+
       span {
         width: 20px;
         height: 20px;
@@ -228,15 +228,15 @@ $contacts-text-font-sizes: (
     .socialBehance {
       background: url(/images/icons/behance-white.svg) no-repeat center;
     }
-    
+
     .socialFacebook {
       background: url(/images/icons/facebook-white.svg) no-repeat center;
     }
-    
+
     .socialDribbble {
       background: url(/images/icons/dribbble-white.svg) no-repeat center;
     }
-    
+
     .socialLinkedin {
       background: url(/images/icons/linkedin-white.svg) no-repeat center;
     }
@@ -247,7 +247,7 @@ $contacts-text-font-sizes: (
     font-weight: bold;
     font-size: 20px;
     letter-spacing: 0.03em;
-    color: #EFE314;
+    color: #efe314;
     width: 100%;
     height: 65px;
     text-decoration: none;
@@ -258,7 +258,7 @@ $contacts-text-font-sizes: (
     background: #171718;
 
     &.servicesBtn {
-      background: #EFE314;
+      background: #efe314;
       color: #171718;
     }
   }

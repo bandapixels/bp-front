@@ -86,7 +86,7 @@ const AnalysisBottom: React.FunctionComponent = () => {
           <AnimationOnScroll
             animationName={AnimationNames.fadeInUp}
             duration={1}
-            delay={1}
+            delay={0.25}
           >
             <p className="appNaviParagraph mb-30">
               Our task was to create a timeless, simple and understandable
@@ -101,7 +101,7 @@ const AnalysisBottom: React.FunctionComponent = () => {
           <AnimationOnScroll
             animationName={AnimationNames.fadeInUp}
             duration={1}
-            delay={1.5}
+            delay={0.5}
           >
             <p className="appNaviParagraph">
               The first element in the logo personifies the user who looks for

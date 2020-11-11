@@ -1,4 +1,4 @@
-@import '../../../../../assets/scss/breakPoints.scss';
+@import "../../../../../assets/scss/breakPoints.scss";
 
 .offerWrapper {
   height: 100vh;
@@ -14,7 +14,7 @@
   bottom: 0;
   width: 1px;
   height: 100vh;
-  background: rgba(23,23,24,.1);
+  background: rgba(167, 167, 167, 0.1);
   position: absolute;
   pointer-events: none;
 }
@@ -22,7 +22,7 @@
 .gradient-horizontal {
   width: 100vw;
   height: 1px;
-  background: rgba(23,23,24,.1);
+  background: rgba(167, 167, 167, 0.1);
   position: absolute;
   pointer-events: none;
 }
@@ -51,7 +51,8 @@
 
   .offerWrapper {
     background-color: #333;
-    background-image: linear-gradient( rgba(255,255,255,.1), transparent 1px), linear-gradient( 90deg, rgba(255,255,255,.1), transparent 1px);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.1), transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.1), transparent 1px);
     background-size: 15px 15px;
     background-position: center center;
     height: auto;

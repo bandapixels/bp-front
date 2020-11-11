@@ -14,7 +14,6 @@ interface ProjectProps {
   url: string;
   orientation: string;
   position: string;
-  activeSlide: number;
 }
 
 const Project: React.FunctionComponent<ProjectProps> = ({
@@ -24,8 +23,7 @@ const Project: React.FunctionComponent<ProjectProps> = ({
   video,
   url,
   orientation,
-  position,
-  activeSlide
+  position
 }) => {
   const [visiblePart, setVisiblePart] = useState(problem);
   const [hiddenPart, setHiddenPart] = useState("");
@@ -61,9 +59,6 @@ const Project: React.FunctionComponent<ProjectProps> = ({
         })}
       >
         <div className={styles.projectInfo}>
-          {router.pathname === "/projects" && activeSlide === 0 && (
-            <h1>Projects</h1>
-          )}
           <h3
             className={styles.projectTitle}
             onClick={(): void => {
