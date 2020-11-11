@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, createElement } from "react";
+import { useDispatch } from "react-redux";
+import { AddElement } from "./animationOnScroll.actions";
 import "./animationOnScroll.module.scss";
 
 export enum AnimationNames {
@@ -25,6 +27,7 @@ const AnimationOnScroll: React.FunctionComponent<AnimationOnScroll> = ({
   delay = 0,
   as
 }) => {
+  const dispatch = useDispatch();
   const animatedElement = useRef<HTMLDivElement>();
   const animation = `animation: ${animationName} ${duration}s ${delay}s forwards`;
   const display = as ? "display:block" : "";
@@ -32,20 +35,14 @@ const AnimationOnScroll: React.FunctionComponent<AnimationOnScroll> = ({
   useEffect(() => {
     const element = animatedElement.current;
     const rect = element.getBoundingClientRect();
-
-    const handlerScroll = (): void => {
-      if (
-        rect.top <= window.innerHeight + window.scrollY &&
-        rect.left <= window.innerWidth + window.scrollX
-      ) {
-        element.setAttribute("style", `${animation}; ${display}`);
-      }
-    };
-
-    window.addEventListener("scroll", handlerScroll);
-
-    return (): void => window.removeEventListener("scroll", handlerScroll);
-  });
+    dispatch(
+      new AddElement({
+        y: rect.top,
+        ref: element,
+        styles: `${animation};${display}`
+      })
+    );
+  }, []);
 
   return as ? (
     createElement(

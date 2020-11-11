@@ -14,7 +14,7 @@ const AnalysisAndSolution: React.FunctionComponent = () => {
         <AnimationOnScroll
           animationName={AnimationNames.fadeInUp}
           duration={1}
-          delay={0.5}
+          delay={0.25}
         >
           <h4 className="appNaviH4">
             For the UX analysis, we took the following steps:
@@ -37,7 +37,7 @@ const AnalysisAndSolution: React.FunctionComponent = () => {
           <AnimationOnScroll
             animationName={AnimationNames.fadeIn}
             duration={1}
-            delay={3}
+            delay={2.5}
           >
             <img
               src="/images/projects/AppNavi/top-line.svg"
@@ -48,7 +48,7 @@ const AnalysisAndSolution: React.FunctionComponent = () => {
           <AnimationOnScroll
             animationName={AnimationNames.fadeIn}
             duration={1}
-            delay={3}
+            delay={2.5}
           >
             <img
               src="/images/projects/AppNavi/bottom-line.svg"
@@ -59,7 +59,7 @@ const AnalysisAndSolution: React.FunctionComponent = () => {
           <AnimationOnScroll
             animationName={AnimationNames.fadeIn}
             duration={1}
-            delay={4}
+            delay={2.5}
           >
             <img
               src="/images/projects/AppNavi/mob-line.svg"
@@ -70,7 +70,7 @@ const AnalysisAndSolution: React.FunctionComponent = () => {
           <AnimationOnScroll
             animationName={AnimationNames.fadeIn}
             duration={1}
-            delay={4}
+            delay={2.5}
           >
             <img
               src="/images/projects/AppNavi/tablet-line.svg"
@@ -92,7 +92,7 @@ const AnalysisAndSolution: React.FunctionComponent = () => {
           <AnimationOnScroll
             animationName={AnimationNames.fadeIn}
             duration={1}
-            delay={0.5}
+            delay={0.25}
           >
             <div className="analysisStep analysisStep2">
               <img src="/images/projects/AppNavi/step-2.svg" alt="step 2" />
@@ -107,7 +107,7 @@ const AnalysisAndSolution: React.FunctionComponent = () => {
           <AnimationOnScroll
             animationName={AnimationNames.fadeIn}
             duration={1}
-            delay={1}
+            delay={0.5}
           >
             <div className="analysisStep analysisStep3">
               <img src="/images/projects/AppNavi/step-3.svg" alt="step 3" />
@@ -124,7 +124,7 @@ const AnalysisAndSolution: React.FunctionComponent = () => {
           <AnimationOnScroll
             animationName={AnimationNames.fadeIn}
             duration={1}
-            delay={1.5}
+            delay={0.6}
           >
             <div className="analysisStep analysisStep4">
               <img src="/images/projects/AppNavi/step-4.svg" alt="step 4" />
@@ -139,7 +139,7 @@ const AnalysisAndSolution: React.FunctionComponent = () => {
           <AnimationOnScroll
             animationName={AnimationNames.fadeIn}
             duration={1}
-            delay={2}
+            delay={0.7}
           >
             <div className="analysisStep analysisStep5">
               <img src="/images/projects/AppNavi/step-5.svg" alt="step 5" />
@@ -160,7 +160,7 @@ const AnalysisAndSolution: React.FunctionComponent = () => {
           <AnimationOnScroll
             animationName={AnimationNames.fadeIn}
             duration={1}
-            delay={2.5}
+            delay={0.8}
           >
             <div className="analysisStep analysisStep6">
               <img src="/images/projects/AppNavi/step-6.svg" alt="step 6" />

@@ -4,10 +4,12 @@ import fullPageScrollReducer from "../shared/FullPageScroll/fullPageScroll.reduc
 import preloaderReducer from "../shared/Preloader/preloader.reducer";
 import showFormReducer from "../features/MainPage/mainPage.reducers";
 import blogPageReducer from "../features/BlogPage/blogPage.reducers";
+import animationOnScrollReducer from "../utils/AnimationOnScroll/animationOnScroll.reducers";
 
 export default combineReducers({
   fullPageScrollReducer,
   preloaderReducer,
   showFormReducer,
-  blogPageReducer
+  blogPageReducer,
+  animationOnScrollReducer
 });

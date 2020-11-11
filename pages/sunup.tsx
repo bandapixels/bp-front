@@ -11,6 +11,7 @@ import Images from "../src/core/features/SunUp/Containers/Images/Images";
 import Results from "../src/core/features/SunUp/Containers/Results/Results";
 import Footer from "../src/core/features/SunUp/Containers/Footer/Footer";
 import StoreLayout from "../src/core/layouts/StoreLayout";
+import ScrollLayout from "../src/core/layouts/ScrollLayout";
 
 const SunUp: NextPage = () => {
   return (
@@ -21,15 +22,17 @@ const SunUp: NextPage = () => {
         <title>Sun Up</title>
       </Head>
       <StoreLayout>
-        <Main />
-        <UserFlow />
-        <Problems />
-        <Challenge />
-        <ProjectTimeline />
-        <Analysis />
-        <Images />
-        <Results />
-        <Footer />
+        <ScrollLayout>
+          <Main />
+          <UserFlow />
+          <Problems />
+          <Challenge />
+          <ProjectTimeline />
+          <Analysis />
+          <Images />
+          <Results />
+          <Footer />
+        </ScrollLayout>
       </StoreLayout>
     </>
   );

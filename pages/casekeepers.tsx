@@ -11,6 +11,7 @@ import Colors from "../src/core/features/CaseKeepers/Containers/Colors/Colors";
 import Analysis from "../src/core/features/CaseKeepers/Containers/Analysis/Analysis";
 import Footer from "../src/core/features/CaseKeepers/Containers/Footer/Footer";
 import StoreLayout from "../src/core/layouts/StoreLayout";
+import ScrollLayout from "../src/core/layouts/ScrollLayout";
 
 const CaseKeepers: NextPage = () => {
   return (
@@ -21,15 +22,17 @@ const CaseKeepers: NextPage = () => {
         <title>CaseKeepers</title>
       </Head>
       <StoreLayout>
-        <Main />
-        <UserFlow />
-        <Research />
-        <Timeline />
-        <Problematics />
-        <Challenge />
-        <Colors />
-        <Analysis />
-        <Footer />
+        <ScrollLayout>
+          <Main />
+          <UserFlow />
+          <Research />
+          <Timeline />
+          <Problematics />
+          <Challenge />
+          <Colors />
+          <Analysis />
+          <Footer />
+        </ScrollLayout>
       </StoreLayout>
     </>
   );

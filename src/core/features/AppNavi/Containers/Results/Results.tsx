@@ -14,7 +14,7 @@ const Results: React.FunctionComponent = () => {
         <AnimationOnScroll
           animationName={AnimationNames.fadeInUp}
           duration={1}
-          delay={0.5}
+          delay={0.25}
         >
           <p className="appNaviParagraph resultText">
             Getting down to the project realization, the owners of the AppNavi
@@ -26,7 +26,7 @@ const Results: React.FunctionComponent = () => {
         <AnimationOnScroll
           animationName={AnimationNames.zoomIn}
           duration={1}
-          delay={1}
+          delay={0.5}
         >
           <blockquote className="appNaviBlockquote">
             <em>
@@ -48,13 +48,13 @@ const Results: React.FunctionComponent = () => {
               <AnimationOnScroll
                 animationName={AnimationNames.fadeInRight}
                 duration={1}
-                delay={0.5}
               >
                 <span className={styles.stepItemNumber}>1</span>
               </AnimationOnScroll>
               <AnimationOnScroll
                 animationName={AnimationNames.zoomIn}
-                duration={0.5}
+                duration={1}
+                delay={1}
               >
                 <div className={styles.stepBorder}>
                   <AnimationOnScroll
@@ -76,13 +76,13 @@ const Results: React.FunctionComponent = () => {
               <AnimationOnScroll
                 animationName={AnimationNames.fadeInRight}
                 duration={1}
-                delay={0.5}
               >
                 <span className={styles.stepItemNumber}>2</span>
               </AnimationOnScroll>
               <AnimationOnScroll
                 animationName={AnimationNames.zoomIn}
                 duration={1}
+                delay={1}
               >
                 <div className={styles.stepBorder}>
                   <AnimationOnScroll
@@ -105,7 +105,6 @@ const Results: React.FunctionComponent = () => {
               <AnimationOnScroll
                 animationName={AnimationNames.fadeInRight}
                 duration={1}
-                delay={1.5}
               >
                 <span className={styles.stepItemNumber}>3</span>
               </AnimationOnScroll>
@@ -118,7 +117,7 @@ const Results: React.FunctionComponent = () => {
                   <AnimationOnScroll
                     animationName={AnimationNames.fadeInUp}
                     duration={1}
-                    delay={2.5}
+                    delay={1.5}
                   >
                     <p className="appNaviParagraph">
                       Due to the improved UX design, users were able to go
@@ -138,20 +137,19 @@ const Results: React.FunctionComponent = () => {
               <AnimationOnScroll
                 animationName={AnimationNames.fadeInRight}
                 duration={1}
-                delay={3.5}
               >
                 <span className={styles.stepItemNumber}>4</span>
               </AnimationOnScroll>
               <AnimationOnScroll
                 animationName={AnimationNames.zoomIn}
                 duration={1}
-                delay={3}
+                delay={1}
               >
                 <div className={styles.stepBorder}>
                   <AnimationOnScroll
                     animationName={AnimationNames.fadeInUp}
                     duration={1}
-                    delay={4.5}
+                    delay={1.5}
                   >
                     <p className="appNaviParagraph">
                       Such improvements have contributed to the popularity of
@@ -167,20 +165,19 @@ const Results: React.FunctionComponent = () => {
               <AnimationOnScroll
                 animationName={AnimationNames.fadeInRight}
                 duration={1}
-                delay={3.5}
               >
                 <span className={styles.stepItemNumber}>5</span>
               </AnimationOnScroll>
               <AnimationOnScroll
                 animationName={AnimationNames.zoomIn}
                 duration={1}
-                delay={3}
+                delay={1}
               >
                 <div className={styles.stepBorder}>
                   <AnimationOnScroll
                     animationName={AnimationNames.fadeInUp}
                     duration={1}
-                    delay={4.5}
+                    delay={1.5}
                   >
                     <p className="appNaviParagraph">
                       The program has become simple and understandable for new

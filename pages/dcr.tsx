@@ -9,6 +9,7 @@ import Problem from "../src/core/features/Dcr/Containers/Problem/Problem";
 import DesignSolutions from "../src/core/features/Dcr/Containers/DesignSolutions/DesignSolutions";
 import Footer from "../src/core/features/Dcr/Containers/Footer/Footer";
 import StoreLayout from "../src/core/layouts/StoreLayout";
+import ScrollLayout from "../src/core/layouts/ScrollLayout";
 
 const Dcr: NextPage = () => {
   return (
@@ -19,13 +20,15 @@ const Dcr: NextPage = () => {
         <title>DCR</title>
       </Head>
       <StoreLayout>
-        <Main />
-        <Analysis />
-        <UserFlow />
-        <Prototypes />
-        <Problem />
-        <DesignSolutions />
-        <Footer />
+        <ScrollLayout>
+          <Main />
+          <Analysis />
+          <UserFlow />
+          <Prototypes />
+          <Problem />
+          <DesignSolutions />
+          <Footer />
+        </ScrollLayout>
       </StoreLayout>
     </>
   );

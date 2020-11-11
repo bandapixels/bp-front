@@ -2,12 +2,14 @@ import { FullPageScrollState } from "../shared/FullPageScroll/fullPageScroll.sta
 import { PreloaderState } from "../shared/Preloader/preloader.state";
 import { ShowFormState } from "../features/MainPage/mainPage.state";
 import { BlogPageState } from "../features/BlogPage/blogPage.state";
+import { ElementsState } from "../utils/AnimationOnScroll/animationOnScroll.state";
 
 export interface AppState {
   fullPageScrollReducer: FullPageScrollState;
   preloaderReducer: PreloaderState;
   showFormReducer: ShowFormState;
   blogPageReducer: BlogPageState;
+  animationOnScrollReducer: ElementsState;
 }
 
 export class Action {

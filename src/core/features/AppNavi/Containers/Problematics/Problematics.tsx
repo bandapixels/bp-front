@@ -18,7 +18,7 @@ const Problematics: React.FunctionComponent = () => {
           <AnimationOnScroll
             animationName={AnimationNames.fadeInUp}
             duration={1}
-            delay={0.5}
+            delay={0.25}
           >
             <p className="appNaviParagraph">
               <span className="blueText">AppNavi</span> suggests a completely
@@ -41,7 +41,7 @@ const Problematics: React.FunctionComponent = () => {
       <AnimationOnScroll
         animationName={AnimationNames.zoomIn}
         duration={1}
-        delay={1}
+        delay={0.25}
       >
         <div className={styles.problematicsQuote}>
           <blockquote className="appNaviBlockquote">
