@@ -35,7 +35,7 @@
 .projectPageInfo {
   margin: 0 60px 0 0;
   max-width: 840px;
-  max-height: 360px;
+  max-height: 460px;
   overflow: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -58,7 +58,7 @@
 
 .projectPageTitle {
   font-weight: bold;
-  font-size: 40px;
+  font-size: 30px;
   line-height: 130%;
   color: #171718;
   margin: 0 0 30px;
@@ -66,7 +66,7 @@
 }
 
 .projectPageProblem {
-  font-size: 24px;
+  font-size: 20px;
   line-height: 150%;
   letter-spacing: 0.03em;
   color: #828282;
@@ -253,6 +253,14 @@
   }
 }
 
+@media screen and (max-width: 1680px) {
+  .projectPageDescription {
+    div {
+      max-width: 53vw;
+    }
+  }
+}
+
 @media screen and (max-width: 1400px) {
   .projectPageTitle {
     font-size: 30px;
@@ -398,6 +406,14 @@
       margin-right: 0;
       max-height: 300px;
       max-width: 200px;
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint-tablet) {
+  .projectPageDescription {
+    div {
+      max-width: none;
     }
   }
 }

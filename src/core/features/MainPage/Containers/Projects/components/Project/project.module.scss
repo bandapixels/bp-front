@@ -46,7 +46,7 @@
 
 .projectTitle {
   font-weight: bold;
-  font-size: 40px;
+  font-size: 30px;
   line-height: 130%;
   color: #171718;
   margin: 0 0 30px;
@@ -54,7 +54,7 @@
 }
 
 .projectProblem {
-  font-size: 24px;
+  font-size: 20px;
   line-height: 150%;
   letter-spacing: 0.03em;
   color: #828282;
@@ -198,6 +198,14 @@
 
 .noVideo {
   opacity: 0;
+}
+
+@media screen and (max-width: 1680px) {
+  .projectDescription {
+    div {
+      max-width: 53vw;
+    }
+  }
 }
 
 @media screen and (max-width: 1400px) {

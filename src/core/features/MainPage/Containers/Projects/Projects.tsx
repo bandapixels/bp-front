@@ -73,14 +73,15 @@ const Projects: React.FunctionComponent = () => {
         <div className={styles.projectsSlider}>
           <div className={styles.projectsSliderList}>
             <Project
-              name={projectsInfo[activeSlide].name}
+              footerTitle={projectsInfo[activeSlide].footerTitle}
+              footerDescription={projectsInfo[activeSlide].footerDescription}
               description={projectsInfo[activeSlide].description}
-              problem={projectsInfo[activeSlide].problem}
-              key={projectsInfo[activeSlide].name}
+              key={projectsInfo[activeSlide].title}
               video={projectsInfo[activeSlide].video}
               url={projectsInfo[activeSlide].url}
               orientation={projectsInfo[activeSlide].orientation}
               position={projectsInfo[activeSlide].position}
+              title={projectsInfo[activeSlide].title}
             />
           </div>
         </div>
