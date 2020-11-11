@@ -7,9 +7,10 @@ import styles from "./project.module.scss";
 import BigArrow from "../../../../../../shared/Icons/BigArrow";
 
 interface ProjectProps {
-  name: string;
+  title: string;
   description?: string;
-  problem?: string;
+  footerTitle: string;
+  footerDescription?: string;
   video: string;
   url: string;
   orientation: string;
@@ -17,15 +18,16 @@ interface ProjectProps {
 }
 
 const Project: React.FunctionComponent<ProjectProps> = ({
-  name,
+  title,
   description,
-  problem,
+  footerTitle,
+  footerDescription,
   video,
   url,
   orientation,
   position
 }) => {
-  const [visiblePart, setVisiblePart] = useState(problem);
+  const [visiblePart, setVisiblePart] = useState(description);
   const [hiddenPart, setHiddenPart] = useState("");
   const [visible, setVisible] = useState(false);
   const router = useRouter();
@@ -65,17 +67,17 @@ const Project: React.FunctionComponent<ProjectProps> = ({
               router.push(url);
             }}
           >
-            What problem do we solve
+            {title}
           </h3>
           <div
             className={styles.projectProblem}
             onClick={(): void => {
               router.push(url);
             }}
-          >
-            {visiblePart}
-            {visible ? hiddenPart : "..."}
-          </div>
+            dangerouslySetInnerHTML={{
+              __html: `${visiblePart}${visible ? hiddenPart : "..."}`
+            }}
+          />
           {!visible && (
             <span className={styles.readMore} onClick={handlerShowMore}>
               read more
@@ -110,8 +112,8 @@ const Project: React.FunctionComponent<ProjectProps> = ({
               router.push(url);
             }}
           >
-            <h3>{name}</h3>
-            <div>{description}</div>
+            <h3>{footerTitle}</h3>
+            <div>{footerDescription}</div>
           </div>
         </div>
       </div>
