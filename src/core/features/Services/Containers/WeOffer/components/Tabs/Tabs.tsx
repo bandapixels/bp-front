@@ -64,7 +64,7 @@ const Tabs: React.FunctionComponent = () => {
                   <span>Timeline</span>
                 </h5>
                 <ul>
-                  <li>3+ month</li>
+                  <li>2 - 4 weeks</li>
                 </ul>
               </div>
               <div>
@@ -76,10 +76,9 @@ const Tabs: React.FunctionComponent = () => {
                   <span>Deliverables</span>
                 </h5>
                 <ul>
-                  <li>
-                    Design screens
-                    <br /> in Figma
-                  </li>
+                  <li>Technical task</li>
+                  <li>Estimate</li>
+                  <li>User flow</li>
                 </ul>
               </div>
             </div>
@@ -93,8 +92,9 @@ const Tabs: React.FunctionComponent = () => {
               </h5>
               <ul>
                 <li>UX designer</li>
-                <li>UI designer</li>
-                <li>Visual QA</li>
+                <li>Developer</li>
+                <li>PM</li>
+                <li>Business analyst</li>
               </ul>
             </div>
           </div>
@@ -133,7 +133,7 @@ const Tabs: React.FunctionComponent = () => {
                   <span>Timeline</span>
                 </h5>
                 <ul>
-                  <li>3+ month</li>
+                  <li>1 - 3 month</li>
                 </ul>
               </div>
             </div>
@@ -148,7 +148,7 @@ const Tabs: React.FunctionComponent = () => {
               <ul>
                 <li>UX designer</li>
                 <li>UI designer</li>
-                <li>Visual QA</li>
+                <li>PM</li>
               </ul>
             </div>
           </div>
@@ -160,8 +160,8 @@ const Tabs: React.FunctionComponent = () => {
             <h3>Web SAAS development</h3>
             <p>
               Innovative designand intutive functionality implemented by our
-              frontend and backend team result in attracive welsites. We set up
-              reliable, secure, efficient and scalable server areitecture so
+              frontend and backend team result in attracive webservice. We set
+              up reliable, secure, efficient and scalable server areitecture so
               that our websites work well, whether it caters for on more than
               100 000 users.
             </p>
@@ -174,7 +174,7 @@ const Tabs: React.FunctionComponent = () => {
                   <span>Timeline</span>
                 </h5>
                 <ul>
-                  <li>3+ month</li>
+                  <li>6+ month</li>
                 </ul>
               </div>
               <div>
@@ -187,8 +187,9 @@ const Tabs: React.FunctionComponent = () => {
                 </h5>
                 <ul>
                   <li>
-                    Design screens
-                    <br /> in Figma
+                    Source code
+                    <br />
+                    on you server
                   </li>
                 </ul>
               </div>
@@ -202,9 +203,10 @@ const Tabs: React.FunctionComponent = () => {
                 <span>People involved</span>
               </h5>
               <ul>
-                <li>UI designer</li>
-                <li>UX designer</li>
-                <li>Visual QA</li>
+                <li>Team lead</li>
+                <li>Frontend developer</li>
+                <li>Backend developer</li>
+                <li>PM</li>
               </ul>
             </div>
           </div>

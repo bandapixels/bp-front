@@ -24,6 +24,7 @@ interface ProjectProps {
   orientation: string;
   position: string;
   isFirst: boolean;
+  isLast: boolean;
   projectIndex: number;
 }
 
@@ -37,6 +38,7 @@ const Project: React.FunctionComponent<ProjectProps> = ({
   orientation,
   position,
   isFirst,
+  isLast,
   projectIndex
 }) => {
   const [visiblePart, setVisiblePart] = useState(description);
@@ -76,8 +78,16 @@ const Project: React.FunctionComponent<ProjectProps> = ({
     }
   };
 
-  const changeProject = (): void => {
-    const scrollTo = isFirst ? projectIndex + 1 : projectIndex - 1;
+  const changeProject = (direction): void => {
+    let scrollTo: number = projectIndex;
+
+    if (direction === "up") {
+      scrollTo--;
+    }
+
+    if (direction === "down") {
+      scrollTo++;
+    }
 
     dispatch(changeSection(scrollTo));
     scrollToSection(scrollTo);
@@ -87,7 +97,7 @@ const Project: React.FunctionComponent<ProjectProps> = ({
     splitTextForMobile();
   }, []);
 
-  useGrid(refGridWrapper, "rgba(167,167,167,0.1)", "#171718");
+  useGrid(refGridWrapper, "rgba(167,167,167,0.1)", "rgba(23, 23, 24, 0.4)");
   useRedrawGrid(refGridWrapper);
 
   return (
@@ -161,14 +171,30 @@ const Project: React.FunctionComponent<ProjectProps> = ({
           </div>
         </div>
         <div className={styles.projectPageFooterRightPart}>
-          <Button
-            type="button"
-            handlerClick={(): void => {
-              changeProject();
-            }}
-          >
-            <ArrowForSlider />
-          </Button>
+          {!isFirst && (
+            <div className={styles.projectPageUpBtn}>
+              <Button
+                type="button"
+                handlerClick={(): void => {
+                  changeProject("up");
+                }}
+              >
+                <ArrowForSlider />
+              </Button>
+            </div>
+          )}
+          {!isLast && (
+            <div className={styles.projectPageDownBtn}>
+              <Button
+                type="button"
+                handlerClick={(): void => {
+                  changeProject("down");
+                }}
+              >
+                <ArrowForSlider />
+              </Button>
+            </div>
+          )}
         </div>
       </div>
     </section>

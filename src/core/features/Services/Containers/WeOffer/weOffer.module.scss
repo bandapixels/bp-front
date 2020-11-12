@@ -43,6 +43,22 @@
   }
 }
 
+@media only screen and (max-width: 1680px) {
+  .offersInfo {
+    h5 {
+      margin: 0 0 10px;
+    }
+
+    li {
+      line-height: 130%;
+
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: $breakpoint-mobile) {
   .gradient-vertical,
   .gradient-horizontal {
