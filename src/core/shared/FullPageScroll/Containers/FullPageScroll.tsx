@@ -90,6 +90,8 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
     setTimeout(() => {
       window.scrollTo({ top: 0 });
     }, 150);
+
+    return (): void => dispatch(changeSection(0));
   }, []);
 
   useEffect((): (() => void) => {

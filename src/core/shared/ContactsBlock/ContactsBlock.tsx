@@ -21,7 +21,7 @@ const ContactsBlock: React.FunctionComponent<ContactsBlockProps> = ({
     contactsPage: router.pathname === "/contacts"
   });
 
-  useGrid(refGridWrapper, "rgba(167,167,167,0.1)", "#171718");
+  useGrid(refGridWrapper, "rgba(167,167,167,0.1)", "rgba(23, 23, 24, 0.4)");
   useRedrawGrid(refGridWrapper);
 
   return (

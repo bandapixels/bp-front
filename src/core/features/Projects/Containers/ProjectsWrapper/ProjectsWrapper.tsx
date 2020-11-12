@@ -19,6 +19,7 @@ const ProjectsWrapper: React.FunctionComponent = () => {
           orientation={project.orientation}
           position={project.position}
           isFirst={index === 0}
+          isLast={index === projectsInfo.length - 1}
           projectIndex={index}
         />
       ))}

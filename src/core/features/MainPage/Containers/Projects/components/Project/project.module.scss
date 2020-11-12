@@ -10,6 +10,7 @@
   z-index: 1;
   transform: translateX(100vw);
   animation: animation-media .8s ease-in-out forwards;
+  position: relative;
 
   &.mediaLeft {
     flex-flow: row-reverse;
@@ -72,8 +73,8 @@
 }
 
 .projectMedia {
-  max-width: 640px;
-  max-height: 380px;
+  max-width: 850px;
+  max-height: 480px;
   background: #4F4F4F;
   border: 8px solid #4F4F4F;
   box-sizing: border-box;
@@ -105,11 +106,11 @@
     font-size: 30px;
     line-height: 28px;
     color: #171718;
-    margin: 0 0 5px;
+    margin: 0 0 10px;
   }
 
   div {
-    max-width: 42vw;
+    max-width: 53vw;
     font-size: 20px;
     line-height: 150%;
     color: #828282;
@@ -201,15 +202,15 @@
 }
 
 @media screen and (max-width: 1680px) {
-  .projectDescription {
-    div {
-      max-width: 53vw;
-    }
+  .projectMedia {
+    max-width: 640px;
+    max-height: 380px;
   }
 
   .projectDescription {
     h3 {
       font-size: 24px;
+      margin: 0 0 5px;
     }
 
     div {
