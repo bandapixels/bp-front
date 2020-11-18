@@ -12,7 +12,7 @@ const Footer: React.FunctionComponent = () => {
           animationName={AnimationNames.fadeInUp}
           duration={0.5}
         >
-          <h3>Результат</h3>
+          <h3>Results</h3>
         </AnimationOnScroll>
         <div className={styles.dcrFooterList}>
           <div className={styles.dcrFooterItem}>
@@ -21,7 +21,7 @@ const Footer: React.FunctionComponent = () => {
               duration={0.5}
             >
               <img src="/images/projects/dcr/device.png" alt="" />
-              <p>Обновленный имидж компании</p>
+              <p>Updated company image</p>
             </AnimationOnScroll>
           </div>
           <div className={styles.dcrFooterItem}>
@@ -31,7 +31,7 @@ const Footer: React.FunctionComponent = () => {
               delay={0.2}
             >
               <img src="/images/projects/dcr/ui.png" alt="" />
-              <p>Отзывчивый UI дизайн</p>
+              <p>Responsive UI design</p>
             </AnimationOnScroll>
           </div>
           <div className={styles.dcrFooterItem}>
@@ -41,7 +41,7 @@ const Footer: React.FunctionComponent = () => {
               delay={0.4}
             >
               <img src="/images/projects/dcr/routes.png" alt="" />
-              <p>Удобные пути пользователя</p>
+              <p>Convenient user journey</p>
             </AnimationOnScroll>
           </div>
           <div className={styles.dcrFooterItem}>
@@ -51,7 +51,7 @@ const Footer: React.FunctionComponent = () => {
               delay={0.6}
             >
               <img src="/images/projects/dcr/search.png" alt="" />
-              <p>Простой поиск сложных задач</p>
+              <p>Simple search tasks</p>
             </AnimationOnScroll>
           </div>
           <div className={styles.dcrFooterItem}>
@@ -61,7 +61,7 @@ const Footer: React.FunctionComponent = () => {
               delay={0.8}
             >
               <img src="/images/projects/dcr/interaction.png" alt="" />
-              <p>Модернизированное взаимодействие на сайте</p>
+              <p>Modernized interaction on the site</p>
             </AnimationOnScroll>
           </div>
           <div className={styles.dcrFooterItem}>
@@ -71,7 +71,7 @@ const Footer: React.FunctionComponent = () => {
               delay={1}
             >
               <img src="/images/projects/dcr/graph.png" alt="" />
-              <p>Возрастание количества клиентов компании</p>
+              <p>Increase in the number of company clients</p>
             </AnimationOnScroll>
           </div>
           <div className={styles.dcrFooterItem}>
@@ -81,7 +81,7 @@ const Footer: React.FunctionComponent = () => {
               delay={1.2}
             >
               <img src="/images/projects/dcr/budget.png" alt="" />
-              <p>Увеличение бюджета компании DCR Solutions</p>
+              <p>Increase in the company budget</p>
             </AnimationOnScroll>
           </div>
         </div>

@@ -31,7 +31,7 @@ const DesignSolutions: React.FunctionComponent = () => {
             animationName={AnimationNames.fadeInUp}
             duration={1}
           >
-            <h3>Дизайнерские решения</h3>
+            <h3>Design concepts</h3>
           </AnimationOnScroll>
           <AnimationOnScroll
             animationName={AnimationNames.fadeInUp}
@@ -39,7 +39,7 @@ const DesignSolutions: React.FunctionComponent = () => {
             delay={0.5}
           >
             <h5>
-              <span>80+</span> UI элементов создано
+              <span>80+</span> UI elements created
             </h5>
           </AnimationOnScroll>
           <p>
@@ -49,11 +49,11 @@ const DesignSolutions: React.FunctionComponent = () => {
               delay={0.7}
               as="span"
             >
-              Во время работы над UI дизайном мы произвели редизайн всех кнопок
-              на сайте, видоизменили и улучшили внешний вид, визуально расширив
-              их и сделав более округлыми, оставив при этом изначальный голубой
-              цвет, что помогло сохранить ассоциативные связи клиентов и
-              упростить взаимодействия пользователей на сайте.
+              While working on the UI design, we redesigned all the buttons on
+              the site, visually expanding them and making them more rounded,
+              while leaving the original blue color, which helped to preserve
+              the associative connections and simplify user interactions on the
+              site.
             </AnimationOnScroll>
           </p>
         </div>
@@ -80,7 +80,7 @@ const DesignSolutions: React.FunctionComponent = () => {
             delay={0.2}
           >
             <h5>
-              <span>50+</span> Тематических иконок
+              <span>50+</span> custom icons
             </h5>
           </AnimationOnScroll>
           <p>
@@ -90,10 +90,9 @@ const DesignSolutions: React.FunctionComponent = () => {
               delay={0.5}
               as="span"
             >
-              Добавление единообразных иконок к определенным разделам сайта
-              освежило внешний вид портала, разбавило большое количество текста,
-              укрепило ассоциативные связи пользователя с конкретными
-              действиями.
+              Adding unified icons to certain sections of the portal refreshed
+              the appearance, diluted a large amount of text, and strengthened
+              the user's associative connections with specific actions.
             </AnimationOnScroll>
           </p>
         </div>
@@ -106,7 +105,7 @@ const DesignSolutions: React.FunctionComponent = () => {
             delay={0.2}
           >
             <h5>
-              <span>4</span> Креативных дизайнера
+              <span>4</span> ideas of user interactions
             </h5>
           </AnimationOnScroll>
           <p>
@@ -116,9 +115,9 @@ const DesignSolutions: React.FunctionComponent = () => {
               delay={0.5}
               as="span"
             >
-              Нашей команде также удалось успешно соединить серьезную тематику
-              портала и тематические изображения, не отвлекая при этом внимания
-              пользователей сайта.
+              Our team also managed to successfully combine the serious topics
+              of the portal and thematic images, without distracting the
+              attention of users.
             </AnimationOnScroll>
           </p>
         </div>
@@ -145,7 +144,7 @@ const DesignSolutions: React.FunctionComponent = () => {
             delay={0.2}
           >
             <h5>
-              <span>Правильные</span> акценты
+              <span>7</span> ideas of highlighting
             </h5>
           </AnimationOnScroll>
           <p>
@@ -155,9 +154,9 @@ const DesignSolutions: React.FunctionComponent = () => {
               delay={0.5}
               as="span"
             >
-              Добавив больше воздуха между отдельными элементами сайта и
-              расчертив границы между блоками нам удалось сделать портал
-              визуально более легким, а взаимодействие на сайте более удобным.
+              By adding more air between the elements of the site and drawing
+              the boundaries between the blocks, we managed to make the portal
+              visually easier, and the interaction on the site more convenient.
             </AnimationOnScroll>
           </p>
         </div>
@@ -170,7 +169,7 @@ const DesignSolutions: React.FunctionComponent = () => {
             delay={0.2}
           >
             <h5>
-              <span>Удобная</span> навигация
+              <span>3</span> ways to show easy navigation
             </h5>
           </AnimationOnScroll>
           <p>
@@ -180,9 +179,9 @@ const DesignSolutions: React.FunctionComponent = () => {
               delay={0.5}
               as="span"
             >
-              Путем создания чекбоксов мы улучшили процесс поиска необходимой
-              информации на сайте, повысив таким образом для пользователя
-              вероятность решить поставленную задачу, найти ответ.
+              By creating checkboxes we have improved the process of finding
+              necessary information on the site, thus increasing the probability
+              for a user to solve the problem and find the answer.
             </AnimationOnScroll>
           </p>
         </div>

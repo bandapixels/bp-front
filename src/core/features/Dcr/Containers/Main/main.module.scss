@@ -40,7 +40,6 @@
 }
 
 .dcrAboutText {
-  max-width: 720px;
   position: relative;
 
   h3 {
@@ -49,6 +48,7 @@
     line-height: 130%;
     color: #fff;
     margin-bottom: 25px;
+    max-width: 850px;
 
     &:first-letter {
       color: #EFE314;
@@ -61,6 +61,7 @@
     letter-spacing: 0.01em;
     color: #E0E0E0;
     font-family: 'Open Sans', sans-serif;
+    max-width: 720px;
 
     &:not(:last-child) {
       margin-bottom: 25px;

@@ -26,7 +26,7 @@ const Prototypes: React.FunctionComponent = () => {
             animationName={AnimationNames.fadeInUp}
             duration={1}
           >
-            <h3>Прототипы</h3>
+            <h3>Prototypes</h3>
           </AnimationOnScroll>
           <div className={styles.dcrPrototypesText}>
             <div>
@@ -37,9 +37,9 @@ const Prototypes: React.FunctionComponent = () => {
                   as="span"
                   delay={0.5}
                 >
-                  Прототип позволил ускорить весь процесс создания дизайна,
-                  увидеть целостную картину всего приложения, а также
-                  использовать бюджет проекта более рациональным образом.
+                  Prototyping allowed us to speed up the entire design process,
+                  see the whole picture of the application, and also use the
+                  project budget in a more rational way.
                 </AnimationOnScroll>
               </p>
               <p>
@@ -49,10 +49,10 @@ const Prototypes: React.FunctionComponent = () => {
                   as="span"
                   delay={0.7}
                 >
-                  Исходя из аналитики мы создали свою версию расположения
-                  элементов и блоков на портале, прибегая к минимальным
-                  изменениям на сайте, чтобы не усложнять дальнейшее
-                  взаимодействие пользователей с сервисом.
+                  Based on the analysis, we arranged the elements and blocks on
+                  the portal in a different way, resorting to minimal changes on
+                  the site so as not to complicate further user interaction with
+                  the service.
                 </AnimationOnScroll>
               </p>
             </div>
@@ -64,9 +64,9 @@ const Prototypes: React.FunctionComponent = () => {
                   as="span"
                   delay={0.9}
                 >
-                  Благодаря прототипу, клиент смог наглядно увидеть изменения и
-                  оценить новые возможности своего продукта. Кроме того, мы
-                  придумали несколько новых полезных пользовательских сценариев.
+                  Due to the prototype, the client was able to see the changes
+                  and evaluate new capabilities of his product. In addition, we
+                  have come up with some new useful user scripts.
                 </AnimationOnScroll>
               </p>
               <p>
@@ -76,8 +76,8 @@ const Prototypes: React.FunctionComponent = () => {
                   as="span"
                   delay={1.1}
                 >
-                  Таким образом, нам удалось существенно повысить уровень
-                  удобства использования портала DCR Solutions.
+                  Thus, we have managed to significantly improve the usability
+                  of the DCR Solutions portal.
                 </AnimationOnScroll>
               </p>
             </div>

@@ -8,7 +8,7 @@ const Analysis: React.FunctionComponent = () => {
   return (
     <section className={styles.dcrAnalysisWrapper}>
       <AnimationOnScroll animationName={AnimationNames.fadeInUp} duration={1}>
-        <h3>Анализ и Решение</h3>
+        <h3>Analysis and solutions</h3>
       </AnimationOnScroll>
       <div className={styles.dcrAnalysisList}>
         <div className={styles.dcrAnalysisItem}>
@@ -28,10 +28,11 @@ const Analysis: React.FunctionComponent = () => {
             duration={0.5}
           >
             <div className={styles.dcrAnalysisItemContent}>
-              <h4>Детальный Анализ</h4>
+              <h4>Detailed analysis</h4>
               <p>
-                Для комплексного решения проблематики компании мы подробно
-                изучили платформу DCR Solutions, определив ее слабые стороны.
+                In order to provide comprehensive solution to the existing
+                design problems, we studied the platform in detail, identifying
+                its weaknesses.
               </p>
             </div>
           </AnimationOnScroll>
@@ -55,12 +56,12 @@ const Analysis: React.FunctionComponent = () => {
             delay={0.5}
           >
             <div className={styles.dcrAnalysisItemContent}>
-              <h4>Обсуждение с Клиентом</h4>
+              <h4>Defining business goals</h4>
               <p>
-                Наши специалисты проанализировали жалобы клиентов, обсудили
-                пожелания заказчика, определили цели и задачи сервиса, а так же
-                сделали аналитику тепловых карт, обсудили ключевые
-                пользовательские сценарии и приоритизировали их.
+                Our specialists analyzed customers’ complaints, discussed their
+                wishes, determined the goals and objectives of the service, as
+                well as conducted analytics based on heat maps, discussed key
+                user scenarios and prioritized them.
               </p>
             </div>
           </AnimationOnScroll>
@@ -84,13 +85,13 @@ const Analysis: React.FunctionComponent = () => {
             delay={0.7}
           >
             <div className={styles.dcrAnalysisItemContent}>
-              <h4>Определение Целей</h4>
+              <h4>Proposal with the solutions</h4>
               <p>
-                В процессе анализа, мы заключили, что платформа DCR Solutions
-                нуждалась в существенной модернизации и обновлении интерфейса,
-                создании нового UI кита и новых более быстрых пользовательских
-                сценариев, изменении размещения отдельных блоков и элементов для
-                большего удобства пользователей.
+                It was obvious that the DCR Solutions platform needed a
+                significant upgrade. We suggested updating the interface,
+                creating a new UI-kit and shorter user scripts, changing the
+                placement of individual blocks and elements for better user
+                experience.
               </p>
             </div>
           </AnimationOnScroll>

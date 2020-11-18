@@ -70,7 +70,7 @@ const Tabs: React.FunctionComponent = () => {
               <div>
                 <h5>
                   <img
-                    src="/images/icons/offers/figma.svg"
+                    src="/images/icons/offers/deliverables.svg"
                     alt="Deliverables"
                   />
                   <span>Deliverables</span>

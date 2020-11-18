@@ -28,7 +28,7 @@ const Problem: React.FunctionComponent = () => {
             animationName={AnimationNames.fadeInUp}
             duration={1}
           >
-            <h3>Проблема</h3>
+            <h3>Challenge</h3>
           </AnimationOnScroll>
           <div className={styles.dcrProblemText}>
             <div>
@@ -39,9 +39,9 @@ const Problem: React.FunctionComponent = () => {
                   delay={0.5}
                   as="span"
                 >
-                  Не смотря на популярность платформы и высокий уровень
-                  востребованности услуг, от клиентов компании начали поступать
-                  жалобы касательно удобства пользования сервисом.
+                  Despite the popularity of the platform and high-level demand
+                  for its services, the company began to receive complaints
+                  regarding service convenience.
                 </AnimationOnScroll>
               </p>
               <p>
@@ -51,10 +51,10 @@ const Problem: React.FunctionComponent = () => {
                   delay={0.7}
                   as="span"
                 >
-                  В связи с неудобным и трудным UX дизайном, который усложнял
-                  поиск решения проблемы, а также из-за устаревшего и хаотичного
-                  UI дизайна, популярность сервиса начала значительно падать.
-                  Как результат – появление оттока клиентов.
+                  Due to the inconvenient and difficult UX design, as well as
+                  outdated and chaotic UI design, the popularity of the service
+                  began to decline significantly. As a result, there was a churn
+                  of customers.
                 </AnimationOnScroll>
               </p>
             </div>
@@ -66,11 +66,11 @@ const Problem: React.FunctionComponent = () => {
                   delay={0.9}
                   as="span"
                 >
-                  Так как портал нацелен на решение огромного количества
-                  клиентских задач, однако не имеет общую налаженную систему,
-                  клиенты не могли быстро и просто достичь своих главных целей,
-                  а значит ключевая функция портала не могла быть успешно
-                  выполненной.
+                  Since the portal is aimed at solving a huge number of client’s
+                  tasks, but does not have a common established system, clients
+                  could not quickly and simply achieve their main goals, which
+                  meant that the key function of the portal could not be
+                  successfully completed.
                 </AnimationOnScroll>
               </p>
             </div>
@@ -165,7 +165,7 @@ const Problem: React.FunctionComponent = () => {
               animationName={AnimationNames.fadeInUp}
               duration={1}
             >
-              <h3>Цвета и UI кит</h3>
+              <h3>Brand Identity</h3>
             </AnimationOnScroll>
             <p>
               <AnimationOnScroll
@@ -174,11 +174,11 @@ const Problem: React.FunctionComponent = () => {
                 delay={0.5}
                 as="span"
               >
-                Так как у клиента уже был готовый логотип с 4 основными цветами
-                – желто-оранжевым, красным, синим и зеленым, мы предпочли
-                придерживаться именно такой цветовой гаммы, чтобы сохранить
-                концепцию сайта, а так же общее восприятие и ассоциации сервиса
-                и компании клиентами.
+                Since the client already had a ready-made logo with 4 main
+                colors - yellow-orange, red, blue and green, we preferred to
+                stick to exactly this color scheme in order to preserve the
+                concept of the site, as well as the general perception and
+                associations of the service and company by clients.
               </AnimationOnScroll>
             </p>
             <p>
@@ -188,9 +188,9 @@ const Problem: React.FunctionComponent = () => {
                 delay={0.7}
                 as="span"
               >
-                Исходя их этих цветов мы разработали индивидуальный UI кит для
-                единой стилистики сайта с различными элементами, плажками,
-                чекбоксами, кнопками, выполненными в стиле компании.
+                Based on these colors, we have developed an individual UI kit
+                for a unified website style with various elements, checkboxes,
+                buttons, alining with the style of the company.
               </AnimationOnScroll>
             </p>
             <p>
@@ -200,10 +200,10 @@ const Problem: React.FunctionComponent = () => {
                 delay={0.9}
                 as="span"
               >
-                Одним из основных цветов сайта был выбран синий цвет и разные
-                его оттенки, в связи с тем, что он отлично сочетается с SAAS, и
-                ассоциируется со стабильностью, прочностью, надежностью, не
-                отвлекает внимания и не вызывает негативных эмоций.
+                The main color of the site was chosen to be blue with its
+                various shades, as it goes well with SAAS, is associated with
+                stability, durability, reliability, does not distract attention
+                and does not cause negative emotions.
               </AnimationOnScroll>
             </p>
           </div>
