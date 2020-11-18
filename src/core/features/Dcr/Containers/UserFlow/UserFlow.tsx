@@ -23,7 +23,7 @@ const UserFlow: React.FunctionComponent = () => {
               animationName={AnimationNames.fadeInUp}
               duration={1}
             >
-              <h3>Юзерфлоу</h3>
+              <h3>User flow</h3>
             </AnimationOnScroll>
             <p>
               <AnimationOnScroll
@@ -32,8 +32,9 @@ const UserFlow: React.FunctionComponent = () => {
                 as="span"
                 delay={0.5}
               >
-                Для наглядности и удобства восприятия связи между страницами и
-                основными их элементами, был создан удобный User Flow
+                The relationship between pages and their main elements was
+                complicated. For clarity and ease of perception a convenient
+                User Flow was created.
               </AnimationOnScroll>
             </p>
             <p>
@@ -43,8 +44,8 @@ const UserFlow: React.FunctionComponent = () => {
                 as="span"
                 delay={0.7}
               >
-                Связь, которая отобразилась на данной схеме, ускорила процес
-                восприятия и ориентации в приложени.
+                The connections shown in this diagram has improved the
+                perception and navigation process in the application.
               </AnimationOnScroll>
             </p>
           </div>

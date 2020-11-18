@@ -37,7 +37,7 @@ const Main: React.FunctionComponent = () => {
               animationName={AnimationNames.fadeInUp}
               duration={1}
             >
-              <h3>О компании</h3>
+              <h3>About the company</h3>
             </AnimationOnScroll>
             <p>
               <AnimationOnScroll
@@ -46,9 +46,8 @@ const Main: React.FunctionComponent = () => {
                 delay={0.5}
                 as="span"
               >
-                DCR Solutions – инновационная датская IT-компания, которая
-                занимается диджитализацей сложных рабочих процессов и конечно
-                же, разработкой поддерживаемых пользователями IT-систем.
+                DCR Solutions is an innovative Danish IT company that digitizes
+                complex workflows and develops user-supported IT systems.
               </AnimationOnScroll>
             </p>
             <p>
@@ -58,10 +57,10 @@ const Main: React.FunctionComponent = () => {
                 delay={0.7}
                 as="span"
               >
-                На своей платформе они создают различные графики и схемы для
-                отображения статистики, которые пошагово помогают решить
-                проблемы, возникающие в бизнесе, связанные с привлечением нового
-                персонала, расходами компании, процессом страхования.
+                On their platform, they create various graphs and schemes for
+                displaying statistics, which step by step help to solve business
+                problems , such as attracting new personnel, company expenses
+                and insurance process.
               </AnimationOnScroll>
             </p>
           </div>
