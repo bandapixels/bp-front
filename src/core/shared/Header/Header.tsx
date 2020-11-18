@@ -70,7 +70,8 @@ const Header: React.FunctionComponent = () => {
     openedMenuWrapper: openedMenu,
     smallYellowHeader: router.pathname === "/form",
     blogHeader: router.pathname === "/projects",
-    casesHeader: casesPages.includes(router.pathname)
+    casesHeader: casesPages.includes(router.pathname),
+    smallFullYellowHeader: router.route === "/404"
   });
 
   const handlerScrollInCases = (): void => {
