@@ -17,7 +17,7 @@ const Posts: React.FunctionComponent = () => {
   const formatDate = (date: string): string => {
     const publishDate = new Date(date);
 
-    return publishDate.toDateString();
+    return `${publishDate.getDate()}.${publishDate.getMonth()}.${publishDate.getFullYear()}`;
   };
 
   useEffect(() => {
