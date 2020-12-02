@@ -77,7 +77,7 @@ const DiscussTheProject: React.FunctionComponent = () => {
     checkedStep?: number
   ): number => {
     const emailReg = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    const skypeReg = /^[a-zA-Z][a-zA-Z0-9_.,-]{5,31}$/;
+    const skypeReg = /[a-zA-Z][a-zA-Z0-9\-_]{5,31}/;
     const checkLength = ["name", "company", "task", "projectType", "budget"];
     let newData = { ...formData };
 

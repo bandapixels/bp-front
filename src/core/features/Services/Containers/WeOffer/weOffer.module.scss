@@ -59,6 +59,16 @@
   }
 }
 
+@media only screen and (max-width: 1480px) {
+  .tabsList {
+    margin: 0 0 5vh;
+  }
+
+  .offerContainer {
+    padding: 20vh 60px 13vh;
+  }
+}
+
 @media only screen and (max-width: $breakpoint-mobile) {
   .gradient-vertical,
   .gradient-horizontal {
