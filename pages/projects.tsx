@@ -35,10 +35,10 @@ const Contacts: NextPage = () => {
             __html: `{
             "@context": "https://schema.org",
             "@type": "Organization",
+            "name": "Bandapixels",
             "url": "https://banda-copy.vercel.app",
             "email": "team(at)bandapixels.com",
             "logo": "https://banda-copy.vercel.app/images/banda-logo.jpg",
-            "legalName": "Bandapixels",
             "sameAs" : [
               "https://www.behance.net/bandapixels",
               "https://www.facebook.com/BandaPixels",
