@@ -31,7 +31,7 @@ const Custom404: NextPage = () => {
             "@type": "Organization",
             "name": "Bandapixels",
             "url": "https://banda-copy.vercel.app",
-            "email": "team(at)bandapixels.com",
+            "email": "team@bandapixels.com",
             "logo": "https://banda-copy.vercel.app/images/banda-logo.jpg",
             "sameAs" : [
               "https://www.behance.net/bandapixels",
