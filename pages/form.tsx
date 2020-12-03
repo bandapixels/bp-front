@@ -8,7 +8,7 @@ const Contacts: NextPage = () => {
   return (
     <StoreLayout>
       <Head>
-        <title>Form</title>
+        <title>Discuss the project</title>
       </Head>
       <DiscussTheProject />
     </StoreLayout>
