@@ -15,6 +15,7 @@ const ProjectsWrapper: React.FunctionComponent = () => {
           footerDescription={project.footerDescription}
           key={project.title}
           video={project.video}
+          image={project.image}
           url={project.url}
           orientation={project.orientation}
           position={project.position}

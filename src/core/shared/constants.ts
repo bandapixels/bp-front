@@ -31,10 +31,10 @@ export default {
       footerDescription: `
         Following the modern trends and successful experince of similar web apps, we decided to display the user flow as Wizard Design and create a simple instrument layout for users to easily work with the app.  
       `,
-      video: "",
       url: "/sunup",
       orientation: "landscape",
-      position: "right"
+      position: "right",
+      image: "/images/sunup.png"
     },
     {
       title: "Shed - a Service Where you Can Rent Everything You Need",
@@ -77,10 +77,10 @@ export default {
       footerDescription: `
         Eventually, more and more professionals, like attorneys and therapists, started using the app because of its improved, clear and convenient design for desktop and mobile interfaces.
       `,
-      video: "",
       url: "/casekeepers",
       orientation: "landscape",
-      position: "left"
+      position: "left",
+      image: "/images/casekeepers.png"
     }
   ]
 };

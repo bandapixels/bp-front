@@ -19,13 +19,14 @@ interface ProjectProps {
   description?: string;
   footerTitle?: string;
   footerDescription?: string;
-  video: string;
+  video?: string;
   url: string;
   orientation: string;
   position: string;
   isFirst: boolean;
   isLast: boolean;
   projectIndex: number;
+  image?: string;
 }
 
 const Project: React.FunctionComponent<ProjectProps> = ({
@@ -39,7 +40,8 @@ const Project: React.FunctionComponent<ProjectProps> = ({
   position,
   isFirst,
   isLast,
-  projectIndex
+  projectIndex,
+  image
 }) => {
   const [visiblePart, setVisiblePart] = useState(description);
   const [hiddenPart, setHiddenPart] = useState("");
@@ -136,7 +138,7 @@ const Project: React.FunctionComponent<ProjectProps> = ({
             </span>
           )}
         </div>
-        {!!video.length && (
+        {video && (
           <video
             muted
             autoPlay
@@ -151,6 +153,9 @@ const Project: React.FunctionComponent<ProjectProps> = ({
             <source src={video} type="video/mp4" />
           </video>
         )}
+        {!video && image ? (
+          <img src={image} alt={title} className={styles.projectImage} />
+        ) : null}
       </div>
       <div className={styles.projectPageFooter}>
         <div className={styles.projectPageFooterLeftPart}>

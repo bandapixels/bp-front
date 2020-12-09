@@ -82,6 +82,7 @@ const Projects: React.FunctionComponent = () => {
               orientation={projectsInfo[activeSlide].orientation}
               position={projectsInfo[activeSlide].position}
               title={projectsInfo[activeSlide].title}
+              image={projectsInfo[activeSlide].image}
             />
           </div>
         </div>

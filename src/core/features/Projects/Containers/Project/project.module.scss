@@ -33,6 +33,12 @@
   padding: 0 180px 0 0;
 }
 
+.projectImage {
+  display: block;
+  max-width: 850px;
+  max-height: 480px;
+}
+
 .projectPageInfo {
   margin: 0 60px 0 0;
   max-width: 840px;
@@ -253,7 +259,8 @@
 }
 
 @media screen and (max-width: 1680px) {
-  .projectPageMedia {
+  .projectPageMedia,
+  .projectImage {
     max-width: 640px;
     max-height: 380px;
   }
@@ -326,6 +333,9 @@
 }
 
 @media screen and (max-width: $breakpoint-max-width) and (max-height: 1000px) {
+  .projectImage {
+    max-width: 440px;
+  }
   .projectPageMedia {
     flex: 0 1 auto;
     max-width: 440px;
@@ -427,6 +437,10 @@
 
 @media screen and (max-width: $breakpoint-mobile) {
   .projectPageMedia {
+    max-width: 100%;
+  }
+
+  .projectImage {
     max-width: 100%;
   }
 
