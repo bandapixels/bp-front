@@ -45,7 +45,7 @@ const Preloader: React.FunctionComponent = () => {
           onEnded={handlerVideoEnd}
           playsInline
         >
-          <source src="/videos/logo-loader.mp4" type="video/mp4" />
+          <source src="/videos/BandaPixelsAnimation.mp4" type="video/mp4" />
         </video>
       </div>
     )
