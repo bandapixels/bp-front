@@ -27,9 +27,11 @@ interface ProjectProps {
   isLast: boolean;
   projectIndex: number;
   image?: string;
+  data: boolean;
 }
 
 const Project: React.FunctionComponent<ProjectProps> = ({
+  data,
   title,
   description,
   footerTitle,
@@ -106,7 +108,7 @@ const Project: React.FunctionComponent<ProjectProps> = ({
     <section
       className={styles.projectPageItem}
       ref={refGridWrapper}
-      data-header="blog-header"
+      data-header={data ? "black" : "blog-header"}
     >
       <div
         className={classNames(styles.projectPageContent, {
