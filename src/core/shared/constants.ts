@@ -1,6 +1,6 @@
 export default {
   schema: "https://",
-  host: process.env.APP_HOSTNAME || "bandapixels.com",
+  host: process.env.APP_HOSTNAME || "bp.foxyloxy.me",
   helpers: {
     form: "/contact",
     blog: "/postList"
