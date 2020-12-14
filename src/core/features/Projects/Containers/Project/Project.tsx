@@ -5,7 +5,7 @@ import classNames from "classnames";
 import Link from "next/link";
 import useGrid from "../../../../utils/useGrid";
 import useRedrawGrid from "../../../../utils/useRedrawGrid";
-
+import ContactsBlock from "../../../../shared/ContactsBlock/ContactsBlock";
 import styles from "./project.module.scss";
 import BigArrow from "../../../../shared/Icons/BigArrow";
 import ArrowForSlider from "../../../../shared/Icons/ArrowForSlider";
@@ -190,18 +190,16 @@ const Project: React.FunctionComponent<ProjectProps> = ({
               </Button>
             </div>
           )}
-          {!isLast && (
-            <div className={styles.projectPageDownBtn}>
-              <Button
-                type="button"
-                handlerClick={(): void => {
-                  changeProject("down");
-                }}
-              >
-                <ArrowForSlider />
-              </Button>
-            </div>
-          )}
+          <div className={styles.projectPageDownBtn}>
+            <Button
+              type="button"
+              handlerClick={(): void => {
+                changeProject("down");
+              }}
+            >
+              <ArrowForSlider />
+            </Button>
+          </div>
         </div>
       </div>
     </section>

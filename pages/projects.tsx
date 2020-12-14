@@ -4,6 +4,7 @@ import Head from "next/head";
 import StoreLayout from "../src/core/layouts/StoreLayout";
 import ProjectsWrapper from "../src/core/features/Projects/Containers/ProjectsWrapper/ProjectsWrapper";
 import FullPageScroll from "../src/core/shared/FullPageScroll/Containers/FullPageScroll";
+import ContactsBlock from "../src/core/shared/ContactsBlock/ContactsBlock";
 
 const Contacts: NextPage = () => {
   return (
@@ -52,6 +53,7 @@ const Contacts: NextPage = () => {
       <StoreLayout>
         <FullPageScroll>
           <ProjectsWrapper />
+          <ContactsBlock />
         </FullPageScroll>
       </StoreLayout>
     </>
