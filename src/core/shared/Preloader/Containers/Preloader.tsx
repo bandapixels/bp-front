@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import classNames from "classnames";
 import { useSelector, useDispatch } from "react-redux";
 import styles from "./preloader.module.scss";
-import { getStart } from "../preloader.selectors";
+import { getStart, getIsShow } from "../preloader.selectors";
 import { AppState } from "../../../store/store";
-import { setStart } from "../preloader.actions";
+import { setStart, setIsShow } from "../preloader.actions";
 
 const Preloader: React.FunctionComponent = () => {
   const dispatch = useDispatch();
   const shouldStart = useSelector((state: AppState) => getStart(state));
+  const isShow = useSelector((state: AppState) => getIsShow(state));
   const [startAnimation, setStartAnimation] = useState(false);
   const classes = classNames(styles.preloaderOverlay, {
     preloaderOut: startAnimation
@@ -21,6 +22,8 @@ const Preloader: React.FunctionComponent = () => {
       document.body.style.overflow = "visible";
       document.body.style.height = "auto";
     }
+
+    dispatch(setIsShow());
   };
 
   const handlerAnimation = (): void => {
@@ -34,6 +37,7 @@ const Preloader: React.FunctionComponent = () => {
   }, []);
 
   return (
+    !isShow &&
     shouldStart && (
       <div className={classes} onAnimationEnd={handlerAnimation}>
         <video
