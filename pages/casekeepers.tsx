@@ -27,7 +27,7 @@ const CaseKeepers: NextPage = () => {
         />
         <meta
           property="og:image"
-          content="https://banda-copy.vercel.app/images/casekeepers.png"
+          content="https://banda-copy.vercel.app/images/projectsMain/casekeepers.jpg"
         />
         <meta property="og:image:type" content="image/jpg" />
         <meta property="og:image:width" content="1200" />

@@ -27,7 +27,7 @@ const SunUp: NextPage = () => {
         />
         <meta
           property="og:image"
-          content="https://banda-copy.vercel.app/images/sunup.png"
+          content="https://banda-copy.vercel.app/images/projectsMain/sunup.jpg"
         />
         <meta property="og:image:type" content="image/jpg" />
         <meta property="og:image:width" content="1200" />

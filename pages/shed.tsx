@@ -27,7 +27,7 @@ const Shed: NextPage = () => {
         />
         <meta
           property="og:image"
-          content="https://banda-copy.vercel.app/images/shed.png"
+          content="https://banda-copy.vercel.app/images/projectsMain/shed.jpg"
         />
         <meta property="og:image:type" content="image/jpg" />
         <meta property="og:image:width" content="1200" />

@@ -25,7 +25,7 @@ const Dcr: NextPage = () => {
         />
         <meta
           property="og:image"
-          content="https://banda-copy.vercel.app/images/dcr.png"
+          content="https://banda-copy.vercel.app/images/projectsMain/dcr.jpg"
         />
         <meta property="og:image:type" content="image/jpg" />
         <meta property="og:image:width" content="1200" />

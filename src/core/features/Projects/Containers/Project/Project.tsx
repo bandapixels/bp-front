@@ -12,6 +12,7 @@ import Button from "../../../../shared/coreUi/Button/Button";
 import { changeSection } from "../../../../shared/FullPageScroll/fullPageScroll.actions";
 import { AppState } from "../../../../store/store";
 import { getSection } from "../../../../shared/FullPageScroll/fullPageScroll.selectors";
+import useIsMobile from "../../../../utils/useIsMobile";
 
 interface ProjectProps {
   title: string;
@@ -51,6 +52,7 @@ const Project: React.FunctionComponent<ProjectProps> = ({
   const refGridWrapper = useRef<HTMLElement>();
   const dispatch = useDispatch();
   const activeSection = useSelector((state: AppState) => getSection(state));
+  const isMobile = useIsMobile();
 
   const splitTextForMobile = (): void => {
     if (window.outerWidth <= 668) {
@@ -139,7 +141,7 @@ const Project: React.FunctionComponent<ProjectProps> = ({
             </span>
           )}
         </div>
-        {video && (
+        {video && !isMobile && (
           <video
             muted
             autoPlay
@@ -154,7 +156,7 @@ const Project: React.FunctionComponent<ProjectProps> = ({
             <source src={video} type="video/mp4" />
           </video>
         )}
-        {!video && image ? (
+        {!video || (image && isMobile) ? (
           <img src={image} alt={title} className={styles.projectImage} />
         ) : null}
       </div>
