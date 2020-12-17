@@ -15,14 +15,12 @@ const Preloader: React.FunctionComponent = () => {
   });
 
   const handlerVideoEnd = (): void => {
-    setTimeout(() => {
-      setStartAnimation(true);
+    setStartAnimation(true);
 
-      if (window.innerWidth < 669) {
-        document.body.style.overflow = "visible";
-        document.body.style.height = "auto";
-      }
-    }, 500);
+    if (window.innerWidth < 669) {
+      document.body.style.overflow = "visible";
+      document.body.style.height = "auto";
+    }
   };
 
   const handlerAnimation = (): void => {
