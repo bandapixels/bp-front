@@ -76,6 +76,8 @@
   display: block;
   max-width: 850px;
   max-height: 480px;
+  border: 8px solid #4F4F4F;
+  border-radius: 10px;
 }
 
 .projectMedia {
@@ -421,14 +423,14 @@
 
   .projectDescription {
     margin: 0 0 20px;
-  
+
     h3 {
       font-size: 20px;
       line-height: 23px;
       color: #fff;
       margin: 0 0 10px;
     }
-  
+
     div {
       max-width: none;
       font-size: 14px;
