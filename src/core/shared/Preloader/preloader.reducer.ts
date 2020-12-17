@@ -1,8 +1,7 @@
 import { PreloaderState } from "./preloader.state";
 
 const initialState: PreloaderState = {
-  startPreloader: true,
-  isShow: false
+  startPreloader: true
 };
 
 const reducer = (state = initialState, action): PreloaderState => {
@@ -11,11 +10,6 @@ const reducer = (state = initialState, action): PreloaderState => {
       return {
         ...state,
         startPreloader: false
-      };
-    case "SET_IS_SHOW":
-      return {
-        ...state,
-        isShow: true
       };
     default:
       return state;
