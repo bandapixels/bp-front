@@ -3,6 +3,7 @@ import { PreloaderState } from "../shared/Preloader/preloader.state";
 import { ShowFormState } from "../features/MainPage/mainPage.state";
 import { BlogPageState } from "../features/BlogPage/blogPage.state";
 import { ElementsState } from "../utils/AnimationOnScroll/animationOnScroll.state";
+import { ArticlesState } from "../features/Error/error.state";
 
 export interface AppState {
   fullPageScrollReducer: FullPageScrollState;
@@ -10,6 +11,7 @@ export interface AppState {
   showFormReducer: ShowFormState;
   blogPageReducer: BlogPageState;
   animationOnScrollReducer: ElementsState;
+  articlesReducer: ArticlesState;
 }
 
 export class Action {

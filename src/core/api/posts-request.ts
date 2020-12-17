@@ -8,6 +8,14 @@ export class PostsRequest {
 
     return request.get(url);
   };
+
+  public GetLastPosts = (numberOfPosts: number): Promise<AxiosResponse> => {
+    const url = `${api.schema +
+      api.host +
+      api.helpers.latestPosts}?amount=${numberOfPosts}`;
+
+    return request.get(url);
+  };
 }
 
 const instance = new PostsRequest();

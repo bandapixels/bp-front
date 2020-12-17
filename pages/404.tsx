@@ -2,7 +2,7 @@ import React from "react";
 import { NextPage } from "next";
 import Head from "next/head";
 import StoreLayout from "../src/core/layouts/StoreLayout";
-import Error from "../src/core/features/Error/Error";
+import Error from "../src/core/features/Error/containers/Error";
 
 const Custom404: NextPage = () => {
   return (

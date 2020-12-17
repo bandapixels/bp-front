@@ -3,7 +3,8 @@ export default {
   host: process.env.APP_HOSTNAME || "bp.foxyloxy.me",
   helpers: {
     form: "/contact",
-    blog: "/postList"
+    blog: "/postList",
+    latestPosts: "/latestPosts"
   },
   projects: [
     {
