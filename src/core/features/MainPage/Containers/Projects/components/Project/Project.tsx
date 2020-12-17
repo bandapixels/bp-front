@@ -5,6 +5,7 @@ import Link from "next/link";
 
 import styles from "./project.module.scss";
 import BigArrow from "../../../../../../shared/Icons/BigArrow";
+import useIsMobile from "../../../../../../utils/useIsMobile";
 
 interface ProjectProps {
   title: string;
@@ -33,6 +34,7 @@ const Project: React.FunctionComponent<ProjectProps> = ({
   const [hiddenPart, setHiddenPart] = useState("");
   const [visible, setVisible] = useState(false);
   const router = useRouter();
+  const isMobile = useIsMobile();
 
   const splitTextForMobile = (): void => {
     if (window.outerWidth <= 668) {
@@ -86,7 +88,7 @@ const Project: React.FunctionComponent<ProjectProps> = ({
             </span>
           )}
         </div>
-        {video ? (
+        {video && !isMobile ? (
           <video
             muted
             autoPlay
@@ -101,7 +103,7 @@ const Project: React.FunctionComponent<ProjectProps> = ({
             <source src={video} type="video/mp4" />
           </video>
         ) : null}
-        {!video && image ? (
+        {!video || (image && isMobile) ? (
           <img src={image} alt={title} className={styles.projectImage} />
         ) : null}
       </div>

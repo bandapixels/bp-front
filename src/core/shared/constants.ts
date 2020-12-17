@@ -19,7 +19,8 @@ export default {
       video: "/videos/AppNavi_animate.mp4",
       url: "/appnavi",
       orientation: "landscape",
-      position: "right"
+      position: "right",
+      image: "/images/projectsMain/appnavi.png"
     },
     {
       title: "SunUP - Solar Panel Interactive Web Application",
@@ -34,7 +35,7 @@ export default {
       url: "/sunup",
       orientation: "landscape",
       position: "right",
-      image: "/images/sunup.png"
+      image: "/images/projectsMain/sunup.png"
     },
     {
       title: "Shed - a Service Where you Can Rent Everything You Need",
@@ -49,7 +50,8 @@ export default {
       video: "/videos/shed.mp4",
       url: "/shed",
       orientation: "landscape",
-      position: "right"
+      position: "right",
+      image: "/images/projectsMain/shed.png"
     },
     {
       title: "DCR - Business Digitalization Platform ",
@@ -65,7 +67,8 @@ export default {
       video: "/videos/dcr.mp4",
       url: "/dcr",
       orientation: "landscape",
-      position: "left"
+      position: "left",
+      image: "/images/projectsMain/dcr.png"
     },
     {
       title: "CaseKeepers - Service for Lawyers & Their Clients",
@@ -80,7 +83,7 @@ export default {
       url: "/casekeepers",
       orientation: "landscape",
       position: "left",
-      image: "/images/casekeepers.png"
+      image: "/images/projectsMain/casekeepers.png"
     }
   ]
 };
