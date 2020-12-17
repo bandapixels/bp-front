@@ -184,7 +184,8 @@
 @media only screen and (max-width: $breakpoint-mobile) {
   .blogWrapper {
     height: auto;
-    padding: 60px 15px 0;
+    //padding: 60px 15px 0;
+    padding: 20px 15px 0;
     background-color: #333;
     background-image: linear-gradient( rgba(255,255,255,.1), transparent 1px), linear-gradient( 90deg, rgba(255,255,255,.1), transparent 1px);
     background-size: 15px 15px;
@@ -192,6 +193,7 @@
     display: block;
 
     h1 {
+      display: none;
       font-size: 26px;
       margin: 0 0 20px;
     }
@@ -206,9 +208,11 @@
 
   .blogItem {
     display: block;
-    margin: 0 0 30px;
+    margin: 0 0 15px;
+    padding-bottom: 8px;
 
     &:not(:last-child) {
+      border-bottom: 1px solid #656565;
       margin-right: 0;
     }
   }
@@ -217,8 +221,9 @@
     margin: 0 auto 15px;
   }
 
-  .postInfo { 
+  .postInfo {
     h4 {
+      opacity: 1;
       margin: 0 0 5px;
     }
   }
@@ -228,6 +233,7 @@
   }
 
   .postAnnotation {
+    opacity: 1;
     margin: 0 0 10px;
   }
 }
