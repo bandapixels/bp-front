@@ -26,9 +26,8 @@ const Main: React.FunctionComponent = () => {
             delay={0.5}
           >
             <p>
-              Solar Roof is comparable in price to a typical roof with solar
-              panels. Purchase SunUp Roof at one of the lowest cost-per-watt of
-              any national provider
+              SunUp is an interactive web application with 3D animations to
+              automatically layout solar panels on rooftops.
             </p>
           </AnimationOnScroll>
         </div>

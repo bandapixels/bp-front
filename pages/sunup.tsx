@@ -58,8 +58,8 @@ const SunUp: NextPage = () => {
         <ScrollLayout>
           <Main />
           <UserFlow />
-          <Problems />
-          <Challenge />
+          {/* <Problems /> */}
+          {/* <Challenge /> */}
           <ProjectTimeline />
           <Analysis />
           <Images />

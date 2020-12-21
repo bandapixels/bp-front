@@ -36,16 +36,9 @@ const Analysis: React.FunctionComponent = () => {
               delay={0.5}
             >
               <p>
-                Solar Roof is comparable in price to a typical roof with solar
-                panels. Purchase SunUp Roof at one of the lowest cost-per-watt
-                of any national provider and take control of your monthly
-                electricity bill.
-              </p>
-              <p>
-                Solar Roof is comparable in price to a typical roof with solar
-                panels. Purchase SunUp Roof at one of the lowest cost-per-watt
-                of any national provider and take control of your monthly
-                electricity bill.
+                The main design challenge was for the user to take the fewest
+                steps to create the layout of solar panels on rooftops. The
+                solution was to show the steps using Wizard Design.
               </p>
             </AnimationOnScroll>
           </div>

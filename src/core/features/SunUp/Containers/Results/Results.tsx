@@ -30,10 +30,11 @@ const Results: React.FunctionComponent = () => {
           delay={0.5}
         >
           <p>
-            Solar Roof is comparable in price to a typical roof with solar
-            panels. Purchase SunUp Roof at one of the lowest cost-per-watt of
-            any national provider and take control of your monthly electricity
-            bill.
+            We have created intuitive design for an interactive web application,
+            following modern trends in design for similar sofwares. The user
+            questionnaire clearly showed that the new design is more convenient
+            and comprehensible, as well as average user’s time for wizard
+            creation has decreased by 45%.
           </p>
         </AnimationOnScroll>
       </div>
