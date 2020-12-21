@@ -1,8 +1,16 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
-import { getSection } from "../fullPageScroll.selectors";
-import { changeSection } from "../fullPageScroll.actions";
+import {
+  getSection,
+  getCanScroll,
+  getActiveAnimation
+} from "../fullPageScroll.selectors";
+import {
+  changeSection,
+  updateActiveAnimation,
+  updateCanScroll
+} from "../fullPageScroll.actions";
 import { AppState } from "../../../store/store";
 import { checkBrowser } from "../../../utils/checkBrowser";
 import { getStart } from "../../Preloader/preloader.selectors";
@@ -10,10 +18,12 @@ import styles from "./fullPageScroll.scss";
 
 const FullPageScroll: React.FunctionComponent = ({ children }) => {
   const router = useRouter();
-  const [activeAnimation, setActiveAnimation] = useState(false);
-  const [canScroll, setCanScroll] = useState(true);
   const refFullPage = useRef<HTMLDivElement>();
   const activeSec = useSelector((state: AppState) => getSection(state));
+  const activeAnimation = useSelector((state: AppState) =>
+    getActiveAnimation(state)
+  );
+  const canScroll = useSelector((state: AppState) => getCanScroll(state));
   const startScroll =
     router.pathname === "/"
       ? !useSelector((state: AppState) => getStart(state))
@@ -23,7 +33,7 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
   // move content to active section
   const scrollContent = (wrapper: HTMLElement, scrollHeight: number): void => {
     wrapper.setAttribute("style", `transform: translateY(${scrollHeight}vh)`);
-    setActiveAnimation(true);
+    dispatch(updateActiveAnimation(true));
   };
 
   // change header styles
@@ -79,10 +89,10 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
     // change header styles
     changeHeaderStyle(sections, spinValue);
     // allow to scroll after animation ending
+    dispatch(changeSection(spinValue));
     setTimeout(() => {
-      setCanScroll(true);
-      setActiveAnimation(false);
-      dispatch(changeSection(spinValue));
+      dispatch(updateCanScroll(true));
+      dispatch(updateActiveAnimation(false));
     }, 1000);
   };
 
@@ -150,7 +160,7 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
           Math.floor(activeSection.scrollLeft + activeSection.offsetWidth);
 
         if (scrollDiff <= 5 && e.deltaX > 0) {
-          setCanScroll(false);
+          dispatch(updateCanScroll(false));
           // scroll down
           spinValue += 1;
           scrollHeight -= 100;
@@ -160,7 +170,7 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
         }
 
         if (activeSection.scrollLeft < 5 && e.deltaX < 0) {
-          setCanScroll(false);
+          dispatch(updateCanScroll(false));
           // scroll up
           spinValue -= 1;
           scrollHeight += 100;
@@ -183,8 +193,7 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
         if (canScroll) {
           // avoid multi swipes and horizontal scrolling
           if (isScrollingVertically) {
-            setCanScroll(false);
-
+            dispatch(updateCanScroll(false));
             if (delta < 0 && spinValue < sections.length - 1) {
               // scroll down
               spinValue += 1;
@@ -195,7 +204,7 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
               scrollHeight += 100;
             } else {
               // allow to scroll if this is the first section
-              setCanScroll(true);
+              dispatch(updateCanScroll(true));
               return;
             }
 
@@ -230,7 +239,7 @@ const FullPageScroll: React.FunctionComponent = ({ children }) => {
       document.removeEventListener("wheel", changeSlider, false); // Firefox
       document.body.classList.remove("fullpage");
     };
-  }, [startScroll, activeSec, canScroll]);
+  }, [startScroll, activeSec, canScroll, activeAnimation]);
 
   return (
     <>

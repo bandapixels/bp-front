@@ -11,7 +11,10 @@ import ArrowForSlider from "../../../../shared/Icons/ArrowForSlider";
 import Button from "../../../../shared/coreUi/Button/Button";
 import { changeSection } from "../../../../shared/FullPageScroll/fullPageScroll.actions";
 import { AppState } from "../../../../store/store";
-import { getSection } from "../../../../shared/FullPageScroll/fullPageScroll.selectors";
+import {
+  getSection,
+  getCanScroll
+} from "../../../../shared/FullPageScroll/fullPageScroll.selectors";
 import useIsMobile from "../../../../utils/useIsMobile";
 
 interface ProjectProps {
@@ -52,6 +55,7 @@ const Project: React.FunctionComponent<ProjectProps> = ({
   const refGridWrapper = useRef<HTMLElement>();
   const dispatch = useDispatch();
   const activeSection = useSelector((state: AppState) => getSection(state));
+  const canScroll = useSelector((state: AppState) => getCanScroll(state));
   const isMobile = useIsMobile();
 
   const splitTextForMobile = (): void => {
@@ -84,6 +88,8 @@ const Project: React.FunctionComponent<ProjectProps> = ({
   };
 
   const changeProject = (direction): void => {
+    if (!canScroll) return;
+
     let scrollTo: number = projectIndex;
 
     if (direction === "up") {
