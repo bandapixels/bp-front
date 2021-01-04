@@ -16,16 +16,13 @@ const Contacts: NextPage = () => {
         />
         <meta
           property="og:image"
-          content="https://banda-copy.vercel.app/images/banda-logo.jpg"
+          content="https://bandapixels.com/images/banda-logo.jpg"
         />
         <meta property="og:image:type" content="image/jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Bandapixels logo" />
-        <meta
-          property="og:url"
-          content="https://banda-copy.vercel.app/contacts"
-        />
+        <meta property="og:url" content="https://bandapixels.com/contacts" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -33,9 +30,9 @@ const Contacts: NextPage = () => {
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "Bandapixels",
-            "url": "https://banda-copy.vercel.app",
+            "url": "https://bandapixels.com",
             "email": "team@bandapixels.com",
-            "logo": "https://banda-copy.vercel.app/images/banda-logo.jpg",
+            "logo": "https://bandapixels.com/images/banda-logo.jpg",
             "sameAs" : [
               "https://www.behance.net/bandapixels",
               "https://www.facebook.com/BandaPixels",
