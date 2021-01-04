@@ -1,9 +1,15 @@
-import { useEffect, RefObject } from "react";
+import { useEffect, RefObject, useState } from "react";
 import { createGrid, removeGrid } from "./grid";
 
 const useRedrawGrid = (ref: RefObject<HTMLElement>, child?: boolean): void => {
+  const [windowHeight, setWindowHeight] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(0);
+
   useEffect(() => {
     const wrapper = ref.current;
+
+    setWindowHeight(window.innerHeight);
+    setWindowWidth(window.innerWidth);
 
     const updateGridOnResize = (): void => {
       removeGrid(wrapper);
@@ -15,7 +21,7 @@ const useRedrawGrid = (ref: RefObject<HTMLElement>, child?: boolean): void => {
     return (): void => {
       window.removeEventListener("resize", updateGridOnResize);
     };
-  });
+  }, [windowHeight, windowWidth]);
 };
 
 export default useRedrawGrid;
