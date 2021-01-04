@@ -9,7 +9,10 @@ import styles from "./project.module.scss";
 import BigArrow from "../../../../shared/Icons/BigArrow";
 import ArrowForSlider from "../../../../shared/Icons/ArrowForSlider";
 import Button from "../../../../shared/coreUi/Button/Button";
-import { changeSection } from "../../../../shared/FullPageScroll/fullPageScroll.actions";
+import {
+  changeSection,
+  updateCanScroll
+} from "../../../../shared/FullPageScroll/fullPageScroll.actions";
 import { AppState } from "../../../../store/store";
 import {
   getSection,
@@ -89,6 +92,7 @@ const Project: React.FunctionComponent<ProjectProps> = ({
 
   const changeProject = (direction): void => {
     if (!canScroll) return;
+    dispatch(updateCanScroll(false));
 
     let scrollTo: number = projectIndex;
 
@@ -102,6 +106,10 @@ const Project: React.FunctionComponent<ProjectProps> = ({
 
     dispatch(changeSection(scrollTo));
     scrollToSection(scrollTo);
+
+    setTimeout(() => {
+      dispatch(updateCanScroll(true));
+    }, 1000);
   };
 
   useEffect(() => {
