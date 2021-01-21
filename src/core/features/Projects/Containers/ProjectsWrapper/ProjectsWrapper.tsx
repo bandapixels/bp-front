@@ -9,12 +9,14 @@ const ProjectsWrapper: React.FunctionComponent = () => {
     <>
       {projectsInfo.map((project, index: number) => (
         <Project
+          data={index > 0}
           title={project.title}
           description={project.description}
           footerTitle={project.footerTitle}
           footerDescription={project.footerDescription}
           key={project.title}
           video={project.video}
+          image={project.image}
           url={project.url}
           orientation={project.orientation}
           position={project.position}

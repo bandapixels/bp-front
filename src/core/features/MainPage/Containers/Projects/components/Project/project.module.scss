@@ -72,6 +72,14 @@
   display: none;
 }
 
+.projectImage {
+  display: block;
+  max-width: 850px;
+  max-height: 480px;
+  border: 8px solid #4F4F4F;
+  border-radius: 10px;
+}
+
 .projectMedia {
   max-width: 850px;
   max-height: 480px;
@@ -202,6 +210,11 @@
 }
 
 @media screen and (max-width: 1680px) {
+  .projectImage {
+    max-width: 640px;
+    max-height: 380px;
+  }
+
   .projectMedia {
     max-width: 640px;
     max-height: 380px;
@@ -258,6 +271,10 @@
 }
 
 @media screen and (max-width: $breakpoint-max-width) and (max-height: 1000px) {
+  .projectImage {
+    max-width: 440px;
+  }
+
   .projectMedia {
     flex: 0 1 auto;
     max-width: 440px;
@@ -327,6 +344,11 @@
 }
 
 @media only screen and (min-width: 669px) and (max-width: $breakpoint-tablet) and (max-height: 800px) {
+  .projectImage {
+    max-height: 300px;
+    max-width: 200px;
+  }
+
   .projectMedia {
     &.portrait {
       margin-right: 0;
@@ -337,7 +359,12 @@
 }
 
 @media screen and (max-width: $breakpoint-mobile) {
+  .projectImage {
+    max-width: 100%;
+  }
+
   .projectContent {
+    min-height: 360px;
     flex-flow: column nowrap;
     padding: 0;
     height: auto;
@@ -397,14 +424,14 @@
 
   .projectDescription {
     margin: 0 0 20px;
-  
+
     h3 {
       font-size: 20px;
       line-height: 23px;
       color: #fff;
       margin: 0 0 10px;
     }
-  
+
     div {
       max-width: none;
       font-size: 14px;

@@ -5,30 +5,39 @@ import classNames from "classnames";
 import Link from "next/link";
 import useGrid from "../../../../utils/useGrid";
 import useRedrawGrid from "../../../../utils/useRedrawGrid";
-
 import styles from "./project.module.scss";
 import BigArrow from "../../../../shared/Icons/BigArrow";
 import ArrowForSlider from "../../../../shared/Icons/ArrowForSlider";
 import Button from "../../../../shared/coreUi/Button/Button";
-import { changeSection } from "../../../../shared/FullPageScroll/fullPageScroll.actions";
+import {
+  changeSection,
+  updateCanScroll
+} from "../../../../shared/FullPageScroll/fullPageScroll.actions";
 import { AppState } from "../../../../store/store";
-import { getSection } from "../../../../shared/FullPageScroll/fullPageScroll.selectors";
+import {
+  getSection,
+  getCanScroll
+} from "../../../../shared/FullPageScroll/fullPageScroll.selectors";
+import useIsMobile from "../../../../utils/useIsMobile";
 
 interface ProjectProps {
   title: string;
   description?: string;
   footerTitle?: string;
   footerDescription?: string;
-  video: string;
+  video?: string;
   url: string;
   orientation: string;
   position: string;
   isFirst: boolean;
   isLast: boolean;
   projectIndex: number;
+  image?: string;
+  data: boolean;
 }
 
 const Project: React.FunctionComponent<ProjectProps> = ({
+  data,
   title,
   description,
   footerTitle,
@@ -39,7 +48,8 @@ const Project: React.FunctionComponent<ProjectProps> = ({
   position,
   isFirst,
   isLast,
-  projectIndex
+  projectIndex,
+  image
 }) => {
   const [visiblePart, setVisiblePart] = useState(description);
   const [hiddenPart, setHiddenPart] = useState("");
@@ -48,6 +58,8 @@ const Project: React.FunctionComponent<ProjectProps> = ({
   const refGridWrapper = useRef<HTMLElement>();
   const dispatch = useDispatch();
   const activeSection = useSelector((state: AppState) => getSection(state));
+  const canScroll = useSelector((state: AppState) => getCanScroll(state));
+  const isMobile = useIsMobile();
 
   const splitTextForMobile = (): void => {
     if (window.outerWidth <= 668) {
@@ -79,6 +91,9 @@ const Project: React.FunctionComponent<ProjectProps> = ({
   };
 
   const changeProject = (direction): void => {
+    if (!canScroll) return;
+    dispatch(updateCanScroll(false));
+
     let scrollTo: number = projectIndex;
 
     if (direction === "up") {
@@ -91,6 +106,10 @@ const Project: React.FunctionComponent<ProjectProps> = ({
 
     dispatch(changeSection(scrollTo));
     scrollToSection(scrollTo);
+
+    setTimeout(() => {
+      dispatch(updateCanScroll(true));
+    }, 1000);
   };
 
   useEffect(() => {
@@ -104,7 +123,7 @@ const Project: React.FunctionComponent<ProjectProps> = ({
     <section
       className={styles.projectPageItem}
       ref={refGridWrapper}
-      data-header="blog-header"
+      data-header={data ? "black" : "blog-header"}
     >
       <div
         className={classNames(styles.projectPageContent, {
@@ -136,7 +155,7 @@ const Project: React.FunctionComponent<ProjectProps> = ({
             </span>
           )}
         </div>
-        {!!video.length && (
+        {video && !isMobile && (
           <video
             muted
             autoPlay
@@ -151,6 +170,9 @@ const Project: React.FunctionComponent<ProjectProps> = ({
             <source src={video} type="video/mp4" />
           </video>
         )}
+        {!video || (image && isMobile) ? (
+          <img src={image} alt={title} className={styles.projectImage} />
+        ) : null}
       </div>
       <div className={styles.projectPageFooter}>
         <div className={styles.projectPageFooterLeftPart}>
@@ -183,18 +205,16 @@ const Project: React.FunctionComponent<ProjectProps> = ({
               </Button>
             </div>
           )}
-          {!isLast && (
-            <div className={styles.projectPageDownBtn}>
-              <Button
-                type="button"
-                handlerClick={(): void => {
-                  changeProject("down");
-                }}
-              >
-                <ArrowForSlider />
-              </Button>
-            </div>
-          )}
+          <div className={styles.projectPageDownBtn}>
+            <Button
+              type="button"
+              handlerClick={(): void => {
+                changeProject("down");
+              }}
+            >
+              <ArrowForSlider />
+            </Button>
+          </div>
         </div>
       </div>
     </section>

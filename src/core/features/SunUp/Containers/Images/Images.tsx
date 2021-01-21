@@ -22,10 +22,8 @@ const Images: React.FunctionComponent = () => {
           </div>
           <div className={styles.sunUpImagesSecond}>
             <p>
-              Solar Roof is comparable in price to a typical roof with solar
-              panels. Purchase SunUp Roof at one of the lowest cost-per-watt of
-              any national provider and take control of your monthly electricity
-              bill.
+              Another crucial point was for users to intuitively understand what
+              instruments to use for creating the layout of solar panels.
             </p>
             <img
               src="/images/projects/SunUp/mobile/images-3.png"
@@ -42,6 +40,10 @@ const Images: React.FunctionComponent = () => {
           <div className={styles.sunUpImagesWrapper}>
             <div className={styles.sunUpImagesMain}>
               <img src="/images/projects/SunUp/images-1.png" alt="SunUp main" />
+              <p>
+                Another crucial point was for users to intuitively understand
+                what instruments to use for creating the layout of solar panels.
+              </p>
             </div>
             <div className={styles.sunUpImagesContent}>
               <div className={styles.sunUpImagesContentImg}>

@@ -7,3 +7,11 @@ export const getSection = ({
 export const getScrollings = ({
   fullPageScrollReducer: { scrollings }
 }: AppState): number[] => scrollings;
+
+export const getCanScroll = ({
+  fullPageScrollReducer: { canScroll }
+}: AppState): boolean => canScroll;
+
+export const getActiveAnimation = ({
+  fullPageScrollReducer: { activeAnimation }
+}: AppState): boolean => activeAnimation;

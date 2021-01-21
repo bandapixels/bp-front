@@ -15,14 +15,12 @@ const Preloader: React.FunctionComponent = () => {
   });
 
   const handlerVideoEnd = (): void => {
-    setTimeout(() => {
-      setStartAnimation(true);
+    setStartAnimation(true);
 
-      if (window.innerWidth < 669) {
-        document.body.style.overflow = "visible";
-        document.body.style.height = "auto";
-      }
-    }, 500);
+    if (window.innerWidth < 669) {
+      document.body.style.overflow = "visible";
+      document.body.style.height = "auto";
+    }
   };
 
   const handlerAnimation = (): void => {
@@ -45,7 +43,7 @@ const Preloader: React.FunctionComponent = () => {
           onEnded={handlerVideoEnd}
           playsInline
         >
-          <source src="/videos/logo-loader.mp4" type="video/mp4" />
+          <source src="/videos/BandaPixelsAnimation.mp4" type="video/mp4" />
         </video>
       </div>
     )

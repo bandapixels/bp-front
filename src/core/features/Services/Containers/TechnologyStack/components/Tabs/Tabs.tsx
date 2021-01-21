@@ -26,27 +26,23 @@ const Tabs: React.FunctionComponent = ({ children }) => {
   };
 
   const handlerPrevSlide = (): void => {
-    if (activeTabMob > 0) {
-      const newActiveSlide = activeTabMob - 1;
-      const { label } = children[newActiveSlide].props;
+    const slidesQuantity = React.Children.toArray(children).length - 1;
+    const newActiveSlide = activeTabMob > 0 ? activeTabMob - 1 : slidesQuantity;
+    const { label } = children[newActiveSlide].props;
 
-      setactiveTabMob(newActiveSlide);
-      setActiveTab(label);
-      scrollTopMobile();
-    }
+    setactiveTabMob(newActiveSlide);
+    setActiveTab(label);
+    scrollTopMobile();
   };
 
   const handlerNextSlide = (): void => {
     const slidesQuantity = React.Children.toArray(children).length - 1;
+    const newActiveSlide = slidesQuantity > activeTabMob ? activeTabMob + 1 : 0;
+    const { label } = children[newActiveSlide].props;
 
-    if (slidesQuantity > activeTabMob) {
-      const newActiveSlide = activeTabMob + 1;
-      const { label } = children[newActiveSlide].props;
-
-      setactiveTabMob(newActiveSlide);
-      setActiveTab(label);
-      scrollTopMobile();
-    }
+    setactiveTabMob(newActiveSlide);
+    setActiveTab(label);
+    scrollTopMobile();
   };
 
   const changeLine = (): void => {

@@ -42,7 +42,7 @@ const Posts: React.FunctionComponent = () => {
             <Link key={post.head} href={`/blog/${post.slug}`}>
               <a className={styles.blogItem}>
                 <div className={styles.blogImage}>
-                  <img src={post.image} alt={post.head} />
+                  <img src={post.preview_image} alt={post.head} />
                 </div>
                 <div className={styles.postInfo}>
                   <h4>{post.head}</h4>

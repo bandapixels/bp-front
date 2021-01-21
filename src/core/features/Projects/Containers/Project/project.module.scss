@@ -33,6 +33,14 @@
   padding: 0 180px 0 0;
 }
 
+.projectImage {
+  display: block;
+  max-width: 850px;
+  max-height: 480px;
+  border: 8px solid #4F4F4F;
+  border-radius: 10px;
+}
+
 .projectPageInfo {
   margin: 0 60px 0 0;
   max-width: 840px;
@@ -253,7 +261,8 @@
 }
 
 @media screen and (max-width: 1680px) {
-  .projectPageMedia {
+  .projectPageMedia,
+  .projectImage {
     max-width: 640px;
     max-height: 380px;
   }
@@ -275,6 +284,12 @@
 
   .projectPageProblem {
     font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .projectPageFooterRightPart {
+    right: 60px;
   }
 }
 
@@ -326,6 +341,9 @@
 }
 
 @media screen and (max-width: $breakpoint-max-width) and (max-height: 1000px) {
+  .projectImage {
+    max-width: 440px;
+  }
   .projectPageMedia {
     flex: 0 1 auto;
     max-width: 440px;
@@ -430,13 +448,17 @@
     max-width: 100%;
   }
 
+  .projectImage {
+    max-width: 100%;
+  }
+
   .projectPageItem {
     background-color: #333;
     background-image: linear-gradient( rgba(255,255,255,.1), transparent 1px), linear-gradient( 90deg, rgba(255,255,255,.1), transparent 1px);
     background-size: 15px 15px;
     background-position: center center;
     height: auto;
-    padding: 60px 15px;
+    padding: 30px 15px;
 
     &.projectsPageWrapper {
       padding: 100px 15px 60px;
@@ -444,6 +466,14 @@
       .projectsMobTitle {
         display: none;
       }
+    }
+
+    &:first-child {
+      padding-top: 80px;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #656565;
     }
   }
 
@@ -484,13 +514,13 @@
       font-size: 26px;
       line-height: 130%;
       text-align: center;
-      height: 180px;
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 0 15px;
+      margin: 0 0 25px;
       text-transform: uppercase;
+      padding: 10px;
     }
 
     p {

@@ -5,16 +5,18 @@ import Link from "next/link";
 
 import styles from "./project.module.scss";
 import BigArrow from "../../../../../../shared/Icons/BigArrow";
+import useIsMobile from "../../../../../../utils/useIsMobile";
 
 interface ProjectProps {
   title: string;
   description?: string;
   footerTitle: string;
   footerDescription?: string;
-  video: string;
+  video?: string;
   url: string;
   orientation: string;
   position: string;
+  image?: string;
 }
 
 const Project: React.FunctionComponent<ProjectProps> = ({
@@ -25,12 +27,14 @@ const Project: React.FunctionComponent<ProjectProps> = ({
   video,
   url,
   orientation,
-  position
+  position,
+  image
 }) => {
   const [visiblePart, setVisiblePart] = useState(description);
   const [hiddenPart, setHiddenPart] = useState("");
   const [visible, setVisible] = useState(false);
   const router = useRouter();
+  const isMobile = useIsMobile();
 
   const splitTextForMobile = (): void => {
     if (window.outerWidth <= 668) {
@@ -84,19 +88,24 @@ const Project: React.FunctionComponent<ProjectProps> = ({
             </span>
           )}
         </div>
-        <video
-          muted
-          autoPlay
-          loop
-          preload="auto"
-          playsInline
-          className={classNames(styles.projectMedia, {
-            portrait: orientation === "portrait",
-            noVideo: !video.length
-          })}
-        >
-          <source src={video} type="video/mp4" />
-        </video>
+        {video && !isMobile ? (
+          <video
+            muted
+            autoPlay
+            loop
+            preload="auto"
+            playsInline
+            className={classNames(styles.projectMedia, {
+              portrait: orientation === "portrait",
+              noVideo: !video
+            })}
+          >
+            <source src={video} type="video/mp4" />
+          </video>
+        ) : null}
+        {!video || (image && isMobile) ? (
+          <img src={image} alt={title} className={styles.projectImage} />
+        ) : null}
       </div>
       <div className={styles.projectsFooter}>
         <div className={styles.projectsFooterLeftPart}>

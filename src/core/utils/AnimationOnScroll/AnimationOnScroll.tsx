@@ -37,11 +37,10 @@ const AnimationOnScroll: React.FunctionComponent<AnimationOnScroll> = ({
     const userAgent = navigator.userAgent.toLowerCase();
     const element = animatedElement.current;
     const rect = element.getBoundingClientRect();
-    let styles = `${animation};${display}`;
+    const styles = `${animation};${display}`;
 
     if (!userAgent.includes("android")) {
       setClassName(animationName);
-      styles = "";
     }
 
     dispatch(

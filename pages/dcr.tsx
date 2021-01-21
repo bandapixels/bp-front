@@ -18,6 +18,39 @@ const Dcr: NextPage = () => {
         <meta name="robots" content="noindex" />
         <meta name="googlebot" content="noindex" />
         <title>DCR</title>
+        <meta property="og:title" content="DCR" />
+        <meta
+          property="og:description"
+          content="DCR - Business Digitalization Platform "
+        />
+        <meta
+          property="og:image"
+          content="https://bandapixels.com/images/projectsMain/dcr.jpg"
+        />
+        <meta property="og:image:type" content="image/jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Project DCR" />
+        <meta property="og:url" content="https://bandapixels.com/dcr" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `{
+                    "@context": "https://schema.org",
+                    "@type": "Organization",
+                    "name": "Bandapixels",
+                    "url": "https://bandapixels.com",
+                    "email": "team@bandapixels.com",
+                    "logo": "https://bandapixels.com/images/banda-logo.jpg",
+                    "sameAs" : [
+                      "https://www.behance.net/bandapixels",
+                      "https://www.facebook.com/BandaPixels",
+                      "https://dribbble.com/bandapixels",
+                      "https://www.linkedin.com/organization-guest/company/bandapixels"
+                    ]
+                  }`
+          }}
+        />
       </Head>
       <StoreLayout>
         <ScrollLayout>

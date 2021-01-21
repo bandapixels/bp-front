@@ -8,6 +8,7 @@ const reducer = (state = initialState, action): PreloaderState => {
   switch (action.type) {
     case "SET_START":
       return {
+        ...state,
         startPreloader: false
       };
     default:

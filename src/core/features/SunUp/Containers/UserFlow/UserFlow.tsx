@@ -24,8 +24,8 @@ const MainBlock: React.FunctionComponent = () => {
             animationName={AnimationNames.fadeInUp}
           >
             <p>
-              При разработке юзер флов, было принято решение оптимизировать пару
-              шагов для более быстрого создания проекта пользователем системы.
+              User flow was done as a succession of screens that display the
+              complete path a user takes when using this web app.
             </p>
           </AnimationOnScroll>
         </div>

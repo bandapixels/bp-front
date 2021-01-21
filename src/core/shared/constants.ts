@@ -1,9 +1,10 @@
 export default {
   schema: "https://",
-  host: process.env.APP_HOSTNAME || "bandapixels.com",
+  host: process.env.APP_HOSTNAME || "bp.foxyloxy.me",
   helpers: {
     form: "/contact",
-    blog: "/postList"
+    blog: "/postList",
+    latestPosts: "/latestPosts"
   },
   projects: [
     {
@@ -19,7 +20,8 @@ export default {
       video: "/videos/AppNavi_animate.mp4",
       url: "/appnavi",
       orientation: "landscape",
-      position: "right"
+      position: "right",
+      image: "/images/projectsMain/appnavi.jpg"
     },
     {
       title: "SunUP - Solar Panel Interactive Web Application",
@@ -31,10 +33,10 @@ export default {
       footerDescription: `
         Following the modern trends and successful experince of similar web apps, we decided to display the user flow as Wizard Design and create a simple instrument layout for users to easily work with the app.  
       `,
-      video: "",
       url: "/sunup",
       orientation: "landscape",
-      position: "right"
+      position: "right",
+      image: "/images/projectsMain/sunup.jpg"
     },
     {
       title: "Shed - a Service Where you Can Rent Everything You Need",
@@ -49,7 +51,8 @@ export default {
       video: "/videos/shed.mp4",
       url: "/shed",
       orientation: "landscape",
-      position: "right"
+      position: "right",
+      image: "/images/projectsMain/shed.jpg"
     },
     {
       title: "DCR - Business Digitalization Platform ",
@@ -65,7 +68,8 @@ export default {
       video: "/videos/dcr.mp4",
       url: "/dcr",
       orientation: "landscape",
-      position: "left"
+      position: "left",
+      image: "/images/projectsMain/dcr.jpg"
     },
     {
       title: "CaseKeepers - Service for Lawyers & Their Clients",
@@ -77,10 +81,10 @@ export default {
       footerDescription: `
         Eventually, more and more professionals, like attorneys and therapists, started using the app because of its improved, clear and convenient design for desktop and mobile interfaces.
       `,
-      video: "",
       url: "/casekeepers",
       orientation: "landscape",
-      position: "left"
+      position: "left",
+      image: "/images/projectsMain/casekeepers.jpg"
     }
   ]
 };
