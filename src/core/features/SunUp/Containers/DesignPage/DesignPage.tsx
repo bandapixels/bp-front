@@ -1,12 +1,18 @@
 import React from "react";
 import useIsMobile from "../../../../utils/useIsMobile";
-import styles from "./footer.module.scss";
+import AnimationOnScroll, {
+  AnimationNames
+} from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
+import styles from "./designPage.module.scss";
 
-const Footer: React.FunctionComponent = () => {
+const DesignPage: React.FunctionComponent = () => {
   const isMobile = useIsMobile();
 
   return (
     <section className={styles.sunUpFooter}>
+      <AnimationOnScroll animationName={AnimationNames.fadeInUp} duration={1}>
+        <h3>Design pages</h3>
+      </AnimationOnScroll>
       {isMobile ? (
         <>
           <img
@@ -37,4 +43,4 @@ const Footer: React.FunctionComponent = () => {
   );
 };
 
-export default Footer;
+export default DesignPage;

@@ -7,91 +7,32 @@ import styles from "./challenge.module.scss";
 const Challenge: React.FunctionComponent = () => {
   return (
     <section className={styles.sunUpChallenge}>
-      <div className={styles.sunUpChallengeWrapper}>
-        <div className={styles.sunUpChallengeInfo}>
-          <AnimationOnScroll
-            animationName={AnimationNames.fadeInUp}
-            duration={1}
-          >
-            <h3>Challenge</h3>
-          </AnimationOnScroll>
-          <AnimationOnScroll
-            animationName={AnimationNames.fadeInUp}
-            duration={1}
-            delay={0.5}
-          >
-            <p>
-              Solar Roof is comparable in price to a typical roof with solar
-              panels. Purchase SunUp Roof at one of the lowest cost-per-watt of
-              any national provider and take control of your monthly electricity
-              bill.
-            </p>
-          </AnimationOnScroll>
-        </div>
-        <div className={styles.sunUpChallengeList}>
-          <div className={styles.sunUpChallengeItem}>
-            <AnimationOnScroll
-              animationName={AnimationNames.zoomIn}
-              duration={0.6}
-            >
-              <div className={styles.sunUpChallengeCircle} />
-            </AnimationOnScroll>
-            <AnimationOnScroll
-              animationName={AnimationNames.fadeInRight}
-              duration={0.6}
-              delay={0.8}
-            >
-              <div className={styles.sunUpChallengeText}>
-                <p>
-                  Roof is comparable in price to a typical roof with solar
-                  panels.
-                </p>
-              </div>
-            </AnimationOnScroll>
-          </div>
-          <div className={styles.sunUpChallengeItem}>
-            <AnimationOnScroll
-              animationName={AnimationNames.zoomIn}
-              duration={0.6}
-              delay={0.2}
-            >
-              <div className={styles.sunUpChallengeCircle} />
-            </AnimationOnScroll>
-            <AnimationOnScroll
-              animationName={AnimationNames.fadeInRight}
-              duration={0.6}
-              delay={1}
-            >
-              <div className={styles.sunUpChallengeText}>
-                <p>
-                  Solar Roof is comparable in price to a typical roof with
-                  panels.
-                </p>
-              </div>
-            </AnimationOnScroll>
-          </div>
-          <div className={styles.sunUpChallengeItem}>
-            <AnimationOnScroll
-              animationName={AnimationNames.zoomIn}
-              duration={0.6}
-              delay={0.8}
-            >
-              <div className={styles.sunUpChallengeCircle} />
-            </AnimationOnScroll>
-            <AnimationOnScroll
-              animationName={AnimationNames.fadeInRight}
-              duration={0.6}
-              delay={1.2}
-            >
-              <div className={styles.sunUpChallengeText}>
-                <p>
-                  Solar Roof is comparable in price to a typical roof with solar
-                  panels.
-                </p>
-              </div>
-            </AnimationOnScroll>
-          </div>
-        </div>
+      <div className={styles.challengeImg}>
+        <img
+          src="/images/projects/SunUp/challenges-dev.png"
+          alt="sunup challenge"
+        />
+      </div>
+      <div className={styles.challengeInfo}>
+        <AnimationOnScroll animationName={AnimationNames.fadeInUp} duration={1}>
+          <h3>Challenge</h3>
+        </AnimationOnScroll>
+        <AnimationOnScroll
+          animationName={AnimationNames.fadeInUp}
+          duration={1}
+          delay={0.2}
+        >
+          <p>
+            The client came up with the task to completely redesign the front
+            part of an existing application. The main design challenge was
+            customizing the old design and making it easy for the user, who is
+            barely familiar with solar panel specifics, to find their way
+            through the complex functionality of the application. On the
+            development side, it was crucial to implement new design really time
+            efficiently, as the app already had a number of users waiting for
+            improvements.
+          </p>
+        </AnimationOnScroll>
       </div>
     </section>
   );
