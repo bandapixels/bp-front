@@ -34,14 +34,14 @@ const WelcomeToBlog: React.FunctionComponent = () => {
             project
           </p>
         </div>
-        {/*<div className={styles.welcomeBtnsWrapper}>*/}
-        {/*  <a href="#" className={styles.welcomeBtn}>*/}
-        {/*    Who we are?*/}
-        {/*  </a>*/}
-        {/*  <a href="#" className={styles.welcomeLink}>*/}
-        {/*    Customer story*/}
-        {/*  </a>*/}
-        {/*</div>*/}
+        <div className={styles.welcomeBtnsWrapper}>
+          <a href="/" className={styles.welcomeBtn}>
+            Who we are?
+          </a>
+          <a href="/projects" className={styles.welcomeLink}>
+            Customer story
+          </a>
+        </div>
       </div>
       <div className={styles.titlesWrapper}>
         <h1 className={styles.roundedTitle}>

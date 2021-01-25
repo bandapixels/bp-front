@@ -46,8 +46,7 @@
   font-weight: 500;
   font-size: 65px;
   line-height: 84px;
-  color: #1A1C1E;
-  opacity: 0.2;
+  color: #FFA800;
   font-family: Roboto;
 
   span {
@@ -61,9 +60,9 @@
 }
 
 .sunUpTimelineStageName {
-  font-size: 14px;
+  font-size: 20px;
   line-height: 40px;
-  color: #000;
+  color: #213659;
   margin-bottom: 10px;
 }
 
@@ -158,15 +157,21 @@
     }
   }
 
+  .sunUpTimelineStageName {
+    font-size: 16px;
+    line-height: 1.2;
+    margin: 20px 0 0;
+  }
+
   .sunUpTimelineStage {
     padding: 20px 0;
     flex-flow: column-reverse;
     align-items: flex-start;
 
     &:last-child {
-      p {
-        font-size: 30px;
-      }
+      //p {
+      //  font-size: 30px;
+      //}
 
       > .sunUpTimelineTotal {
         font-size: 65px;
@@ -175,7 +180,7 @@
   }
 
   .sunUpTimelineHours {
-    margin-top: 20px;
+    //margin-top: 20px;
   }
 
   .sunUpTimelineStageInfo {

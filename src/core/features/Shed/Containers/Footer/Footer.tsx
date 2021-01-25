@@ -5,7 +5,7 @@ const Footer: React.FunctionComponent = () => {
   return (
     <footer className={styles.shedFooter}>
       <div className={styles.shedFooterWrapper}>
-        <img src="/images/projects/Shed/footer.png" alt="Shed Footer" />
+        <img src="/images/projects/Shed/footer.png" alt="Shed DesignPage" />
         <div className={styles.footerContent}>
           <p>
             Thank you
@@ -13,7 +13,10 @@ const Footer: React.FunctionComponent = () => {
             for watching!
           </p>
           <div className={styles.footerLogo}>
-            <img src="/images/projects/Shed/logo.png" alt="Shed Footer Logo" />
+            <img
+              src="/images/projects/Shed/logo.png"
+              alt="Shed DesignPage Logo"
+            />
           </div>
         </div>
         <div className={styles.shedFooterCircles}>

@@ -20,11 +20,13 @@ const ProjectTimeline: React.FunctionComponent = () => {
           </AnimationOnScroll>
           <div className={styles.sunUpTimelineStages}>
             <div className={styles.sunUpTimelineStage}>
-              <div className={styles.sunUpTimelineHours}>
-                13 <span>hours</span>
+              <div className={styles.sunUpTimelineLeft}>
+                <p className={styles.sunUpTimelineStageName}>First-stage</p>
+                <div className={styles.sunUpTimelineHours}>
+                  13 <span>hours</span>
+                </div>
               </div>
               <div className={styles.sunUpTimelineStageInfo}>
-                <p className={styles.sunUpTimelineStageName}>First-stage</p>
                 <div className={styles.sunUpTimelineStageTasks}>
                   <div
                     className={styles.sunUpTimelineStageItem}
@@ -48,11 +50,13 @@ const ProjectTimeline: React.FunctionComponent = () => {
               </div>
             </div>
             <div className={styles.sunUpTimelineStage}>
-              <div className={styles.sunUpTimelineHours}>
-                60 <span>hours</span>
+              <div className={styles.sunUpTimelineLeft}>
+                <p className={styles.sunUpTimelineStageName}>Second-stage</p>
+                <div className={styles.sunUpTimelineHours}>
+                  60 <span>hours</span>
+                </div>
               </div>
               <div className={styles.sunUpTimelineStageInfo}>
-                <p className={styles.sunUpTimelineStageName}>Second-stage</p>
                 <div className={styles.sunUpTimelineStageTasks}>
                   <div
                     className={styles.sunUpTimelineStageItem}
@@ -70,29 +74,31 @@ const ProjectTimeline: React.FunctionComponent = () => {
               </div>
             </div>
             <div className={styles.sunUpTimelineStage}>
-              <div className={styles.sunUpTimelineHours}>
-                8 <span>hours</span>
+              <div className={styles.sunUpTimelineLeft}>
+                <p className={styles.sunUpTimelineStageName}>Third-stage</p>
+                <div className={styles.sunUpTimelineHours}>
+                  05 <span>month</span>
+                </div>
               </div>
               <div className={styles.sunUpTimelineStageInfo}>
-                <p className={styles.sunUpTimelineStageName}>Third-stage</p>
                 <div className={styles.sunUpTimelineStageTasks}>
                   <div
                     className={styles.sunUpTimelineStageItem}
                     style={{ maxWidth: "300px" }}
                   >
-                    Optimization (8h)
+                    Implementation (5 months)
                   </div>
                 </div>
               </div>
             </div>
-            <div className={styles.sunUpTimelineStage}>
-              <p className={styles.sunUpTimelineTotal}>
-                81 <span>hours</span>
-              </p>
-              <div className={styles.sunUpTimelineStageInfo}>
-                <p className={styles.sunUpTimelineTotal}>All stages</p>
-              </div>
-            </div>
+            {/*<div className={styles.sunUpTimelineStage}>*/}
+            {/*  <p className={styles.sunUpTimelineTotal}>*/}
+            {/*    81 <span>hours</span>*/}
+            {/*  </p>*/}
+            {/*  <div className={styles.sunUpTimelineStageInfo}>*/}
+            {/*    <p className={styles.sunUpTimelineTotal}>All stages</p>*/}
+            {/*  </div>*/}
+            {/*</div>*/}
           </div>
         </div>
         <div className={styles.sunUpTimelineSolar}>
