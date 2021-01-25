@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./footer.module.scss";
 
-const DesignPage: React.FunctionComponent = () => {
+const Footer: React.FunctionComponent = () => {
   return (
     <footer className={styles.shedFooter}>
       <div className={styles.shedFooterWrapper}>
