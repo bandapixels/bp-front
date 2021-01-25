@@ -48,13 +48,13 @@
       }
 
       &:nth-child(even) {
-        margin-right: 0;
-        margin-left: auto;
-        padding-left: 10px;
+        padding-right: 10px;
       }
 
       &:nth-child(odd) {
-        padding-right: 10px;
+        margin-right: 0;
+        margin-left: auto;
+        padding-left: 10px;
       }
     }
   }
