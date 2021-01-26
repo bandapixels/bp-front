@@ -26,12 +26,12 @@ export default {
     {
       title: "SunUP - Solar Panel Interactive Web Application",
       description: `
-        <p>SunUP is a B2B solution to visualize roof solar panels in 3D. The main design goal was to simplyfy the user flow to creating the layout of their future rooftop solar panels.</p>
-        <p>Another crucial point was to make users intuitively understand what instrument to use while creating the solar panel layout.</p> 
+        <p>The client came up with the task to completely redesign the front part of an existing application. The main design challenge was customizing the old design and making it easy for the user, who is barely familiar with solar panel specifics, to find their way through the complex functionality of the application. </p>
+        <p>On the development side, it was crucial to implement new design really time efficiently, as the app already had a number of users waiting for improvements.</p> 
       `,
       footerTitle: "Results",
       footerDescription: `
-        Following the modern trends and successful experince of similar web apps, we decided to display the user flow as Wizard Design and create a simple instrument layout for users to easily work with the app.  
+        The user questionnaire clearly showed that the new user experience oriented design is more convenient and comprehensible, as well as average user’s time for panels layout creation has decreased by 45%  
       `,
       url: "/sunup",
       orientation: "landscape",
