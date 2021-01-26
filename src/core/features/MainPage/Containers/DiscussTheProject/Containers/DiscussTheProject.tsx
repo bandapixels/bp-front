@@ -243,7 +243,7 @@ const DiscussTheProject: React.FunctionComponent = () => {
       {formSend && formStatus === "success" && (
         <ModalThanks clickHandler={handlerClosePopup} />
       )}
-      {formSend && formStatus !== "success" && (
+      {formSend && formStatus === "failure" && (
         <ModalThanks
           clickHandler={handlerClosePopup}
           error="Please try again"
