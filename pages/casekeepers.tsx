@@ -12,6 +12,7 @@ import Analysis from "../src/core/features/CaseKeepers/Containers/Analysis/Analy
 import Footer from "../src/core/features/CaseKeepers/Containers/Footer/Footer";
 import StoreLayout from "../src/core/layouts/StoreLayout";
 import ScrollLayout from "../src/core/layouts/ScrollLayout";
+import constants from "../src/core/shared/constants";
 
 const CaseKeepers: NextPage = () => {
   return (
@@ -27,13 +28,16 @@ const CaseKeepers: NextPage = () => {
         />
         <meta
           property="og:image"
-          content="https://bandapixels.com/images/projectsMain/casekeepers.jpg"
+          content={`${constants.schema}${constants.host}/images/projectsMain/casekeepers.jpg`}
         />
         <meta property="og:image:type" content="image/jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Project CaseKeepers" />
-        <meta property="og:url" content="https://bandapixels.com/casekeepers" />
+        <meta
+          property="og:url"
+          content={`${constants.schema}${constants.host}/casekeepers`}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -41,9 +45,9 @@ const CaseKeepers: NextPage = () => {
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "Bandapixels",
-            "url": "https://bandapixels.com",
+            "url": "${constants.schema}${constants.host}",
             "email": "team@bandapixels.com",
-            "logo": "https://bandapixels.com/images/banda-logo.jpg",
+            "logo": "${constants.schema}${constants.host}/images/banda-logo.jpg",
             "sameAs" : [
               "https://www.behance.net/bandapixels",
               "https://www.facebook.com/BandaPixels",

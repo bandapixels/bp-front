@@ -12,6 +12,7 @@ import Colors from "../src/core/features/Shed/Containers/Colors/Colors";
 import Footer from "../src/core/features/Shed/Containers/Footer/Footer";
 import ScrollLayout from "../src/core/layouts/ScrollLayout";
 import StoreLayout from "../src/core/layouts/StoreLayout";
+import constants from "../src/core/shared/constants";
 
 const Shed: NextPage = () => {
   return (
@@ -27,13 +28,16 @@ const Shed: NextPage = () => {
         />
         <meta
           property="og:image"
-          content="https://bandapixels.com/images/projectsMain/shed.jpg"
+          content={`${constants.schema}${constants.host}/images/projectsMain/shed.jpg`}
         />
         <meta property="og:image:type" content="image/jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Project Shed" />
-        <meta property="og:url" content="https://bandapixels.com/shed" />
+        <meta
+          property="og:url"
+          content={`${constants.schema}${constants.host}/shed`}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -41,9 +45,9 @@ const Shed: NextPage = () => {
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "Bandapixels",
-            "url": "https://bandapixels.com",
+            "url": "${constants.schema}${constants.host}",
             "email": "team@bandapixels.com",
-            "logo": "https://bandapixels.com/images/banda-logo.jpg",
+            "logo": "${constants.schema}${constants.host}/images/banda-logo.jpg",
             "sameAs" : [
               "https://www.behance.net/bandapixels",
               "https://www.facebook.com/BandaPixels",
