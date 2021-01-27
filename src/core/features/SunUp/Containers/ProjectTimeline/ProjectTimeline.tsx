@@ -77,7 +77,7 @@ const ProjectTimeline: React.FunctionComponent = () => {
               <div className={styles.sunUpTimelineLeft}>
                 <p className={styles.sunUpTimelineStageName}>Third-stage</p>
                 <div className={styles.sunUpTimelineHours}>
-                  05 <span>month</span>
+                  3 <span>month</span>
                 </div>
               </div>
               <div className={styles.sunUpTimelineStageInfo}>
@@ -86,7 +86,7 @@ const ProjectTimeline: React.FunctionComponent = () => {
                     className={styles.sunUpTimelineStageItem}
                     style={{ maxWidth: "300px" }}
                   >
-                    Implementation (5 months)
+                    Implementation (3 months)
                   </div>
                 </div>
               </div>
