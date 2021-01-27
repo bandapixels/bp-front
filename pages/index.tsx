@@ -10,6 +10,7 @@ import Projects from "../src/core/features/MainPage/Containers/Projects/Projects
 import YourAdvantages from "../src/core/features/MainPage/Containers/YourAdvantages/YourAdvantages";
 import FullPageScroll from "../src/core/shared/FullPageScroll/Containers/FullPageScroll";
 import Preloader from "../src/core/shared/Preloader/Containers/Preloader";
+import constants from "../src/core/shared/constants";
 
 const Home: NextPage = () => {
   return (
@@ -24,13 +25,16 @@ const Home: NextPage = () => {
         />
         <meta
           property="og:image"
-          content="https://bandapixels.com/images/banda-logo.jpg"
+          content={`${constants.schema}${constants.host}/images/banda-logo.jpg`}
         />
         <meta property="og:image:type" content="image/jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Bandapixels logo" />
-        <meta property="og:url" content="https://bandapixels.com" />
+        <meta
+          property="og:url"
+          content={`${constants.schema}${constants.host}`}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -38,9 +42,9 @@ const Home: NextPage = () => {
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "Bandapixels",
-            "url": "https://bandapixels.com",
+            "url": "${constants.schema}${constants.host}",
             "email": "team@bandapixels.com",
-            "logo": "https://bandapixels.com/images/banda-logo.jpg",
+            "logo": "${constants.schema}${constants.host}/images/banda-logo.jpg",
             "sameAs" : [
               "https://www.behance.net/bandapixels",
               "https://www.facebook.com/BandaPixels",

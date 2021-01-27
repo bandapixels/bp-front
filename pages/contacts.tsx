@@ -3,6 +3,7 @@ import { NextPage } from "next";
 import Head from "next/head";
 import StoreLayout from "../src/core/layouts/StoreLayout";
 import ContactsBlock from "../src/core/shared/ContactsBlock/ContactsBlock";
+import constants from "../src/core/shared/constants";
 
 const Contacts: NextPage = () => {
   return (
@@ -16,13 +17,16 @@ const Contacts: NextPage = () => {
         />
         <meta
           property="og:image"
-          content="https://bandapixels.com/images/banda-logo.jpg"
+          content={`${constants.schema}${constants.host}/images/banda-logo.jpg`}
         />
         <meta property="og:image:type" content="image/jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Bandapixels logo" />
-        <meta property="og:url" content="https://bandapixels.com/contacts" />
+        <meta
+          property="og:url"
+          content={`${constants.schema}${constants.host}/contacts`}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -30,9 +34,9 @@ const Contacts: NextPage = () => {
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "Bandapixels",
-            "url": "https://bandapixels.com",
+            "url": "${constants.schema}${constants.host}",
             "email": "team@bandapixels.com",
-            "logo": "https://bandapixels.com/images/banda-logo.jpg",
+            "logo": "${constants.schema}${constants.host}/images/banda-logo.jpg",
             "sameAs" : [
               "https://www.behance.net/bandapixels",
               "https://www.facebook.com/BandaPixels",

@@ -14,6 +14,7 @@ import Analysis from "../src/core/features/SunUp/Containers/Analysis/Analysis";
 import Results from "../src/core/features/SunUp/Containers/Results/Results";
 import StoreLayout from "../src/core/layouts/StoreLayout";
 import ScrollLayout from "../src/core/layouts/ScrollLayout";
+import constants from "../src/core/shared/constants";
 
 const SunUp: NextPage = () => {
   return (
@@ -29,13 +30,16 @@ const SunUp: NextPage = () => {
         />
         <meta
           property="og:image"
-          content="https://bandapixels.com/images/projectsMain/sunup.jpg"
+          content={`${constants.schema}${constants.host}/images/projectsMain/sunup.jpg`}
         />
         <meta property="og:image:type" content="image/jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Project sunup" />
-        <meta property="og:url" content="https://bandapixels.com/sunup" />
+        <meta
+          property="og:url"
+          content={`${constants.schema}${constants.host}/sunup`}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -43,9 +47,9 @@ const SunUp: NextPage = () => {
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "Bandapixels",
-            "url": "https://bandapixels.com",
+            "url": "${constants.schema}${constants.host}",
             "email": "team@bandapixels.com",
-            "logo": "https://bandapixels.com/images/banda-logo.jpg",
+            "logo": "${constants.schema}${constants.host}/images/banda-logo.jpg",
             "sameAs" : [
               "https://www.behance.net/bandapixels",
               "https://www.facebook.com/BandaPixels",
