@@ -37,34 +37,32 @@ const Posts: React.FunctionComponent = () => {
     >
       <h1>Blog</h1>
       <div className={styles.blogContainer}>
-        {postsData && postsData.length ? (
-          postsData.map(post => (
-            <Link key={post.head} href={`/blog/${post.slug}`}>
-              <a className={styles.blogItem}>
-                <div className={styles.blogImage}>
-                  <img src={post.preview_image} alt={post.head} />
-                </div>
-                <div className={styles.postInfo}>
-                  <h4>{post.head}</h4>
-                  <p className={styles.postTime}>
-                    {formatDate(post.created_at)}
-                  </p>
-                  {/*<div className={styles.hashtags}>*/}
-                  {/*  {post.tags.map((hashtag, index) => {*/}
-                  {/*    const key = hashtag.name + index;*/}
+        {postsData && postsData.length
+          ? postsData.map(post => (
+              <Link key={post.head} href={`/blog/${post.slug}`}>
+                <a className={styles.blogItem}>
+                  <div className={styles.blogImage}>
+                    <img src={post.preview_image} alt={post.head} />
+                  </div>
+                  <div className={styles.postInfo}>
+                    <h4>{post.head}</h4>
+                    <p className={styles.postTime}>
+                      {formatDate(post.created_at)}
+                    </p>
+                    {/*<div className={styles.hashtags}>*/}
+                    {/*  {post.tags.map((hashtag, index) => {*/}
+                    {/*    const key = hashtag.name + index;*/}
 
-                  {/*    return <span key={key}>{hashtag.name}</span>;*/}
-                  {/*  })}*/}
-                  {/*</div>*/}
-                  <div className={styles.postAnnotation}>{post.excerpt}</div>
-                  <p className={styles.postReadMore}>Read more</p>
-                </div>
-              </a>
-            </Link>
-          ))
-        ) : (
-          <p>No posts</p>
-        )}
+                    {/*    return <span key={key}>{hashtag.name}</span>;*/}
+                    {/*  })}*/}
+                    {/*</div>*/}
+                    <div className={styles.postAnnotation}>{post.excerpt}</div>
+                    <p className={styles.postReadMore}>Read more</p>
+                  </div>
+                </a>
+              </Link>
+            ))
+          : null}
       </div>
       <AnimatedLine backgroundColor="#333" filledColor="#fff" />
     </section>
