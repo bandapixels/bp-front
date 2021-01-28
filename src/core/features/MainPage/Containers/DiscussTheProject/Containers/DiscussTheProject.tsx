@@ -69,6 +69,11 @@ const DiscussTheProject: React.FunctionComponent = () => {
 
   const handlerClosePopup = (): void => {
     setFormSend(!formSend);
+
+    if (formStatus === "success") {
+      setFormData({ ...formInitialState });
+      refForm.current.reset();
+    }
   };
 
   const formValidation = (
@@ -178,11 +183,6 @@ const DiscussTheProject: React.FunctionComponent = () => {
       dispatch(new SendFormData(dataToSend));
       setFormSend(!formSend);
       setStep(1);
-
-      if (formStatus === "success") {
-        setFormData({ ...formInitialState });
-        refForm.current.reset();
-      }
     }
   };
 
