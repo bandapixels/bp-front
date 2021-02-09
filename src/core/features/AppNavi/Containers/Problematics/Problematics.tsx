@@ -1,6 +1,6 @@
 import React from "react";
 import AnimationOnScroll, {
-  AnimationNames
+  AnimationNames,
 } from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
 import styles from "./problematics.module.scss";
 
@@ -33,6 +33,21 @@ const Problematics: React.FunctionComponent = () => {
               increase in clients and in company budget.
             </p>
           </AnimationOnScroll>
+          <AnimationOnScroll
+            animationName={AnimationNames.fadeInUp}
+            duration={1}
+            delay={0.25}
+          >
+            <div className={styles.problematicsQuote}>
+              <blockquote className="appNaviBlockquote problematicQuote">
+                <em className={styles.problematicsQuoteSubtitle}>
+                  Apart from that, the app already had its users who were used
+                  to it, which we needed to keep in mind while making new design
+                  and changing old software version to the new technology stack.
+                </em>
+              </blockquote>
+            </div>
+          </AnimationOnScroll>
         </div>
         <div className={styles.decorP}>
           <img src="/images/projects/AppNavi/p.svg" alt="Decor P" />
@@ -42,30 +57,10 @@ const Problematics: React.FunctionComponent = () => {
         animationName={AnimationNames.zoomIn}
         duration={1}
         delay={0.25}
-      >
-        <div className={styles.problematicsQuote}>
-          <blockquote className="appNaviBlockquote">
-            <em>
-              Apart from that, the app already had its users who were used to
-              it, which we needed to consider and make a new design version that
-              wouldn't interfere with their established workflow.
-            </em>
-            <cite>
-              <b>Carsten Neumann,</b>
-              <br />
-              co-owner of the AppNavi project
-            </cite>
-          </blockquote>
-        </div>
-      </AnimationOnScroll>
+      ></AnimationOnScroll>
       <div className={styles.wrapperAppLayOut}>
         <img src="/images/projects/AppNavi/app-layout.png" alt="App Layout" />
       </div>
-      <img
-        src="/images/projects/AppNavi/o.svg"
-        alt="Decor O"
-        className={styles.decorO}
-      />
     </section>
   );
 };

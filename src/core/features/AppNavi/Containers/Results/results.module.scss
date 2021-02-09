@@ -1,14 +1,15 @@
 .appNaviResults {
   overflow: hidden;
   max-width: 1920px;
-  margin: 0 auto;
+  padding-left: 60px;
+  padding-right: 60px;
+  margin: 30px auto;
 }
 
 .appNaviResultsContainer {
   max-width: 1600px;
   width: 100%;
   margin: 0 auto 100px;
-  padding: 0 40px;
 
   h3 {
     text-align: center;
@@ -37,34 +38,40 @@
   min-height: 250px;
 
   .stepBorder {
-    border-left: 1px solid #04D5D9;
-    background:#fff;
+    border-left: 1px solid #04d5d9;
+    background: #fff;
     z-index: 2;
   }
 
   p {
-    padding: 35px 35px 35px 24px;
+    padding: 35px 35px 10px 24px;
   }
 }
-
+.appNaviParagraph {
+  margin: 0;
+}
 .stepItemNumber {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: bold;
   font-size: 165px;
   line-height: 150%;
   z-index: 1;
-  color: #04D5D9;
+  color: #04d5d9;
   position: relative;
   right: -28px;
 }
-
+.appNaviResultsSubtitle {
+  max-width: 100%;
+  font-style: italic;
+  font-size: 29px;
+}
 .twoStepsRow {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
 
-  &> div {
+  & > div {
     &:first-child {
       flex: 0 0 52%;
     }
@@ -79,7 +86,26 @@
   max-width: 900px;
   margin: 80px auto;
 }
-
+@media only screen and (max-width: 1280px) {
+  .appNaviResultsSubtitle {
+    font-size: 18px !important;
+    line-height: 150%;
+  }
+  .appNaviBlockquote > cite {
+    font-size: 19px !important;
+    line-height: 150%;
+    padding-top: 20px;
+  }
+  .appNaviBlockquote {
+    padding: 20px 30px 20px 50px;
+  }
+}
+@media only screen and (max-width: 960px) {
+  .appNaviResults {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
 @media only screen and (max-width: 768px) {
   .twoStepsRow {
     flex-flow: column nowrap;
@@ -111,7 +137,7 @@
     font-size: 48px;
     line-height: 150%;
     right: -8px;
-    top: -10px
+    top: -10px;
   }
 
   .stepItem {
@@ -122,5 +148,27 @@
       padding: 0 0 0 10px;
       min-height: 55px;
     }
+  }
+  .appNaviResultsSubtitle {
+    font-size: 14px !important;
+    line-height: 150%;
+  }
+  .appNaviBlockquote > cite {
+    font-size: 14px !important;
+    line-height: 150%;
+    padding-top: 20px;
+  }
+  .appNaviBlockquote {
+    padding: 10px 20px 10px 20px;
+  }
+  .appNaviResults {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  .appNaviResults {
+    margin: 0px auto;
   }
 }

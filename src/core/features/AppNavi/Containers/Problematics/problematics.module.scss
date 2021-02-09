@@ -1,12 +1,13 @@
 .problematicsWrapper {
   margin: 100px auto 0;
   padding: 0 15px;
+  padding-left: 60px;
+  padding-right: 60px;
   position: relative;
   max-width: 1920px;
 }
-
 .problematicsQuote {
-  margin: 0 auto 135px;
+  margin: 40px auto;
   padding: 0 20px;
 
   blockquote {
@@ -14,7 +15,14 @@
     margin: 0 auto;
   }
 }
-
+.problematicQuote {
+  font-style: normal;
+  font-size: 24px;
+  padding: 28px;
+  padding-left: 50px;
+  line-height: 20px;
+  line-height: 170%;
+}
 .appNaviContainer {
   max-width: 1500px;
   margin: 0 auto 45px;
@@ -39,31 +47,47 @@
 
 .wrapperAppLayOut {
   max-width: 1500px;
-  margin: 135px auto 0;
+  margin: 35px auto 0;
 
   img {
     max-width: 100%;
   }
 }
 
-.decorO {
-  position: absolute;
-  top: 53%;
-  left: -15px;
-  z-index: -1;
+@media only screen and (max-width: 1280px) {
+  .problematicQuote {
+    line-height: 25px;
+  }
+  .problematicsQuoteSubtitle {
+    font-size: 18px;
+  }
 }
-
 @media only screen and (max-width: 960px) {
   .decorO {
-    top: 63%;
+    top: 64%;
+    left: -20px;
+    width: 30vw;
+  }
+  .problematicsWrapper {
+    padding-left: 40px;
+    padding-right: 40px;
   }
 }
 
 @media only screen and (max-width: 668px) {
+  .problematicsQuoteSubtitle {
+    font-size: 14px;
+    line-height: 150%;
+  }
   .problematicsWrapper {
     margin: 40px auto 0;
+    padding-left: 30px;
+    padding-right: 30px;
   }
-
+  .problematicQuote {
+    padding: 20px;
+    padding-left: 32px;
+  }
   .decorP {
     display: none;
   }
@@ -78,16 +102,25 @@
 
   .problematicsQuote {
     padding: 0;
-    margin: 0 auto 40px;
+    margin: 0 auto 0;
+    margin-top: 20px;
   }
 
   .wrapperAppLayOut {
     margin: 40px auto 0;
   }
-
   .decorO {
-    top: auto;
-    max-width: 90px;
-    bottom: 5%;
+    top: 70%;
+  }
+}
+@media only screen and (max-width: 455px) {
+  .problematicsWrapper {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+@media only screen and (max-width: 280px) {
+  .decorO {
+    display: none;
   }
 }

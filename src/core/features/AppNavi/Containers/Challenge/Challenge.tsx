@@ -1,6 +1,6 @@
 import React from "react";
 import AnimationOnScroll, {
-  AnimationNames
+  AnimationNames,
 } from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
 import styles from "./challenge.module.scss";
 
@@ -9,6 +9,11 @@ const Challenge: React.FunctionComponent = () => {
     <section className={styles.challengeWrapper}>
       <div className={styles.challengeContainer}>
         <div className={styles.challengeContent}>
+          <img
+            src="/images/projects/AppNavi/decor-curcle.svg"
+            alt="Decor O"
+            className={styles.decorO}
+          />
           <AnimationOnScroll
             animationName={AnimationNames.fadeInUp}
             duration={1}
@@ -21,12 +26,10 @@ const Challenge: React.FunctionComponent = () => {
             delay={0.25}
           >
             <p className="appNaviParagraph mb-30">
-              <span className="blueText">AppNavi</span> is a completely new idea
-              in the market and in the training field, meaning that companies
-              have not yet had to work with it. Our task was to develop so
-              convenient and intuitive UX that no questions would arise of how
-              to use it and that all user flows would be as fast and clear as
-              possible.
+              Apart from implementing new intuitively clear user flows, the
+              front-end challenge was to be able to track user's actions in the
+              tool they are learning and suggest next possible steps, leading
+              the pre-planned route.
             </p>
           </AnimationOnScroll>
           <AnimationOnScroll
@@ -34,11 +37,9 @@ const Challenge: React.FunctionComponent = () => {
             duration={1}
             delay={0.5}
           >
-            <p className="appNaviParagraph">
-              The UI part, on the other hand, was supposed to ensure an easy
-              comprehension when integrated into absolutely any software. It was
-              also necessary to make it convenient for administrators to create
-              new scripts for training materials for new programs.
+            <p className="appNaviParagraph appNaviTopParagraph mb-30">
+              On the Back-end the challenge was to create a modular system for
+              route storing that can be edited and expanded.
             </p>
           </AnimationOnScroll>
         </div>
@@ -48,11 +49,12 @@ const Challenge: React.FunctionComponent = () => {
           className={styles.decorArrow}
         />
       </div>
-      <img
-        src="/images/projects/AppNavi/decor-challenge.png"
-        alt="Decor Challenge"
-        className={styles.decorChallenge}
-      />
+      <div className={styles.challengeImgWrapper}>
+        <img
+          src="/images/projects/AppNavi/analysis-layout.png"
+          alt="Analysis Layout"
+        />
+      </div>
     </section>
   );
 };

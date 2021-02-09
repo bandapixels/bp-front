@@ -1,6 +1,6 @@
 import React from "react";
 import AnimationOnScroll, {
-  AnimationNames
+  AnimationNames,
 } from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
 import styles from "./analysisAndSolution.module.scss";
 
@@ -9,53 +9,18 @@ const AnalysisAndSolution: React.FunctionComponent = () => {
     <section className={styles.analysisWrapper}>
       <div className={styles.analysisContainer}>
         <AnimationOnScroll animationName={AnimationNames.fadeInUp} duration={1}>
-          <h3 className="appNaviH3">Analysis and solution</h3>
+          <div className={styles.appNaviFunctionalityHeaderWrapper}>
+            <div className={styles.appNaviFunctionalityHeader}>
+              <h3 className="appNaviH3 appNaviFunctionalityTitle">
+                Functionality
+              </h3>
+              <h4 className="appNaviH4 appNaviFunctionalitySubitle">
+                The main features we developed:
+              </h4>
+            </div>
+          </div>
         </AnimationOnScroll>
-        <AnimationOnScroll
-          animationName={AnimationNames.fadeInUp}
-          duration={1}
-          delay={0.25}
-        >
-          <h4 className="appNaviH4">
-            For the UX analysis, we took the following steps:
-          </h4>
-        </AnimationOnScroll>
-        <div className={styles.analysisStepsText}>
-          <AnimationOnScroll
-            animationName={AnimationNames.fadeInUp}
-            duration={1}
-          >
-            <p className="appNaviParagraph">
-              The purpose of AppNavi is to provide assistance, to help you
-              quickly and easily understand the issue of interest, to train,
-              excluding painful and tedious explanations, and not to cause
-              stress and irritation.
-            </p>
-          </AnimationOnScroll>
-        </div>
         <div className={styles.analysisSteps}>
-          <AnimationOnScroll
-            animationName={AnimationNames.fadeIn}
-            duration={1}
-            delay={2.5}
-          >
-            <img
-              src="/images/projects/AppNavi/top-line.svg"
-              className={styles.topLine}
-              alt="Line"
-            />
-          </AnimationOnScroll>
-          <AnimationOnScroll
-            animationName={AnimationNames.fadeIn}
-            duration={1}
-            delay={2.5}
-          >
-            <img
-              src="/images/projects/AppNavi/bottom-line.svg"
-              className={styles.bottomLine}
-              alt="Line"
-            />
-          </AnimationOnScroll>
           <AnimationOnScroll
             animationName={AnimationNames.fadeIn}
             duration={1}
@@ -72,9 +37,22 @@ const AnalysisAndSolution: React.FunctionComponent = () => {
             duration={1}
             delay={2.5}
           >
+            <div className={styles.tabletWrapper}>
+              <img
+                src="/images/projects/AppNavi/tablet-line.svg"
+                className={styles.tabletLine}
+                alt="Line"
+              />
+            </div>
+          </AnimationOnScroll>
+          <AnimationOnScroll
+            animationName={AnimationNames.fadeIn}
+            duration={1}
+            delay={2.5}
+          >
             <img
-              src="/images/projects/AppNavi/tablet-line.svg"
-              className={styles.tabletLine}
+              src="/images/projects/AppNavi/pc-tablet-line.svg"
+              className={styles.topLine}
               alt="line"
             />
           </AnimationOnScroll>
@@ -86,7 +64,9 @@ const AnalysisAndSolution: React.FunctionComponent = () => {
                 alt="step 1"
                 className={styles.mobSteps}
               />
-              <p>studied the idea of the application</p>
+              <p>
+                Ready-made routes that help the user learn the app step by step
+              </p>
             </div>
           </AnimationOnScroll>
           <AnimationOnScroll
@@ -101,7 +81,10 @@ const AnalysisAndSolution: React.FunctionComponent = () => {
                 alt="step 2"
                 className={styles.mobSteps}
               />
-              <p>studied technical requirements and existing style guides</p>
+              <p>
+                Tooltips. They guide the user through the respective use cases.
+                The main development focus was on reliable object recognition
+              </p>
             </div>
           </AnimationOnScroll>
           <AnimationOnScroll
@@ -116,9 +99,7 @@ const AnalysisAndSolution: React.FunctionComponent = () => {
                 alt="step 3"
                 className={styles.mobSteps}
               />
-              <p>
-                studied the main user flows and tested them on a focus group
-              </p>
+              <p>News. The administrator can create articles for app users</p>
             </div>
           </AnimationOnScroll>
           <AnimationOnScroll
@@ -133,7 +114,11 @@ const AnalysisAndSolution: React.FunctionComponent = () => {
                 alt="step 4"
                 className={styles.mobSteps}
               />
-              <p>requested and studied customer reviews</p>
+              <p>
+                Collections. This feature allows administrators combine relevant
+                content into collections and make them available to their
+                onboarders, such as a learning collection
+              </p>
             </div>
           </AnimationOnScroll>
           <AnimationOnScroll
@@ -149,37 +134,32 @@ const AnalysisAndSolution: React.FunctionComponent = () => {
                 className={styles.mobSteps}
               />
               <p className={styles.hideInMob}>
-                requested several video recordings of how clients' new employees
-                use the application
+                Editorial process. The admin can define under which
+                circumstances a user can see the content and what this content
+                will be
               </p>
               <p className={styles.showInMob}>
-                requested videos of how new users use the app
-              </p>
-            </div>
-          </AnimationOnScroll>
-          <AnimationOnScroll
-            animationName={AnimationNames.fadeIn}
-            duration={1}
-            delay={0.8}
-          >
-            <div className="analysisStep analysisStep6">
-              <img src="/images/projects/AppNavi/step-6.svg" alt="step 6" />
-              <img
-                src="/images/projects/AppNavi/step-6-mob.svg"
-                alt="step 6"
-                className={styles.mobSteps}
-              />
-              <p className={styles.hideInMob}>
-                studied the user flow for the administrator who created new
-                instructions for learning new programs and functions
-              </p>
-              <p className={styles.showInMob}>
-                studied userflow to create instructions for learning new
-                programs
+                Editorial process. The admin can define under which
+                circumstances a user can see the content and what this content
+                will be
               </p>
             </div>
           </AnimationOnScroll>
         </div>
+
+        <AnimationOnScroll
+          animationName={AnimationNames.fadeIn}
+          duration={1}
+          delay={0.8}
+        >
+          <div className={styles.solutionsLogoWrapper}>
+            <img
+              src="/images/projects/AppNavi/logo.svg"
+              alt="logo"
+              className={styles.solutionsLogo}
+            />
+          </div>
+        </AnimationOnScroll>
       </div>
     </section>
   );

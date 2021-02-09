@@ -21,7 +21,9 @@
   position: absolute;
   right: 0;
   top: calc(100% + 10vh);
+  width: 70vw;
   z-index: -2;
+  max-width: 1200px;
 }
 
 .appNaviMainLeft {
@@ -38,7 +40,7 @@
     display: flex;
     align-items: center;
     letter-spacing: 0.02em;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 }
 
@@ -46,6 +48,7 @@
   img {
     display: block;
     max-width: 60vw;
+    margin-bottom: 185px;
   }
 }
 
@@ -62,22 +65,18 @@
   font-size: 24px;
   line-height: 170%;
   letter-spacing: 0.03em;
-  color: #4F4F4F;
-
-  &:not(:last-child) {
-    margin-bottom: 50px;
-  }
+  color: #4f4f4f;
 }
 
 .blueText {
-  color: #04D5D9;
+  color: #04d5d9;
 }
 
 .appNaviQuote {
   font-size: 24px;
   line-height: 150%;
   color: #696363;
-  border: 1px solid #04D5D9;
+  border: 1px solid #04d5d9;
   padding: 30px 45px;
   display: block;
   margin: 25px 0 0;
@@ -103,7 +102,7 @@
   font-size: 28px;
   line-height: 170%;
   letter-spacing: 0.03em;
-  color: #4F4F4F;
+  color: #4f4f4f;
   position: relative;
   background: #fff;
   border-radius: 32px;
@@ -111,20 +110,20 @@
   position: relative;
 
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     z-index: -1;
-    background: linear-gradient(90deg, #5EDABB -137.04%, #04D5D9 203.7%);
+    background: linear-gradient(90deg, #5edabb -137.04%, #04d5d9 203.7%);
     border-radius: 32px;
     margin: -3px;
   }
 
   &:after {
-    content: '';
+    content: "";
     width: 82px;
     height: 100px;
     display: block;
@@ -181,9 +180,12 @@
 }
 
 @media only screen and (max-width: 960px) {
+  .appNaviMainRight img {
+    margin-top: -55px;
+  }
   .appNaviMainLeft {
     .naviLogoWrapper {
-      margin-bottom: 30px;
+      margin-bottom: 40px;
 
       img {
         display: block;
@@ -248,13 +250,9 @@
   .appNaviMainRight {
     img {
       max-width: 100%;
+      margin-bottom: 0;
     }
   }
-
-  .mainTransparentLogo {
-    display: none;
-  }
-
   .mainFigure {
     height: 145%;
     object-fit: cover;

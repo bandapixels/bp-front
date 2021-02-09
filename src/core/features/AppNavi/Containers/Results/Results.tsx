@@ -1,6 +1,6 @@
 import React from "react";
 import AnimationOnScroll, {
-  AnimationNames
+  AnimationNames,
 } from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
 import styles from "./results.module.scss";
 
@@ -12,29 +12,18 @@ const Results: React.FunctionComponent = () => {
           <h3 className="appNaviH3">Results</h3>
         </AnimationOnScroll>
         <AnimationOnScroll
-          animationName={AnimationNames.fadeInUp}
-          duration={1}
-          delay={0.25}
-        >
-          <p className="appNaviParagraph resultText">
-            Getting down to the project realization, the owners of the AppNavi
-            brand have distinguished us among other companies yet at the initial
-            stage of specialist selection and gave preference to cooperation
-            with us.
-          </p>
-        </AnimationOnScroll>
-        <AnimationOnScroll
           animationName={AnimationNames.zoomIn}
           duration={1}
           delay={0.5}
         >
           <blockquote className="appNaviBlockquote">
-            <em>
-              Getting down to the project realization, the owners of the AppNavi
-              brand have distinguished us among other companies yet at the
-              initial stage of specialist selection and gave preference to
-              cooperation with us.
-            </em>
+            <p className={styles.appNaviResultsSubtitle}>
+              The collaboration was very creative and professional in every
+              sense. Milestones were quickly developed and pragmatically refined
+              in a swift iterative process. We were very satisfied with the
+              results in every respect and can recommend BandaPixels with a
+              clear conscience.
+            </p>
             <cite>
               <b>Carsten Neumann,</b>
               <br />
@@ -63,10 +52,14 @@ const Results: React.FunctionComponent = () => {
                     delay={1.5}
                   >
                     <p className="appNaviParagraph">
-                      Day and night modes have improved the working conditions
-                      of employees who work in several shifts, reduced eye
-                      strain, increased productivity, which was stated by
-                      representatives of the companies that use this application
+                      Deployed at scale on device This product is designed to be
+                      downloaded and deployed at scale on devices (e.g. mobile
+                      applications, intelligent agents, etc.)
+                    </p>
+                    <p className="appNaviParagraph">
+                      Deployed on server This product is an on-premise/hosted
+                      solution designed to be downloaded and deployed on a
+                      server.
                     </p>
                   </AnimationOnScroll>
                 </div>
@@ -91,9 +84,13 @@ const Results: React.FunctionComponent = () => {
                     delay={1.5}
                   >
                     <p className="appNaviParagraph">
-                      The modern animated logo of the brand has become more
-                      memorable and recognizable. Now it can be used in
-                      advertising and print branded products.
+                      Software-as-a-Service solution This product is delivered
+                      online as a subscription service.
+                    </p>
+                    <p className="appNaviParagraph">
+                      User Assistance provided Assistance is provided to enable
+                      all target users to install, configure, and use the
+                      solution.
                     </p>
                   </AnimationOnScroll>
                 </div>
@@ -120,68 +117,15 @@ const Results: React.FunctionComponent = () => {
                     delay={1.5}
                   >
                     <p className="appNaviParagraph">
-                      Due to the improved UX design, users were able to go
-                      through user scenarios much faster, which has increased
-                      their training productivity. Hence, this had had a
-                      positive effect on the company budget, further reduced
-                      spendings on employee onboarding and thereby increased
-                      loyalty to AppNavi
+                      Works with SAP Extension Suite and SAP Integration Suite
+                      This solution leverages the technologies of the SAP
+                      Extension Suite and SAP Integration Suite.
                     </p>
-                  </AnimationOnScroll>
-                </div>
-              </AnimationOnScroll>
-            </div>
-          </div>
-          <div className={styles.twoStepsRow}>
-            <div className={styles.stepItem}>
-              <AnimationOnScroll
-                animationName={AnimationNames.fadeInRight}
-                duration={1}
-              >
-                <span className={styles.stepItemNumber}>4</span>
-              </AnimationOnScroll>
-              <AnimationOnScroll
-                animationName={AnimationNames.zoomIn}
-                duration={1}
-                delay={1}
-              >
-                <div className={styles.stepBorder}>
-                  <AnimationOnScroll
-                    animationName={AnimationNames.fadeInUp}
-                    duration={1}
-                    delay={1.5}
-                  >
                     <p className="appNaviParagraph">
-                      Such improvements have contributed to the popularity of
-                      AppNavi, it has began to be recommend and widely used.
-                      Thus, the company has increased the number of clients
-                      gained by testimonials
-                    </p>
-                  </AnimationOnScroll>
-                </div>
-              </AnimationOnScroll>
-            </div>
-            <div className={styles.stepItem}>
-              <AnimationOnScroll
-                animationName={AnimationNames.fadeInRight}
-                duration={1}
-              >
-                <span className={styles.stepItemNumber}>5</span>
-              </AnimationOnScroll>
-              <AnimationOnScroll
-                animationName={AnimationNames.zoomIn}
-                duration={1}
-                delay={1}
-              >
-                <div className={styles.stepBorder}>
-                  <AnimationOnScroll
-                    animationName={AnimationNames.fadeInUp}
-                    duration={1}
-                    delay={1.5}
-                  >
-                    <p className="appNaviParagraph">
-                      The program has become simple and understandable for new
-                      clients, thus increasing the % of conversion
+                      Integrates with SAP Cloud solutions This product
+                      integrates with SAP cloud solutions using standard
+                      SAP-approved interfaces and APIs. It is designed to be
+                      delivered over a network as a cloud service.
                     </p>
                   </AnimationOnScroll>
                 </div>
@@ -190,11 +134,6 @@ const Results: React.FunctionComponent = () => {
           </div>
         </div>
       </div>
-      <img
-        src="/images/projects/AppNavi/results-layout.svg"
-        alt="Results"
-        className={styles.resultsLayout}
-      />
     </section>
   );
 };

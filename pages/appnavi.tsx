@@ -13,6 +13,9 @@ import Results from "../src/core/features/AppNavi/Containers/Results/Results";
 import StoreLayout from "../src/core/layouts/StoreLayout";
 import ScrollLayout from "../src/core/layouts/ScrollLayout";
 import constants from "../src/core/shared/constants";
+import Solution from "../src/core/features/AppNavi/Containers/Solution/Solution";
+import Technologies from "../src/core/features/AppNavi/Containers/Technologies/Technologies";
+import SolutionVideo from "../src/core/features/AppNavi/Containers/SolutionVideo/SolutionVideo";
 
 const AppNavi: NextPage = () => {
   return (
@@ -54,7 +57,7 @@ const AppNavi: NextPage = () => {
               "https://dribbble.com/bandapixels",
               "https://www.linkedin.com/organization-guest/company/bandapixels"
             ]
-          }`
+          }`,
           }}
         />
       </Head>
@@ -62,13 +65,14 @@ const AppNavi: NextPage = () => {
         <ScrollLayout>
           <MainBlock />
           <AboutTheProject />
+          <AboutVideo />
           <Problematics />
           <Challenge />
-          <AboutVideo />
+          <Solution />
+          <SolutionVideo />
           <AnalysisAndSolution />
-          <AnalysisVideo />
-          <AnalysisBottom />
           <Results />
+          <Technologies />
         </ScrollLayout>
       </StoreLayout>
     </>

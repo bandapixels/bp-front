@@ -1,10 +1,12 @@
 import React from "react";
 import AnimationOnScroll, {
-  AnimationNames
+  AnimationNames,
 } from "../../../../utils/AnimationOnScroll/AnimationOnScroll";
+import useIsMobile from "../../../../utils/useIsMobile";
 import styles from "./aboutTheProject.module.scss";
 
 const AboutTheProject: React.FunctionComponent = () => {
+  useIsMobile;
   return (
     <section className={styles.appNaviAbout}>
       <div className={styles.appNaviWrapper}>
@@ -16,7 +18,9 @@ const AboutTheProject: React.FunctionComponent = () => {
             animationName={AnimationNames.fadeInUp}
             duration={1}
           >
-            <h3 className="appNaviH3">About the project</h3>
+            <h3 className="appNaviH3 aboutTitle">
+              <div>About</div>&nbsp;<div>the project</div>
+            </h3>
           </AnimationOnScroll>
           <AnimationOnScroll
             animationName={AnimationNames.fadeInUp}
@@ -42,11 +46,6 @@ const AboutTheProject: React.FunctionComponent = () => {
           employees, which economizes time and budget.
         </p>
       </div>
-      <img
-        src="/images/projects/AppNavi/decor.png"
-        alt="AppNavi decor"
-        className={styles.decor}
-      />
     </section>
   );
 };
