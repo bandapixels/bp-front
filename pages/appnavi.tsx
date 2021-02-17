@@ -7,8 +7,6 @@ import AboutVideo from "../src/core/features/AppNavi/Containers/AboutVideo/About
 import Problematics from "../src/core/features/AppNavi/Containers/Problematics/Problematics";
 import Challenge from "../src/core/features/AppNavi/Containers/Challenge/Challenge";
 import AnalysisAndSolution from "../src/core/features/AppNavi/Containers/AnalysisAndSolution/AnalysisAndSolution";
-import AnalysisVideo from "../src/core/features/AppNavi/Containers/AnalysisVideo/AnalysisVideo";
-import AnalysisBottom from "../src/core/features/AppNavi/Containers/AnalysisBottom/AnalysisBottom";
 import Results from "../src/core/features/AppNavi/Containers/Results/Results";
 import StoreLayout from "../src/core/layouts/StoreLayout";
 import ScrollLayout from "../src/core/layouts/ScrollLayout";
@@ -57,7 +55,7 @@ const AppNavi: NextPage = () => {
               "https://dribbble.com/bandapixels",
               "https://www.linkedin.com/organization-guest/company/bandapixels"
             ]
-          }`,
+          }`
           }}
         />
       </Head>
