@@ -44,7 +44,6 @@ $we-help-font-sizes: (
   text-transform: uppercase;
   width: $size;
   height: $size;
-  position: relative;
   animation: $animation $animationTime linear infinite;
   transform-origin: center;
   margin: 0 auto;
@@ -262,7 +261,7 @@ $we-help-font-sizes: (
       position: absolute;
       top: 100%;
       left: 32%;
-      width: 110%;
+      width: max-content;
     }
   }
 }
@@ -289,7 +288,7 @@ $we-help-font-sizes: (
     &:last-child {
       position: absolute;
       left: calc(100% + 20px);
-      width: 56%;
+      width: max-content;
       bottom: 0;
 
       &:after {
