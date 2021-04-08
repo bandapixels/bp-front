@@ -235,7 +235,7 @@ $we-help-font-sizes: (
 
 .bigLettersWrapper {
   margin: 32vh 0 0;
-  padding: 0 0 0 60px;
+  padding: 0 0 0 40px;
   pointer-events: none;
 }
 
@@ -244,10 +244,18 @@ $we-help-font-sizes: (
 }
 
 .firstLine {
+  background-color: #171718;
+  padding: 14px 13px 8px 13px;
+  max-width: 506px;
+  color: #EFE314;
+
+  font-family: Raleway;
+  font-style: normal;
   font-weight: bold;
+
   line-height: 130%;
   letter-spacing: 0.03em;
-  color: #ffffff;
+  text-align: center;
   position: relative;
   @include font-size($first-line-font-sizes);
 
@@ -258,10 +266,14 @@ $we-help-font-sizes: (
     }
 
     &:last-child {
+      background-color: #fff;
+      color: #171718;
+      padding: 5px 15px 11px 15px;
       position: absolute;
-      top: 100%;
-      left: 32%;
+      top: 90%;
+      left: 33%;
       width: max-content;
+      z-index: -1;
     }
   }
 }
@@ -271,7 +283,7 @@ $we-help-font-sizes: (
   line-height: 130%;
   letter-spacing: 0.03em;
   color: #171718;
-  margin: 15px 0 0;
+  margin: 157px 0 0 20px;
   position: relative;
   @include font-size($last-line-font-sizes);
 
@@ -298,8 +310,8 @@ $we-help-font-sizes: (
         width: 401px;
         height: 283px;
         position: absolute;
-        bottom: -20px;
-        left: calc(100% - 50px);
+        bottom: 110px;
+        left: calc(100% - 90px);
       }
     }
   }

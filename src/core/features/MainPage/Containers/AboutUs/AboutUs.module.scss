@@ -110,6 +110,9 @@ $bigLetters-offset: (
 .virtuesItem {
   flex: 0 0 50%;
   min-height: 200px;
+  &:last-child {
+    margin-top: 48px;
+  }
 }
 
 @media screen and (max-width: $breakpoint-tablet) {

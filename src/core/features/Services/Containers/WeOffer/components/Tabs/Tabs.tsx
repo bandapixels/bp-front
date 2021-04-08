@@ -49,7 +49,7 @@ const Tabs: React.FunctionComponent = () => {
           <div className={styles.tabContent}>
             <h3>Discovery stage</h3>
             <p>
-              Is the first step in Product Development During the P.S., we will
+              Is the first step in Product Development During the Discovery stage, we will
               communicate closely with you to define the project vision and
               scope. We undertake user research, prototype and test ideas, and
               validate tech feasibility to create a user — friendly product with

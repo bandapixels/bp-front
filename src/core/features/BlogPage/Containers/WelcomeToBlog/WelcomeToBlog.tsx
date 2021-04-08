@@ -26,7 +26,7 @@ const WelcomeToBlog: React.FunctionComponent = () => {
           <h3 className={styles.welcomeTitle}>
             Welcome to
             <br />
-            bandapixels blog
+            Bandapixels blog
           </h3>
           <p className={styles.welcomeText}>
             Here you will find many articles that can help you use your budget

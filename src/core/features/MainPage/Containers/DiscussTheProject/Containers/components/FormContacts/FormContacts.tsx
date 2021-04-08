@@ -42,6 +42,7 @@ const FormContacts: React.FunctionComponent<FormContactsProps> = ({
         handlerOnChange={handlerOnChange}
         value={formData.email.value}
         error={formData.email.error}
+        required={true}
       >
         Email
       </Input>

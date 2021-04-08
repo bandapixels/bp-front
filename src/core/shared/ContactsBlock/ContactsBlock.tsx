@@ -36,9 +36,9 @@ const ContactsBlock: React.FunctionComponent<ContactsBlockProps> = ({
           <br /> the best choice for the users
         </h3>
         <p className={styles.contactsText}>
-          Our team the best choice for you
+          Let our team be the best choice for you
           <br />
-          Join vs work with us
+          Contact Us
         </p>
         <a href="mailto:team@bandapixels.com" className={styles.mailBtn}>
           team@bandapixels.com
