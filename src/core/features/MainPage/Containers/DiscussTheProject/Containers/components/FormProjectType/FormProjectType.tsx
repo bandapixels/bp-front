@@ -15,7 +15,7 @@ const FormProjectType: React.FunctionComponent<FormProjectTypeProps> = ({
 
   return (
     <div className={styles.formProjectType}>
-      <h6>Project type</h6>
+      <h6>Project type*</h6>
       <div className={styles.projectRadioContainer}>
         <div className={styles.projectRadioRow}>
           <RadioButton

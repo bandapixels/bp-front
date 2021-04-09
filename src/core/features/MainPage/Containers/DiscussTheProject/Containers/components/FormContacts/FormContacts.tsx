@@ -23,7 +23,7 @@ const FormContacts: React.FunctionComponent<FormContactsProps> = ({
         value={formData.name.value}
         error={formData.name.error}
       >
-        Name
+        Name<span className={styles.inputTextStar}>*</span>
       </Input>
       <Input
         id="discuss-company"
@@ -33,7 +33,7 @@ const FormContacts: React.FunctionComponent<FormContactsProps> = ({
         value={formData.company.value}
         error={formData.company.error}
       >
-        Company
+        Company<span style={{display: "inline", fontSize: "11px", position: "relative", top: "-5px", right: "-1px"}}>*</span>
       </Input>
       <Input
         id="discuss-email"
@@ -44,7 +44,7 @@ const FormContacts: React.FunctionComponent<FormContactsProps> = ({
         error={formData.email.error}
         required={true}
       >
-        Email
+        Email<span style={{display: "inline", fontSize: "11px", position: "relative", top: "-5px", right: "-1px"}}>*</span>
       </Input>
       <Input
         id="discuss-skype"

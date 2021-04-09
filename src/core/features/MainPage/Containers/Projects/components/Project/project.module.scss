@@ -36,6 +36,7 @@
   }
 
   h1 {
+    font-family: Raleway;
     font-weight: bold;
     font-size: 80px;
     line-height: 100%;
@@ -209,7 +210,21 @@
   opacity: 0;
 }
 
+@media screen and (max-width: 1900px) {
+  .projectInfo {
+    h1 {
+      font-size: 70px;
+    }
+  }
+}
+
 @media screen and (max-width: 1680px) {
+  .projectInfo {
+    h1 {
+      font-size: 50px;
+    }
+  }
+
   .projectImage {
     max-width: 640px;
     max-height: 380px;
@@ -265,6 +280,7 @@
 
   .projectInfo {
     h1 {
+      font-size: 45px;
       margin-bottom: 30px;
     }
   }
