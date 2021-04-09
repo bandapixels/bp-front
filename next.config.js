@@ -15,5 +15,8 @@ module.exports = withSass({
       const name = fileName.replace(/\.[^/.]+$/, '');
       return `${name}__${localName}`;
     },
-  }
-});
+  },
+    env: {
+      APP_HOSTNAME: process.env.APP_HOSTNAME
+    }
+}); 
