@@ -50,6 +50,20 @@
   transition: .8s;
 }
 
+@media only screen and (max-width: 1600px) and (max-height: 1200px) and (min-width: 669px) {
+  .sliderBtnWrapper {
+    transform: translateY(-10vh);
+    button {
+      max-width: 12vh;
+      max-height: 12vh;
+      svg {
+        width: 25px;
+        height: 18px;
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 1400px) and (max-height: 1200px) and (min-width: 669px) {
   .sliderBtnWrapper {
     bottom: 16vh;
@@ -59,6 +73,10 @@
     button {
       max-width: 10vh;
       max-height: 10vh;
+      svg {
+        width: 25px;
+        height: 18px;
+      }
     }
   }
 
@@ -101,6 +119,10 @@
     button {
       max-width: 5.5vh;
       max-height: 5.5vh;
+      svg {
+        width: 17px;
+        height: 10px;
+      }
     }
   }
 }

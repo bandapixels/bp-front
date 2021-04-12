@@ -92,6 +92,7 @@ $bigLetters-offset: (
 }
 
 .virtuesTitle {
+  font-family: 'Raleway' !important;
   font-weight: bold;
   line-height: 130%;
   color: #000000;
@@ -111,7 +112,7 @@ $bigLetters-offset: (
   flex: 0 0 50%;
   min-height: 200px;
   &:last-child {
-    margin-top: 48px;
+    margin-top: 30px;
   }
 }
 
@@ -218,5 +219,17 @@ $bigLetters-offset: (
   .gradient-horizontal,
   .gradient-vertical {
     display: none;
+  }
+}
+
+@media (max-height: 720px) {
+  .virtuesItem {
+    min-height: 130px;
+  }
+  .virtuesTitle {
+    font-size: 30px;
+  }
+  .virtuesDescription {
+    font-size: 20px;
   }
 }

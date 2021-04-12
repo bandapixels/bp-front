@@ -12,10 +12,9 @@ const FormProjectType: React.FunctionComponent<FormProjectTypeProps> = ({
   handlerOnChange,
   formData
 }) => {
-
   return (
     <div className={styles.formProjectType}>
-      <h6>Project type*</h6>
+      <h6 className={!!formData.projectType.error ? styles.error : ''}>Project type*</h6>
       <div className={styles.projectRadioContainer}>
         <div className={styles.projectRadioRow}>
           <RadioButton

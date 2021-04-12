@@ -171,29 +171,23 @@
       margin: 0 8px 0 0;
     }
 
-    // &.sliderNext {
-    //   background-color: #171718;
-    //   svg {
-    //     path {
-    //       fill:#fff;
-    //     }
-    //   }
-    // }
-
     svg {
       transition: .3s;
     }
 
     &:hover {
-      border-color: #EFE314;
+      background: #3F3F40;
 
       path {
-        fill: #EFE314;
+        fill: #fff;
       }
     }
 
     &:active {
-      background: #171718;
+      background: #fff;
+      path {
+        fill: #454546;
+      }
     }
   }
 }
