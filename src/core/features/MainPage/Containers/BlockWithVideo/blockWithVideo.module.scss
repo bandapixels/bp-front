@@ -357,14 +357,6 @@ $we-help-font-sizes: (
 
   .lastLine {
     margin: 30px 0 0 20px;
-    span {
-      &:last-child {
-        &:after {
-          width: 301px;
-          bottom: -50px;
-        }
-      }
-    }
   }
 }
 
@@ -456,13 +448,18 @@ $we-help-font-sizes: (
 
 @media (max-width: 1440px) {
   .firstLine {
+    font-size: 40px;
     padding: 5px 13px;
     width: 350px;
+    span:last-child {
+        padding: 0 10px 5px 15px;
+    }
   }
 }
 
 @media (max-width: 1280px) {
   .firstLine {
+      font-size: 30px;
     padding: 5px 13px;
     width: 270px;
   }
@@ -471,29 +468,16 @@ $we-help-font-sizes: (
 @media (max-height: 910px) {
   .lastLine {
     margin: 100px 0 0 20px;
+    span {
+        &:last-child {
+          &:after {
+            width: 301px;
+          }
+        }
+      }
   }
 
   .mainText {
     bottom: 40px;
-  }
-}
-
-@media (max-height: 800px) {
-  .lastLine {
-    margin: 20px 0 0 20px;
-    span {
-      &:last-child {
-        &::after {
-          width: 320px;
-          height: 220px;
-          bottom: 20px;
-          left: calc(100% - 100px);
-        }
-      }
-    }
-  }
-
-  .mainText {
-    bottom: 30px;
   }
 }
