@@ -36,6 +36,8 @@
   }
 
   h1 {
+    position: absolute;
+    top: 19vh;
     font-family: Raleway;
     font-weight: bold;
     font-size: 80px;
@@ -253,6 +255,14 @@
   .projectProblem {
     font-size: 16px;
   }
+}
+
+@media screen and (max-width: 1024px) {
+    .projectInfo {
+        h1 {
+            display: none;
+        }
+    }
 }
 
 @media screen and (min-width: 1025px) and (min-height: 700px) and (max-height: 900px){
