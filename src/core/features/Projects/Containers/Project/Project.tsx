@@ -19,6 +19,7 @@ import {
   getCanScroll
 } from "../../../../shared/FullPageScroll/fullPageScroll.selectors";
 import useIsMobile from "../../../../utils/useIsMobile";
+import Arrow from "../../../../shared/Icons/Arrow/Arrow";
 
 interface ProjectProps {
   title: string;
@@ -201,7 +202,7 @@ const Project: React.FunctionComponent<ProjectProps> = ({
                   changeProject("up");
                 }}
               >
-                <ArrowForSlider />
+                <Arrow />
               </Button>
             </div>
           )}
@@ -212,7 +213,7 @@ const Project: React.FunctionComponent<ProjectProps> = ({
                 changeProject("down");
               }}
             >
-              <ArrowForSlider />
+              <Arrow />
             </Button>
           </div>
         </div>

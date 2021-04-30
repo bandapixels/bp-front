@@ -72,11 +72,11 @@ $bigLetters-offset: (
     display: block;
 
     &:last-child {
-      background: url(/images/icons/us.svg) no-repeat center;
+      background: url(/images/icons/US1.svg) no-repeat center;
       background-size: contain;
       width: 120px;
       height: 84px;
-      margin: 20px 0 0 45px;
+      margin: 5px 0 0 1px;
     }
   }
 }
@@ -92,6 +92,7 @@ $bigLetters-offset: (
 }
 
 .virtuesTitle {
+  font-family: 'Raleway' !important;
   font-weight: bold;
   line-height: 130%;
   color: #000000;
@@ -110,6 +111,9 @@ $bigLetters-offset: (
 .virtuesItem {
   flex: 0 0 50%;
   min-height: 200px;
+  &:last-child {
+    margin-top: 30px;
+  }
 }
 
 @media screen and (max-width: $breakpoint-tablet) {
@@ -119,7 +123,7 @@ $bigLetters-offset: (
   
   .virtuesItem {
     min-height: unset;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     flex: 0 0 100%;
   }
 }
@@ -215,5 +219,17 @@ $bigLetters-offset: (
   .gradient-horizontal,
   .gradient-vertical {
     display: none;
+  }
+}
+
+@media (max-height: 720px) {
+  .virtuesItem {
+    min-height: 130px;
+  }
+  .virtuesTitle {
+    font-size: 30px;
+  }
+  .virtuesDescription {
+    font-size: 20px;
   }
 }

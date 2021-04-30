@@ -22,6 +22,7 @@
   }
 
   span {
+    position: relative;
     font-weight: bold;
     font-size: 16px;
     line-height: 19px;
@@ -31,6 +32,7 @@
     display: inline-block;
     flex: 0 0 90px;
     transition: .3s;
+    margin-right: 3px;
   }
 
   input[type="text"],

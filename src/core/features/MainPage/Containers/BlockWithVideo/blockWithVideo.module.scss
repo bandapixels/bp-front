@@ -235,8 +235,12 @@ $we-help-font-sizes: (
 
 .bigLettersWrapper {
   margin: 32vh 0 0;
-  padding: 0 0 0 60px;
+  padding: 0 0 0 40px;
   pointer-events: none;
+
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: bold;
 }
 
 .yellowText {
@@ -244,10 +248,14 @@ $we-help-font-sizes: (
 }
 
 .firstLine {
-  font-weight: bold;
+  background-color: #171718;
+  padding: 14px 13px 8px 13px;
+  max-width: 506px;
+  color: #EFE314;
+
   line-height: 130%;
   letter-spacing: 0.03em;
-  color: #ffffff;
+  text-align: center;
   position: relative;
   @include font-size($first-line-font-sizes);
 
@@ -258,10 +266,14 @@ $we-help-font-sizes: (
     }
 
     &:last-child {
+      background-color: #fff;
+      color: #171718;
+      padding: 5px 15px 11px 15px;
       position: absolute;
-      top: 100%;
-      left: 32%;
+      top: 90%;
+      left: 33%;
       width: max-content;
+      z-index: -1;
     }
   }
 }
@@ -271,7 +283,7 @@ $we-help-font-sizes: (
   line-height: 130%;
   letter-spacing: 0.03em;
   color: #171718;
-  margin: 15px 0 0;
+  margin: 157px 0 0 20px;
   position: relative;
   @include font-size($last-line-font-sizes);
 
@@ -298,7 +310,7 @@ $we-help-font-sizes: (
         width: 401px;
         height: 283px;
         position: absolute;
-        bottom: -20px;
+        bottom: 110px;
         left: calc(100% - 50px);
       }
     }
@@ -311,6 +323,7 @@ $we-help-font-sizes: (
 }
 
 .mainText {
+  font-family: 'Raleway';
   font-weight: normal;
   font-size: 20px;
   line-height: 150%;
@@ -343,14 +356,7 @@ $we-help-font-sizes: (
   }
 
   .lastLine {
-    span {
-      &:last-child {
-        &:after {
-          width: 301px;
-          bottom: -50px;
-        }
-      }
-    }
+    margin: 30px 0 0 20px;
   }
 }
 
@@ -430,5 +436,48 @@ $we-help-font-sizes: (
     display: block;
     margin: 20px auto 0;
     width: 100%;
+  }
+}
+
+@media (max-width: 1900px) {
+  .firstLine {
+    padding: 5px 8px 0;
+    width: 440px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .firstLine {
+    font-size: 40px;
+    padding: 5px 13px;
+    width: 350px;
+    span:last-child {
+        padding: 0 10px 5px 15px;
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  .firstLine {
+      font-size: 30px;
+    padding: 5px 13px;
+    width: 270px;
+  }
+}
+
+@media (max-height: 910px) {
+  .lastLine {
+    margin: 100px 0 0 20px;
+    span {
+        &:last-child {
+          &:after {
+            width: 301px;
+          }
+        }
+      }
+  }
+
+  .mainText {
+    bottom: 40px;
   }
 }

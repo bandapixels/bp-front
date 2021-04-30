@@ -14,31 +14,11 @@ const FormProjectType: React.FunctionComponent<FormProjectTypeProps> = ({
 }) => {
   return (
     <div className={styles.formProjectType}>
-      <h6>Project type</h6>
+      <h6 className={!!formData.projectType.error ? styles.error : ''}>Project type*</h6>
       <div className={styles.projectRadioContainer}>
         <div className={styles.projectRadioRow}>
           <RadioButton
             id="type-1"
-            value="We want to make the design of the service more convenient and
-            understandable for users."
-            name="projectType"
-            handlerOnChange={handlerOnChange}
-            error={formData.projectType.error}
-          >
-            We want to make the design of the service more convenient and
-            understandable for users.
-          </RadioButton>
-          <RadioButton
-            id="type-2"
-            value="We are doing a new service and want to make a design for it."
-            name="projectType"
-            handlerOnChange={handlerOnChange}
-            error={formData.projectType.error}
-          >
-            We are doing a new service and want to make a design for it.
-          </RadioButton>
-          <RadioButton
-            id="type-3"
             value="We improve or expand a working service"
             name="projectType"
             handlerOnChange={handlerOnChange}
@@ -46,10 +26,8 @@ const FormProjectType: React.FunctionComponent<FormProjectTypeProps> = ({
           >
             We improve or expand a working service
           </RadioButton>
-        </div>
-        <div className={styles.projectRadioRow}>
           <RadioButton
-            id="type-4"
+            id="type-2"
             value="We are developing a new service for everyone and we know exactly
             what we want"
             name="projectType"
@@ -60,7 +38,7 @@ const FormProjectType: React.FunctionComponent<FormProjectTypeProps> = ({
             what we want
           </RadioButton>
           <RadioButton
-            id="type-5"
+            id="type-3"
             value="We are a startup and want to make a cool MVP. We want to see a team
             that will help us."
             name="projectType"
@@ -69,6 +47,28 @@ const FormProjectType: React.FunctionComponent<FormProjectTypeProps> = ({
           >
             We are a startup and want to make a cool MVP. We want to see a team
             that will help us.
+          </RadioButton>
+        </div>
+        <div className={styles.projectRadioRow}>
+          <RadioButton
+            id="type-4"
+            value="We are doing a new service and want to make a design for it."
+            name="projectType"
+            handlerOnChange={handlerOnChange}
+            error={formData.projectType.error}
+          >
+            We are doing a new service and want to make a design for it.
+          </RadioButton>
+          <RadioButton
+            id="type-5"
+            value="We want to make the design of the service more convenient and
+            understandable for users."
+            name="projectType"
+            handlerOnChange={handlerOnChange}
+            error={formData.projectType.error}
+          >
+            We want to make the design of the service more convenient and
+            understandable for users.
           </RadioButton>
           <RadioButton
             id="type-6"

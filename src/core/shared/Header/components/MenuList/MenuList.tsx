@@ -9,16 +9,16 @@ const MenuList: React.FunctionComponent = () => {
       href: "/"
     },
     {
+      name: "Services",
+      href: "/services"
+    },
+    {
       name: "Projects",
       href: "/projects"
     },
     {
       name: "Blog",
       href: "/blog"
-    },
-    {
-      name: "Services",
-      href: "/services"
     },
     {
       name: "Contacts",

@@ -14,7 +14,7 @@ const FormBudget: React.FunctionComponent<FormBudgetProps> = ({
 }) => {
   return (
     <div className={styles.formBudget}>
-      <h6>Budget</h6>
+      <h6 className={!!formData.budget.error ? styles.error : ''}>Budget*</h6>
       <div className={styles.projectBudgetContainer}>
         <RadioButton
           id="budget-1"

@@ -62,6 +62,14 @@ const AboutUs: React.FunctionComponent = () => {
             working with us is not inconvenient
           </p>
         </div>
+        <div className={styles.virtuesItem}>
+          <h4 className={styles.virtuesTitle}>
+            100+ completed projects
+          </h4>
+          <p className={styles.virtuesDescription}>
+            Try to surprise us with yours!
+          </p>
+        </div>
       </div>
       <AnimatedLine backgroundColor="#BDBDBD" filledColor="#333" />
     </section>

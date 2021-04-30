@@ -215,7 +215,7 @@ const TechnologyStack: React.FunctionComponent = () => {
               <h3>Databases</h3>
               <p>
                 We choose the best data storage for building your product from a
-                variety of SQL and n6 SQL databases.
+                variety of SQL and no SQL databases.
               </p>
               <div className={styles.technologyIcons}>
                 <div className={styles.technologyIconsItem}>

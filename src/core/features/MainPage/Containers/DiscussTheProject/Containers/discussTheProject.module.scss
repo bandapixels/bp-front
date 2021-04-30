@@ -77,6 +77,10 @@
   }
 }
 
+.error {
+  color: #EB5757 !important;
+}
+
 @media screen and (max-width: $breakpoint-1600) {
   .discussWrapper {
     h1 {
@@ -154,6 +158,9 @@
 
   .formProjectType {
     margin: 5px 0 0;
+    h6 {
+      margin-top: 15px;
+    }
   }
 
   .formMainInfo {
@@ -286,4 +293,12 @@
       display: none;
     }
   }
+}
+
+.inputTextStar {
+  display: inline !important;
+  position: relative !important;
+  top: -5px !important;
+  right: -1px !important;
+  font-size: 11px !important;
 }

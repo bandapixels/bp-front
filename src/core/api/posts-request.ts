@@ -5,7 +5,7 @@ import api from "../shared/constants";
 export class PostsRequest {
   public GetPosts = (): Promise<AxiosResponse> => {
     const url = api.schema + api.host + api.helpers.blog;
-
+    
     return request.get(url);
   };
 

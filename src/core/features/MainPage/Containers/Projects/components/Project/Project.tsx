@@ -65,6 +65,7 @@ const Project: React.FunctionComponent<ProjectProps> = ({
         })}
       >
         <div className={styles.projectInfo}>
+          <h1>Successful projects</h1>
           <h3
             className={styles.projectTitle}
             onClick={(): void => {

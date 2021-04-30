@@ -36,12 +36,15 @@
   }
 
   h1 {
+    position: absolute;
+    top: 19vh;
+    font-family: Raleway;
     font-weight: bold;
     font-size: 80px;
     line-height: 100%;
     letter-spacing: 0.03em;
     color: #171718;
-    margin: 0 0 60px;
+    margin: 0 0 40px;
   }
 }
 
@@ -209,7 +212,21 @@
   opacity: 0;
 }
 
+@media screen and (max-width: 1900px) {
+  .projectInfo {
+    h1 {
+      font-size: 70px;
+    }
+  }
+}
+
 @media screen and (max-width: 1680px) {
+  .projectInfo {
+    h1 {
+      font-size: 50px;
+    }
+  }
+
   .projectImage {
     max-width: 640px;
     max-height: 380px;
@@ -240,6 +257,14 @@
   }
 }
 
+@media screen and (max-width: 1024px) {
+    .projectInfo {
+        h1 {
+            display: none;
+        }
+    }
+}
+
 @media screen and (min-width: 1025px) and (min-height: 700px) and (max-height: 900px){
   .projectMedia {
     &.portrait {
@@ -265,6 +290,7 @@
 
   .projectInfo {
     h1 {
+      font-size: 45px;
       margin-bottom: 30px;
     }
   }
