@@ -14,7 +14,7 @@ const FormTask: React.FunctionComponent<FormTaskProps> = ({
 }) => {
   return (
     <div className={styles.formTask}>
-      <h6>Task</h6>
+      <h6>Task*</h6>
       <Textarea
         name="task"
         placeholder="write task..."
