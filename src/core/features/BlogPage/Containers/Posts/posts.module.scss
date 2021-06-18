@@ -32,6 +32,7 @@
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: flex-start;
+  width: 100%;
 
   &::-webkit-scrollbar {
     width: 0;
@@ -41,6 +42,7 @@
 }
 
 .blogImage {
+  grid-area: 2 / 1 / span 2 / span 3;
   max-width: 450px;
   max-height: 450px;
   margin-right: 50px;
@@ -55,6 +57,8 @@
 }
 
 .postInfo {
+  grid-area: 2 / 2 / span 2 / span 2;
+  margin-left: 50px;
   max-width: 382px;
 
   h4 {
@@ -67,40 +71,44 @@
     opacity: .5;
     transition: .3s;
   }
+}
 
-  .postReadMore {
-    font-size: 20px;
-    line-height: 150%;
-    letter-spacing: 0.03em;
-    color: #EFE314;
+.postAnnotationBlockLaptop {
+  display: none;
+}
+
+.postReadMore {
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 0.03em;
+  color: #EFE314;
+  transition: .3s;
+  position: relative;
+  display: inline;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 5px;
+    background: #EFE314;
+    position: absolute;
+    left: 0;
+    top: calc(100% + 5px);
     transition: .3s;
-    position: relative;
-    display: inline;
+  }
+
+  &:hover {
+    &:after {
+      width: 100%;
+    }
+  }
+
+  &:active {
+    color: #fff;
 
     &:after {
-      content: '';
-      display: block;
-      width: 0;
-      height: 5px;
-      background: #EFE314;
-      position: absolute;
-      left: 0;
-      top: calc(100% + 5px);
-      transition: .3s;
-    }
-
-    &:hover {
-      &:after {
-        width: 100%;
-      }
-    }
-
-    &:active {
-      color: #fff;
-
-      &:after {
-        background: #fff;
-      }
+      background: #fff;
     }
   }
 }
@@ -141,18 +149,18 @@
 }
 
 .blogItem {
-  display: flex;
-  flex-flow: row nowrap;
+  display: grid;
+  grid-template-columns: 450px 442px;
   align-items: center;
-  flex: 0 0 auto;
   text-decoration: none;
 
   &:nth-child(odd) {
+    margin-top: 20px;
     align-self: flex-end;
   }
 
   &:not(:last-child) {
-    margin-right: 60px;
+    margin-right: 50px;
   }
 
   &:hover {
@@ -172,6 +180,45 @@
   }
 }
 
+@media only screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-laptop) {
+  .blogImage {
+    max-width: 270px;
+    max-height: 200px;
+    margin-right: 20px;
+
+    img {
+      max-width: 270px;
+      max-height: 200px;
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .blogItem {
+    grid-template-columns: 270px 390px;
+  }
+
+  .postAnnotationBlockLaptop {
+    display: block;
+    grid-area: 5 / 1 / span 2 / span 2;
+    margin-top: 20px;
+    margin-left: 0;
+  }
+
+  .postAnnotationBlock {
+    display: none;
+  }
+
+  .postInfo {
+    margin-left: 20px;
+  }
+
+  .blogContainer {
+    height: 390px;
+  }
+}
+
 @media only screen and (max-width: $breakpoint-tablet) {
   .blogWrapper {
     h1 {
@@ -185,7 +232,7 @@
   .blogWrapper {
     height: auto;
     //padding: 60px 15px 0;
-    padding: 20px 15px 0;
+    padding: 0 15px;
     background-color: #333;
     background-image: linear-gradient( rgba(255,255,255,.1), transparent 1px), linear-gradient( 90deg, rgba(255,255,255,.1), transparent 1px);
     background-size: 15px 15px;
@@ -222,6 +269,7 @@
   }
 
   .postInfo {
+    margin-left: 0;
     h4 {
       opacity: 1;
       margin: 0 0 5px;

@@ -63,7 +63,7 @@ const BlockWithVideo: React.FunctionComponent = () => {
           <p className={styles.mainText}>
             We know everything about the budget, terms and requirements of the
             business. This allows you to rationally use the budget and
-            guarantees theresult.
+            guarantees the result.
           </p>
           <div className={styles.mobileBtnsWrapper}>
             <Button

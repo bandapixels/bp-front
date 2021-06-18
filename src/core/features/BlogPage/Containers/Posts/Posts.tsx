@@ -13,7 +13,6 @@ const Posts: React.FunctionComponent = () => {
   const dispatch = useDispatch();
   const refGridWrapper = useRef<HTMLDivElement>();
   const postsData = useSelector((state: AppState) => getAllPosts(state));
-
   const formatDate = (date: string): string => {
     const publishDate = new Date(date);
 
@@ -26,7 +25,7 @@ const Posts: React.FunctionComponent = () => {
 
   useGrid(refGridWrapper, "rgba(23,23,24,0.1)", "#fff");
   useRedrawGrid(refGridWrapper);
-  
+
   return (
     <section
       className={styles.blogWrapper}
@@ -49,13 +48,18 @@ const Posts: React.FunctionComponent = () => {
                     <p className={styles.postTime}>
                       {formatDate(post.created_at)}
                     </p>
+                    <div className={styles.postAnnotationBlock}>
+                      <div className={styles.postAnnotation}>{post.excerpt}</div>
+                      <p className={styles.postReadMore}>Read more</p>
+                    </div>
                     {/* <div className={styles.hashtags}>*/}
                     {/*  {post.tags.map((hashtag, index) => {*/}
                     {/*    const key = hashtag.name + index;*/}
-
                     {/*    return <span key={key}>{hashtag.name}</span>;*/}
                     {/*  })}*/}
                     {/*</div> */}
+                  </div>
+                  <div className={styles.postAnnotationBlockLaptop}>
                     <div className={styles.postAnnotation}>{post.excerpt}</div>
                     <p className={styles.postReadMore}>Read more</p>
                   </div>
