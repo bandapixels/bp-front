@@ -101,7 +101,7 @@ const DiscussTheProject: React.FunctionComponent = () => {
           error = "email";
         }
 
-        if (formName === "skype" && !skypeReg.test(formValue.value)) {
+        if (formName === "skype" && formValue.value && !skypeReg.test(formValue.value)) {
           error = "skype";
         }
 

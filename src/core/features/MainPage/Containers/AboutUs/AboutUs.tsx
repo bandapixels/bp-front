@@ -23,7 +23,7 @@ const AboutUs: React.FunctionComponent = () => {
       </div>
       <div className={styles.virtuesWrapper}>
         <div className={styles.virtuesItem}>
-          <h4 className={styles.virtuesTitle}>March 2014</h4>
+          <h4 className={styles.virtuesTitle}>est. 2014</h4>
           <p className={styles.virtuesDescription}>
             Customers trust us,
             <br />
