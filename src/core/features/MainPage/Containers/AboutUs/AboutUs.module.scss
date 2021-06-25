@@ -111,16 +111,13 @@ $bigLetters-offset: (
 .virtuesItem {
   flex: 0 0 50%;
   min-height: 200px;
-  &:last-child {
-    margin-top: 30px;
-  }
 }
 
 @media screen and (max-width: $breakpoint-tablet) {
   .virtuesWrapper {
     padding-right: 30px;
   }
-  
+
   .virtuesItem {
     min-height: unset;
     margin-bottom: 20px;
@@ -180,27 +177,8 @@ $bigLetters-offset: (
   .virtuesItem {
     margin-bottom: 30px;
 
-    &:nth-child(1) {
-      order: 1;
-    }
-
-    &:nth-child(2) {
-      order: 4;
+    &:nth-child(even) {
       margin-left: 50px;
-    }
-
-    &:nth-child(3) {
-      order: 2;
-      margin-left: 50px;
-    }
-
-    &:nth-child(4) {
-      order: 5;
-      margin: 0;
-    }
-
-    &:nth-child(5) {
-      order: 3;
     }
   }
 
