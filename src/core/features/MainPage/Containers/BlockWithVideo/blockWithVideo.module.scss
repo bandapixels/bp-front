@@ -484,3 +484,34 @@ $we-help-font-sizes: (
     bottom: 40px;
   }
 }
+
+@media (max-height: 700px) {
+  .lastLine {
+    margin: 70px 0 0 20px;
+  }
+
+  .lastLine span:last-child:after {
+    width: 285px;
+    bottom: 0;
+  }
+
+  .bigLettersWrapper {
+    margin: 28vh 0 0;
+  }
+}
+
+@media (max-height: 600px) {
+  .bigLettersWrapper {
+    margin: 25vh 0 0;
+  }
+  .lastLine span:last-child:after {
+    width: 240px;
+    bottom: 0;
+  }
+}
+
+@media (max-height: 515px) {
+  .mainText {
+    font-size: 16px;
+  }
+}
