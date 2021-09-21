@@ -19,8 +19,15 @@ const Header: React.FunctionComponent = () => {
   const activeSection = useSelector((state: AppState) => getSection(state));
   const dispatch = useDispatch();
   const router = useRouter();
-  const casesPages = ["/appnavi", "/sunup", "/shed", "/dcr", "/casekeepers"];
-
+  const casesPages = [
+    "/appnavi",
+    "/sunup",
+    "/shed",
+    "/dcr",
+    "/casekeepers",
+    "/careers",
+    "/careers/[id]"
+  ];
   const handlerOpenMobileMenu = (): void => {
     setOpenedMenu(!openedMenu);
   };

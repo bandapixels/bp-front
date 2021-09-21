@@ -23,7 +23,7 @@
   * {
     z-index: 1;
   }
-  
+
   &:before {
     content: '';
     display: block;
@@ -74,7 +74,7 @@
   background-color: transparent;
   border: none;
   background-image: url(/images/icons/close.svg);
-  
+
   &:focus {
     outline: none
   }
@@ -212,18 +212,7 @@
   }
 }
 
-@media screen and (max-width: $breakpoint-mobile) {
-  .mobileBtnsWrapper {
-    .yellowBtnWithIcon {
-      margin-bottom: 20px;
-    }
-  }
-
-  .yellowBtnWithIcon,
-  .transparentBtnWithIcon {
-    max-width: none;
-  }
-
+@media screen and (max-width: $breakpoint-tablet) {
   .menuSwitchBtn {
     transition: .5s;
     display: block;
@@ -241,6 +230,19 @@
       background: url(/images/icons/menu-icon-mob-black.svg) no-repeat center;
     }
   }
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+  .mobileBtnsWrapper {
+    .yellowBtnWithIcon {
+      margin-bottom: 20px;
+    }
+  }
+
+  .yellowBtnWithIcon,
+  .transparentBtnWithIcon {
+    max-width: none;
+  }
 
   .sliderBtnWrapper {
     button {
@@ -255,10 +257,10 @@
       color: #FFF;
       padding: 0 40px;
       text-align: left;
-  
+
       &.sliderPrev {
         transform: none;
-        
+
         &:before {
           content: 'previous project';
         }
@@ -266,7 +268,7 @@
 
       &.sliderNext {
         transform: none;
-        
+
         &:before {
           content: 'next project';
         }
