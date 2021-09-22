@@ -15,5 +15,12 @@ module.exports = withSass({
       const name = fileName.replace(/\.[^/.]+$/, '');
       return `${name}__${localName}`;
     },
+  },
+  routes: {
+    '/careers': { page: '/careers'},
+    '/careers/0': { page: '/careers/[id]'},
+    '/careers/1': { page: '/careers/[id]'},
+    '/careers/2': { page: '/careers/[id]'},
+    '/careers/3': { page: '/careers/[id]'}
   }
 }); 

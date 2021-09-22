@@ -143,7 +143,16 @@ const CareersForm: React.FunctionComponent<FormProps> = ({ title, rank }) => {
   const prepareDataToSend = (): {} => {
     const formDataToSend = new FormData(document.querySelector("form"));
     formDataToSend.append("title", `${title} ${rank}`);
-    return formDataToSend;
+    const dataToSend = {
+      email: formDataToSend.get("email"),
+      body: `Title: ${formDataToSend.get(
+        "title"
+      )} \n Name: ${formDataToSend.get("name")} \n  Phone: ${formDataToSend.get(
+        "phone"
+      )} \n Comment: ${formDataToSend.get("comment")}`,
+      file: formDataToSend.get("file")
+    };
+    return dataToSend;
   };
 
   const handlerSendData = (e: FormEvent<HTMLFormElement>): void => {
