@@ -17,10 +17,21 @@ module.exports = withSass({
     },
   },
   routes: {
-    '/careers': { page: '/careers'},
-    '/careers/0': { page: '/careers/[id]'},
-    '/careers/1': { page: '/careers/[id]'},
-    '/careers/2': { page: '/careers/[id]'},
-    '/careers/3': { page: '/careers/[id]'}
+    '/': { page: '/' },
+    '/services': { page: '/services' },
+    '/projects': { page: '/projects' },
+    '/appnavi': { page: '/appnavi' },
+    '/sunup': { page: '/sunup' },
+    '/shed': { page: '/shed' },
+    '/dcr': { page: '/dcr' },
+    '/casekeepers': { page: '/casekeepers' },
+    '/blog': { page: '/blog' },
+    '/careers': { page: '/careers' },
+    '/careers/0': { page: '/careers/[id]' },
+    '/careers/1': { page: '/careers/[id]' },
+    '/careers/2': { page: '/careers/[id]' },
+    '/careers/3': { page: '/careers/[id]' },
+    '/contacts': { page: '/contacts' },
+    '/form': { page: '/form' }
   }
 }); 
