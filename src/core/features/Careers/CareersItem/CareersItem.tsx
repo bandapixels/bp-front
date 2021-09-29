@@ -150,22 +150,21 @@ const CareersItem: React.FunctionComponent = () => {
           <div className={styles.bodyOffer}>
             <div className={styles.bodyTitle}>We offer</div>
             <ul>
+              <li>Professional development with a well-defined strategy;</li>
+              <li>Experienced colleagues willing to share knowledge;</li>
               <li>
-                Broad space for professional and personal development, learning
-                new things;
+                Opportunity to change projects, technology stacks, try out
+                different roles;
               </li>
-              <li>Professional and personal development;</li>
-              <li>Friendly team;</li>
-              <li>Comfortable working environment;</li>
+              <li>Studying and practicing English twice a week.</li>
               <li>
-                Career path design, helping to reach out next promotion steps;
+                An opportunity to concentrate on your work: no bureaucracy and
+                micromanagement;
               </li>
               <li>
-                Compensation for attending technical conferences and courses,
-                and enhance your learnings;
+                A friendly team with a creative mind and a good sense of humor;
               </li>
-              <li>Cool Friday night board games;</li>
-              <li>Other goodies and care about every employee.</li>
+              <li>Flexible schedule.</li>
             </ul>
           </div>
           <div className={styles.bodyResponsibility}>
