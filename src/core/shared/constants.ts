@@ -1,6 +1,6 @@
 export default {
   schema: "https://",
-  host: process.env.APP_HOSTNAME || "staging.bandapixels.com",
+  host: process.env.APP_HOSTNAME || "api-staging.bandapixels.com",
   helpers: {
     form: "/contact",
     blog: "/postList",
