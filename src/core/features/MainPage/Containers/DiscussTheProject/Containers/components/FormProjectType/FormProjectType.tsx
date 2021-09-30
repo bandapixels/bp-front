@@ -4,7 +4,7 @@ import { DiscussTheProjectInterface } from "../../../../../../../shared/interfac
 import styles from "../../discussTheProject.module.scss";
 
 interface FormProjectTypeProps {
-  handlerOnChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handlerOnChange?: (e: React.MouseEvent<HTMLInputElement>) => void;
   formData: DiscussTheProjectInterface;
 }
 
@@ -14,7 +14,9 @@ const FormProjectType: React.FunctionComponent<FormProjectTypeProps> = ({
 }) => {
   return (
     <div className={styles.formProjectType}>
-      <h6 className={!!formData.projectType.error ? styles.error : ''}>Project type*</h6>
+      <h6 className={formData.projectType.error ? styles.error : ""}>
+        Project type*
+      </h6>
       <div className={styles.projectRadioContainer}>
         <div className={styles.projectRadioRow}>
           <RadioButton
