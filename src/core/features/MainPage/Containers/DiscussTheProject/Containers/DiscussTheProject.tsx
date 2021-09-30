@@ -2,7 +2,7 @@ import React, { FormEvent, useRef, useState } from "react";
 import classNames from "classnames";
 import { useDispatch, useSelector } from "react-redux";
 import { getStatus } from "../../../mainPage.selector";
-import { SendFormData } from "../../../mainPage.actions";
+import { ClearFormDataStatus, SendFormData } from "../../../mainPage.actions";
 import useGrid from "../../../../../utils/useGrid";
 import useRedrawGrid from "../../../../../utils/useRedrawGrid";
 import FormContacts from "./components/FormContacts/FormContacts";
@@ -73,6 +73,7 @@ const DiscussTheProject: React.FunctionComponent = () => {
     if (formStatus === "success") {
       setFormData({ ...formInitialState });
       refForm.current.reset();
+      dispatch(new ClearFormDataStatus());
     }
   };
 
@@ -101,7 +102,11 @@ const DiscussTheProject: React.FunctionComponent = () => {
           error = "email";
         }
 
-        if (formName === "skype" && formValue.value && !skypeReg.test(formValue.value)) {
+        if (
+          formName === "skype" &&
+          formValue.value &&
+          !skypeReg.test(formValue.value)
+        ) {
           error = "skype";
         }
 
@@ -134,9 +139,11 @@ const DiscussTheProject: React.FunctionComponent = () => {
   };
 
   const handlerOnChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e:
+      | React.MouseEvent<HTMLInputElement | HTMLTextAreaElement>
+      | React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ): void => {
-    const input = e.target;
+    const input = e.target as HTMLInputElement | HTMLTextAreaElement;
     const inputName: string = input.name;
     const inputVal: string = input.value;
 

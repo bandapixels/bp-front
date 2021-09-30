@@ -1,9 +1,12 @@
-import React, { FormEvent, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./careersForm.module.scss";
 import Input from "../../../../shared/coreUi/Input/Input";
 import Textarea from "../../../../shared/coreUi/Textarea/Textarea";
-import { SendFormData } from "../../../MainPage/mainPage.actions";
+import {
+  ClearFormDataStatus,
+  SendFormData
+} from "../../../MainPage/mainPage.actions";
 import { AppState } from "../../../../store/store";
 import { getStatus } from "../../../MainPage/mainPage.selector";
 import ModalThanks from "../../../../shared/Modal/ModalThanks/ModalThanks";
@@ -49,6 +52,7 @@ const CareersForm: React.FunctionComponent<FormProps> = ({ title, rank }) => {
     if (formStatus === "success") {
       setFormData({ ...formInitialState });
       refForm.current.reset();
+      dispatch(new ClearFormDataStatus());
     }
   };
 
@@ -87,8 +91,7 @@ const CareersForm: React.FunctionComponent<FormProps> = ({ title, rank }) => {
     setFormData(newData);
 
     const errors = Object.entries(newData).filter(
-      ([, info]: [string, { error: boolean | string; value: string }]) =>
-        info.error
+      ([, info]: [string, { error: string; value: string }]) => info.error
     );
 
     return errors?.length;
@@ -142,24 +145,25 @@ const CareersForm: React.FunctionComponent<FormProps> = ({ title, rank }) => {
 
   const prepareDataToSend = (): {} => {
     const formDataToSend = new FormData(document.querySelector("form"));
-    formDataToSend.append("title", `${title} ${rank}`);
-    const dataToSend = {
-      email: formDataToSend.get("email"),
-      body: `Title: ${formDataToSend.get(
-        "title"
-      )} \n Name: ${formDataToSend.get("name")} \n  Phone: ${formDataToSend.get(
+    const form = new FormData();
+    form.append("email", formDataToSend.get("email"));
+    form.append(
+      "body",
+      `Title: ${title} ${rank} \n Name: ${formDataToSend.get(
+        "name"
+      )} \n  Phone: ${formDataToSend.get(
         "phone"
-      )} \n Comment: ${formDataToSend.get("comment")}`,
-      file: formDataToSend.get("file")
-    };
-    return dataToSend;
+      )} \n Comment: ${formDataToSend.get("comment")}`
+    );
+    form.append("file", formDataToSend.get("file"));
+    return form;
   };
 
-  const handlerSendData = (e: FormEvent<HTMLFormElement>): void => {
-    e.preventDefault();
+  const handlerSendData = (e: React.MouseEvent<HTMLButtonElement>): void => {
     const errors = formValidation(formData);
 
     if (!errors) {
+      e.preventDefault();
       const dataToSend = prepareDataToSend();
 
       dispatch(new SendFormData(dataToSend));
@@ -172,12 +176,7 @@ const CareersForm: React.FunctionComponent<FormProps> = ({ title, rank }) => {
       <h1 className={styles.formTitle}>{`Join\nour\nteam`}</h1>
       <div className={styles.underline} />
       <div className={styles.formWrapper}>
-        <form
-          id={styles.jobForm}
-          ref={refForm}
-          onSubmit={(e: FormEvent<HTMLFormElement>): void => handlerSendData(e)}
-          encType="multipart/form-data"
-        >
+        <form id={styles.jobForm} ref={refForm} encType="multipart/form-data">
           <div className={styles.inputs}>
             <div className={styles.inputName}>
               <Input
@@ -231,8 +230,11 @@ const CareersForm: React.FunctionComponent<FormProps> = ({ title, rank }) => {
             />
           </div>
           <div className={styles.btnsGroup}>
-            <span className={styles.attachText}>
-              {formData.file.value || "doc,pdf,docx"}
+            <span
+              className={`${styles.attachText} ${formData.file.error &&
+                styles.fileError}`}
+            >
+              {formData.file.value || "doc,pdf,docx*"}
             </span>
             <label
               className={`${styles.cvAttach} ${formData.file.error &&
@@ -260,7 +262,11 @@ const CareersForm: React.FunctionComponent<FormProps> = ({ title, rank }) => {
                 required
               />
             </label>
-            <button type="submit" className={styles.applyFormBtnLink}>
+            <button
+              type="submit"
+              className={styles.applyFormBtnLink}
+              onClick={(e): void => handlerSendData(e)}
+            >
               <span className={styles.applyFormLink}>APPLY</span>
               <svg
                 width="17"

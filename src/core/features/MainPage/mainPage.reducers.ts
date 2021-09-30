@@ -15,6 +15,8 @@ const reducer = (state = initialState, action): ShowFormState => {
       return {
         formStatus: action.payload
       };
+    case FormActions.CLEAR_STATUS:
+      return initialState;
     default:
       return state;
   }

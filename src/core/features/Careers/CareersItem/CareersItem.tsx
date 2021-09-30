@@ -178,10 +178,18 @@ const CareersItem: React.FunctionComponent = () => {
           <div className={styles.bodyAbout}>
             <div className={styles.bodyTitle}>About BandaPixels</div>
             <p>
-              BandaPixels software development and UI/UX design services. We
-              offer all necessary services for business improvement. We work on
-              design and development to make business more convenient and more
-              pleasant for your customers
+              BandaPixels is a software development and UI/UX design team. We
+              work on design and development to make business more convenient
+              and more pleasant for your customers.
+              <br />
+              We're kinda all right guys. We get a buzz out of working on our
+              projects and with each other. We'll provide all resources to do
+              cool things, help when it’s hard, set the bar to make it
+              challenging. <br />
+              We hold educational meetings and feedback sessions in-house, we
+              in-house, we stand for awareness and adequacy. We are young,
+              vibrant, and funny. No bureaucracy, only memes and sticker packs
+              :)
             </p>
           </div>
         </div>

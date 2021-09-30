@@ -119,6 +119,12 @@ $careersForm-title-font-sizes: (
   }
   &.fileError {
     border: 0.766667px solid #e45557;
+
+    svg {
+      path {
+        stroke: #e45557;
+      }
+    }
   }
   svg {
     position: absolute;
@@ -181,6 +187,9 @@ $careersForm-title-font-sizes: (
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  &.fileError {
+    color: #e45557;
+  }
 }
 
 @media screen and (max-width: 1280px) {
