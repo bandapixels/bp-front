@@ -155,7 +155,7 @@ const CareersForm: React.FunctionComponent<FormProps> = ({ title, rank }) => {
         "phone"
       )} \n Comment: ${formDataToSend.get("comment")}`
     );
-    form.append("file", formDataToSend.get("file"));
+    form.append("attachment", formDataToSend.get("file"));
     return form;
   };
 
