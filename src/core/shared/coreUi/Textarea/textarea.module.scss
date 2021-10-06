@@ -50,6 +50,13 @@
     background: #fff;
   }
 
+  &:hover {
+    border-color: #EFE314;
+    &::placeholder {
+      color: #EFE314;
+    }
+  }
+
   &:disabled {
     border-color: #4f4f4f;
 
@@ -71,9 +78,9 @@
   }
 }
 
-@media screen and (max-width: $breakpoint-tablet) and (max-height: 768px){
+@media screen and (max-width: 768px) and (max-height: $breakpoint-tablet){
   .textarea {
-    max-height: 190px;
+    max-height: 230px;
   }
 }
 

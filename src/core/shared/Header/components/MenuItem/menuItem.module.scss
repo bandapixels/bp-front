@@ -1,7 +1,7 @@
 @import '../../../../../assets/scss/breakPoints.scss';
 
 .menuItem {
-  margin: 0 50px 0 0;
+  margin: 0 40px 0 0;
 
   &:last-child {
     margin-right: 0;
@@ -19,7 +19,7 @@
 
     &.contactsHeader {
       color: #171718;
-      
+
       &:not(.activeLink) {
         &:hover {
           &:after {
@@ -73,16 +73,6 @@
 
 @media screen and (max-width: $breakpoint-tablet) {
   .menuItem {
-    margin: 0 20px 0 0;
-
-    a {
-      font-size: 16px;
-    }
-  }
-}
-
-@media screen and (max-width: $breakpoint-mobile) {
-  .menuItem {
     margin: 0 auto 30px;
     font-size: 20px;
 
@@ -92,6 +82,7 @@
 
     a {
       color: #171718;
+      font-size: 16px;
 
       &.activeLink {
         &:after {
@@ -99,5 +90,11 @@
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .menuItem {
+    margin: 0 7px 20px 0;
   }
 }

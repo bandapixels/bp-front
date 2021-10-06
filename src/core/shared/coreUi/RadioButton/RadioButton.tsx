@@ -8,7 +8,9 @@ interface InputProps {
   disabled?: boolean;
   value: string;
   smallInput?: boolean;
-  handlerOnChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handlerOnChange?: (
+    e: React.MouseEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
   required?: boolean;
   error: boolean | string;
 }
@@ -37,7 +39,7 @@ const RadioButton: React.FunctionComponent<InputProps> = ({
         name={name}
         disabled={disabled}
         value={value}
-        onChange={(e): void => handlerOnChange(e)}
+        onClick={(e): void => handlerOnChange(e)}
         required={required}
       />
       <div>

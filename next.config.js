@@ -16,4 +16,4 @@ module.exports = withSass({
       return `${name}__${localName}`;
     },
   }
-}); 
+});

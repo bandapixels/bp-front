@@ -10,7 +10,7 @@ const Error: React.FunctionComponent = () => {
   const dispatch = useDispatch();
   const refGridWrapper = useRef<HTMLDivElement>();
   const articles = useSelector((state: AppState) => getLatestArticles(state));
-  console.log(articles);
+
   useEffect(() => {
     dispatch(new acts.GetLatestArticles(2));
   }, []);
@@ -37,14 +37,14 @@ const Error: React.FunctionComponent = () => {
               head,
               created_at: createAt,
               excerpt,
-              slug
+              url
             }) => (
               <Article
                 title={head}
                 image={previewImage}
                 date={createAt}
                 description={excerpt}
-                url={slug}
+                url={url}
                 key={head}
               />
             )

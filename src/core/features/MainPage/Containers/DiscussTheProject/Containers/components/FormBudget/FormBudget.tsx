@@ -4,7 +4,9 @@ import { DiscussTheProjectInterface } from "../../../../../../../shared/interfac
 import styles from "../../discussTheProject.module.scss";
 
 interface FormBudgetProps {
-  handlerOnChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handlerOnChange?: (
+    e: React.MouseEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
   formData: DiscussTheProjectInterface;
 }
 
@@ -14,7 +16,7 @@ const FormBudget: React.FunctionComponent<FormBudgetProps> = ({
 }) => {
   return (
     <div className={styles.formBudget}>
-      <h6 className={!!formData.budget.error ? styles.error : ''}>Budget*</h6>
+      <h6 className={formData.budget.error ? styles.error : ""}>Budget*</h6>
       <div className={styles.projectBudgetContainer}>
         <RadioButton
           id="budget-1"
